@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capallo Investment Advisory - Your Financial Future Starts Here</title>
+    <meta name="description" content="Professional investment advisory services with personalized strategies and expert guidance for your financial success.">
+    
+    <!-- Preload critical resources for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #ffffff 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 4rem 2rem;
+            background: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Social Media Section */
+        .social-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 4rem 2rem;
+            background: var(--bg-primary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Capallo</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" class="cta-button" target="_blank">Schedule a Call</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container fade-in">
+            <h1>Your Financial Future Starts Here</h1>
+            <p>Expert investment advisory services tailored to your unique goals. We help you build wealth, manage risk, and secure your financial independence with personalized strategies and proven expertise.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Explore Our Services</a>
+                <a href="#contact" class="btn-secondary">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="services" class="value-prop">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Capallo</h2>
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">📈</div>
+                    <h3>Proven Track Record</h3>
+                    <p>Over 15 years of consistent performance with a client-first approach. Our strategies have helped clients achieve an average 12% annual return while managing risk effectively.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">🎯</div>
+                    <h3>Personalized Strategies</h3>
+                    <p>Every client receives a custom investment plan tailored to their risk tolerance, timeline, and financial goals. No cookie-cutter solutions, just personalized wealth building.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Risk Management</h3>
+                    <p>Advanced risk assessment and diversification strategies protect your portfolio while maximizing growth potential. Sleep soundly knowing your investments are professionally managed.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">📞</div>
+                    <h3>24/7 Support</h3>
+                    <p>Direct access to your dedicated advisor with quarterly reviews, market updates, and ongoing strategy adjustments. We're here when you need us most.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">💡</div>
+                    <h3>Market Insights</h3>
+                    <p>Stay ahead with our proprietary research, market analysis, and economic forecasting. Make informed decisions with expert guidance and cutting-edge tools.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">🏆</div>
+                    <h3>Award-Winning Team</h3>
+                    <p>Our certified financial planners and investment analysts bring decades of combined experience and industry recognition to your portfolio management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Stay Connected</h2>
+            <p>Follow us for daily market insights, investment tips, and financial education</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/company/your-firm" class="social-link" target="_blank">💼</a>
+                <a href="https://twitter.com/your-firm" class="social-link" target="_blank">🐦</a>
+                <a href="https://facebook.com/your-firm" class="social-link" target="_blank">📘</a>
+                <a href="https://instagram.com/your-firm" class="social-link" target="_blank">📷</a>
+                <a href="https://youtube.com/your-firm" class="social-link" target="_blank">🎥</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Investment Insights & Market Analysis</h2>
+            <div class="blog-grid">
+                <article class="blog-card fade-in">
+                    <div class="blog-image">📊</div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 15, 2025</div>
+                        <h3 class="blog-title">Q1 2025 Market Outlook: Opportunities in Uncertainty</h3>
+                        <p class="blog-excerpt">Our analysis of emerging market trends and investment opportunities for the first quarter, including sector rotations and economic indicators to watch.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card fade-in">
+                    <div class="blog-image">💰</div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 10, 2025</div>
+                        <h3 class="blog-title">Tax-Efficient Investing Strategies for 2025</h3>
+                        <p class="blog-excerpt">Maximize your after-tax returns with these proven strategies for tax-loss harvesting, asset location, and retirement account optimization.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🌱</div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 5, 2025</div>
+                        <h3 class="blog-title">ESG Investing: Performance Meets Purpose</h3>
+                        <p class="blog-excerpt">How environmental, social, and governance factors are creating new investment opportunities while delivering competitive returns.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Capallo Investment Advisory. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Performance optimization: Preload critical resources
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.as = 'style';
+        preloadLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+        document.head.appendChild(preloadLink);
+
+        // Lazy load non-critical resources
+        window.addEventListener('load', () => {
+            // Add any additional lazy-loaded content here
+            console.log('Website loaded and optimized for performance');
+        });
+    </script>
+</body>
+</html>
