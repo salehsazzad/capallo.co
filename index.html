@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoring Investor Confidence Among Founders in Bangladesh</title>
-    <meta name="description" content="Capallo builds conviction between capital providers and startups through a structured, ongoing support system across equity, debt, crowdfunding, and advisory services.">
-    
-    <!-- Preload critical resources for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Capallo - Investment Advisory</title>
+    <meta name="description" content="Building conviction between capital providers and startups in Bangladesh.">
     
     <style>
         * {
@@ -18,348 +13,360 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --border-color: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            color: #333;
+            background: #fff;
         }
 
-        /* Header Styles */
-        .header {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid #eee;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 20px 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
 
         .nav-links a {
+            color: #666;
             text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 15px;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: #000;
         }
 
-        .cta-button {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Hero Section */
+        /* Hero Section - Full Viewport */
         .hero {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, #ffffff 100%);
-            padding: 8rem 2rem 4rem;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            position: relative;
         }
 
-        .hero-container {
-            max-width: 1200px;
+        .hero-content {
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 300;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.5;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+        .cta {
             display: inline-block;
+            padding: 15px 30px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border: 2px solid var(--primary-color);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-primary:hover, .btn-secondary:hover {
+        .cta:hover {
+            background: #333;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
         }
 
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
+        .cta-secondary {
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
         }
 
-        /* Value Proposition Section */
-        .value-prop {
-            padding: 4rem 2rem;
-            background: var(--bg-primary);
+        .cta-secondary:hover {
+            background: #000;
+            color: #fff;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Services Section - Full Viewport */
+        .services {
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            background: #fff;
         }
 
         .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
+            margin-bottom: 60px;
         }
 
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .services-comparison {
+            overflow-x: auto;
+            margin-top: 40px;
         }
 
-        .value-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .value-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .value-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Social Media Section */
-        .social-section {
-            background: var(--bg-secondary);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Blog Section */
-        .blog-section {
-            padding: 4rem 2rem;
-            background: var(--bg-primary);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-card {
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .comparison-table th {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 500;
+            font-size: 18px;
         }
 
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+        .comparison-table .service-name {
+            text-align: left;
+            background: white;
+            font-weight: 500;
+            color: #333;
+            width: 40%;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+
+        .comparison-table .service-name {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .check {
+            color: #22c55e;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .plan-header-row th {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .plan-description {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .diy-column {
+            background: #fef2f2;
+        }
+
+        .standard-column {
+            background: #f0f9ff;
+        }
+
+        .full-column {
+            background: #f0fdf4;
+        }
+
+        /* Blog Section - Viewport Height */
+        .blog {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #fafafa;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
         }
 
         .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .blog-excerpt {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 3rem 2rem 2rem;
             text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .footer p {
-            color: #9ca3af;
+        .blog h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .blog p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .blog-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .blog-cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* About Section - Viewport Height */
+        .about {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .about p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Contact Section - Viewport Height */
+        .contact {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contact p {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 50px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #000;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #333;
         }
 
         /* Mobile Responsiveness */
@@ -368,177 +375,271 @@
                 display: none;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .social-links {
-                flex-wrap: wrap;
+            .services-comparison {
+                margin: 0 -20px;
             }
 
-            .nav-container {
-                padding: 1rem;
+            .comparison-table {
+                min-width: 600px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            .plan-header-row th {
+                font-size: 16px;
+            }
+
+            .plan-description {
+                font-size: 12px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-links a {
+                font-size: 16px;
+                padding: 12px 25px;
             }
         }
 
-        /* Smooth scrolling */
+        /* Smooth scrolling and animations */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Loading animation */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 40px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .scroll-indicator:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            width: 4px;
+            height: 8px;
+            background: #333;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0%, 20% { transform: translateX(-50%) translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            80%, 100% { transform: translateX(-50%) translateY(15px); opacity: 0; }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">Capallo</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Insights</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" class="cta-button" target="_blank">Schedule a Call</a>
-        </nav>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Capallo</a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container fade-in">
-            <h1>Restoring Investor Confidence Among Founders in Bangladesh</h1>
-            <p>Capallo builds conviction between capital providers and startups through a structured, ongoing support system across equity, debt, crowdfunding, and advisory services.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn-primary">Explore Our Services</a>
-                <a href="#contact" class="btn-secondary">Get Started Today</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition Section -->
-    <section id="services" class="value-prop">
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title fade-in">Why Choose Capallo</h2>
-            <div class="value-grid">
-                <div class="value-card fade-in">
-                    <div class="value-icon">📈</div>
-                    <h3>Proven Track Record</h3>
-                    <p>Over 15 years of consistent performance with a client-first approach. Our strategies have helped clients achieve an average 12% annual return while managing risk effectively.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">🎯</div>
-                    <h3>Personalized Strategies</h3>
-                    <p>Every client receives a custom investment plan tailored to their risk tolerance, timeline, and financial goals. No cookie-cutter solutions, just personalized wealth building.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">🛡️</div>
-                    <h3>Risk Management</h3>
-                    <p>Advanced risk assessment and diversification strategies protect your portfolio while maximizing growth potential. Sleep soundly knowing your investments are professionally managed.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">📞</div>
-                    <h3>24/7 Support</h3>
-                    <p>Direct access to your dedicated advisor with quarterly reviews, market updates, and ongoing strategy adjustments. We're here when you need us most.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">💡</div>
-                    <h3>Market Insights</h3>
-                    <p>Stay ahead with our proprietary research, market analysis, and economic forecasting. Make informed decisions with expert guidance and cutting-edge tools.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">🏆</div>
-                    <h3>Award-Winning Team</h3>
-                    <p>Our certified financial planners and investment analysts bring decades of combined experience and industry recognition to your portfolio management.</p>
+            <div class="hero-content fade-in">
+                <h1>Building conviction between capital providers and startups</h1>
+                <p>We restore investor confidence among founders in Bangladesh through structured support across equity, debt, and advisory services.</p>
+                <div class="hero-buttons">
+                    <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" class="cta" target="_blank">Schedule a Call</a>
+                    <a href="#services" class="cta cta-secondary">View Services</a>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator" onclick="document.getElementById('services').scrollIntoView()"></div>
     </section>
 
-    <!-- Social Media Section -->
-    <section class="social-section">
-        <div class="container fade-in">
-            <h2 class="section-title">Stay Connected</h2>
-            <p>Follow us for daily market insights, investment tips, and financial education</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/company/your-firm" class="social-link" target="_blank">💼</a>
-                <a href="https://twitter.com/your-firm" class="social-link" target="_blank">🐦</a>
-                <a href="https://facebook.com/your-firm" class="social-link" target="_blank">📘</a>
-                <a href="https://instagram.com/your-firm" class="social-link" target="_blank">📷</a>
-                <a href="https://youtube.com/your-firm" class="social-link" target="_blank">🎥</a>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Fundraising Advisory Services</h2>
+            
+            <div class="services-comparison fade-in">
+                <table class="comparison-table">
+                    <thead>
+                        <tr class="plan-header-row">
+                            <th></th>
+                            <th class="diy-column">
+                                DIY Approach<br>
+                                <span class="plan-description">Self-directed fundraising with no external support</span>
+                            </th>
+                            <th class="standard-column">
+                                Standard Service<br>
+                                <span class="plan-description">Part-time analyst manages fundraising process with investment banking support</span>
+                            </th>
+                            <th class="full-column">
+                                Full Service<br>
+                                <span class="plan-description">Full-time analyst manages fundraising process with investment banking team support</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service-name">Set Up Fundraising Infrastructure</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Develop Targeting Thesis</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Build Investor Lists</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Qualify Investors and Initiate Email Outreach</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Call Investors and Arrange Pitch Meetings with Founders</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="cross">✗</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Collect and Manage Data/Feedback</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Weekly Performance Meetings with Full Data Access</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Pitch Call Review and Advisory</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="cross">✗</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="blog-section">
+    <section id="blog" class="blog">
         <div class="container">
-            <h2 class="section-title fade-in">Investment Insights & Market Analysis</h2>
-            <div class="blog-grid">
-                <article class="blog-card fade-in">
-                    <div class="blog-image">📊</div>
-                    <div class="blog-content">
-                        <div class="blog-date">January 15, 2025</div>
-                        <h3 class="blog-title">Q1 2025 Market Outlook: Opportunities in Uncertainty</h3>
-                        <p class="blog-excerpt">Our analysis of emerging market trends and investment opportunities for the first quarter, including sector rotations and economic indicators to watch.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card fade-in">
-                    <div class="blog-image">💰</div>
-                    <div class="blog-content">
-                        <div class="blog-date">January 10, 2025</div>
-                        <h3 class="blog-title">Tax-Efficient Investing Strategies for 2025</h3>
-                        <p class="blog-excerpt">Maximize your after-tax returns with these proven strategies for tax-loss harvesting, asset location, and retirement account optimization.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card fade-in">
-                    <div class="blog-image">🌱</div>
-                    <div class="blog-content">
-                        <div class="blog-date">January 5, 2025</div>
-                        <h3 class="blog-title">ESG Investing: Performance Meets Purpose</h3>
-                        <p class="blog-excerpt">How environmental, social, and governance factors are creating new investment opportunities while delivering competitive returns.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
+            <div class="blog-content fade-in">
+                <h2>Insights for Founders</h2>
+                <p>Access our comprehensive blog featuring fundraising strategies, market insights, and practical advice for startup founders navigating the Bangladesh ecosystem.</p>
+                <a href="#" class="blog-cta" target="_blank">Read Our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2>About Capallo</h2>
+                <p>We bridge the gap between ambitious founders and discerning investors in Bangladesh's evolving startup landscape.</p>
+                <p>Our structured approach builds lasting relationships and delivers sustainable growth for all stakeholders through proven methodologies and deep market expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2>Get in Touch</h2>
+                <p>Ready to discuss your investment strategy or fundraising needs?</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@capallo.com">Email Us</a>
+                    <a href="https://linkedin.com/company/capallo" target="_blank">LinkedIn</a>
+                    <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" target="_blank">Schedule Call</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Capallo Investment Advisory. All rights reserved</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Capallo. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
+                    target.scrollIntoView({ 
                         behavior: 'smooth',
                         block: 'start'
                     });
@@ -546,54 +647,16 @@
             });
         });
 
-        // Header scroll effect
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-        
+        // Header background on scroll
         window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
                 header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.boxShadow = 'none';
             }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Performance optimization: Preload critical resources
-        const preloadLink = document.createElement('link');
-        preloadLink.rel = 'preload';
-        preloadLink.as = 'style';
-        preloadLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-        document.head.appendChild(preloadLink);
-
-        // Lazy load non-critical resources
-        window.addEventListener('load', () => {
-            // Add any additional lazy-loaded content here
-            console.log('Website loaded and optimized for performance');
         });
     </script>
 </body>
