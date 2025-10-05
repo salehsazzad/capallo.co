@@ -666,6 +666,24 @@
             50% { opacity: 1; }
             80%, 100% { transform: translateX(-50%) translateY(15px); opacity: 0; }
         }
+
+        .quote-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4f46e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .quote-button:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -711,16 +729,13 @@
                         <tr class="plan-header-row">
                             <th></th>
                             <th class="diy-column">
-                                Self-Directed (DIY)<br>
-                                <span class="plan-description">Self-directed fundraising with no external support</span>
+                                Self-Directed (DIY)
                             </th>
                             <th class="standard-column">
-                                Guided Fundraising Support<br>
-                                <span class="plan-description">Strategic guidance and process support for organized fundraising</span>
+                                Guided Fundraising Support
                             </th>
                             <th class="full-column">
-                                Dedicated Fundraising Partner<br>
-                                <span class="plan-description">Full-service fundraising management with dedicated team support</span>
+                                Dedicated Fundraising Partner
                             </th>
                         </tr>
                     </thead>
@@ -784,6 +799,17 @@
                             <td class="diy-column"><span class="outcome">Slow & uncertain</span></td>
                             <td class="standard-column"><span class="outcome">Organized process, better-prepared pitches</span></td>
                             <td class="full-column"><span class="outcome">Optimized outreach, higher conversion</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"><strong>Fee Structure</strong></td>
+                            <td class="diy-column"></td>
+                            <td class="standard-column"><span class="time-saved" style="color: #22c55e;">✓ Pro Bono (Free)</span></td>
+                            <td class="full-column"><span class="time-saved" style="color: #4f46e5;">💰 Paid Service</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"></td>
+                            <td class="diy-column"></td>
+                            <td colspan="2" style="background: linear-gradient(to right, #f0f9ff 0%, #f0fdf4 100%);"><a href="#" class="quote-button">Get Quote</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -960,6 +986,3 @@
     </script>
 </body>
 </html>
-
-
-
