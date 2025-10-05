@@ -575,6 +575,15 @@
             border-top: 1px solid #333;
         }
 
+        /* Mobile Service Cards */
+        .mobile-services {
+            display: none;
+        }
+
+        .mobile-service-card {
+            display: none;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
@@ -587,25 +596,15 @@
             }
 
             .services-comparison {
-                margin: 0 -20px;
+                margin: 0;
             }
 
             .comparison-table {
-                min-width: 600px;
+                display: none;
             }
 
-            .comparison-table th,
-            .comparison-table td {
-                padding: 15px 10px;
-                font-size: 14px;
-            }
-
-            .plan-header-row th {
-                font-size: 16px;
-            }
-
-            .plan-description {
-                font-size: 12px;
+            .mobile-services {
+                display: block;
             }
 
             .contact-links {
@@ -616,6 +615,115 @@
             .contact-links a {
                 font-size: 16px;
                 padding: 12px 25px;
+            }
+
+            .mobile-service-card {
+                display: block;
+                background: white;
+                border-radius: 12px;
+                padding: 30px 20px;
+                margin-bottom: 30px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .mobile-service-card.diy {
+                border-top: 4px solid #ef4444;
+            }
+
+            .mobile-service-card.standard {
+                border-top: 4px solid #3b82f6;
+            }
+
+            .mobile-service-card.full {
+                border-top: 4px solid #22c55e;
+            }
+
+            .mobile-card-header {
+                text-align: center;
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid #f1f3f4;
+            }
+
+            .mobile-card-title {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: #1f2937;
+            }
+
+            .mobile-service-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #f1f3f4;
+            }
+
+            .mobile-service-item:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-service-name {
+                font-size: 14px;
+                color: #374151;
+                flex: 1;
+                padding-right: 10px;
+            }
+
+            .mobile-service-value {
+                font-size: 18px;
+            }
+
+            .mobile-outcome-section {
+                margin-top: 25px;
+                padding-top: 20px;
+                border-top: 2px solid #e5e7eb;
+            }
+
+            .mobile-outcome-item {
+                margin-bottom: 15px;
+            }
+
+            .mobile-outcome-label {
+                font-size: 13px;
+                font-weight: 600;
+                color: #6b7280;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .mobile-outcome-value {
+                font-size: 15px;
+                color: #1f2937;
+                font-weight: 500;
+            }
+
+            .mobile-fee-section {
+                text-align: center;
+                margin-top: 20px;
+                padding: 15px;
+                background: #f9fafb;
+                border-radius: 8px;
+            }
+
+            .mobile-fee-label {
+                font-size: 13px;
+                font-weight: 600;
+                color: #6b7280;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+            }
+
+            .mobile-fee-value {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .mobile-cta-section {
+                text-align: center;
+                margin-top: 20px;
             }
         }
 
@@ -813,6 +921,170 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- Mobile View -->
+                <div class="mobile-services">
+                    <!-- DIY Card -->
+                    <div class="mobile-service-card diy">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Self-Directed (DIY)</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">❌ None</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Slow & uncertain</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guided Card -->
+                    <div class="mobile-service-card standard">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Guided Fundraising Support</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">⏳ ~10 hrs/week</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Organized process, better-prepared pitches</div>
+                            </div>
+                        </div>
+                        <div class="mobile-fee-section">
+                            <div class="mobile-fee-label">Fee Structure</div>
+                            <div class="mobile-fee-value" style="color: #22c55e;">✓ Pro Bono (Free)</div>
+                        </div>
+                        <div class="mobile-cta-section">
+                            <a href="#" class="quote-button">Get Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Dedicated Card -->
+                    <div class="mobile-service-card full">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Dedicated Fundraising Partner</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">⏳ ~20+ hrs/week</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Optimized outreach, higher conversion</div>
+                            </div>
+                        </div>
+                        <div class="mobile-fee-section">
+                            <div class="mobile-fee-label">Fee Structure</div>
+                            <div class="mobile-fee-value" style="color: #4f46e5;">💰 Paid Service</div>
+                        </div>
+                        <div class="mobile-cta-section">
+                            <a href="#" class="quote-button">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
