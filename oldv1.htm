@@ -1,376 +1,1265 @@
-<!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Left Sidebar - Helios by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="left-sidebar is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capallo - Private Capital Advisory & Investor Relations</title>
+    <meta name="description" content="Building conviction between capital providers and startups.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000'/%3E%3Cpath d='M65 30 Q75 30 75 40 Q75 50 65 50 M65 50 Q75 50 75 60 Q75 70 65 70 M40 30 L40 70 L65 70' stroke='%23fff' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			<!-- Header -->
-				<div id="header">
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">Helios</a></h1>
-							</header>
-						</div>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">And a submenu &hellip;</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-				</div>
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
 
-			<!-- Main -->
-				<div class="wrapper style1">
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
 
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<hr class="first" />
-								<section>
-									<header>
-										<h3><a href="#">Accumsan sed penatibus</a></h3>
-									</header>
-									<p>
-										Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-										porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
-										magna tempus feugiat veroeros.
-									</p>
-									<footer>
-										<a href="#" class="button">Learn More</a>
-									</footer>
-								</section>
-								<hr />
-								<section>
-									<header>
-										<h3><a href="#">Sed lorem etiam consequat</a></h3>
-									</header>
-									<p>
-										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-									</p>
-									<div class="row gtr-50">
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Nibh sed cubilia</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Proin sed adipiscing</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Lorem feugiat magna</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Sed tempus fringilla</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Malesuada fermentum</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-									</div>
-									<footer>
-										<a href="#" class="button">Magna Adipiscing</a>
-									</footer>
-								</section>
-							</div>
-							<div class="col-8 col-12-mobile imp-mobile" id="content">
-								<article id="main">
-									<header>
-										<h2><a href="#">Left Sidebar</a></h2>
-										<p>
-											Morbi convallis lectus malesuada sed fermentum dolore amet
-										</p>
-									</header>
-									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-									<p>
-										Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-										posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-										lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-										consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-										interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-										natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-									</p>
-									<section>
-										<header>
-											<h3>Ultrices tempor sagittis nisl</h3>
-										</header>
-										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-										</p>
-										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
-										</p>
-									</section>
-									<section>
-										<header>
-											<h3>Augue euismod feugiat tempus</h3>
-										</header>
-										<p>
-											Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-										</p>
-									</section>
-								</article>
-							</div>
-						</div>
-						<hr />
-						<div class="row">
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-						</div>
-					</div>
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+        }
 
-				</div>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
 
-							<!-- Tweets -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="tweet">
-												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
-												<span class="timestamp">5 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Hendrerit rutrum quisque.
-												<span class="timestamp">30 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
-												<span class="timestamp">5 hours ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
+        .nav-links a:hover {
+            color: #000;
+        }
 
-							<!-- Posts -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Nisl fermentum integer</a></h3>
-												</header>
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Phasellus portitor lorem</a></h3>
-												</header>
-												<span class="timestamp">6 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Magna tempus consequat</a></h3>
-												</header>
-												<span class="timestamp">Yesterday</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Feugiat lorem ipsum</a></h3>
-												</header>
-												<span class="timestamp">2 days ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
+        /* Hero Section - Full Viewport */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            position: relative;
+        }
 
-							<!-- Photos -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
-									</header>
-									<div class="row gtr-25">
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-						</div>
-						<hr />
-						<div class="row">
-							<div class="col-12">
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 300;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
 
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>Nisl turpis nascetur interdum?</h3>
-										</header>
-										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
-										<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
 
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-							</div>
+        .cta {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
-						</div>
-					</div>
-				</div>
+        .cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
 
-		</div>
+        .cta-secondary {
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .cta-secondary:hover {
+            background: #000;
+            color: #fff;
+        }
 
-	</body>
+        /* Services Section - Full Viewport */
+        .services {
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            background: #fff;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-comparison {
+            overflow-x: auto;
+            margin-top: 40px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .comparison-table .service-name {
+            text-align: left;
+            background: white;
+            font-weight: 500;
+            color: #333;
+            width: 40%;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+
+        .comparison-table .service-name {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .check {
+            color: #22c55e;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .plan-header-row th {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .plan-description {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .diy-column {
+            background: #fef2f2;
+        }
+
+        .standard-column {
+            background: #f0f9ff;
+        }
+
+        .full-column {
+            background: #f0fdf4;
+        }
+
+        .outcome-row {
+            border-top: 2px solid #e9ecef;
+        }
+
+        .outcome-row td {
+            padding: 25px 20px;
+            font-weight: 500;
+        }
+
+        .time-saved {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .outcome {
+            font-size: 13px;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        /* Venture School Section */
+        .venture-school {
+            min-height: 100vh;
+            padding: 100px 0;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+        }
+
+        .venture-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .venture-intro {
+            margin-bottom: 80px;
+        }
+
+        .venture-intro h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .venture-tagline {
+            font-size: 24px;
+            color: #4f46e5;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .venture-description {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 60px;
+        }
+
+        .labs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        .lab-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .lab-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .lab-subtitle {
+            font-size: 16px;
+            color: #4f46e5;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .lab-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .highlights {
+            margin-bottom: 30px;
+        }
+
+        .highlights h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights li {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .highlights li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .why-matters {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #374151;
+        }
+
+        .why-matters strong {
+            color: #1f2937;
+        }
+
+        .lab-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lab-cta:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+        }
+
+        .venture-promise {
+            background: #1f2937;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .venture-promise h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+
+        .venture-promise p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #e5e7eb;
+        }
+
+        @media (max-width: 768px) {
+            .labs-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .lab-card {
+                padding: 30px 25px;
+            }
+
+            .venture-tagline {
+                font-size: 20px;
+            }
+
+            .venture-promise {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+        }
+
+        .newsletter-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .newsletter p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .newsletter-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* About Section - Viewport Height */
+        .about {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .about p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Contact Section - Viewport Height */
+        .contact {
+            min-height: 80vh;
+            padding: 100px 0;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contact p {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 50px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #000;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+
+        /* Mobile Service Cards */
+        .mobile-services {
+            display: none;
+        }
+
+        .mobile-service-card {
+            display: none;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-comparison {
+                margin: 0;
+            }
+
+            .comparison-table {
+                display: none;
+            }
+
+            .mobile-services {
+                display: block;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-links a {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+
+            .mobile-service-card {
+                display: block;
+                background: white;
+                border-radius: 12px;
+                padding: 30px 20px;
+                margin-bottom: 30px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .mobile-service-card.diy {
+                border-top: 4px solid #ef4444;
+            }
+
+            .mobile-service-card.standard {
+                border-top: 4px solid #3b82f6;
+            }
+
+            .mobile-service-card.full {
+                border-top: 4px solid #22c55e;
+            }
+
+            .mobile-card-header {
+                text-align: center;
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid #f1f3f4;
+            }
+
+            .mobile-card-title {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: #1f2937;
+            }
+
+            .mobile-service-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #f1f3f4;
+            }
+
+            .mobile-service-item:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-service-name {
+                font-size: 14px;
+                color: #374151;
+                flex: 1;
+                padding-right: 10px;
+            }
+
+            .mobile-service-value {
+                font-size: 18px;
+            }
+
+            .mobile-outcome-section {
+                margin-top: 25px;
+                padding-top: 20px;
+                border-top: 2px solid #e5e7eb;
+            }
+
+            .mobile-outcome-item {
+                margin-bottom: 15px;
+            }
+
+            .mobile-outcome-label {
+                font-size: 13px;
+                font-weight: 600;
+                color: #6b7280;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .mobile-outcome-value {
+                font-size: 15px;
+                color: #1f2937;
+                font-weight: 500;
+            }
+
+            .mobile-fee-section {
+                text-align: center;
+                margin-top: 20px;
+                padding: 15px;
+                background: #f9fafb;
+                border-radius: 8px;
+            }
+
+            .mobile-fee-label {
+                font-size: 13px;
+                font-weight: 600;
+                color: #6b7280;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+            }
+
+            .mobile-fee-value {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .mobile-cta-section {
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+
+        /* Smooth scrolling and animations */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 40px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .scroll-indicator:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            width: 4px;
+            height: 8px;
+            background: #333;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0%, 20% { transform: translateX(-50%) translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            80%, 100% { transform: translateX(-50%) translateY(15px); opacity: 0; }
+        }
+
+        .quote-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4f46e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .quote-button:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Capallo</a>
+                <ul class="nav-links">
+                    <li><a href="#services" aria-label="Services">Services</a></li>
+                    <li><a href="#venture-school" aria-label="Venture School">Venture School</a></li>
+                    <li><a href="#newsletter" aria-label="Newsletter">Newsletter</a></li>
+                    <li><a href="#about" aria-label="About">About</a></li>
+                    <li><a href="#contact" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Building conviction between capital providers and startups</h1>
+                <p>We restore investor confidence among founders through structured support across equity, debt, and advisory services.</p>
+                <div class="hero-buttons">
+                    <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" class="cta" target="_blank">Schedule a Call</a>
+                    <a href="#services" class="cta cta-secondary">View Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('services').scrollIntoView()"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Private Capital Advisory & Investor Relations Services</h2>
+            
+            <div class="services-comparison fade-in">
+                <table class="comparison-table">
+                    <thead>
+                        <tr class="plan-header-row">
+                            <th></th>
+                            <th class="diy-column">
+                                Self-Directed (DIY)
+                            </th>
+                            <th class="standard-column">
+                                Guided Fundraising Support
+                            </th>
+                            <th class="full-column">
+                                Dedicated Fundraising Partner
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service-name">Fundraising Infrastructure</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Targeting Thesis Development</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Build & Curate Investor Lists</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="cross">✗</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Qualify Investors & Outreach</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="cross">✗</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Direct Investor Calls & Pitch Scheduling</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="cross">✗</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Data Collection & Feedback Management</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Weekly Progress Reviews</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Pitch Call Review & Advisory</td>
+                            <td class="diy-column"><span class="cross">✗</span></td>
+                            <td class="standard-column"><span class="check">✓</span></td>
+                            <td class="full-column"><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"><strong>Founder Time Saved</strong></td>
+                            <td class="diy-column"><span class="time-saved">❌ None</span></td>
+                            <td class="standard-column"><span class="time-saved">⏳ ~10 hrs/week</span></td>
+                            <td class="full-column"><span class="time-saved">⏳ ~20+ hrs/week</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"><strong>Expected Outcome</strong></td>
+                            <td class="diy-column"><span class="outcome">Slow & uncertain</span></td>
+                            <td class="standard-column"><span class="outcome">Organized process, better-prepared pitches</span></td>
+                            <td class="full-column"><span class="outcome">Optimized outreach, higher conversion</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"><strong>Fee Structure</strong></td>
+                            <td class="diy-column"></td>
+                            <td class="standard-column"><span class="time-saved" style="color: #22c55e;">✓ Pro Bono</span></td>
+                            <td class="full-column"><span class="time-saved" style="color: #4f46e5;">💰 Paid Service</span></td>
+                        </tr>
+                        <tr class="outcome-row">
+                            <td class="service-name"></td>
+                            <td class="diy-column"></td>
+                            <td colspan="2" style="background: linear-gradient(to right, #f0f9ff 0%, #f0fdf4 100%);"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf43UpC5PkPlNINfR-jbnx0F-y67JLg3Sb4y_c7WtCpIr_QSw/viewform?usp=header" class="quote-button" target="_blank" rel="noopener noreferrer">Get Quote</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Mobile View -->
+                <div class="mobile-services">
+                    <!-- DIY Card -->
+                    <div class="mobile-service-card diy">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Self-Directed (DIY)</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">❌ None</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Slow & uncertain</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guided Card -->
+                    <div class="mobile-service-card standard">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Guided Fundraising Support</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value cross">✗</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">⏳ ~10 hrs/week</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Organized process, better-prepared pitches</div>
+                            </div>
+                        </div>
+                        <div class="mobile-fee-section">
+                            <div class="mobile-fee-label">Fee Structure</div>
+                            <div class="mobile-fee-value" style="color: #22c55e;">✓ Pro Bono (Free)</div>
+                        </div>
+                        <div class="mobile-cta-section">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf43UpC5PkPlNINfR-jbnx0F-y67JLg3Sb4y_c7WtCpIr_QSw/viewform?usp=header" class="quote-button" target="_blank" rel="noopener noreferrer">Get Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Dedicated Card -->
+                    <div class="mobile-service-card full">
+                        <div class="mobile-card-header">
+                            <h3 class="mobile-card-title">Dedicated Fundraising Partner</h3>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Fundraising Infrastructure</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Targeting Thesis Development</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Build & Curate Investor Lists</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Qualify Investors & Outreach</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Direct Investor Calls & Pitch Scheduling</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Data Collection & Feedback Management</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Weekly Progress Reviews</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-service-item">
+                            <span class="mobile-service-name">Pitch Call Review & Advisory</span>
+                            <span class="mobile-service-value check">✓</span>
+                        </div>
+                        <div class="mobile-outcome-section">
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Founder Time Saved</div>
+                                <div class="mobile-outcome-value">⏳ ~20+ hrs/week</div>
+                            </div>
+                            <div class="mobile-outcome-item">
+                                <div class="mobile-outcome-label">Expected Outcome</div>
+                                <div class="mobile-outcome-value">Optimized outreach, higher conversion</div>
+                            </div>
+                        </div>
+                        <div class="mobile-fee-section">
+                            <div class="mobile-fee-label">Fee Structure</div>
+                            <div class="mobile-fee-value" style="color: #4f46e5;">💰 Paid Service</div>
+                        </div>
+                        <div class="mobile-cta-section">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf43UpC5PkPlNINfR-jbnx0F-y67JLg3Sb4y_c7WtCpIr_QSw/viewform?usp=header" class="quote-button" target="_blank" rel="noopener noreferrer">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venture School Section -->
+    <section id="venture-school" class="venture-school">
+        <div class="container">
+            <div class="venture-content fade-in">
+                <div class="venture-intro">
+                    <h2>Venture School</h2>
+                    <p class="venture-description">
+                        Venture School bridges the gap in Bangladesh's startup ecosystem by nurturing both sides of the table — investors and founders. Through two dedicated labs, we provide the space, knowledge, and community needed to fuel entrepreneurial growth as we're on a mission to back 100 high-integrity founders & empower 10,000 angel investors in Bangladesh.
+                    </p>
+                </div>
+
+                <div class="labs-container">
+                    <!-- Investor Lab -->
+                    <div class="lab-card">
+                        <h3 class="lab-title">Investor Lab</h3>
+                        <p class="lab-subtitle">Conscious Investing, Made Simple</p>
+                        <p class="lab-description">
+                            Investor Lab is Bangladesh's first structured program to help professionals, HNWIs, and aspiring angels gain confidence and skills to invest in startups.
+                        </p>
+                        
+                        <div class="highlights">
+                            <h4>Program Highlights:</h4>
+                            <ul>
+                                <li>Weekend classes: Friday & Saturday, 1.5 hours each</li>
+                                <li>8 sessions per month, cohort-based learning</li>
+                                <li>Hands-on practice: pitch reviews & due diligence on real startups</li>
+                                <li>Graduation ceremony with live pitches from actual companies raising funds</li>
+                                <li>Small cohorts: only 7–10 participants per batch</li>
+                                <li>Be part of the investor community to access highy vetted deals and quarterly investor happy hours</li>
+                                <li>Lifetime private investment advisory with no additional fee</li>
+                                <li>Paid program: practical learning with measurable outcomes</li>
+                            </ul>
+                        </div>
+
+                        <div class="why-matters">
+                            <strong>Why Join?</strong> Smarter investors create better startups, and better startups transform economies.
+                        </div>
+
+                        <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=send_form" class="lab-cta" target="_blank" rel="noopener noreferrer">Register for Investor Lab</a>
+                    </div>
+
+                    <!-- Founder Lab -->
+                    <div class="lab-card">
+                        <h3 class="lab-title">Founder Lab (Coming soon)</h3>
+                        <p class="lab-subtitle">A Second Home for Builders</p>
+                        <p class="lab-description">
+                            Founder Lab is where early-stage founders find the community, focus, and support to grow their ventures.
+                        </p>
+                        
+                        <div class="highlights">
+                            <h4>Program Highlights:</h4>
+                            <ul>
+                                <li>Flexible workspace options: hotdesks to private offices</li>
+                                <li>Access to experienced advisors (legal & operational) and industry mentors</li>
+                                <li>Access to curated startup books and resources from leading investors</li>
+                                <li>Complimentary Capallo advisory support for fundraising</li>
+                                <li>Learn from monthly events from experienced entrepreneurs & investors</li>
+                                <li>Connect and co-build with fellow entrepreneurs</li>
+                                <li>Grant fund facility for eligible companies</li>
+                            </ul>
+                        </div>
+
+                        <div class="why-matters">
+                            <strong>Why Join?</strong> Founders don't just need a desk. They need a network, structured support system, and a community to thrive and that's our playbook to create 100 high-integrity, high-trust, high-value founders.
+                        </div>
+
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/viewform" class="lab-cta" target="_blank" rel="noopener noreferrer">Register for Founder Lab</a>
+                    </div>
+                </div>
+
+                <div class="venture-promise">
+                    <h3>Our Vision</h3>
+                    <p>
+                        Venture School is not theory driven. It's practical, community powered, and impact-focused to empower 100 high-integrity, high-trust, high-value founders , 10,000 venture investors, and a better collaborative ecosystem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <h2>Insights for Founders</h2>
+                <p>Subscribe to our newsletter and get exclusive insights into Capallo's Venture School, upcoming programs, founder stories, and the latest developments in Bangladesh's startup ecosystem.</p>
+                <a href="https://capallo.substack.com/" class="newsletter-cta" target="_blank">Subscribe to Newsletter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2>About Capallo</h2>
+                <p>We bridge the gap between ambitious founders and discerning investors in Bangladesh's evolving startup landscape.</p>
+                <p>Our structured approach builds lasting relationships and delivers sustainable growth for all stakeholders through proven methodologies and deep market expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2>Get in Touch</h2>
+                <p>Ready to discuss your investment strategy or fundraising needs?</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@capallo.com">Email Us</a>
+                    <a href="https://linkedin.com/company/capallo" target="_blank">LinkedIn</a>
+                    <a href="https://calendar.app.google/A55TaKbTrw9MmKPT8" target="_blank">Schedule Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Capallo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
 </html>
+
+
