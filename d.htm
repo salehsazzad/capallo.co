@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             background: #ffffff;
             color: #2c2c2c;
             line-height: 1.7;
@@ -40,9 +40,10 @@
 
         .logo {
             font-size: 1.8rem;
-            font-weight: bold;
-            color: #006a4e;
+            font-weight: 600;
+            color: #1a1a1a;
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -59,7 +60,8 @@
         }
 
         .nav-links a:hover {
-            color: #006a4e;
+            color: #1a1a1a;
+            font-weight: 500;
         }
 
         .mobile-menu-btn {
@@ -87,18 +89,19 @@
 
         h1 {
             font-size: 3.5rem;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 1.5rem;
             color: #1a1a1a;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            color: #5a5a5a;
+            font-size: 1.5rem;
+            color: #666;
             margin-bottom: 3rem;
-            font-style: italic;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
         .sketch-container {
@@ -122,39 +125,46 @@
         }
 
         .btn-primary {
-            background: #006a4e;
+            background: #1a1a1a;
             color: white;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 1.1rem 2.8rem;
+            font-size: 1rem;
             text-decoration: none;
             border: none;
+            border-radius: 50px;
             cursor: pointer;
-            font-family: 'Georgia', serif;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,106,78,0.2);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: inline-block;
         }
 
         .btn-primary:hover {
-            background: #005a42;
+            background: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,106,78,0.3);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.25);
         }
 
         .btn-secondary {
             background: white;
-            color: #006a4e;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            color: #1a1a1a;
+            padding: 1.1rem 2.8rem;
+            font-size: 1rem;
             text-decoration: none;
-            border: 2px solid #006a4e;
+            border: 2px solid #1a1a1a;
+            border-radius: 50px;
             cursor: pointer;
-            font-family: 'Georgia', serif;
-            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .btn-secondary:hover {
-            background: #006a4e;
+            background: #1a1a1a;
             color: white;
+            transform: translateY(-2px);
         }
 
         /* Services Section */
@@ -176,16 +186,17 @@
             font-size: 2.8rem;
             text-align: center;
             margin-bottom: 1rem;
-            font-weight: 400;
+            font-weight: 300;
             color: #1a1a1a;
+            letter-spacing: -1px;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            color: #6a6a6a;
+            color: #666;
             margin-bottom: 4rem;
-            font-style: italic;
+            font-weight: 300;
         }
 
         .services-grid {
@@ -209,7 +220,7 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: #006a4e;
+            background: #1a1a1a;
             transform: scaleY(0);
             transition: transform 0.3s;
         }
@@ -245,15 +256,15 @@
 
         .service-link {
             display: inline-block;
-            color: #006a4e;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             border-bottom: 2px solid transparent;
             transition: border-color 0.3s;
         }
 
         .service-link:hover {
-            border-bottom-color: #006a4e;
+            border-bottom-color: #1a1a1a;
         }
 
         /* About Section */
@@ -299,8 +310,8 @@
 
         .stat-number {
             font-size: 2.5rem;
-            color: #006a4e;
-            font-weight: bold;
+            color: #1a1a1a;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
@@ -357,9 +368,9 @@
         }
 
         .contact-method a {
-            color: #006a4e;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* Service Detail Pages */
@@ -375,10 +386,11 @@
 
         .back-link {
             display: inline-block;
-            color: #006a4e;
+            color: #1a1a1a;
             text-decoration: none;
             margin-bottom: 2rem;
             font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .back-link:hover {
@@ -400,7 +412,8 @@
         .detail-content h3 {
             font-size: 1.8rem;
             margin: 2rem 0 1rem;
-            color: #006a4e;
+            color: #1a1a1a;
+            font-weight: 500;
         }
 
         .detail-content ul {
@@ -532,7 +545,7 @@
 
             <div class="cta-buttons">
                 <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule a Call</a>
-                <a href="#services" class="btn-secondary" onclick="showPage('services')">See Our Services</a>
+                <a href="#services" class="btn-secondary" onclick="showPage('services')">View Services</a>
             </div>
         </div>
     </section>
@@ -1007,14 +1020,14 @@
             drawPencilLine(heroCtx, 240, 285, 460, 285);
             
             // Rising growth arrow
-            heroCtx.strokeStyle = '#006a4e';
+            heroCtx.strokeStyle = '#1a1a1a';
             heroCtx.lineWidth = 3;
             drawPencilLine(heroCtx, 120, 250, 220, 120, 2);
             drawPencilLine(heroCtx, 220, 120, 200, 140, 2);
             drawPencilLine(heroCtx, 220, 120, 200, 120, 2);
             
             // Sun/Future symbol
-            heroCtx.strokeStyle = '#f42a41';
+            heroCtx.strokeStyle = '#1a1a1a';
             heroCtx.lineWidth = 2;
             heroCtx.beginPath();
             heroCtx.arc(580, 100, 35, 0, Math.PI * 2);
@@ -1040,7 +1053,7 @@
             }
             
             // People silhouettes representing angels/founders
-            heroCtx.strokeStyle = '#006a4e';
+            heroCtx.strokeStyle = '#1a1a1a';
             heroCtx.lineWidth = 2;
             
             // Group of people
