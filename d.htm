@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capallo - Simplifying Venture Investing</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%231a1a1a'/><text x='50' y='70' font-size='60' font-weight='600' font-family='system-ui, -apple-system, sans-serif' text-anchor='middle' fill='white'>C</text></svg>">
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #ffffff;
+            background: #fdfbf7;
             color: #2c2c2c;
             line-height: 1.7;
         }
@@ -23,10 +24,9 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: #ffffff;
-            border-bottom: 2px solid #e0e0e0;
+            background: #fdfbf7;
+            border-bottom: 1px solid #e8e3d8;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -39,7 +39,7 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: #1a1a1a;
             text-decoration: none;
@@ -55,13 +55,13 @@
         .nav-links a {
             color: #2c2c2c;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            font-weight: 400;
         }
 
         .nav-links a:hover {
             color: #1a1a1a;
-            font-weight: 500;
         }
 
         .mobile-menu-btn {
@@ -74,61 +74,62 @@
         }
 
         /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 2rem 4rem;
+        .hero-section {
+            padding: 8rem 2rem 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .hero-content {
-            max-width: 900px;
+        .hero-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 500;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 300;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
             color: #1a1a1a;
             letter-spacing: -1.5px;
             line-height: 1.2;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: #666;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .sketch-container {
+        .sketch-box {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 2rem;
             margin: 3rem auto;
             max-width: 700px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
         canvas {
             max-width: 100%;
             height: auto;
-            border: 2px solid #e0e0e0;
-            background: #fafafa;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2.5rem;
+        .hero-text {
+            font-size: 1.15rem;
+            color: #4a4a4a;
+            margin: 2.5rem auto;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            margin: 3rem 0;
         }
 
         .btn-primary {
             background: #1a1a1a;
             color: white;
-            padding: 1.1rem 2.8rem;
-            font-size: 1rem;
+            padding: 1rem 2.5rem;
+            font-size: 0.95rem;
             text-decoration: none;
             border: none;
             border-radius: 50px;
@@ -146,284 +147,189 @@
             box-shadow: 0 6px 25px rgba(0,0,0,0.25);
         }
 
-        .btn-secondary {
-            background: white;
-            color: #1a1a1a;
-            padding: 1.1rem 2.8rem;
-            font-size: 1rem;
-            text-decoration: none;
-            border: 2px solid #1a1a1a;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        /* Content Sections */
+        .content-section {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 1.5rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: #1a1a1a;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .services {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 6rem 2rem 4rem;
-            background: #fafafa;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .section-title {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
             font-weight: 300;
             color: #1a1a1a;
+            margin-bottom: 2rem;
             letter-spacing: -1px;
+            line-height: 1.3;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 4rem;
-            font-weight: 300;
-        }
-
-        .services-grid {
+        .two-column {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .content-box {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 2.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .content-box h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .content-box p {
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Blueprint Section */
+        .blueprint-section {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 3rem;
+            margin: 4rem auto;
+            max-width: 900px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .blueprint-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e8e3d8;
+        }
+
+        .blueprint-title {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .blueprint-version {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blueprint-steps {
+            display: flex;
+            flex-direction: column;
             gap: 2.5rem;
         }
 
-        .service-card {
-            background: white;
-            border: 2px solid #e0e0e0;
-            padding: 2.5rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: #1a1a1a;
-            transform: scaleY(0);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .service-number {
-            font-size: 3rem;
-            color: #e0e0e0;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .service-title {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            font-weight: 500;
-        }
-
-        .service-description {
-            color: #5a5a5a;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .service-link {
-            display: inline-block;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .service-link:hover {
-            border-bottom-color: #1a1a1a;
-        }
-
-        /* About Section */
-        .about {
-            min-height: 100vh;
+        .blueprint-step {
             display: flex;
-            align-items: center;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            background: #fafafa;
-            border: 2px solid #e0e0e0;
-            padding: 3rem;
-            margin: 2rem 0;
-        }
-
-        .about-content p {
-            font-size: 1.15rem;
-            color: #4a4a4a;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            align-items: flex-start;
         }
 
-        .stat-box {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border: 2px solid #e0e0e0;
-        }
-
-        .stat-number {
+        .step-number {
             font-size: 2.5rem;
-            color: #1a1a1a;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #ccc;
+            min-width: 60px;
         }
 
-        .stat-label {
-            color: #5a5a5a;
-            font-size: 1rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 6rem 2rem 4rem;
-            background: #fafafa;
-        }
-
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .contact-box {
-            background: white;
-            border: 2px solid #e0e0e0;
-            padding: 3rem;
-            text-align: center;
-        }
-
-        .contact-box p {
-            font-size: 1.2rem;
-            color: #5a5a5a;
-            margin-bottom: 2rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .contact-method {
-            padding: 1.5rem;
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
-        }
-
-        .contact-method h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .contact-method a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Service Detail Pages */
-        .service-detail {
-            min-height: 100vh;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .service-detail-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .back-link {
-            display: inline-block;
-            color: #1a1a1a;
-            text-decoration: none;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+        .step-content h4 {
+            font-size: 1.4rem;
             font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .detail-content {
-            background: white;
-            border: 2px solid #e0e0e0;
-            padding: 3rem;
-        }
-
-        .detail-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
-        }
-
-        .detail-content h3 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
-            color: #1a1a1a;
-            font-weight: 500;
-        }
-
-        .detail-content ul {
-            margin: 1rem 0 1rem 2rem;
-            color: #5a5a5a;
-        }
-
-        .detail-content li {
             margin-bottom: 0.8rem;
+            color: #1a1a1a;
+        }
+
+        .step-subtitle {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #666;
+        }
+
+        .step-content p {
+            color: #4a4a4a;
             line-height: 1.7;
+        }
+
+        /* Transition Section */
+        .transition-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+
+        .transition-text {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .transition-subtext {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 4rem auto;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .founder-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .founder-title {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .founder-content p {
+            font-size: 1.05rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-top: 2rem;
+            text-align: right;
         }
 
         /* Footer */
@@ -432,7 +338,7 @@
             color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 4rem;
+            margin-top: 6rem;
         }
 
         /* Mobile Responsive */
@@ -443,7 +349,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: white;
+                background: #fdfbf7;
                 flex-direction: column;
                 padding: 1rem 0;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -465,34 +371,26 @@
                 font-size: 2.2rem;
             }
 
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            .services-grid {
+            .two-column {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
+            .blueprint-step {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
 
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
+            .transition-text {
+                font-size: 1.4rem;
             }
         }
 
-        /* Hide all sections except home by default */
+        /* Page navigation */
         .page-section {
             display: none;
         }
@@ -501,20 +399,158 @@
             display: block;
         }
 
-        #home.active {
-            display: flex;
+        /* Services page styling */
+        .services-page {
+            padding: 6rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        #services.active {
-            display: flex;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        #about.active {
-            display: flex;
+        .service-card {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
-        #contact.active {
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-number {
+            font-size: 2.5rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .service-description {
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-link {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .service-link:hover {
+            border-bottom-color: #1a1a1a;
+        }
+
+        /* Other pages simple styling */
+        .simple-page {
+            padding: 6rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .simple-page h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .simple-content {
+            background: white;
+            border: 1px solid #e8e3d8;
+            padding: 3rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .simple-content p {
+            font-size: 1.05rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            background: #fdfbf7;
+            border: 1px solid #e8e3d8;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-methods {
             display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            padding: 1.5rem;
+            background: #fdfbf7;
+            border: 1px solid #e8e3d8;
+        }
+
+        .contact-method h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .contact-method a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -533,327 +569,304 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="hero page-section active">
-        <div class="hero-content">
+    <!-- Home Page -->
+    <div id="home" class="page-section active">
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="hero-label">OUR WHY</div>
             <h1>Simplifying Venture Investing</h1>
-            <p class="subtitle">To build 10,000 angels, 100 high value founders and one future ready nation</p>
             
-            <div class="sketch-container">
-                <canvas id="heroSketch" width="700" height="350"></canvas>
+            <p class="hero-text" style="font-size: 1.25rem; margin: 1.5rem auto 3rem;">
+                To build 10,000 angel investors, 100 high-value founders, and one future-ready nation
+            </p>
+            
+            <div class="sketch-box">
+                <canvas id="pathSketch" width="600" height="300"></canvas>
             </div>
 
-            <div class="cta-buttons">
+            <p class="hero-text">
+                You've worked hard to build wealth—time, resources, and the freedom to choose what comes next. 
+                You want to invest in Bangladesh's future. You want to create impact. But the world of venture 
+                investing feels inaccessible, opaque, or purely transactional.
+            </p>
+
+            <p class="hero-text">
+                You don't need another pitch deck. You need a blueprint to build your own investment engine.
+            </p>
+
+            <div class="cta-section">
                 <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule a Call</a>
-                <a href="#services" class="btn-secondary" onclick="showPage('services')">View Services</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services page-section">
-        <div class="services-container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive solutions for your investment journey</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3 class="service-title">Venture School</h3>
-                    <p class="service-description">
-                        Our flagship investor education program designed to transform aspiring angels into confident, strategic investors ready to support Bangladesh's entrepreneurial ecosystem.
-                    </p>
-                    <a href="#" class="service-link" onclick="showServiceDetail('venture-school')">Learn More →</a>
+        <!-- Blueprint Section -->
+        <section class="content-section">
+            <div class="blueprint-section">
+                <div class="blueprint-header">
+                    <div class="blueprint-title">Investment Blueprint</div>
+                    <div class="blueprint-version">Version 1.0 | By: Capallo Team</div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3 class="service-title">Investment Advisory</h3>
-                    <p class="service-description">
-                        Expert guidance for both buy-side and sell-side transactions. We provide strategic counsel to help you make informed investment decisions and maximize returns.
-                    </p>
-                    <a href="#" class="service-link" onclick="showServiceDetail('investment-advisory')">Learn More →</a>
-                </div>
+                <div class="blueprint-steps">
+                    <div class="blueprint-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h4>Define Your Vision</h4>
+                            <p class="step-subtitle">When your investment thesis is clear, returns compound.</p>
+                            <p>Use Capallo's frameworks—like our Investor Readiness Assessment and Portfolio Builder—to identify what sectors align with your values and where you're best positioned to add value beyond capital.</p>
+                        </div>
+                    </div>
 
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3 class="service-title">Wakalah Investment Management</h3>
-                    <p class="service-description">
-                        Shariah-compliant investment management services through the Wakalah model, allowing you to invest with confidence while adhering to Islamic principles.
-                    </p>
-                    <a href="#" class="service-link" onclick="showServiceDetail('wakalah')">Learn More →</a>
-                </div>
+                    <div class="blueprint-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h4>Build Your Portfolio</h4>
+                            <p class="step-subtitle">Focused investing makes every taka go further.</p>
+                            <p>Craft your personal investment strategy, access vetted deal flow, and connect with high-potential founders. Go at your own pace through Venture School or work directly with us—either way, you get a repeatable system.</p>
+                        </div>
+                    </div>
 
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3 class="service-title">Legal Documentation</h3>
-                    <p class="service-description">
-                        Comprehensive legal document preparation and review for all your investment needs, ensuring your interests are protected at every step.
-                    </p>
-                    <a href="#" class="service-link" onclick="showServiceDetail('legal-docs')">Learn More →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <h3 class="service-title">Portfolio Management</h3>
-                    <p class="service-description">
-                        Active management and oversight of your investment portfolio, providing regular updates, strategic rebalancing, and performance optimization.
-                    </p>
-                    <a href="#" class="service-link" onclick="showServiceDetail('portfolio-mgmt')">Learn More →</a>
+                    <div class="blueprint-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h4>Manage & Scale</h4>
+                            <p class="step-subtitle">The more you see, the more you can do.</p>
+                            <p>Our portfolio management platform makes it easier than ever to invest strategically. Track where your capital goes, monitor company progress, and identify new opportunities as they emerge.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Two Column Section -->
+        <section class="content-section">
+            <div class="section-label">FROM SCATTERED TO ALIGNED</div>
+            <div class="section-title">You bring the capital. We provide the clarity.</div>
+            
+            <div class="two-column">
+                <div class="content-box">
+                    <p>
+                        We connect you to vetted opportunities, proven frameworks, and a community of fellow investors building Bangladesh's future—giving you a repeatable way to invest with confidence.
+                    </p>
+                </div>
+                
+                <div class="sketch-box">
+                    <canvas id="alignmentSketch" width="400" height="250"></canvas>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#services" class="btn-primary" onclick="showPage('services')">View Our Services</a>
+            </div>
+        </section>
+
+        <!-- Visual Section -->
+        <section class="content-section">
+            <div class="sketch-box">
+                <canvas id="buildingSketch" width="650" height="300"></canvas>
+            </div>
+        </section>
+
+        <!-- Founder Story -->
+        <section class="content-section">
+            <div class="founder-section">
+                <div class="founder-label">JOIN THE MOVEMENT</div>
+                <h2 class="founder-title">Let's build something that matters</h2>
+                
+                <div class="founder-content">
+                    <p>
+                        I started Capallo because I saw a gap. Bangladesh has incredible entrepreneurs and available capital, but no bridge connecting them effectively.
+                    </p>
+                    <p>
+                        I wanted to create something meaningful—a way to democratize access to venture investing while helping our best founders scale. But I had no clear path forward.
+                    </p>
+                    <p>
+                        This whole thing began with a simple question: What if venture investing could feel like building something together? That idea gave me direction. Now I want to give others the same.
+                    </p>
+                    <p>
+                        If even one angel investor we train backs a founder who builds a category-defining company—this will have been worth it.
+                    </p>
+                    <p>
+                        But we won't stop there. We'll keep building until we have 10,000 angels, 100 high-value founders, and one future-ready nation.
+                    </p>
+                    <p>
+                        If this resonates, I hope you'll join us. Let's build something that matters, together.
+                    </p>
+                    
+                    <div class="signature">— Capallo Team</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page-section services-page">
+        <div class="section-label">OUR SERVICES</div>
+        <h2 class="section-title">Comprehensive solutions for your investment journey</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3 class="service-title">Venture School</h3>
+                <p class="service-description">
+                    Our flagship investor education program designed to transform aspiring angels into confident, strategic investors ready to support Bangladesh's entrepreneurial ecosystem.
+                </p>
+                <a href="#venture-school" class="service-link" onclick="showPage('venture-school')">Learn More →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3 class="service-title">Investment Advisory</h3>
+                <p class="service-description">
+                    Expert guidance for both buy-side and sell-side transactions. Strategic counsel to help you make informed investment decisions and maximize returns.
+                </p>
+                <a href="#investment-advisory" class="service-link" onclick="showPage('investment-advisory')">Learn More →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3 class="service-title">Wakalah Investment Management</h3>
+                <p class="service-description">
+                    Shariah-compliant investment management services through the Wakalah model, allowing you to invest with confidence while adhering to Islamic principles.
+                </p>
+                <a href="#wakalah" class="service-link" onclick="showPage('wakalah')">Learn More →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3 class="service-title">Legal Documentation</h3>
+                <p class="service-description">
+                    Comprehensive legal document preparation and review for all your investment needs, ensuring your interests are protected at every step.
+                </p>
+                <a href="#legal-docs" class="service-link" onclick="showPage('legal-docs')">Learn More →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3 class="service-title">Portfolio Management</h3>
+                <p class="service-description">
+                    Active management and oversight of your investment portfolio, providing regular updates, strategic rebalancing, and performance optimization.
+                </p>
+                <a href="#portfolio-mgmt" class="service-link" onclick="showPage('portfolio-mgmt')">Learn More →</a>
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- Service Detail Pages -->
-    <section id="venture-school" class="service-detail page-section">
-        <div class="service-detail-container">
-            <a href="#" class="back-link" onclick="showPage('services')">← Back to Services</a>
-            <div class="detail-content">
-                <h2>Venture School</h2>
-                <p style="font-size: 1.2rem; color: #5a5a5a; margin-bottom: 2rem;">Our flagship investor education program</p>
-                
-                <h3>What You'll Learn</h3>
-                <ul>
-                    <li><strong>Investment Fundamentals:</strong> Understanding deal structures, term sheets, and valuation methods</li>
-                    <li><strong>Due Diligence:</strong> Comprehensive frameworks for evaluating startups and founders</li>
-                    <li><strong>Bangladesh Market Dynamics:</strong> Deep insights into local opportunities and challenges</li>
-                    <li><strong>Portfolio Construction:</strong> Building a balanced angel investment portfolio</li>
-                    <li><strong>Syndicate Formation:</strong> Collaborating with other angels to access larger deals</li>
-                    <li><strong>Exit Strategies:</strong> Understanding paths to liquidity and maximizing returns</li>
-                </ul>
-
-                <h3>Program Structure</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    Our 8-week intensive program combines online learning modules, live workshops with successful investors, 
-                    hands-on case studies of real Bangladeshi startups, and networking opportunities with fellow aspiring angels.
-                </p>
-
-                <h3>Who Should Join</h3>
-                <ul>
-                    <li>High-net-worth individuals looking to diversify into venture investments</li>
-                    <li>Successful entrepreneurs ready to become angel investors</li>
-                    <li>Family office managers exploring venture opportunities</li>
-                    <li>Professionals with capital seeking impact investment avenues</li>
-                </ul>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="https://forms.google.com/your-form" class="btn-primary" target="_blank">Apply Now</a>
-                    <a href="https://calendly.com/your-link" class="btn-secondary" target="_blank" style="margin-left: 1rem;">Schedule Info Session</a>
-                </div>
+    <div id="venture-school" class="page-section simple-page">
+        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
+        <div class="simple-content">
+            <h2>Venture School</h2>
+            <p>Our flagship investor education program designed to transform aspiring angels into confident, strategic investors.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">What You'll Learn</h3>
+            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
+                <li>Investment fundamentals and deal structures</li>
+                <li>Due diligence frameworks</li>
+                <li>Bangladesh market dynamics</li>
+                <li>Portfolio construction strategies</li>
+                <li>Exit planning and liquidity events</li>
+            </ul>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://forms.google.com/your-form" class="btn-primary" target="_blank">Apply Now</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="investment-advisory" class="service-detail page-section">
-        <div class="service-detail-container">
-            <a href="#" class="back-link" onclick="showPage('services')">← Back to Services</a>
-            <div class="detail-content">
-                <h2>Investment Advisory</h2>
-                <p style="font-size: 1.2rem; color: #5a5a5a; margin-bottom: 2rem;">Strategic guidance for both buy-side and sell-side transactions</p>
-                
-                <h3>Buy-Side Advisory</h3>
-                <ul>
-                    <li><strong>Deal Sourcing:</strong> Access to curated investment opportunities in Bangladesh's startup ecosystem</li>
-                    <li><strong>Due Diligence Support:</strong> Comprehensive analysis of business models, financials, and market potential</li>
-                    <li><strong>Valuation Advisory:</strong> Fair pricing recommendations based on market standards and company metrics</li>
-                    <li><strong>Negotiation Support:</strong> Expert guidance through term sheet negotiations and deal structuring</li>
-                    <li><strong>Syndicate Coordination:</strong> Connecting you with co-investors to share risk and increase deal access</li>
-                </ul>
-
-                <h3>Sell-Side Advisory</h3>
-                <ul>
-                    <li><strong>Exit Planning:</strong> Strategic roadmap for optimizing your investment exit</li>
-                    <li><strong>Buyer Identification:</strong> Connecting sellers with qualified, interested buyers</li>
-                    <li><strong>Company Positioning:</strong> Enhancing company presentation to maximize valuation</li>
-                    <li><strong>Deal Structuring:</strong> Creating transaction structures that work for all parties</li>
-                    <li><strong>Process Management:</strong> Coordinating all aspects of the transaction to closing</li>
-                </ul>
-
-                <h3>Our Approach</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    We combine deep local market knowledge with international best practices to provide objective, 
-                    actionable advice. Our team has experience across sectors including technology, manufacturing, 
-                    agriculture, and financial services, giving you access to comprehensive industry insights.
-                </p>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Consultation</a>
-                </div>
+    <div id="investment-advisory" class="page-section simple-page">
+        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
+        <div class="simple-content">
+            <h2>Investment Advisory</h2>
+            <p>Strategic guidance for both buy-side and sell-side transactions in Bangladesh's venture ecosystem.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Buy-Side Services</h3>
+            <p>Deal sourcing, due diligence support, valuation advisory, and negotiation guidance.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Sell-Side Services</h3>
+            <p>Exit planning, buyer identification, company positioning, and transaction management.</p>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Consultation</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="wakalah" class="service-detail page-section">
-        <div class="service-detail-container">
-            <a href="#" class="back-link" onclick="showPage('services')">← Back to Services</a>
-            <div class="detail-content">
-                <h2>Wakalah Investment Management</h2>
-                <p style="font-size: 1.2rem; color: #5a5a5a; margin-bottom: 2rem;">Shariah-compliant investment management through the Wakalah model</p>
-                
-                <h3>What is Wakalah?</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    Wakalah is an Islamic contract where you appoint us as your agent (Wakil) to invest on your behalf 
-                    according to Shariah principles. This model ensures transparency, ethical investing, and alignment 
-                    with Islamic values while pursuing competitive returns.
-                </p>
-
-                <h3>Our Wakalah Services</h3>
-                <ul>
-                    <li><strong>Shariah Screening:</strong> All investments vetted by qualified Shariah scholars</li>
-                    <li><strong>Ethical Investment Selection:</strong> Focus on businesses that benefit society and avoid prohibited sectors</li>
-                    <li><strong>Transparent Fee Structure:</strong> Clear, upfront fees with no hidden charges</li>
-                    <li><strong>Regular Reporting:</strong> Detailed updates on portfolio performance and Shariah compliance</li>
-                    <li><strong>Zakat Calculation:</strong> Assistance with determining Zakat obligations on investments</li>
-                </ul>
-
-                <h3>Investment Focus</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    We focus on halal sectors including technology, healthcare, education, manufacturing, and 
-                    agriculture. All investments avoid interest-based financing, gambling, alcohol, and other 
-                    prohibited activities.
-                </p>
-
-                <h3>Minimum Investment</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    Our Wakalah services are available for investors with a minimum commitment of BDT 50 lakh, 
-                    allowing us to build a properly diversified portfolio while maintaining Shariah compliance.
-                </p>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Discuss Your Needs</a>
-                    <a href="https://forms.google.com/your-form" class="btn-secondary" target="_blank" style="margin-left: 1rem;">Request Information</a>
-                </div>
+    <div id="wakalah" class="page-section simple-page">
+        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
+        <div class="simple-content">
+            <h2>Wakalah Investment Management</h2>
+            <p>Shariah-compliant investment management where we act as your agent (Wakil) to invest on your behalf according to Islamic principles.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Our Approach</h3>
+            <p>All investments are vetted by qualified Shariah scholars, focusing on ethical sectors that benefit society while avoiding prohibited activities.</p>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Discuss Your Needs</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="legal-docs" class="service-detail page-section">
-        <div class="service-detail-container">
-            <a href="#" class="back-link" onclick="showPage('services')">← Back to Services</a>
-            <div class="detail-content">
-                <h2>Legal Documentation for Investments</h2>
-                <p style="font-size: 1.2rem; color: #5a5a5a; margin-bottom: 2rem;">Comprehensive legal support for secure investing</p>
-                
-                <h3>Document Preparation</h3>
-                <ul>
-                    <li><strong>Term Sheets:</strong> Clear, balanced agreements outlining investment terms</li>
-                    <li><strong>Shareholder Agreements:</strong> Protecting your rights and defining governance structures</li>
-                    <li><strong>Subscription Agreements:</strong> Formalizing your investment commitment</li>
-                    <li><strong>Convertible Notes:</strong> Flexible debt instruments for early-stage investments</li>
-                    <li><strong>SAFE Agreements:</strong> Simple agreements for future equity</li>
-                    <li><strong>Side Letters:</strong> Customized provisions for specific investor requirements</li>
-                </ul>
-
-                <h3>Document Review</h3>
-                <ul>
-                    <li><strong>Red Flag Identification:</strong> Spotting concerning clauses before you commit</li>
-                    <li><strong>Term Analysis:</strong> Ensuring terms align with market standards</li>
-                    <li><strong>Risk Assessment:</strong> Understanding potential legal and financial exposures</li>
-                    <li><strong>Negotiation Support:</strong> Recommendations for improving deal terms</li>
-                </ul>
-
-                <h3>Compliance Support</h3>
-                <ul>
-                    <li><strong>BSEC Regulations:</strong> Ensuring compliance with Bangladesh Securities and Exchange Commission requirements</li>
-                    <li><strong>RJSC Filings:</strong> Proper registration and documentation with Registrar of Joint Stock Companies</li>
-                    <li><strong>Tax Considerations:</strong> Structuring investments for tax efficiency</li>
-                    <li><strong>Foreign Investment:</strong> Navigating BIDA and Bangladesh Bank regulations for international investors</li>
-                </ul>
-
-                <h3>Our Legal Network</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    We work with Bangladesh's top corporate law firms specializing in venture capital and private equity. 
-                    This ensures you receive expert legal guidance while benefiting from our negotiated rates and 
-                    streamlined processes.
-                </p>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Legal Consultation</a>
-                </div>
+    <div id="legal-docs" class="page-section simple-page">
+        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
+        <div class="simple-content">
+            <h2>Legal Documentation</h2>
+            <p>Comprehensive legal support for secure venture investing, from term sheets to shareholder agreements.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Services Include</h3>
+            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
+                <li>Term sheet preparation and review</li>
+                <li>Shareholder agreements</li>
+                <li>Subscription agreements</li>
+                <li>BSEC and RJSC compliance</li>
+                <li>Tax structuring guidance</li>
+            </ul>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Legal Consultation</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="portfolio-mgmt" class="service-detail page-section">
-        <div class="service-detail-container">
-            <a href="#" class="back-link" onclick="showPage('services')">← Back to Services</a>
-            <div class="detail-content">
-                <h2>Portfolio Management Services</h2>
-                <p style="font-size: 1.2rem; color: #5a5a5a; margin-bottom: 2rem;">Active oversight and optimization of your venture investments</p>
-                
-                <h3>Portfolio Tracking</h3>
-                <ul>
-                    <li><strong>Performance Monitoring:</strong> Regular updates on each portfolio company's progress</li>
-                    <li><strong>Financial Reporting:</strong> Consolidated view of all your investments and valuations</li>
-                    <li><strong>Milestone Tracking:</strong> Monitoring key metrics and KPIs for each investment</li>
-                    <li><strong>Risk Assessment:</strong> Early identification of portfolio companies facing challenges</li>
-                </ul>
-
-                <h3>Strategic Portfolio Management</h3>
-                <ul>
-                    <li><strong>Rebalancing Recommendations:</strong> Guidance on maintaining optimal portfolio composition</li>
-                    <li><strong>Follow-on Investment Analysis:</strong> Evaluating opportunities to invest more in existing portfolio companies</li>
-                    <li><strong>Exit Planning:</strong> Identifying optimal timing and strategies for liquidity events</li>
-                    <li><strong>Co-investment Opportunities:</strong> Access to deals alongside other portfolio companies</li>
-                </ul>
-
-                <h3>Value-Add Support</h3>
-                <ul>
-                    <li><strong>Board Representation:</strong> We can represent your interests on portfolio company boards</li>
-                    <li><strong>Mentor Matching:</strong> Connecting portfolio companies with relevant expertise from our network</li>
-                    <li><strong>Operational Support:</strong> Facilitating introductions to customers, partners, and talent</li>
-                    <li><strong>Fundraising Assistance:</strong> Helping portfolio companies with subsequent funding rounds</li>
-                </ul>
-
-                <h3>Reporting & Communication</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    You'll receive quarterly comprehensive portfolio reports including company updates, financial performance, 
-                    market developments, and strategic recommendations. We also provide ad-hoc updates on significant events 
-                    and maintain an online portal for 24/7 access to your portfolio information.
-                </p>
-
-                <h3>Management Fees</h3>
-                <p style="color: #5a5a5a; line-height: 1.8; margin: 1rem 0;">
-                    Our portfolio management services are available on an annual retainer basis, with fees scaled 
-                    to portfolio size and complexity. We align our interests with yours through performance-based 
-                    incentives tied to portfolio value growth.
-                </p>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Discuss Portfolio Management</a>
-                </div>
+    <div id="portfolio-mgmt" class="page-section simple-page">
+        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
+        <div class="simple-content">
+            <h2>Portfolio Management</h2>
+            <p>Active oversight and optimization of your venture investments with regular reporting and strategic guidance.</p>
+            
+            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">What We Provide</h3>
+            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
+                <li>Performance monitoring and reporting</li>
+                <li>Portfolio rebalancing recommendations</li>
+                <li>Follow-on investment analysis</li>
+                <li>Exit strategy planning</li>
+                <li>Board representation services</li>
+            </ul>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Discuss Portfolio Management</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about page-section">
-        <div class="about-container">
-            <h2 class="section-title">About Capallo</h2>
-            <p class="section-subtitle">Building the future of venture investing in Bangladesh</p>
-
-            <div class="about-content">
-                <p>
-                    Capallo was founded with a singular mission: to democratize access to venture investing in Bangladesh 
-                    and create a thriving ecosystem of informed angel investors and successful founders.
-                </p>
-                <p>
-                    We recognize that Bangladesh stands at an inflection point. Our economy is growing, our entrepreneurial 
-                    talent is world-class, and capital is available. What's missing is the connective tissue—the education, 
-                    infrastructure, and trust needed to channel investment effectively into high-growth ventures.
-                </p>
-                <p>
-                    That's where Capallo comes in. We're not just facilitating transactions; we're building a movement. 
-                    Through investor education, rigorous due diligence, Shariah-compliant options, and hands-on portfolio 
-                    management, we're creating the foundation for Bangladesh's venture capital ecosystem.
-                </p>
-            </div>
-
+    <!-- About Page -->
+    <div id="about" class="page-section simple-page">
+        <h2>About Capallo</h2>
+        <div class="simple-content">
+            <p>
+                Capallo was founded with a singular mission: to democratize access to venture investing in Bangladesh 
+                and create a thriving ecosystem of informed angel investors and successful founders.
+            </p>
+            <p>
+                We recognize that Bangladesh stands at an inflection point. Our economy is growing, our entrepreneurial 
+                talent is world-class, and capital is available. What's missing is the connective tissue—the education, 
+                infrastructure, and trust needed to channel investment effectively into high-growth ventures.
+            </p>
+            
             <div class="stats-grid">
                 <div class="stat-box">
                     <div class="stat-number">10,000</div>
-                    <div class="stat-label">Angels to Build</div>
+                    <div class="stat-label">Angel Investors</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">100</div>
@@ -864,88 +877,100 @@
                     <div class="stat-label">Future Ready Nation</div>
                 </div>
             </div>
-
-            <div class="about-content" style="margin-top: 3rem;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #006a4e;">Our Values</h3>
-                <p>
-                    <strong>Trust & Transparency:</strong> Every recommendation, every document, every piece of advice 
-                    is rooted in your best interests, not ours.
-                </p>
-                <p>
-                    <strong>Local Expertise:</strong> We understand Bangladesh's market dynamics, regulatory environment, 
-                    and cultural nuances like no one else.
-                </p>
-                <p>
-                    <strong>Long-Term Thinking:</strong> Venture investing requires patience. We're building relationships 
-                    and portfolios that will compound over decades, not quarters.
-                </p>
-                <p>
-                    <strong>Ethical Investing:</strong> Whether through our Shariah-compliant services or our overall 
-                    approach, we believe capital should create positive impact alongside returns.
-                </p>
-            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact page-section">
-        <div class="contact-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's discuss how we can support your investment journey</p>
+    <!-- Contact Page -->
+    <div id="contact" class="page-section simple-page">
+        <h2>Get In Touch</h2>
+        <div class="simple-content">
+            <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2rem;">
+                Whether you're looking to start your angel investing journey, need advice on a specific deal, 
+                or want to discuss portfolio management, we're here to help.
+            </p>
 
-            <div class="contact-box">
-                <p>
-                    Whether you're looking to start your angel investing journey, need advice on a specific deal, 
-                    or want to discuss portfolio management, we're here to help.
-                </p>
-
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <h3>Schedule a Call</h3>
-                        <p style="margin: 0.5rem 0; color: #5a5a5a;">
-                            Book a free 30-minute consultation to discuss your needs
-                        </p>
-                        <a href="https://calendly.com/your-link" target="_blank">View Available Times →</a>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Email Us</h3>
-                        <p style="margin: 0.5rem 0; color: #5a5a5a;">
-                            Send us your questions or request information
-                        </p>
-                        <a href="mailto:hello@capallo.com">hello@capallo.com</a>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Office</h3>
-                        <p style="margin: 0.5rem 0; color: #5a5a5a;">
-                            Visit us for an in-person meeting
-                        </p>
-                        <p style="margin: 0; color: #2c2c2c;">Dhaka, Bangladesh</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Apply to Venture School</h3>
-                        <p style="margin: 0.5rem 0; color: #5a5a5a;">
-                            Join our next cohort of aspiring angel investors
-                        </p>
-                        <a href="https://forms.google.com/your-form" target="_blank">Submit Application →</a>
-                    </div>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>Schedule a Call</h3>
+                    <p style="margin: 0.5rem 0; color: #666;">
+                        Book a free 30-minute consultation to discuss your needs
+                    </p>
+                    <a href="https://calendly.com/your-link" target="_blank">View Available Times →</a>
                 </div>
 
-                <div style="margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid #e0e0e0;">
-                    <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Your Free Consultation</a>
+                <div class="contact-method">
+                    <h3>Email Us</h3>
+                    <p style="margin: 0.5rem 0; color: #666;">
+                        Send us your questions or request information
+                    </p>
+                    <a href="mailto:hello@capallo.com">hello@capallo.com</a>
+                </div>
+
+                <div class="contact-method">
+                    <h3>Office</h3>
+                    <p style="margin: 0.5rem 0; color: #666;">
+                        Visit us for an in-person meeting
+                    </p>
+                    <p style="margin: 0; color: #2c2c2c;">Dhaka, Bangladesh</p>
                 </div>
             </div>
+
+            <div style="margin-top: 2.5rem; text-align: center;">
+                <a href="https://calendly.com/your-link" class="btn-primary" target="_blank">Schedule Your Free Consultation</a>
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Capallo. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-            Simplifying venture investing to build Bangladesh's future
-        </p>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 3rem 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Capallo</h3>
+                    <p style="color: #ccc; line-height: 1.7; font-size: 0.95rem;">
+                        Simplifying venture investing to build 10,000 angel investors, 100 high-value founders, 
+                        and one future-ready nation.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">Quick Links</h4>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><a href="#home" onclick="showPage('home')" style="color: #ccc; text-decoration: none;">Home</a></li>
+                        <li><a href="#services" onclick="showPage('services')" style="color: #ccc; text-decoration: none;">Services</a></li>
+                        <li><a href="#about" onclick="showPage('about')" style="color: #ccc; text-decoration: none;">About</a></li>
+                        <li><a href="#contact" onclick="showPage('contact')" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">Services</h4>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><a href="#venture-school" onclick="showPage('venture-school')" style="color: #ccc; text-decoration: none;">Venture School</a></li>
+                        <li><a href="#investment-advisory" onclick="showPage('investment-advisory')" style="color: #ccc; text-decoration: none;">Investment Advisory</a></li>
+                        <li><a href="#wakalah" onclick="showPage('wakalah')" style="color: #ccc; text-decoration: none;">Wakalah Management</a></li>
+                        <li><a href="#legal-docs" onclick="showPage('legal-docs')" style="color: #ccc; text-decoration: none;">Legal Documentation</a></li>
+                        <li><a href="#portfolio-mgmt" onclick="showPage('portfolio-mgmt')" style="color: #ccc; text-decoration: none;">Portfolio Management</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">Contact</h4>
+                    <ul style="list-style: none; line-height: 2; color: #ccc;">
+                        <li>Dhaka, Bangladesh</li>
+                        <li><a href="mailto:hello@capallo.com" style="color: #ccc; text-decoration: none;">hello@capallo.com</a></li>
+                        <li><a href="https://calendly.com/your-link" target="_blank" style="color: #ccc; text-decoration: none;">Schedule a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #444; padding-top: 2rem; text-align: center;">
+                <p style="color: #999; font-size: 0.9rem;">&copy; 2024 Capallo. All rights reserved.</p>
+                <p style="color: #999; font-size: 0.85rem; margin-top: 0.5rem;">
+                    Building Bangladesh's venture investing ecosystem
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -957,27 +982,38 @@
             });
             
             // Show selected section
-            document.getElementById(pageId).classList.add('active');
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
             
             // Close mobile menu
             document.getElementById('navLinks').classList.remove('active');
             
             // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        function showServiceDetail(serviceId) {
-            showPage(serviceId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update URL hash without jumping
+            history.pushState(null, null, '#' + pageId);
         }
 
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Hero sketch - Shaheed Minar with rising arrow
-        const heroCanvas = document.getElementById('heroSketch');
-        const heroCtx = heroCanvas.getContext('2d');
-        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+            const hash = window.location.hash.substring(1) || 'home';
+            showPage(hash);
+        });
+
+        // Initialize page on load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1) || 'home';
+            showPage(hash);
+        });
+
+        // Drawing functions
         function drawPencilLine(ctx, x1, y1, x2, y2, wobble = 1) {
             ctx.beginPath();
             ctx.moveTo(x1, y1);
@@ -992,95 +1028,108 @@
             ctx.stroke();
         }
         
-        function drawHeroSketch() {
-            heroCtx.strokeStyle = '#2c2c2c';
-            heroCtx.lineWidth = 2;
-            heroCtx.lineCap = 'round';
+        // Path sketch - crossroads
+        const pathCanvas = document.getElementById('pathSketch');
+        if (pathCanvas) {
+            const pathCtx = pathCanvas.getContext('2d');
             
-            // Shaheed Minar central pillar
-            drawPencilLine(heroCtx, 340, 160, 340, 280);
-            drawPencilLine(heroCtx, 360, 160, 360, 280);
-            drawPencilLine(heroCtx, 340, 160, 360, 160);
+            pathCtx.strokeStyle = '#2c2c2c';
+            pathCtx.lineWidth = 2;
             
-            // Side pillars
-            drawPencilLine(heroCtx, 300, 200, 300, 280);
-            drawPencilLine(heroCtx, 320, 200, 320, 280);
-            drawPencilLine(heroCtx, 300, 200, 320, 200);
+            // Main path splitting
+            drawPencilLine(pathCtx, 300, 250, 300, 150, 2);
+            drawPencilLine(pathCtx, 300, 150, 200, 50, 2);
+            drawPencilLine(pathCtx, 300, 150, 400, 50, 2);
             
-            drawPencilLine(heroCtx, 380, 200, 380, 280);
-            drawPencilLine(heroCtx, 400, 200, 400, 280);
-            drawPencilLine(heroCtx, 380, 200, 400, 200);
+            // Path edges
+            drawPencilLine(pathCtx, 290, 250, 290, 155, 1);
+            drawPencilLine(pathCtx, 310, 250, 310, 155, 1);
             
-            // Outer pillars
-            drawPencilLine(heroCtx, 260, 230, 260, 280);
-            drawPencilLine(heroCtx, 440, 230, 440, 280);
+            // Signpost
+            pathCtx.fillStyle = '#8b7355';
+            pathCtx.fillRect(295, 180, 10, 60);
+            pathCtx.fillRect(270, 185, 50, 8);
+            pathCtx.fillRect(270, 205, 50, 8);
             
-            // Base
-            drawPencilLine(heroCtx, 240, 280, 460, 280);
-            drawPencilLine(heroCtx, 240, 285, 460, 285);
-            
-            // Rising growth arrow
-            heroCtx.strokeStyle = '#1a1a1a';
-            heroCtx.lineWidth = 3;
-            drawPencilLine(heroCtx, 120, 250, 220, 120, 2);
-            drawPencilLine(heroCtx, 220, 120, 200, 140, 2);
-            drawPencilLine(heroCtx, 220, 120, 200, 120, 2);
-            
-            // Sun/Future symbol
-            heroCtx.strokeStyle = '#1a1a1a';
-            heroCtx.lineWidth = 2;
-            heroCtx.beginPath();
-            heroCtx.arc(580, 100, 35, 0, Math.PI * 2);
-            heroCtx.stroke();
-            
-            for (let i = 0; i < 8; i++) {
-                const angle = (Math.PI * 2 * i) / 8;
-                const x1 = 580 + Math.cos(angle) * 40;
-                const y1 = 100 + Math.sin(angle) * 40;
-                const x2 = 580 + Math.cos(angle) * 55;
-                const y2 = 100 + Math.sin(angle) * 55;
-                drawPencilLine(heroCtx, x1, y1, x2, y2, 0.5);
-            }
-            
-            // Ground
-            heroCtx.strokeStyle = '#8b7355';
-            heroCtx.lineWidth = 2;
-            drawPencilLine(heroCtx, 50, 290, 650, 290);
-            
-            // Grass
-            for (let i = 60; i < 650; i += 20) {
-                drawPencilLine(heroCtx, i, 290, i + (Math.random() - 0.5) * 5, 305);
-            }
-            
-            // People silhouettes representing angels/founders
-            heroCtx.strokeStyle = '#1a1a1a';
-            heroCtx.lineWidth = 2;
-            
-            // Group of people
-            for (let i = 0; i < 5; i++) {
-                const x = 500 + i * 25;
-                heroCtx.beginPath();
-                heroCtx.arc(x, 260, 8, 0, Math.PI * 2);
-                heroCtx.stroke();
-                drawPencilLine(heroCtx, x, 268, x, 290, 0.5);
+            // Trees
+            for (let x of [120, 480]) {
+                drawPencilLine(pathCtx, x, 200, x, 120);
+                pathCtx.beginPath();
+                pathCtx.arc(x, 110, 25, 0, Math.PI * 2);
+                pathCtx.stroke();
             }
         }
         
-        // Draw sketch on load
-        drawHeroSketch();
-
-        // Handle window resize for canvas
-        window.addEventListener('resize', () => {
-            const canvas = document.getElementById('heroSketch');
-            if (window.innerWidth < 768) {
-                canvas.width = window.innerWidth - 40;
-                canvas.height = 250;
-            } else {
-                canvas.width = 700;
-                canvas.height = 350;
+        // Alignment sketch
+        const alignCanvas = document.getElementById('alignmentSketch');
+        if (alignCanvas) {
+            const alignCtx = alignCanvas.getContext('2d');
+            
+            alignCtx.strokeStyle = '#2c2c2c';
+            alignCtx.lineWidth = 2;
+            
+            // Scattered dots on left
+            for (let i = 0; i < 8; i++) {
+                alignCtx.beginPath();
+                alignCtx.arc(50 + Math.random() * 80, 50 + Math.random() * 150, 4, 0, Math.PI * 2);
+                alignCtx.fill();
             }
-            drawHeroSketch();
-        });
+            
+            // Arrow
+            drawPencilLine(alignCtx, 170, 125, 230, 125, 1);
+            drawPencilLine(alignCtx, 230, 125, 220, 115, 1);
+            drawPencilLine(alignCtx, 230, 125, 220, 135, 1);
+            
+            // Aligned structure on right
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    alignCtx.beginPath();
+                    alignCtx.arc(270 + j * 40, 80 + i * 40, 4, 0, Math.PI * 2);
+                    alignCtx.fill();
+                }
+            }
+        }
+        
+        // Building sketch
+        const buildCanvas = document.getElementById('buildingSketch');
+        if (buildCanvas) {
+            const buildCtx = buildCanvas.getContext('2d');
+            
+            buildCtx.strokeStyle = '#2c2c2c';
+            buildCtx.lineWidth = 2;
+            
+            // Building outline
+            drawPencilLine(buildCtx, 150, 200, 150, 100, 2);
+            drawPencilLine(buildCtx, 150, 100, 500, 100, 2);
+            drawPencilLine(buildCtx, 500, 100, 500, 200, 2);
+            drawPencilLine(buildCtx, 150, 200, 500, 200, 2);
+            
+            // Roof
+            drawPencilLine(buildCtx, 140, 100, 325, 50, 2);
+            drawPencilLine(buildCtx, 325, 50, 510, 100, 2);
+            
+            // Windows
+            for (let i = 0; i < 5; i++) {
+                const x = 200 + i * 70;
+                buildCtx.strokeRect(x, 130, 40, 40);
+            }
+            
+            // People figures
+            buildCtx.strokeStyle = '#1a1a1a';
+            buildCtx.lineWidth = 2;
+            
+            for (let i = 0; i < 3; i++) {
+                const x = 80 + i * 50;
+                buildCtx.beginPath();
+                buildCtx.arc(x, 180, 10, 0, Math.PI * 2);
+                buildCtx.stroke();
+                drawPencilLine(buildCtx, x, 190, x, 220, 0.5);
+            }
+            
+            // Ground
+            buildCtx.strokeStyle = '#8b7355';
+            drawPencilLine(buildCtx, 0, 230, 650, 230);
+        }
     </script>
 </body>
 </html>
