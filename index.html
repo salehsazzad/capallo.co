@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capallo - Simplifying Venture Investing</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%231a1a1a'/><text x='50' y='70' font-size='60' font-weight='600' font-family='system-ui, -apple-system, sans-serif' text-anchor='middle' fill='white'>C</text></svg>">
+    <title>Capallo - Bangladesh's Institutional Venture Platform</title>
     <style>
         * {
             margin: 0;
@@ -13,1554 +12,913 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #fdfbf7;
-            color: #2c2c2c;
-            line-height: 1.7;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
         }
 
-        /* Navbar */
-        .navbar {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #fdfbf7;
-            border-bottom: 1px solid #e8e3d8;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
             z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 2rem;
+            padding: 1.2rem 3rem;
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
             letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
-            list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #2c2c2c;
+            color: #4a5568;
             text-decoration: none;
+            font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.3s;
-            font-weight: 400;
         }
 
         .nav-links a:hover {
-            color: #1a1a1a;
+            color: #0f3460;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             border: none;
-            font-size: 1.8rem;
             cursor: pointer;
-            color: #2c2c2c;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 8rem 2rem 4rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-            color: #1a1a1a;
-            letter-spacing: -1.5px;
-            line-height: 1.2;
-        }
-
-        .sketch-box {
-            background: white;
-            border: 1px solid #e8e3d8;
-            padding: 2rem;
-            margin: 3rem auto;
-            max-width: 700px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        canvas {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .hero-text {
-            font-size: 1.15rem;
-            color: #4a4a4a;
-            margin: 2.5rem auto;
-            max-width: 650px;
-            line-height: 1.8;
-        }
-
-        .cta-section {
-            margin: 3rem 0;
         }
 
         .btn-primary {
-            background: #1a1a1a;
+            background: #0f3460;
             color: white;
-            padding: 1rem 2.5rem;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            display: inline-block;
         }
 
         .btn-primary:hover {
-            background: #000000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+            background: #16213e;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 52, 96, 0.3);
         }
 
-        /* Content Sections */
-        .content-section {
-            max-width: 1000px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-            line-height: 1.3;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin: 4rem 0;
-        }
-
-        .content-box {
+        .btn-secondary {
             background: white;
-            border: 1px solid #e8e3d8;
-            padding: 2.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            color: #0f3460;
+            border: 2px solid #0f3460;
         }
 
-        .content-box h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
+        .btn-secondary:hover {
+            background: #0f3460;
+            color: white;
         }
 
-        .content-box p {
-            color: #4a4a4a;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* Blueprint Section */
-        .blueprint-section {
-            background: white;
-            border: 1px solid #e8e3d8;
-            padding: 3rem;
-            margin: 4rem auto;
-            max-width: 900px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        .blueprint-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e8e3d8;
-        }
-
-        .blueprint-title {
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .blueprint-version {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .blueprint-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .blueprint-step {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #ccc;
-            min-width: 60px;
-        }
-
-        .step-content h4 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            color: #1a1a1a;
-        }
-
-        .step-subtitle {
-            font-size: 1.05rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            color: #666;
-        }
-
-        .step-content p {
-            color: #4a4a4a;
-            line-height: 1.7;
-        }
-
-        /* Transition Section */
-        .transition-section {
-            text-align: center;
-            padding: 4rem 2rem;
-            max-width: 800px;
-            margin: 4rem auto;
-        }
-
-        .transition-text {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .transition-subtext {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* Founder Section */
-        .founder-section {
-            background: white;
-            border: 1px solid #e8e3d8;
-            padding: 3rem;
-            max-width: 800px;
-            margin: 4rem auto;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        .founder-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .founder-title {
-            font-size: 2rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
-        }
-
-        .founder-content p {
-            font-size: 1.05rem;
-            color: #4a4a4a;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .signature {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            margin-top: 2rem;
-            text-align: right;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c2c2c;
+        /* Hero Section */
+        .hero {
+            padding: 140px 3rem 80px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 6rem;
         }
 
-/* Social Media Icons */
-        .social-icon {
-            color: #ccc;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
             display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
         }
 
-        .social-icon:hover {
-            transform: translateY(-3px) scale(1.1);
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .social-icon.linkedin:hover {
-            color: #0077b5;
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
         }
 
-        .social-icon.facebook:hover {
-            color: #1877f2;
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
         }
 
-        .social-icon.twitter:hover {
-            color: #1da1f2;
+        .btn-hero {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.05rem;
         }
 
-        .social-icon.instagram:hover {
-            color: #e4405f;
+        .btn-white {
+            background: white;
+            color: #0f3460;
         }
 
-        .social-icon.youtube:hover {
-            color: #ff0000;
+        .btn-white:hover {
+            background: #f7fafc;
         }
 
-        .social-icon.whatsapp:hover {
-            color: #25d366;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #fdfbf7;
-                flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 1rem 2rem;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .two-column {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .blueprint-step {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .transition-text {
-                font-size: 1.4rem;
-            }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
         }
 
-        /* Page navigation */
-        .page-section {
-            display: none;
+        .btn-outline:hover {
+            background: white;
+            color: #0f3460;
         }
 
-        .page-section.active {
-            display: block;
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Services page styling */
-        .services-page {
-            padding: 6rem 2rem 4rem;
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 3rem;
+            background: #f7fafc;
+            text-align: center;
+        }
+
+        .trust-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .services-grid {
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f3460;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #1a1a2e;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        /* Dual Track Section */
+        .dual-track {
+            padding: 80px 3rem;
+            background: white;
+        }
+
+        .dual-track-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .track-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .track-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 3rem;
+            transition: all 0.3s;
+        }
+
+        .track-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            border-color: #0f3460;
+        }
+
+        .track-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .track-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .track-description {
+            font-size: 1.05rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .track-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .track-features li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .track-features li:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 3rem;
+            background: #f7fafc;
+        }
+
+        .pricing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .service-card {
+        .pricing-card {
             background: white;
-            border: 1px solid #e8e3d8;
+            border-radius: 12px;
             padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 2px solid transparent;
         }
 
-        .service-card:hover {
+        .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #0f3460;
         }
 
-        .service-number {
+        .pricing-card.featured {
+            border-color: #fbbf24;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #fbbf24;
+            color: #1a1a2e;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .pricing-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .pricing-price {
             font-size: 2.5rem;
-            color: #e0e0e0;
-            font-weight: 300;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5rem;
         }
 
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
+        .pricing-price span {
+            font-size: 1rem;
             font-weight: 500;
+            color: #4a5568;
         }
 
-        .service-description {
-            color: #4a4a4a;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
         }
 
-        .service-link {
-            display: inline-block;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.6;
         }
 
-        .service-link:hover {
-            border-bottom-color: #1a1a1a;
+        /* Process Section */
+        .process {
+            padding: 80px 3rem;
+            background: white;
         }
 
-        /* Other pages simple styling */
-        .simple-page {
-            padding: 6rem 2rem 4rem;
-            max-width: 900px;
+        .process-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .simple-page h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .simple-content {
-            background: white;
-            border: 1px solid #e8e3d8;
-            padding: 3rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        .process-step {
+            text-align: center;
+            padding: 2rem;
         }
 
-        .simple-content p {
-            font-size: 1.05rem;
-            color: #4a4a4a;
-            line-height: 1.8;
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #0f3460;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 60px;
             margin-bottom: 1.5rem;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 2rem;
-            background: #fdfbf7;
-            border: 1px solid #e8e3d8;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .contact-method {
-            padding: 1.5rem;
-            background: #fdfbf7;
-            border: 1px solid #e8e3d8;
-        }
-
-        .contact-method h3 {
+        .step-title {
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-            font-weight: 500;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 0.75rem;
         }
 
-        .contact-method a {
-            color: #1a1a1a;
+        .step-description {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 3rem;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-description {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #9ca3af;
+            padding: 60px 3rem 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
             text-decoration: none;
-            font-weight: 600;
+            transition: color 0.3s;
         }
 
-        .back-link {
-            display: inline-block;
-            color: #1a1a1a;
-            text-decoration: none;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            font-weight: 500;
+        .footer-links a:hover {
+            color: white;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .track-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav>
         <div class="nav-container">
-            <a href="#home" class="logo" onclick="showPage('home')">Capallo</a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" onclick="showPage('home')">Home</a></li>
-                <li><a href="#services" onclick="showPage('services')">Services</a></li>
-                <li><a href="#about" onclick="showPage('about')">About</a></li>
-                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
-            </ul>
+            <div class="logo">Capallo</div>
+            <div class="nav-links">
+                <a href="#investors">For Investors</a>
+                <a href="#founders">For Founders</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="btn btn-secondary" target="_blank">Schedule Call</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Home Page -->
-    <div id="home" class="page-section active">
-        <!-- Hero -->
-        <section class="hero-section">
-            <div class="hero-label">OUR WHY</div>
-            <h1>Simplifying Venture Investing</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">BANGLADESH'S INSTITUTIONAL VENTURE PLATFORM</div>
+            <h1>Building Bangladesh's Future, One Investment at a Time</h1>
+            <p>The structured venture platform connecting institutional-grade investors with Bangladesh's most promising founders. Minimum $5,000 investment.</p>
             
-            <p class="hero-text" style="font-size: 1.25rem; margin: 1.5rem auto 3rem;">
-                To build 10,000 angel investors, 100 high-value founders, and one future-ready nation
-            </p>
+            <div class="hero-cta">
+                <a href="#investors" class="btn btn-hero btn-white">I'm an Investor</a>
+                <a href="#founders" class="btn btn-hero btn-outline">I'm a Founder</a>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">৳1.2M+</div>
+                    <div class="stat-label">Capital Facilitated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Companies Funded</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">180M</div>
+                    <div class="stat-label">Market Opportunity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust/Testimonial Section -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="section-label">TRUSTED BY INVESTORS</div>
+            <div class="testimonial-box">
+                <p class="testimonial-text">"I have never seen anywhere in the world what Capallo is doing. They are taking the present into the future."</p>
+                <p class="testimonial-author">— Capallo Investor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Track Section -->
+    <section class="dual-track" id="services">
+        <div class="dual-track-container">
+            <div class="section-label">CHOOSE YOUR PATH</div>
+            <h2 class="section-title">Structured Solutions for Every Stakeholder</h2>
+            <p class="section-subtitle">Whether you're deploying capital or building a company, Capallo provides institutional-grade infrastructure for Bangladesh's private markets.</p>
+
+            <div class="track-grid">
+                <!-- Investor Track -->
+                <div class="track-card">
+                    <div class="track-icon">💼</div>
+                    <h3 class="track-title">For Investors</h3>
+                    <p class="track-description">Access vetted deal flow, professional portfolio management, and investor protection in Bangladesh's frontier market.</p>
+                    <ul class="track-features">
+                        <li><span class="checkmark">✓</span> Investor pipeline with contacts</li>
+                    </ul>
+                    <a href="https://forms.gle/XfM7xQKWx8a5YGBT6" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Fundraising Wingman -->
+            <h3 style="font-size: 1.8rem; font-weight: 700; margin: 3rem 0 1.5rem; color: #0f3460;">Service 2: Dedicated Fundraising Wingman</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">DFY Fundraising</h3>
+                        <p class="pricing-subtitle">Leverage our investor network</p>
+                    </div>
+                    <div class="pricing-price">$5,000<span> + 3-5% success fee</span></div>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Deal showcase opportunity (post due diligence)</li>
+                        <li><span class="checkmark">✓</span> LinkedIn & investor community distribution</li>
+                        <li><span class="checkmark">✓</span> Local & foreign investor access</li>
+                        <li><span class="checkmark">✓</span> Active investor introductions</li>
+                        <li><span class="checkmark">✓</span> All legal & tool expenses covered</li>
+                        <li><span class="checkmark">✓</span> 2-3x savings on legal fees</li>
+                    </ul>
+                    <a href="https://forms.gle/XfM7xQKWx8a5YGBT6" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="featured-badge">PREMIUM</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">DWY Fundraising</h3>
+                        <p class="pricing-subtitle">Full-service fundraising partner</p>
+                    </div>
+                    <div class="pricing-price">$5,000<span> + $2,000/mo + 3-5%</span></div>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Everything in DFY Package</li>
+                        <li><span class="checkmark">✓</span> Structured angel & syndicate exposure</li>
+                        <li><span class="checkmark">✓</span> Managed outreach to 100+ investors</li>
+                        <li><span class="checkmark">✓</span> Coordinated investor conversations</li>
+                        <li><span class="checkmark">✓</span> Investor protection framework (upon DD approval)</li>
+                        <li><span class="checkmark">✓</span> Highest success rate</li>
+                    </ul>
+                    <a href="https://forms.gle/XfM7xQKWx8a5YGBT6" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Investor Relations -->
+            <h3 style="font-size: 1.8rem; font-weight: 700; margin: 3rem 0 1.5rem; color: #0f3460;">Service 3: Investor Relations & Governance (Post-Raise)</h3>
+            <div class="pricing-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="pricing-card featured">
+                    <div class="featured-badge">POST-RAISE</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">DFY Investor Relations</h3>
+                        <p class="pricing-subtitle">Ongoing governance & support</p>
+                    </div>
+                    <div class="pricing-price">$1,200<span>/month</span></div>
+                    <p style="font-size: 0.85rem; color: #10b981; margin: -0.5rem 0 1.5rem 0;">No signing fee required</p>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Monthly investor communications</li>
+                        <li><span class="checkmark">✓</span> Performance monitoring & reporting</li>
+                        <li><span class="checkmark">✓</span> Legal coordination & compliance</li>
+                        <li><span class="checkmark">✓</span> Future round structuring support</li>
+                        <li><span class="checkmark">✓</span> Exit pathway development</li>
+                        <li><span class="checkmark">✓</span> Next round investor introductions</li>
+                    </ul>
+                    <a href="https://forms.gle/XfM7xQKWx8a5YGBT6" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Founder Eligibility Box -->
+            <div style="background: #fff8f0; border-left: 4px solid #fbbf24; padding: 2rem; margin: 3rem 0; border-radius: 8px;">
+                <h4 style="color: #1a1a2e; font-size: 1.2rem; margin-bottom: 1rem;">Who We Work With</h4>
+                <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1rem;">Capallo provides structured, long-term support with the discipline of a venture capital fund. We focus on cash-flow generating, capital-efficient businesses.</p>
+                <p style="color: #4a5568; line-height: 1.7; margin-bottom: 0.5rem;"><strong>We work with founders who:</strong></p>
+                <ul style="color: #4a5568; margin-left: 2rem; line-height: 2;">
+                    <li>Have clearly defined exit pathways</li>
+                    <li>Demonstrate strong resource management</li>
+                    <li>Show financial discipline & unit economics understanding</li>
+                    <li>Uphold integrity and operational rigour</li>
+                    <li>Target minimum $100K fundraise</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="process-container">
+            <div class="section-label">HOW IT WORKS</div>
+            <h2 class="section-title">Simple, Transparent Process</h2>
+            <p class="section-subtitle">From application to capital deployment, we've streamlined every step to ensure efficiency and clarity.</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Submit Application</h3>
+                    <p class="step-description">Complete our KYC form (investors) or founder application form. Takes 5-10 minutes.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Review & Approval</h3>
+                    <p class="step-description">Our team reviews your submission within 48 hours and schedules a call if approved.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Onboarding</h3>
+                    <p class="step-description">Sign agreements, review documentation, and get access to deal flow or fundraising support.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Execute & Monitor</h3>
+                    <p class="step-description">Make investments or raise capital with ongoing support, reporting, and governance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="trust-section" id="about">
+        <div class="trust-container">
+            <div class="section-label">ABOUT CAPALLO</div>
+            <h2 class="section-title">Building Bangladesh's Venture Infrastructure</h2>
+            <p class="section-subtitle">Capallo operates with the discipline and governance of a venture capital fund, aspiring to evolve into a professional fund manager serving the 180 million people of Bangladesh.</p>
             
-            <div class="sketch-box">
-                <canvas id="pathSketch" width="600" height="300"></canvas>
-            </div>
-
-            <p class="hero-text">
-                You've worked hard to build wealth, time, resources, and the freedom to choose what comes next. 
-                You want to invest in Bangladesh's future. You want to create impact. But the world of venture 
-                investing feels inaccessible, and opaque.
-                The result isn’t just poor returns. It’s a delayed future.
-                Every strong economy was shaped long before the stock market through private market investors backing companies when it mattered most.
-                Real pride isn’t in saying “I invested” It’s in knowing what your capital helped build in BANGLADESH.
-                A logistics company that fixed inefficiency. A fintech that formalized commerce. A manufacturing business that created skilled jobs.
-                Capallo exists to help private investors act as long-term stewards of capital to build portfolios aligned with the future we want to see in BANGLADESH
-                Be the kind of investor who helped build what BANGLADESH needs next.
-            </p>
-
-            <p class="hero-text">
-                You don't need another investment opportunity. You need a blueprint to build your own investment engine built by people who live in the Private Markets
-            </p>
-
-            <div class="cta-section">
-                <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="btn-primary" target="_blank">Let’s Talk About Your Investment Strategy</a>
-            </div>
-        </section>
-
-        <!-- Blueprint Section -->
-        <section class="content-section">
-            <div class="blueprint-section">
-                <div class="blueprint-header">
-                    <div class="blueprint-title">Investment Blueprint</div>
-                    <div class="blueprint-version">Version 1.0 | By: Capallo Team</div>
-                </div>
-
-                <div class="blueprint-steps">
-                    <div class="blueprint-step">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h4>Define Your Vision</h4>
-                            <p class="step-subtitle">When your investment thesis is clear, returns compound.</p>
-                            <p>Use Capallo's frameworks—like our Investor Readiness Assessment and Portfolio Builder—to identify what sectors align with your values and where you're best positioned to add value beyond capital.</p>
-                        </div>
-                    </div>
-
-                    <div class="blueprint-step">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h4>Build Your Portfolio</h4>
-                            <p class="step-subtitle">Focused investing makes every taka go further.</p>
-                            <p>Craft your personal investment strategy, access vetted deal flow, and connect with high-potential founders. Go at your own pace through Venture School or work directly with us—either way, you get a repeatable system.</p>
-                        </div>
-                    </div>
-
-                    <div class="blueprint-step">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h4>Manage & Scale</h4>
-                            <p class="step-subtitle">The more you see, the more you can do.</p>
-                            <p>Our portfolio management platform makes it easier than ever to invest strategically. Track where your capital goes, monitor company progress, and identify new opportunities as they emerge.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Two Column Section -->
-        <section class="content-section">
-            <div class="section-label">FROM SCATTERED TO ALIGNED</div>
-            <div class="section-title">You bring the capital. We provide the clarity.</div>
-            
-            <div class="two-column">
-                <div class="content-box">
-                    <p>
-                        We connect you to vetted opportunities, proven frameworks, and a community of fellow investors building Bangladesh's future—giving you a repeatable way to invest with confidence.
-                    </p>
-                </div>
-                
-                <div class="sketch-box">
-                    <canvas id="alignmentSketch" width="400" height="250"></canvas>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#services" class="btn-primary" onclick="showPage('services')">View Our Services</a>
-            </div>
-        </section>
-
-        <!-- Visual Section -->
-        <section class="content-section">
-            <div class="sketch-box">
-                <canvas id="buildingSketch" width="650" height="300"></canvas>
-            </div>
-        </section>
-
-        <!-- Founder Story -->
-        <section class="content-section">
-            <div class="founder-section">
-                <div class="founder-label">JOIN THE MOVEMENT</div>
-                <h2 class="founder-title">Let's build something that matters</h2>
-                
-                <div class="founder-content">
-                    <p>
-                        I started Capallo because I saw a gap. Bangladesh has incredible entrepreneurs and available capital, but no bridge connecting them effectively.
-                    </p>
-                    <p>
-                        I wanted to create something meaningful—a way to democratize access to venture investing while helping our best founders scale. But I had no clear path forward.
-                    </p>
-                    <p>
-                        This whole thing began with a simple question: What if venture investing could feel like building something together? That idea gave me direction. Now I want to give others the same.
-                    </p>
-                    <p>
-                        If even one angel investor we train backs a founder who builds a category-defining company—this will have been worth it.
-                    </p>
-                    <p>
-                        But we won't stop there. We'll keep building until we have 10,000 angels, 100 high-value founders, and one future-ready nation.
-                    </p>
-                    <p>
-                        If this resonates, I hope you'll join us. Let's build something that matters, together.
-                    </p>
+            <div style="max-width: 900px; margin: 3rem auto; text-align: left;">
+                <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.5rem; color: #0f3460; margin-bottom: 1.5rem;">Our Mission</h3>
+                    <p style="color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">We exist to bridge the gap between institutional-grade investors and Bangladesh's most promising founders. Our goal is to democratize access to venture capital while maintaining the highest standards of governance, transparency, and investor protection.</p>
                     
-                    <div class="signature">— Capallo Team</div>
+                    <h3 style="font-size: 1.5rem; color: #0f3460; margin-bottom: 1.5rem; margin-top: 2rem;">Our Approach</h3>
+                    <p style="color: #4a5568; line-height: 1.8; margin-bottom: 1rem;">We don't chase speculative 100x returns. Instead, we focus on:</p>
+                    <ul style="color: #4a5568; margin-left: 2rem; line-height: 2;">
+                        <li>Cash-flow generating businesses</li>
+                        <li>Capital-efficient operations</li>
+                        <li>Responsible, committed founders</li>
+                        <li>Clear exit pathways</li>
+                        <li>Strong financial stewardship</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </div>
-
-    <!-- Services Page -->
-    <div id="services" class="page-section services-page">
-        <div class="section-label">OUR SERVICES</div>
-        <h2 class="section-title">Comprehensive solutions for your investment journey</h2>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-number">01</div>
-                <h3 class="service-title">Venture School</h3>
-                <p class="service-description">
-                    Our flagship investor education program designed to transform aspiring angels into confident, strategic investors ready to support Bangladesh's entrepreneurial ecosystem.
-                </p>
-                <a href="#venture-school" class="service-link" onclick="showPage('venture-school')">Learn More →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">02</div>
-                <h3 class="service-title">Investment Advisory</h3>
-                <p class="service-description">
-                    Expert guidance for both buy-side and sell-side transactions. Strategic counsel to help you make informed investment decisions and maximize returns.
-                </p>
-                <a href="#investment-advisory" class="service-link" onclick="showPage('investment-advisory')">Learn More →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">03</div>
-                <h3 class="service-title">Wakalah Investment Management</h3>
-                <p class="service-description">
-                    Shariah-compliant investment management services through the Wakalah model, allowing you to invest with confidence while adhering to Islamic principles.
-                </p>
-                <a href="#wakalah" class="service-link" onclick="showPage('wakalah')">Learn More →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">04</div>
-                <h3 class="service-title">Private Credit</h3>
-                <p class="service-description">
-                    Private credit will be a $30+ trillion industry, That's why we built a UK-based private credit platform designed to support growth stage startups
-                </p>
-                <a href="#private-credit" class="service-link" onclick="showPage('private-credit')">Learn More →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-number">05</div>
-                <h3 class="service-title">Legal Documentation & Portfolio Management</h3>
-                <p class="service-description">
-                    Active legal and portfolio management and oversight of your investment portfolio, providing regular updates, strategic rebalancing, and performance optimization.
-                </p>
-                <a href="#portfolio-mgmt" class="service-link" onclick="showPage('portfolio-mgmt')">Learn More →</a>
-            </div>
-                        <div class="service-card">
-                <div class="service-number">06</div>
-                <h3 class="service-title">Capallo Deal Flow</h3>
-                <p class="service-description">
-                    Bangladesh's first ever investor protected venture portfolio where you can invest with a minimum ticket of $5K with value aligned financing structure across equity and shahriah financing with clear exit pathway.
-                </p>
-                <a href="#deal-flow" class="service-link" onclick="showPage('deal-flow')">Learn More →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-number">07</div>
-                <h3 class="service-title">Business-in-a-Box</h3>
-                <p class="service-description">
-                    Comprehensive business building support so you can become a proud CEO of a company rom Day 1
-                </p>
-                <a href="#Business-in-a-Box" class="service-link" onclick="showPage('Business-in-a-Box')">Learn More →</a>
-            </div>     
         </div>
-    </div>
+    </section>
 
-    <!-- Service Detail Pages -->
-    <div id="venture-school" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-<h2>Venture School</h2>
+    <!-- Final CTA -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-description">Whether you're an investor looking to access Bangladesh's private markets or a founder seeking structured capital, we're here to help.</p>
             
-            <!-- Compelling Hook -->
-            <div style="background: linear-gradient(135deg, #2c5f4f 0%, #1a4d3e 100%); color: white; padding: 2.5rem; margin: 2rem 0; text-align: center; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500;">You've Built Wealth. Now Make It Work Smarter.</h3>
-                <p style="font-size: 1.15rem; margin-bottom: 0; line-height: 1.7; color: #f0f0f0;">Traditional investments giving you 5-8% returns? Your peers in private markets are seeing 3-10x returns. Learn how in just 4 weekends.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="btn btn-hero btn-white" target="_blank">Investor KYC Form</a>
+                <a href="https://forms.gle/XfM7xQKWx8a5YGBT6" class="btn btn-hero btn-outline" target="_blank">Founder Application</a>
             </div>
 
-            <!-- The Problem Section -->
-            <div style="background: #fff8f0; border-left: 4px solid #d4845c; padding: 2rem; margin: 2rem 0;">
-                <h3 style="font-size: 1.4rem; color: #1a1a1a; margin-bottom: 1rem;">The Problem Most Wealthy Bangladeshis Face</h3>
-                <p style="color: #4a4a4a; line-height: 1.8; margin-bottom: 1rem;">You've worked hard to build wealth—whether through your career, business, or family legacy. But now you're stuck watching your capital sit in:</p>
-                <ul style="margin: 0 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                    <li>Bank FDRs earning 6-7% (barely beating inflation)</li>
-                    <li>Stock market volatility that keeps you up at night</li>
-                    <li>Real estate that ties up capital for years</li>
-                    <li>Traditional businesses with diminishing margins</li>
-                </ul>
-                <p style="color: #4a4a4a; line-height: 1.8; margin-bottom: 0;"><strong>Meanwhile,</strong> a small group of informed investors is backing Bangladesh's fastest-growing companies—capturing 20-30% annual returns while building the nation's future.</p>
-            </div>
-
-            <!-- The Gap Section -->
-            <div style="background: #f8f6f2; padding: 2rem; margin: 2rem 0; border: 1px solid #e8e3d8;">
-                <h3 style="font-size: 1.4rem; color: #1a1a1a; margin-bottom: 1rem;">Why Haven't You Started?</h3>
-                <p style="color: #4a4a4a; line-height: 1.8; margin-bottom: 1rem;">It's not lack of capital or interest. It's lack of <strong>knowledge and access</strong>:</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-                    <div style="background: white; padding: 1.2rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <p style="margin: 0; color: #666; font-size: 0.95rem;">❌ <strong>"I don't know how to evaluate startups"</strong><br>Without frameworks, every pitch sounds promising—and risky.</p>
-                    </div>
-                    <div style="background: white; padding: 1.2rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <p style="margin: 0; color: #666; font-size: 0.95rem;">❌ <strong>"I'm afraid of losing money"</strong><br>You've seen friends invest based on relationships, not data. Many lost capital.</p>
-                    </div>
-                    <div style="background: white; padding: 1.2rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <p style="margin: 0; color: #666; font-size: 0.95rem;">❌ <strong>"I don't have deal flow"</strong><br>The best deals never reach public platforms. They're shared privately.</p>
-                    </div>
-                    <div style="background: white; padding: 1.2rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <p style="margin: 0; color: #666; font-size: 0.95rem;">❌ <strong>"The legal stuff is confusing"</strong><br>Term sheets, SAFEs, dilution—it all feels like a foreign language.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- The Solution -->
-            <div style="background: linear-gradient(135deg, #fdfbf7 0%, #f8f6f2 100%); padding: 2.5rem; margin: 2rem 0; border: 2px solid #d4a574; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <h3 style="font-size: 1.6rem; color: #1a1a1a; margin-bottom: 1rem; text-align: center;">Introducing Venture School: Your Bridge to Private Markets</h3>
-                <p style="text-align: center; font-size: 1.1rem; color: #4a4a4a; line-height: 1.8; max-width: 800px; margin: 0 auto 2rem;">In just <strong>4 weekends</strong>, go from curious outsider to confident angel investor with the knowledge, frameworks, and network that typically takes years to build.</p>
-                
-                <!-- Value Proposition Grid -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 4px; border: 1px solid #e8e3d8; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Fast-Track</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Learn in 4 weekends what takes most investors 3+ years</p>
-                    </div>
-                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 4px; border: 1px solid #e8e3d8; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Practical</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Real deals, live analysis, actual frameworks—no theory fluff</p>
-                    </div>
-                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 4px; border: 1px solid #e8e3d8; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤝</div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Network</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Join 20 like-minded investors and access exclusive deals</p>
-                    </div>
-                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 4px; border: 1px solid #e8e3d8; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">ROI-Focused</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Make smarter bets, avoid costly mistakes, maximize returns</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program Format -->
-            <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a;">📅 Program Format</h3>
-            <div style="background: white; border: 1px solid #e8e3d8; padding: 2rem; margin: 1rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <p style="margin: 0 0 0.5rem 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Format</p>
-                        <p style="margin: 0; color: #1a1a1a; font-weight: 500; font-size: 1.05rem;">In-person (Gulshan) + Hybrid</p>
-                        <p style="margin: 0.3rem 0 0 0; font-size: 0.85rem; color: #666;">Best learning experience with flexibility</p>
-                    </div>
-                    <div>
-                        <p style="margin: 0 0 0.5rem 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Duration</p>
-                        <p style="margin: 0; color: #1a1a1a; font-weight: 500; font-size: 1.05rem;">4 Weekends (Fri/Sat)</p>
-                        <p style="margin: 0.3rem 0 0 0; font-size: 0.85rem; color: #666;">8 sessions × 1.5 hours = 12 hours total</p>
-                    </div>
-                    <div>
-                        <p style="margin: 0 0 0.5rem 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Investment</p>
-                        <p style="margin: 0; color: #1a1a1a; font-weight: 500; font-size: 1.05rem;">Paid Program</p>
-                        <p style="margin: 0.3rem 0 0 0; font-size: 0.85rem; color: #666;">Scholarships available for qualified candidates</p>
-                    </div>
-                    <div>
-                        <p style="margin: 0 0 0.5rem 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Seats</p>
-                        <p style="margin: 0; color: #1a1a1a; font-weight: 500; font-size: 1.05rem;">Only 20 Spots</p>
-                        <p style="margin: 0.3rem 0 0 0; font-size: 0.85rem; color: #666;">Small cohort = personalized attention</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- What You'll Master -->
-            <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a;">🎓 What You'll Master (That Your Competitors Won't Know)</h3>
-            <div style="background: white; border: 1px solid #e8e3d8; padding: 2rem; margin: 1rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                <ul style="margin: 0; padding: 0; list-style: none; color: #4a4a4a; line-height: 2;">
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Asset allocation in 2025:</strong> Where to put your money for 20-30% returns (beyond FDRs and stocks)</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Deal evaluation framework:</strong> Screen 100 deals, identify the 3 winners—every single time</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>SME vs Startup analysis:</strong> Know when to back a profitable business vs a growth rocket</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Investment structures decoded:</strong> Equity, SAFE, convertibles—and when to use each</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Valuation secrets:</strong> Know if you're paying ৳5 crore for a ৳50 lakh company</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Dilution protection:</strong> Keep your ownership % even as the company raises more rounds</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Due diligence playbook:</strong> The exact checklist VCs use before writing checks</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Portfolio construction:</strong> Build your personal investment thesis (20-30 deals over 3-5 years)</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Global case studies:</strong> Learn from billion-dollar exits and spectacular failures</li>
-                    <li style="padding: 0.8rem 0;"><strong style="color: #2c5f4f;">✓</strong> <strong>Bangladesh opportunity map:</strong> Where the next ৳1000 crore companies will emerge</li>
-                </ul>
-            </div>
-
-            <!-- What You Get -->
-            <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a;">🎁 What You Get (Beyond the Education)</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0;">
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">🎓 Official Certification</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">Capallo Investor Fellowship certificate—recognized credential in BD investment circles</p>
-                </div>
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">🧰 Investor Toolkit</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">Templates, checklists, and frameworks from top Southeast Asian VCs (worth $5,000+)</p>
-                </div>
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">💼 Exclusive Deal Flow</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">Access vetted SME & startup deals that never hit public platforms</p>
-                </div>
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">🎤 Live Demo Day</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">Watch founders pitch live, ask tough questions, make your first investment</p>
-                </div>
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">🤝 Elite Network</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">Lifetime access to investor community, co-investment opportunities, and exclusive events</p>
-                </div>
-                <div style="background: #f0f7f4; padding: 1.5rem; border-left: 4px solid #2c5f4f; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">👥 1-on-1 Mentorship</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #4a4a4a;">2 follow-up sessions with facilitators to review your first deals</p>
-                </div>
-            </div>
-
-            <!-- Perfect For -->
-            <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a;">👥 This Is Perfect For You If You're A...</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">💼 Corporate Executive</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You've climbed the ladder, earning ৳15-50 lakh/month. But your wealth is stuck in FDRs earning 6%. You want your money to work as hard as you do.</p>
-                </div>
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">🏢 Family Business Heir</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You've inherited wealth but traditional family businesses have declining margins. You want to diversify into high-growth sectors.</p>
-                </div>
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">✈️ Non-Resident Bangladeshi</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You're earning in USD/GBP but want to invest in Bangladesh's 7% GDP growth. You need trusted partners and frameworks.</p>
-                </div>
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">💰 High Net Worth Individual</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You have ৳5+ crore liquid. Friends are making angel investments but you don't know how to start without losing money on bad bets.</p>
-                </div>
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">🚀 Successful Entrepreneur</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You built and exited a business. Now you want to back the next generation while understanding the investor side of the table.</p>
-                </div>
-                <div style="background: white; border: 1px solid #e8e3d8; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                    <h4 style="color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.8rem;">📈 Investment Professional</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.7;">You work in banking/finance but want to break into VC/PE. This is your entry point into private markets.</p>
-                </div>
-            </div>
-
-            <!-- Social Proof / Urgency -->
-            <div style="background: linear-gradient(135deg, #c97a5c 0%, #b36a4c 100%); color: white; padding: 2rem; margin: 3rem 0; text-align: center; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">⚠️ Fair Warning: This Isn't For Everyone</h3>
-                <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: #f5f5f5;">If you're looking for "get rich quick" schemes or want someone else to manage your money, this isn't for you. But if you're serious about building generational wealth through strategic private market investing, and you're willing to put in the work—<strong>there are only 20 seats available.</strong></p>
-            </div>
-
-            <!-- Final CTA -->
-            <div style="background: linear-gradient(135deg, #2c5f4f 0%, #1a4d3e 100%); color: white; padding: 3rem 2rem; margin: 3rem 0; text-align: center; border-radius: 4px; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
-                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500;">Next Cohort Starts Soon</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7; color: #f0f0f0;">Join the waiting list now. Applications are reviewed on a rolling basis, and seats fill up fast.</p>
-                <a href="https://forms.gle/mamWizqtvtYxF6Rv6" class="btn-primary" target="_blank" style="background: white; color: #1a4d3e; padding: 1.2rem 3rem; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">Apply for Venture School →</a>
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #d4e8e0;">🎓 Merit-based scholarships available | 💬 Questions? <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" style="color: white; text-decoration: underline; font-weight: 500;" target="_blank">Schedule a call</a></p>
-            </div>
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8);">Or schedule a call: <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" style="color: #fbbf24; text-decoration: underline;" target="_blank">Book 30-minute consultation</a></p>
         </div>
-    </div>
-
-    <div id="investment-advisory" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-            <h2>Investment Advisory</h2>
-            <p>Strategic guidance for both buy-side and sell-side transactions in Bangladesh's venture ecosystem.</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Buy-Side Services</h3>
-            <p>Deal sourcing, due diligence support, valuation advisory, and negotiation guidance.</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Sell-Side Services</h3>
-            <p>Exit planning, buyer identification, company positioning, and transaction management.</p>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://calendar.app.google/oVwKct4pFoqS9FiP6" class="btn-primary" target="_blank">Schedule Consultation</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="wakalah" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-            <h2>Wakalah Investment Management</h2>
-            <p>Shariah-compliant investment management where we act as your agent (Wakil) to invest on your behalf according to Islamic principles.</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Our Approach</h3>
-            <p>All investments are vetted by qualified Shariah scholars, focusing on ethical sectors that benefit society while avoiding prohibited activities.</p>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://calendar.app.google/oVwKct4pFoqS9FiP6" class="btn-primary" target="_blank">Discuss Your Needs</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="private-credit" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-            <h2>Private Credit</h2>
-            <p>Private credit will be a $30+ trillion industry, but most Bangladeshi's money is sitting in fixed deposits. That's why we’re building a UK-based private credit platform designed to do three things well:</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Scope</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                <li>Deploy patient capital into growth-stage Bangladeshi companies</li>
-                <li>Operate under UK legal, compliance, and reporting standards</li>
-                <li>Offer investors predictable quarterly or monthly income as per their profile + full principal return over a defined horizon</li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">We're welcoming a very small group of globally minded families or individuals</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                <li>Lawful UK residency pathways</li>
-                <li>Family relocation support if needed</li>
-                <li>Institutional-grade investor protections</li>
-                <li>Quarterly or monthly cash returns on your Bank account across any part of the world</li>
-            </ul>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://calendar.app.google/oVwKct4pFoqS9FiP6" class="btn-primary" target="_blank">Schedule a call</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="portfolio-mgmt" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-            <h2>Legal Documentation and Portfolio Management</h2>
-            <p>Active oversight and optimization of your venture investments with regular reporting and strategic guidance.</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">Services Include</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                <li>Term sheet preparation and review</li>
-                <li>Shareholder agreements</li>
-                <li>Subscription agreements</li>
-                <li>BSEC and RJSC compliance</li>
-                <li>Tax structuring guidance</li>
-            </ul>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">What We Provide</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                <li>Performance monitoring and reporting</li>
-                <li>Portfolio rebalancing recommendations</li>
-                <li>Follow-on investment analysis</li>
-                <li>Exit strategy planning</li>
-                <li>Board representation services</li>
-            </ul>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://calendar.app.google/oVwKct4pFoqS9FiP6" class="btn-primary" target="_blank">Discuss Portfolio Management</a>
-            </div>
-        </div>
-    </div>
-
-<div id="deal-flow" class="page-section simple-page">
-    <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-    <div class="simple-content">
-        <h2>Capallo Deal Flow</h2>
-        
-        <!-- Compelling Hook -->
-        <div style="background: linear-gradient(135deg, #2c5f4f 0%, #1a4d3e 100%); color: white; padding: 2.5rem; margin: 2rem 0; text-align: center; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-            <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500;">Bangladesh's First Investor-Protected Venture Portfolio</h3>
-            <p style="font-size: 1.15rem; margin-bottom: 0; line-height: 1.7; color: #f0f0f0;">Your money is safe and secured even if founders commit fraud. Invest with confidence starting at just $5,000.</p>
-        </div>
-
-        <!-- Key Benefits -->
-        <div style="background: #f8f6f2; padding: 2rem; margin: 2rem 0; border: 1px solid #e8e3d8;">
-            <h3 style="font-size: 1.4rem; color: #1a1a1a; margin-bottom: 1.5rem; text-align: center;">Why Capallo Deal Flow is Different</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                <div style="background: white; padding: 1.5rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Investor Protection</h4>
-                    <p style="margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6;">First-of-its-kind protection against founder fraud. Your capital is secured through legal safeguards.</p>
-                </div>
-                <div style="background: white; padding: 1.5rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💰</div>
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Low Entry Point</h4>
-                    <p style="margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6;">Start investing with just $5,000. Build your portfolio gradually without massive upfront capital.</p>
-                </div>
-                <div style="background: white; padding: 1.5rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚖️</div>
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Flexible Structures</h4>
-                    <p style="margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6;">Value-aligned financing through both equity and Shariah-compliant structures to match your preferences.</p>
-                </div>
-                <div style="background: white; padding: 1.5rem; border: 1px solid #e8e3d8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚪</div>
-                    <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Clear Exit Pathway</h4>
-                    <p style="margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6;">Pre-defined exit strategies ensure you know how and when you'll realize returns on your investment.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- How It Works -->
-        <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a; text-align: center;">📋 How It Works</h3>
-        <div style="background: white; border: 1px solid #e8e3d8; padding: 2.5rem; margin: 1.5rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
-                <div style="display: flex; gap: 1.5rem; align-items: start;">
-                    <div style="background: #2c5f4f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">1</div>
-                    <div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">Complete Investor KYC Form</h4>
-                        <p style="margin: 0; color: #666; line-height: 1.7;">Takes just 5 minutes. We'll verify your source of funds, NID and Nominee NID as well as investment preferences.</p>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 1.5rem; align-items: start;">
-                    <div style="background: #2c5f4f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">2</div>
-                    <div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">If you get approved you'll be notified through mail & WhatsApp Within 48 Hours</h4>
-                        <p style="margin: 0; color: #666; line-height: 1.7;">Our team reviews your application and gets back to you quickly with approval status, if declined its probably not the best time for you to start venture investing</p>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 1.5rem; align-items: start;">
-                    <div style="background: #2c5f4f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">3</div>
-                    <div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">Receive Vetted Deal Flow fit for your profile</h4>
-                        <p style="margin: 0; color: #666; line-height: 1.7;">We send you high-quality investment opportunity one at a time with full due diligence reports.</p>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 1.5rem; align-items: start;">
-                    <div style="background: #2c5f4f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">4</div>
-                    <div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">Make Your Investment</h4>
-                        <p style="margin: 0; color: #666; line-height: 1.7;">Review the opportunity, ask questions, and invest with full legal documentation and investor protection.</p>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 1.5rem; align-items: start;">
-                    <div style="background: #2c5f4f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">5</div>
-                    <div>
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.1rem;">Stay Informed & Exit Successfully</h4>
-                        <p style="margin: 0; color: #666; line-height: 1.7;">Receive monthly and quarterly updates, track company progress, and execute planned exits to realize your returns.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Social Proof / Urgency -->
-        <div style="background: #fff8f0; border-left: 4px solid #d4845c; padding: 2rem; margin: 2rem 0;">
-            <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 1rem;">⚡ Limited Access Program</h3>
-            <p style="color: #4a4a4a; line-height: 1.8; margin-bottom: 0;">We're currently accepting a limited number of investors to maintain deal quality and ensure personalized service. Once our investor slots are filled, new applications will be waitlisted. Secure your spot now to access Bangladesh's most protected deal flow.</p>
-        </div>
-
-        <!-- Final CTA -->
-        <div style="background: linear-gradient(135deg, #2c5f4f 0%, #1a4d3e 100%); color: white; padding: 3rem 2rem; margin: 3rem 0; text-align: center; border-radius: 4px; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
-            <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 500;">Ready to Access Protected Deal Flow?</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7; color: #f0f0f0;">Complete your Investor KYC in 5 minutes and join Bangladesh's first investor protected venture portfolio.</p>
-            <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="btn-primary" target="_blank" style="background: white; color: #1a4d3e; padding: 1.2rem 3rem; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">Complete Investor KYC Form →</a>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #d4e8e0;">🔒 Your information is secure and confidential | ⚡ Approval within 48 hours</p>
-        </div>
-
-        <!-- FAQ Section -->
-        <h3 style="margin-top: 3rem; font-size: 1.4rem; color: #1a1a1a; text-align: center;">Frequently Asked Questions ❓</h3>
-        <div style="background: white; border: 1px solid #e8e3d8; padding: 2rem; margin: 1.5rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">How Capallo is financing the risk that it is taking??</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">We've set aside a risk fund from our own profits for worst-case scenarios. But our primary strategy isn't just having a fund it's founder vetting. The risk fund inspiration came from banks Liquidity Coverage Ratio (LCR), which is typically kept around 10–20% in Bangladesh. Our goal is to maintain our risk coverage ratio close to 100% for the investors and work only with companies where founders have proven experience and can generate cash flows and ead the company towards profitability</p>
-            </div>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">What's the exact criteria, especially for fraud. For example, do you only pay out if the founders are convicted of a financial crime?</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">We pay the bank savings rate ONLY for financial embezzlement, fabrications or fake financials, and the founder abandoning the company and taking everyone's money and walked out of the country. We won't pay if that's a market failure with complete transparency from the founder. Founder tried hard and took the business risk in good faith that did't pan out. This is really helpful for investors because Bangladesh's legal system is extremely slow, taking years to get a verdict under civil court. but if we find fraud, we pay investors immediately at bank savings rate and then pursue legal recovery.</p>
-            </div>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">Who can invest?</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">Anyone with legal & halal source of funds from both inshore and offshore can invest but offshore ones must comply with Bangladesh Bank's foreign investment policies. we'll handle compliance for fund repatriation. Currently, up to $10,000 can be repatriated without approval. For larger amounts, we'll coordinate with Bangladesh Bank's to help on the repatriation process but our priority is to serve local non-private investors as billions sitting in FDRs that could be used for promising startups & SMEs instead.</p>
-            </div>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">How many deals will I see?</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">We prioritize quality over quantity. We won't push deals randomly not fit for your profile, even if we do you can't realistically invest in multiple companies at a time so you'll receive one deal each time you submit the investor KYC with our guarantee model and companies must meet our requirements before we can proceed with the guarantee mechanism one company at a time and The goal is to onboard 100 companies</p>
-            </div>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">What sectors do you cover?</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">Capallo is focused on major sectors that is driving Bangladesh's growth trajectory.</p>
-            </div>
-            <div>
-                <h4 style="color: #1a1a1a; margin-bottom: 0.5rem; font-size: 1.05rem;">Is there a commitment requirement?</h4>
-                <p style="margin: 0; color: #666; line-height: 1.7;">We don't encourage anyone to submit the Investor KYC form who's not considering to invest in private markets. Please help us save our time and yours</p>
-            </div>
-        </div>
-
-        <!-- Alternative Contact -->
-        <div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e8e3d8;">
-            <p style="color: #666; margin-bottom: 1rem;">Have questions before applying?</p>
-            <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="service-link" target="_blank" style="font-size: 1.05rem;">Schedule a Call with Our Team →</a>
-        </div>
-    </div>
-</div>
-    
-    <div id="Business-in-a-Box" class="page-section simple-page">
-        <a href="#services" class="back-link" onclick="showPage('services')">← Back to Services</a>
-        <div class="simple-content">
-            <h2>Business in a Box</h2>
-            <p>Invest in Bangladesh's frist investor protected venture portfolio where you're money is safe and secured if founders commit fraud</p>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.4rem; color: #1a1a1a;">How it works?</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; color: #4a4a4a; line-height: 1.8;">
-                <li>You fill in investor KYC form</li>
-                <li>Our team will get back to you if you are approved</li>
-                <li>We recommend the portfolio company one at a time</li>
-                <li>You make the investment</li>
-                <li>and we would get your monthly and quarterly updates and exit from the company</li>
-            </ul>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="btn-primary" target="_blank">Fill in our investor KYC form</a>
-            </div>
-        </div>
-    </div>
-            
-                
-    <!-- About Page -->
-    <div id="about" class="page-section simple-page">
-        <h2>About Capallo</h2>
-        <div class="simple-content">
-            <p>
-                Capallo was founded with a singular mission: to democratize access to venture investing in Bangladesh 
-                and create a thriving ecosystem of informed venture investors and successful founders.
-            </p>
-            <p>
-                We recognize that Bangladesh stands at an inflection point. Our economy is growing, our entrepreneurial 
-                talent is world-class, and capital is available. What's missing is the connective tissue—the education, 
-                infrastructure, and trust needed to channel investment effectively into high-growth ventures.
-            </p>
-            
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">10,000</div>
-                    <div class="stat-label">Angel Investors</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">100</div>
-                    <div class="stat-label">High-Value Founders</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Future Ready Nation</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact" class="page-section simple-page">
-        <h2>Get In Touch</h2>
-        <div class="simple-content">
-            <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2rem;">
-                Whether you're looking to start your venture investing journey, need advice on a specific deal, 
-                or want to discuss portfolio management, we're here to help.
-            </p>
-
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <h3>Schedule a Call</h3>
-                    <p style="margin: 0.5rem 0; color: #666;">
-                        Book a 30-minute consultation to discuss your needs
-                    </p>
-                    <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" target="_blank">View Available Times →</a>
-                </div>
-
-                <div class="contact-method">
-                    <h3>Email Us</h3>
-                    <p style="margin: 0.5rem 0; color: #666;">
-                        Send us your questions or request information
-                    </p>
-                    <a href="mailto:saleh.sazzad@capallo.co">saleh.sazzad@capallo.co</a>
-                </div>
-
-                <div class="contact-method">
-                    <h3>Office</h3>
-                    <p style="margin: 0.5rem 0; color: #666;">
-                        Visit us for an in-person meeting
-                    </p>
-                    <p style="margin: 0; color: #2c2c2c;">Dhaka, Bangladesh</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 2.5rem; text-align: center;">
-                <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="btn-primary" target="_blank">Schedule a call</a>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div style="max-width: 1200px; margin: 0 auto; padding: 3rem 2rem;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4rem; margin-bottom: 3rem;">
-                <div>
-                    <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 500; color: white;">Quick Links</h4>
-                    <ul style="list-style: none; line-height: 2.2;">
-                        <li><a href="#home" onclick="showPage('home')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Home</a></li>
-                        <li><a href="#services" onclick="showPage('services')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Services</a></li>
-                        <li><a href="#about" onclick="showPage('about')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">About</a></li>
-                        <li><a href="#contact" onclick="showPage('contact')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 500; color: white;">Services</h4>
-                    <ul style="list-style: none; line-height: 2.2;">
-                        <li><a href="#venture-school" onclick="showPage('venture-school')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Venture School</a></li>
-                        <li><a href="#investment-advisory" onclick="showPage('investment-advisory')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Investment Advisory</a></li>
-                        <li><a href="#wakalah" onclick="showPage('wakalah')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Wakalah Management</a></li>
-                        <li><a href="#private-credit" onclick="showPage('private-credit')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Private Credit</a></li>
-                        <li><a href="#portfolio-mgmt" onclick="showPage('portfolio-mgmt')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Legal and Portfolio Management</a></li>
-                        <li><a href="#Business-in-a-Box" onclick="showPage('Business-in-a-Box')" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Business-in-a-Box</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 500; color: white;">Contact</h4>
-                    <ul style="list-style: none; line-height: 2.2; color: #ccc;">
-                        <li style="margin-bottom: 0.8rem;">Dhaka, Bangladesh</li>
-                        <li style="margin-bottom: 0.8rem;"><a href="mailto:saleh.sazzad@capallo.co" style="color: #ccc; text-decoration: none; transition: color 0.3s;">saleh.sazzad@capallo.co</a></li>
-                        <li><a href="https://calendar.app.google/etHdy6gfbpcHL3T29" target="_blank" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Schedule a Call →</a></li>
-                    </ul>
-                </div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Capallo</h3>
+                <p>Bangladesh's institutional venture platform connecting sophisticated investors with promising founders. Building the future of private markets in a frontier economy.</p>
+                <p style="color: #6b7280;">📍 Dhaka, Bangladesh</p>
+                <p style="color: #6b7280;">📧 saleh.sazzad@capallo.co</p>
             </div>
-            
-<div style="border-top: 1px solid #444; padding-top: 2rem; text-align: center;">
-    <div style="margin-bottom: 1.5rem;">
-        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-            <a href="https://www.linkedin.com/company/capallo/" class="social-icon linkedin" title="LinkedIn">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="#" class="social-icon facebook" title="Facebook">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-            </a>
-            <a href="#" class="social-icon twitter" title="Twitter/X">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="social-icon instagram" title="Instagram">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="#" class="social-icon youtube" title="YouTube">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-            </a>
-            <a href="http://wa.me/+8801645823853" class="social-icon whatsapp" title="WhatsApp">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            </a>
+
+            <div class="footer-section">
+                <h4>For Investors</h4>
+                <ul class="footer-links">
+                    <li><a href="#investors">Investor Services</a></li>
+                    <li><a href="https://forms.gle/sHqpWhoeJGkrmw9L6" target="_blank">KYC Form</a></li>
+                    <li><a href="https://forms.gle/mamWizqtvtYxF6Rv6" target="_blank">Venture School</a></li>
+                    <li><a href="https://calendar.app.google/etHdy6gfbpcHL3T29" target="_blank">Schedule Call</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>For Founders</h4>
+                <ul class="footer-links">
+                    <li><a href="#founders">Founder Services</a></li>
+                    <li><a href="https://forms.gle/XfM7xQKWx8a5YGBT6" target="_blank">Apply Now</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="https://calendar.app.google/etHdy6gfbpcHL3T29" target="_blank">Schedule Call</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.linkedin.com/company/capallo/" target="_blank">LinkedIn</a></li>
+                    <li><a href="http://wa.me/+8801645823853" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <p style="color: #999; font-size: 0.9rem;">&copy; 2025 Capallo. All rights reserved.</p>
-    <p style="color: #888; font-size: 0.85rem; margin-top: 0.5rem;">
-        Simplifying Bangladesh's venture investing ecosystem
-    </p>
-</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Capallo. All rights reserved. | Simplifying Bangladesh's venture investing ecosystem.</p>
         </div>
     </footer>
 
     <script>
-        // Navigation functionality
-        function showPage(pageId) {
-            // Hide all sections
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-            
-            // Close mobile menu
-            document.getElementById('navLinks').classList.remove('active');
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // Update URL hash without jumping
-            history.pushState(null, null, '#' + pageId);
-        }
-
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function() {
-            const hash = window.location.hash.substring(1) || 'home';
-            showPage(hash);
-        });
-
-        // Initialize page on load
-        window.addEventListener('load', function() {
-            const hash = window.location.hash.substring(1) || 'home';
-            showPage(hash);
-        });
-
-        // Drawing functions
-        function drawPencilLine(ctx, x1, y1, x2, y2, wobble = 1) {
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            
-            const steps = 20;
-            for (let i = 0; i <= steps; i++) {
-                const t = i / steps;
-                const x = x1 + (x2 - x1) * t + (Math.random() - 0.5) * wobble;
-                const y = y1 + (y2 - y1) * t + (Math.random() - 0.5) * wobble;
-                ctx.lineTo(x, y);
-            }
-            ctx.stroke();
-        }
-        
-        // Path sketch - crossroads
-        const pathCanvas = document.getElementById('pathSketch');
-        if (pathCanvas) {
-            const pathCtx = pathCanvas.getContext('2d');
-            
-            pathCtx.strokeStyle = '#2c2c2c';
-            pathCtx.lineWidth = 2;
-            
-            // Main path splitting
-            drawPencilLine(pathCtx, 300, 250, 300, 150, 2);
-            drawPencilLine(pathCtx, 300, 150, 200, 50, 2);
-            drawPencilLine(pathCtx, 300, 150, 400, 50, 2);
-            
-            // Path edges
-            drawPencilLine(pathCtx, 290, 250, 290, 155, 1);
-            drawPencilLine(pathCtx, 310, 250, 310, 155, 1);
-            
-            // Signpost
-            pathCtx.fillStyle = '#8b7355';
-            pathCtx.fillRect(295, 180, 10, 60);
-            pathCtx.fillRect(270, 185, 50, 8);
-            pathCtx.fillRect(270, 205, 50, 8);
-            
-            // Trees
-            for (let x of [120, 480]) {
-                drawPencilLine(pathCtx, x, 200, x, 120);
-                pathCtx.beginPath();
-                pathCtx.arc(x, 110, 25, 0, Math.PI * 2);
-                pathCtx.stroke();
-            }
-        }
-        
-        // Alignment sketch
-        const alignCanvas = document.getElementById('alignmentSketch');
-        if (alignCanvas) {
-            const alignCtx = alignCanvas.getContext('2d');
-            
-            alignCtx.strokeStyle = '#2c2c2c';
-            alignCtx.lineWidth = 2;
-            
-            // Scattered dots on left
-            for (let i = 0; i < 8; i++) {
-                alignCtx.beginPath();
-                alignCtx.arc(50 + Math.random() * 80, 50 + Math.random() * 150, 4, 0, Math.PI * 2);
-                alignCtx.fill();
-            }
-            
-            // Arrow
-            drawPencilLine(alignCtx, 170, 125, 230, 125, 1);
-            drawPencilLine(alignCtx, 230, 125, 220, 115, 1);
-            drawPencilLine(alignCtx, 230, 125, 220, 135, 1);
-            
-            // Aligned structure on right
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
-                    alignCtx.beginPath();
-                    alignCtx.arc(270 + j * 40, 80 + i * 40, 4, 0, Math.PI * 2);
-                    alignCtx.fill();
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 }
-            }
-        }
-        
-        // Building sketch
-        const buildCanvas = document.getElementById('buildingSketch');
-        if (buildCanvas) {
-            const buildCtx = buildCanvas.getContext('2d');
+            });
+        });
+
+        // Add scroll effect to nav
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
             
-            buildCtx.strokeStyle = '#2c2c2c';
-            buildCtx.lineWidth = 2;
-            
-            // Building outline
-            drawPencilLine(buildCtx, 150, 200, 150, 100, 2);
-            drawPencilLine(buildCtx, 150, 100, 500, 100, 2);
-            drawPencilLine(buildCtx, 500, 100, 500, 200, 2);
-            drawPencilLine(buildCtx, 150, 200, 500, 200, 2);
-            
-            // Roof
-            drawPencilLine(buildCtx, 140, 100, 325, 50, 2);
-            drawPencilLine(buildCtx, 325, 50, 510, 100, 2);
-            
-            // Windows
-            for (let i = 0; i < 5; i++) {
-                const x = 200 + i * 70;
-                buildCtx.strokeRect(x, 130, 40, 40);
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
             }
             
-            // People figures
-            buildCtx.strokeStyle = '#1a1a1a';
-            buildCtx.lineWidth = 2;
-            
-            for (let i = 0; i < 3; i++) {
-                const x = 80 + i * 50;
-                buildCtx.beginPath();
-                buildCtx.arc(x, 180, 10, 0, Math.PI * 2);
-                buildCtx.stroke();
-                drawPencilLine(buildCtx, x, 190, x, 220, 0.5);
-            }
-            
-            // Ground
-            buildCtx.strokeStyle = '#8b7355';
-            drawPencilLine(buildCtx, 0, 230, 650, 230);
-        }
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
