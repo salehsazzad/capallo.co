@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capallo - Simplifying venture investing</title>
+    <meta name="description" content="Bangladesh's first investor-protected venture platform. Minimum $5,000 investment. Access vetted deals with fraud protection framework.">
+    <meta name="keywords" content="Angel investor in Bangladesh, Bangladesh venture capital, startup investing Bangladesh, angel investing Dhaka, investor protection, venture investing, Capallo">
+    <meta name="author" content="Capallo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://capallo.co/">
+    <meta property="og:title" content="Capallo - Bangladesh's Institutional Venture Platform">
+    <meta property="og:description" content="World's first fraud-protected venture investing platform. Build Bangladesh's future with institutional-grade infrastructure.">
+    <meta property="og:image" content="https://capallo.co/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://capallo.co/">
+    <meta property="twitter:title" content="Capallo - Bangladesh's Institutional Venture Platform">
+    <meta property="twitter:description" content="World's first fraud-protected venture investing platform. Build Bangladesh's future.">
+    <meta property="twitter:image" content="https://capallo.co/og-image.jpg">
     <style>
         * {
             margin: 0;
@@ -18,6 +35,39 @@
             line-height: 1.6;
         }
 
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        transition: left 0.3s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #0f3460;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+    .nav-links.active {
+        left: 0;
+    }
+}
+        
         /* Navigation */
         nav {
             position: fixed;
@@ -45,7 +95,9 @@
             color: #0f3460;
             letter-spacing: -0.5px;
         }
-
+        
+<button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -569,8 +621,33 @@
                 padding: 1rem 1.5rem;
             }
 
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                transition: left 0.3s;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                padding: 1rem 0;
+                width: 100%;
+                border-bottom: 1px solid #e5e7eb;
             }
 
             .hero {
@@ -618,6 +695,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">Capallo</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <div class="nav-links">
                 <a href="#investors">For Investors</a>
                 <a href="#founders">For Founders</a>
@@ -1250,6 +1328,10 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1282,6 +1364,7 @@
         });
     </script>
 </body>
+
 
 
 
