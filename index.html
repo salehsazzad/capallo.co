@@ -734,9 +734,10 @@
     <!-- Navigation -->
 <nav>
     <div class="nav-container">
-        <a href="#" class="logo">
-            <img src="https://i.imgur.com/ud5rBhm.png" alt="Capallo Logo" style="height: 40px; width: auto;">
-        </a>
+<a href="#" class="logo" onclick="scrollToTop(event)">
+    <img src="https://i.imgur.com/ud5rBhm.png" alt="Capallo Logo" style="height: 40px; width: auto;">
+    <span>Capallo</span>
+</a>
         <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         <div class="nav-links">
             <a href="#investors">For Investors</a>
@@ -1434,6 +1435,14 @@
     </footer>
 
     <script>
+        // Scroll to top when logo is clicked
+function scrollToTop(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
         // Mobile menu toggle
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
