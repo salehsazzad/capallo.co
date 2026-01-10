@@ -22,18 +22,30 @@
     <meta property="twitter:description" content="World's first fraud-protected venture investing platform building Bangladesh's future with institutional-grade infrastructure.">
     <meta property="twitter:image" content="https://imgur.com/a/zb0bqLi">
     <style>
-        .logo {
+.logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    /* ... rest of styles */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f3460;
+    letter-spacing: -0.5px;
+    text-decoration: none;
 }
 
 .logo-icon {
     width: 42px;
     height: 42px;
     background: #0f3460;
-    /* ... rest of styles */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -1px;
+    box-shadow: 0 2px 8px rgba(15, 52, 96, 0.3);
 }
         * {
             margin: 0;
@@ -724,25 +736,24 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+<nav>
+    <div class="nav-container">
         <a href="#" class="logo">
-    <div class="logo-icon">C</div>
-    <span>Capallo</span>
+            <div class="logo-icon">C</div>
+            <span>Capallo</span>
         </a>
-        <div class="nav-container">
-            <div class="logo">Capallo</div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <div class="nav-links">
-                <a href="#investors">For Investors</a>
-                <a href="#founders">For Founders</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-cta">
-                <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="btn btn-secondary" target="_blank">Schedule Call</a>
-            </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
+            <a href="#investors">For Investors</a>
+            <a href="#founders">For Founders</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </div>
-    </nav>
+        <div class="nav-cta">
+            <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" class="btn btn-secondary" target="_blank">Schedule Call</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1531,4 +1542,5 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 </body>
+
 
