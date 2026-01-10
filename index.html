@@ -663,6 +663,20 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            /* Footer Mobile Fix */
+            footer div[style*="grid-template-columns: 1.5fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            footer div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            footer div[style*="display: flex; justify-content: space-between"] {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
         }
     </style>
 <!-- Google tag (gtag.js) -->
@@ -1368,6 +1382,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 </body>
+
 
 
 
