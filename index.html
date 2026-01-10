@@ -677,6 +677,26 @@
                 flex-direction: column !important;
                 text-align: center !important;
             }
+
+          /* Testimonial Carousel Mobile */
+            .trust-section button[onclick*="changeTestimonial"] {
+                left: 10px !important;
+                right: 10px !important;
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .trust-section button[onclick*="changeTestimonial"]:first-of-type {
+                left: 10px !important;
+            }
+            
+            .trust-section button[onclick*="changeTestimonial"]:last-of-type {
+                right: 10px !important;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem !important;
+            }
         }
     </style>
 <!-- Google tag (gtag.js) -->
@@ -736,16 +756,74 @@
         </div>
     </section>
 
-    <!-- Trust/Testimonial Section -->
-    <section class="trust-section">
-        <div class="trust-container">
-            <div class="section-label">TRUSTED BY INVESTORS</div>
-            <div class="testimonial-box">
-                <p class="testimonial-text">"I have never seen anywhere in the world what Capallo is doing. They are taking the present into the future."</p>
-                <p class="testimonial-author">— Capallo Investor</p>
+<!-- Trust/Testimonial Section with Carousel -->
+<section class="trust-section">
+    <div class="trust-container">
+        <div class="section-label">TRUSTED BY INVESTORS & FOUNDERS</div>
+        
+        <!-- Testimonial Carousel -->
+        <div style="position: relative; max-width: 900px; margin: 3rem auto;">
+            <!-- Testimonial Slides -->
+            <div id="testimonial-slider" style="overflow: hidden; border-radius: 12px;">
+                <div class="testimonial-track" style="display: flex; transition: transform 0.5s ease;">
+                    
+                    <!-- Testimonial 1 - Investor (Financing Innovation) -->
+                    <div class="testimonial-slide" style="min-width: 100%; box-sizing: border-box;">
+                        <div class="testimonial-box">
+                            <p class="testimonial-text">"Saleh is doing wonderful work with Capallo, especially around financing structures. He's taken them to a creative level with Wakalah, quasi-equity, and quasi-debt alongside Shariah financing. It's like value alignment for the next generation of venture investors."</p>
+                            <p class="testimonial-author">— Prominent Angel Investor</p>
+                            <div style="margin-top: 1rem;">
+                                <span style="display: inline-block; background: rgba(15, 52, 96, 0.1); color: #0f3460; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">ANGEL INVESTOR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 - Working Professional (Perception Shift) -->
+                    <div class="testimonial-slide" style="min-width: 100%; box-sizing: border-box;">
+                        <div class="testimonial-box">
+                            <p class="testimonial-text">"I've been looking for something like Capallo to participate in private markets. I was skeptical about making investments in companies, but once I learned about the impact I could create, it completely changed my perception toward private markets."</p>
+                            <p class="testimonial-author">— Working Professional, Multinational Corporation</p>
+                            <div style="margin-top: 1rem;">
+                                <span style="display: inline-block; background: rgba(251, 191, 36, 0.1); color: #fbbf24; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">CORPORATE EXECUTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 - Founder (Portfolio Company) -->
+                    <div class="testimonial-slide" style="min-width: 100%; box-sizing: border-box;">
+                        <div class="testimonial-box">
+                            <p class="testimonial-text">"Capallo is a powerhouse for our company's growth journey. We're one of their portfolio companies, and we're grateful for the opportunity to connect with genuinely supportive investors through their platform."</p>
+                            <p class="testimonial-author">— Growth-Stage Startup Founder</p>
+                            <div style="margin-top: 1rem;">
+                                <span style="display: inline-block; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">FOUNDER</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button onclick="changeTestimonial(-1)" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid #e5e7eb; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" onmouseover="this.style.background='#0f3460'; this.style.borderColor='#0f3460'; this.querySelector('svg').style.stroke='white'" onmouseout="this.style.background='white'; this.style.borderColor='#e5e7eb'; this.querySelector('svg').style.stroke='#0f3460'">
+                <svg width="24" height="24" fill="none" stroke="#0f3460" stroke-width="2" viewBox="0 0 24 24" style="transition: stroke 0.3s;"><path d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            
+            <button onclick="changeTestimonial(1)" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid #e5e7eb; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" onmouseover="this.style.background='#0f3460'; this.style.borderColor='#0f3460'; this.querySelector('svg').style.stroke='white'" onmouseout="this.style.background='white'; this.style.borderColor='#e5e7eb'; this.querySelector('svg').style.stroke='#0f3460'">
+                <svg width="24" height="24" fill="none" stroke="#0f3460" stroke-width="2" viewBox="0 0 24 24" style="transition: stroke 0.3s;"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+
+            <!-- Dot Indicators -->
+            <div id="testimonial-dots" style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem;">
+                <!-- Dots will be generated by JavaScript -->
             </div>
         </div>
-    </section>
+
+        <!-- Stats -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: #6b7280; font-size: 0.9rem;">Trusted by <strong style="color: #0f3460;">investors</strong>, <strong style="color: #fbbf24;">professionals</strong>, and <strong style="color: #10b981;">founders</strong> building Bangladesh's future</p>
+        </div>
+    </div>
+</section>
 
 <!-- Investor Protection Section -->
 <section class="dual-track" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: white;">
@@ -1367,6 +1445,60 @@
             
             lastScroll = currentScroll;
         });
+      // Testimonial Carousel
+        let currentTestimonial = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const totalTestimonials = testimonialSlides.length;
+
+        // Create dot indicators
+        const dotsContainer = document.getElementById('testimonial-dots');
+        for (let i = 0; i < totalTestimonials; i++) {
+            const dot = document.createElement('button');
+            dot.style.width = '12px';
+            dot.style.height = '12px';
+            dot.style.borderRadius = '50%';
+            dot.style.border = 'none';
+            dot.style.cursor = 'pointer';
+            dot.style.transition = 'all 0.3s';
+            dot.style.background = i === 0 ? '#0f3460' : '#d1d5db';
+            dot.onclick = () => goToTestimonial(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function changeTestimonial(direction) {
+            currentTestimonial += direction;
+            
+            // Loop around
+            if (currentTestimonial < 0) {
+                currentTestimonial = totalTestimonials - 1;
+            } else if (currentTestimonial >= totalTestimonials) {
+                currentTestimonial = 0;
+            }
+            
+            updateTestimonialDisplay();
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            updateTestimonialDisplay();
+        }
+
+        function updateTestimonialDisplay() {
+            const track = document.querySelector('.testimonial-track');
+            track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            
+            // Update dots
+            const dots = dotsContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].style.background = i === currentTestimonial ? '#0f3460' : '#d1d5db';
+                dots[i].style.transform = i === currentTestimonial ? 'scale(1.2)' : 'scale(1)';
+            }
+        }
+
+        // Auto-advance testimonials every 7 seconds
+        setInterval(() => {
+            changeTestimonial(1);
+        }, 7000);
     </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -1382,23 +1514,3 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
