@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Capallo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            background: #0f3460;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #16213e;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 2rem 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #0f3460;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            color: #4a5568;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid #0f3460;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff8f0;
+            border-left: 4px solid #fbbf24;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        strong {
+            color: #1a1a2e;
+        }
+
+        a {
+            color: #0f3460;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #16213e;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: #9ca3af;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .container {
+                padding: 120px 1.5rem 60px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="https://capallo.co" class="logo">
+                <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo Logo" style="height: 40px; width: auto;">
+            </a>
+            <a href="https://capallo.co" class="btn">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: January 11, 2025</p>
+
+        <p>Welcome to Capallo. These Terms of Service ("Terms") govern your access to and use of Capallo's website (capallo.co), services, and platform. By accessing or using our services, you agree to be bound by these Terms.</p>
+
+        <div class="danger-box">
+            <p style="margin: 0;"><strong>IMPORTANT:</strong> Please read these Terms carefully. They contain important information about your legal rights, remedies, and obligations, including mandatory arbitration and class action waiver provisions.</p>
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+
+        <p>By accessing or using Capallo's services, you confirm that:</p>
+        <ul>
+            <li>You are at least 18 years old or the age of majority in your jurisdiction</li>
+            <li>You have the legal capacity to enter into binding contracts</li>
+            <li>You have read, understood, and agree to these Terms and our Privacy Policy</li>
+            <li>You will comply with all applicable Bangladesh laws and regulations</li>
+        </ul>
+
+        <p>If you do not agree to these Terms, you must not access or use our services.</p>
+
+        <h2>2. About Capallo</h2>
+
+        <h3>2.1 Our Role</h3>
+        <p>Capallo operates as a <strong>venture capital facilitation platform</strong> that:</p>
+        <ul>
+            <li>Connects accredited investors with pre-vetted founders and companies</li>
+            <li>Provides due diligence, advisory, and portfolio monitoring services</li>
+            <li>Facilitates private market transactions between parties</li>
+            <li>Offers investor education and founder support programs</li>
+        </ul>
+
+        <h3>2.2 What We Are NOT</h3>
+        <div class="warning-box">
+            <p><strong>Critical Disclaimer:</strong></p>
+            <ul style="margin-bottom: 0;">
+                <li><strong>NOT a Registered Fund:</strong> Capallo is not a registered investment fund, mutual fund, or collective investment scheme</li>
+                <li><strong>NOT a Broker-Dealer:</strong> We do not execute securities transactions or hold investor funds</li>
+                <li><strong>NOT a Financial Advisor:</strong> We do not provide personalized investment advice or recommendations</li>
+                <li><strong>NOT a Guarantor:</strong> We do not guarantee investment returns or business success (except under specific fraud protection terms)</li>
+            </ul>
+        </div>
+
+        <h3>2.3 Regulatory Status</h3>
+        <p>Capallo facilitates private transactions between sophisticated parties. We operate within Bangladesh's existing legal framework but are not currently regulated as a securities intermediary. As Bangladesh's venture capital regulations evolve, we commit to maintaining full compliance with all applicable laws.</p>
+
+        <h2>3. Services Offered</h2>
+
+        <h3>3.1 For Investors</h3>
+        <ul>
+            <li><strong>Investor Education:</strong> Venture investing courses, newsletters, and community access</li>
+            <li><strong>Deal Access:</strong> Introduction to pre-vetted investment opportunities (minimum $5,000)</li>
+            <li><strong>Portfolio Monitoring:</strong> Monthly performance reports and company tracking</li>
+            <li><strong>Investor Protection Framework:</strong> Protection against documented founder fraud (as detailed in agreements)</li>
+            <li><strong>Exit Facilitation:</strong> Support for liquidity events and secondary transactions</li>
+        </ul>
+
+        <h3>3.2 For Founders</h3>
+        <ul>
+            <li><strong>Investment Advisory (DIY/DFY):</strong> Fundraising preparation and strategy</li>
+            <li><strong>Fundraising Support:</strong> Investor introductions and capital raising assistance</li>
+            <li><strong>Investor Relations:</strong> Post-raise governance and reporting services</li>
+            <li><strong>Business-in-a-Box:</strong> Complete company setup and infrastructure services</li>
+        </ul>
+
+        <h2>4. Specific Agreements</h2>
+
+        <h3>4.1 Capital Facilitation Agreement (Founders)</h3>
+        <p>Founders engaging with Capallo's fundraising services must sign a <strong>Capital Facilitation Agreement</strong> that governs:</p>
+        <ul>
+            <li><strong>Scope of Services:</strong> Specific services Capallo will provide</li>
+            <li><strong>Success Fees:</strong> Typically 3-5% of capital raised (as outlined in pricing)</li>
+            <li><strong>Confidentiality:</strong> Protection of investor information and Capallo's methodologies</li>
+            <li><strong>Representations & Warranties:</strong> Founder certifications regarding business accuracy and integrity</li>
+            <li><strong>Fraud Protection Obligations:</strong> Requirements for founders to maintain accurate records and proper fund usage</li>
+            <li><strong>Termination Conditions:</strong> Circumstances under which either party may terminate</li>
+        </ul>
+
+        <h3>4.2 Confidential Non-Disclosure Agreement (Investors)</h3>
+        <p>Investors accessing deal flow must sign a <strong>Confidential NDA</strong> covering:</p>
+        <ul>
+            <li><strong>Company Information:</strong> All non-public business information, financials, and strategies</li>
+            <li><strong>Deal Terms:</strong> Valuation, investment structures, and proprietary deal frameworks</li>
+            <li><strong>Non-Circumvention:</strong> Prohibition on directly approaching companies without Capallo involvement during agreement period</li>
+            <li><strong>Duration:</strong> Typically 2-3 years from disclosure date</li>
+            <li><strong>Permitted Disclosures:</strong> Exceptions for legal advisors, accountants (under confidentiality)</li>
+        </ul>
+
+        <h3>4.3 Investment Agreements</h3>
+        <p>Actual investments are governed by separate agreements negotiated between investors and companies, which may include:</p>
+        <ul>
+            <li>Shareholder agreements</li>
+            <li>Subscription agreements</li>
+            <li>Wakalah financing agreements (Shariah-compliant structures)</li>
+            <li>Quasi-equity or quasi-debt instruments</li>
+        </ul>
+        <p><em>Capallo may facilitate these agreements but is not a party to the investment contracts.</em></p>
+
+        <h2>5. Investor Protection Framework</h2>
+
+        <h3>5.1 Scope of Protection</h3>
+        <p>Capallo's investor protection covers <strong>documented cases of founder fraud only</strong>, specifically:</p>
+        <ul>
+            <li><strong>Financial Embezzlement:</strong> Misappropriation of investor funds for non-business purposes</li>
+            <li><strong>Fraudulent Financials:</strong> Deliberately fabricated or materially false financial statements</li>
+            <li><strong>Capital Flight:</strong> Founder abandonment with funds withdrawn from Bangladesh</li>
+        </ul>
+
+        <h3>5.2 What Is NOT Protected</h3>
+        <div class="warning-box">
+            <p style="margin-bottom: 1rem;"><strong>The following are NOT covered by investor protection:</strong></p>
+            <ul style="margin-bottom: 0;">
+                <li>Market failures and business risks undertaken in good faith</li>
+                <li>Poor management decisions or strategic errors</li>
+                <li>Competitive pressures or economic downturns</li>
+                <li>Regulatory changes affecting the business</li>
+                <li>Founders who tried diligently but couldn't achieve product-market fit</li>
+                <li>Normal startup failure risks (which are high)</li>
+            </ul>
+        </div>
+
+        <h3>5.3 Protection Mechanism</h3>
+        <ul>
+            <li><strong>Coverage Amount:</strong> Return of principal at prevailing Bangladesh bank savings rate (currently ~2-4% annually)</li>
+            <li><strong>Funding Source:</strong> Risk fund set aside from Capallo's profits (targeting near 100% coverage)</li>
+            <li><strong>Claims Process:</strong> Investors must provide documented evidence of fraud; Capallo investigates and determines eligibility</li>
+            <li><strong>Payout Timeline:</strong> Typically 60-90 days from claim approval</li>
+            <li><strong>Legal Action:</strong> Capallo reserves the right to pursue legal remedies against fraudulent founders</li>
+        </ul>
+
+        <h3>5.4 Limitations</h3>
+        <ul>
+            <li>Protection applies only to investments made through Capallo's platform with signed agreements</li>
+            <li>Fund availability is subject to Capallo's financial capacity</li>
+            <li>In extreme scenarios of multiple simultaneous frauds, payout may be prorated</li>
+            <li>Protection does not extend to investments made outside Capallo's facilitation</li>
+        </ul>
+
+        <h2>6. Investment Risks & Acknowledgments</h2>
+
+        <div class="danger-box">
+            <h3 style="margin-top: 0; color: #dc2626;">MANDATORY RISK ACKNOWLEDGMENTS</h3>
+            <p>By using Capallo's services as an investor, you explicitly acknowledge and accept:</p>
+            <ul style="margin-bottom: 0;">
+                <li><strong>High Risk of Total Loss:</strong> Private market investments are highly speculative; you may lose 100% of your investment</li>
+                <li><strong>Illiquidity:</strong> Investments typically require 5-7+ years before exit opportunities; your capital will be locked</li>
+                <li><strong>No Guaranteed Returns:</strong> Past performance does not predict future results; most startups fail</li>
+                <li><strong>Dilution Risk:</strong> Your ownership may decrease in future funding rounds</li>
+                <li><strong>Limited Information:</strong> Private companies have less disclosure than public companies</li>
+                <li><strong>Regulatory Risk:</strong> Bangladesh's venture capital regulations are evolving and may change</li>
+                <li><strong>Fraud Protection Limitations:</strong> Protection covers only documented fraud, not market failures</li>
+                <li><strong>Investor Sophistication Required:</strong> You must be able to evaluate complex business models and financials</li>
+            </ul>
+        </div>
+
+        <h3>6.1 Accredited Investor Status</h3>
+        <p>Capallo's services are intended for sophisticated investors who:</p>
+        <ul>
+            <li>Have significant investment experience and financial knowledge</li>
+            <li>Can afford to lose their entire investment without affecting their lifestyle</li>
+            <li>Meet minimum net worth or income thresholds (as determined by Capallo)</li>
+            <li>Understand the nature of private market investments</li>
+        </ul>
+
+        <h2>7. User Responsibilities</h2>
+
+        <h3>7.1 Accurate Information</h3>
+        <p>You must:</p>
+        <ul>
+            <li>Provide truthful, accurate, and complete information in all forms and applications</li>
+            <li>Update information promptly when circumstances change</li>
+            <li>Not misrepresent your financial status, experience, or qualifications</li>
+        </ul>
+
+        <h3>7.2 Independent Due Diligence</h3>
+        <p>You are responsible for:</p>
+        <ul>
+            <li>Conducting your own independent investigation and analysis</li>
+            <li>Consulting legal, tax, and financial advisors before making investment decisions</li>
+            <li>Understanding the terms of all investment agreements</li>
+            <li>Not relying solely on information provided by Capallo</li>
+        </ul>
+
+        <h3>7.3 Compliance with Laws</h3>
+        <p>You agree to:</p>
+        <ul>
+            <li>Comply with all applicable Bangladesh laws and regulations</li>
+            <li>Pay all taxes on investment gains as required</li>
+            <li>Obtain necessary approvals for foreign exchange transactions (if applicable)</li>
+            <li>Not engage in money laundering, fraud, or other illegal activities</li>
+        </ul>
+
+        <h3>7.4 Confidentiality Obligations</h3>
+        <p>You must:</p>
+        <ul>
+            <li>Maintain strict confidentiality of non-public information</li>
+            <li>Not disclose deal terms, company information, or proprietary Capallo methods</li>
+            <li>Not circumvent Capallo to approach companies directly during NDA period</li>
+            <li>Limit information sharing to advisors under confidentiality</li>
+        </ul>
+
+        <h2>8. Prohibited Activities</h2>
+
+        <p>You may not:</p>
+        <ul>
+            <li>Use Capallo's platform for any illegal purpose</li>
+            <li>Provide false or misleading information</li>
+            <li>Circumvent investor protection requirements or attempt to defraud</li>
+            <li>Hack, disrupt, or compromise platform security</li>
+            <li>Scrape, data mine, or extract information without authorization</li>
+            <li>Impersonate others or misrepresent affiliations</li>
+            <li>Violate confidentiality agreements or intellectual property rights</li>
+            <li>Manipulate or artificially influence deal valuations</li>
+            <li>Engage in insider trading or market manipulation</li>
+        </ul>
+
+        <h2>9. Fees and Payments</h2>
+
+        <h3>9.1 Service Fees</h3>
+        <p>Fees are detailed on our website and in individual service agreements:</p>
+        <ul>
+            <li><strong>Investor Services:</strong> Education ($250 one-time), Portfolio Monitoring ($30/month), Exit Facilitation (20% of gains)</li>
+            <li><strong>Founder Services:</strong> Advisory fees, success fees (3-5% of capital raised), monthly retainers as specified</li>
+        </ul>
+
+        <h3>9.2 Payment Terms</h3>
+        <ul>
+            <li>Fees are payable in advance unless otherwise specified</li>
+            <li>Success fees are due upon capital transfer to company accounts</li>
+            <li>All fees are non-refundable except where explicitly stated</li>
+            <li>Payments must be made in Bangladesh Taka (BDT) or USD as agreed</li>
+        </ul>
+
+        <h3>9.3 Fee Changes</h3>
+        <p>Capallo reserves the right to modify fees with 30 days' notice. Changes do not affect existing signed agreements.</p>
+
+        <h2>10. Intellectual Property</h2>
+
+        <h3>10.1 Capallo's IP</h3>
+        <p>All content, designs, methodologies, frameworks, and materials on Capallo's platform are owned by Capallo and protected by copyright, trademark, and other intellectual property laws. You may not:</p>
+        <ul>
+            <li>Copy, reproduce, or distribute Capallo's content without permission</li>
+            <li>Use Capallo's name, logo, or branding without authorization</li>
+            <li>Reverse engineer or replicate Capallo's methodologies</li>
+        </ul>
+
+        <h3>10.2 User Content</h3>
+        <p>By submitting information, documents, or materials to Capallo, you grant us a license to use, store, and process such content for the purpose of providing services. You retain ownership of your content.</p>
+
+        <h2>11. Disclaimers and Limitations of Liability</h2>
+
+        <h3>11.1 No Investment Advice</h3>
+        <div class="warning-box">
+            <p style="margin: 0;"><strong>IMPORTANT DISCLAIMER:</strong> Nothing on Capallo's platform constitutes investment, legal, tax, or financial advice. All information is provided for informational purposes only. You must consult qualified professionals before making investment decisions. Capallo is not a registered investment advisor and does not provide personalized recommendations.</p>
+        </div>
+
+        <h3>11.2 No Warranties</h3>
+        <p>Capallo provides services "AS IS" and "AS AVAILABLE" without warranties of any kind, including:</p>
+        <ul>
+            <li>No warranty that services will be uninterrupted or error-free</li>
+            <li>No warranty regarding accuracy or completeness of information</li>
+            <li>No warranty that investments will be profitable</li>
+            <li>No warranty regarding third-party services or companies</li>
+        </ul>
+
+        <h3>11.3 Limitation of Liability</h3>
+        <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</strong></p>
+        <ul>
+            <li>Capallo shall not be liable for any indirect, incidental, special, or consequential damages</li>
+            <li>Our total liability for any claim shall not exceed the fees you paid to Capallo in the 12 months preceding the claim</li>
+            <li>We are not liable for investment losses, missed opportunities, or third-party actions</li>
+            <li>We are not liable for breaches by founders or companies (except under fraud protection terms)</li>
+        </ul>
+
+        <h2>12. Indemnification</h2>
+
+        <p>You agree to indemnify and hold harmless Capallo, its directors, employees, and agents from any claims, damages, losses, or expenses (including legal fees) arising from:</p>
+        <ul>
+            <li>Your violation of these Terms</li>
+            <li>Your investment decisions and activities</li>
+            <li>Your breach of confidentiality obligations</li>
+            <li>Your violation of any laws or third-party rights</li>
+            <li>Information you provide to Capallo</li>
+        </ul>
+
+        <h2>13. Termination</h2>
+
+        <h3>13.1 By You</h3>
+        <p>You may stop using Capallo's services at any time. Note that:</p>
+        <ul>
+            <li>Existing contractual obligations remain in effect</li>
+            <li>Confidentiality obligations survive termination</li>
+            <li>Fees already paid are non-refundable</li>
+        </ul>
+
+        <h3>13.2 By Capallo</h3>
+        <p>We may suspend or terminate your access if:</p>
+        <ul>
+            <li>You violate these Terms or applicable laws</li>
+            <li>You provide false or misleading information</li>
+            <li>Your actions pose risk to other users or Capallo</li>
+            <li>We determine you are not suitable for our services</li>
+            <li>Required by legal or regulatory authorities</li>
+        </ul>
+
+        <h3>13.3 Effect of Termination</h3>
+        <ul>
+            <li>Your right to access services ceases immediately</li>
+            <li>Outstanding fees become immediately due</li>
+            <li>Confidentiality and indemnification obligations survive</li>
+            <li>Existing investments and agreements continue independently</li>
+        </ul>
+
+        <h2>14. Dispute Resolution</h2>
+
+        <h3>14.1 Governing Law</h3>
+        <p>These Terms are governed by the laws of Bangladesh.</p>
+
+        <h3>14.2 Arbitration</h3>
+        <p>Any disputes arising from these Terms or our services shall be resolved through binding arbitration in Dhaka, Bangladesh, under the rules of the Bangladesh International Arbitration Centre (BIAC), except:</p>
+        <ul>
+            <li>Claims seeking injunctive relief may be brought in court</li>
+            <li>Claims under $10,000 may be pursued in small claims court</li>
+        </ul>
+
+        <h3>14.3 Class Action Waiver</h3>
+        <p>You agree that disputes will be resolved individually. You waive the right to participate in class actions or collective proceedings.</p>
+
+        <h3>14.4 Informal Resolution First</h3>
+        <p>Before initiating formal dispute resolution, parties agree to attempt good faith negotiation for at least 30 days.</p>
+
+        <h2>15. Modifications to Terms</h2>
+
+        <p>Capallo may update these Terms at any time. We will notify you by:</p>
+        <ul>
+            <li>Posting updated Terms with a new "Last Updated" date</li>
+            <li>Sending email notifications for material changes</li>
+            <li>Requiring acceptance before continued use (for significant changes)</li>
+        </ul>
+
+        <p>Your continued use after changes constitutes acceptance of the updated Terms.</p>
+
+        <h2>16. Miscellaneous</h2>
+
+        <h3>16.1 Entire Agreement</h3>
+        <p>These Terms, together with our Privacy Policy and any signed agreements, constitute the entire agreement between you and Capallo.</p>
+
+        <h3>16.2 Severability</h3>
+        <p>If any provision is found invalid, the remaining provisions continue in effect.</p>
+
+        <h3>16.3 No Waiver</h3>
+        <p>Failure to enforce any provision does not waive our right to enforce it later.</p>
+
+        <h3>16.4 Assignment</h3>
+        <p>You may not assign these Terms without our written consent. Capallo may assign these Terms without restriction.</p>
+
+        <h3>16.5 Force Majeure</h3>
+        <p>Capallo is not liable for delays or failures due to circumstances beyond our reasonable control (natural disasters, wars, pandemics, regulatory changes, etc.).</p>
+
+        <h3>16.6 Language</h3>
+        <p>These Terms are provided in English. In case of any translation, the English version shall prevail.</p>
+
+        <h2>17. Contact Information</h2>
+
+        <p>For questions about these Terms or to report violations:</p>
+
+        <div class="highlight-box">
+            <p><strong>Capallo</strong><br>
+            Email: <a href="mailto:saleh.sazzad@capallo.co">saleh.sazzad@capallo.co</a><br>
+            Phone: +880 1645-823853<br>
+            Location: Dhaka, Bangladesh<br>
+            Website: <a href="https://capallo.co">capallo.co</a></p>
+        </div>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid #e5e7eb;">
+
+        <div class="danger-box">
+            <p style="margin: 0;"><strong>BY CLICKING "I AGREE" OR BY ACCESSING OR USING CAPALLO'S SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS OF SERVICE.</strong></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Capallo. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;"><a href="https://capallo.co" style="color: #9ca3af;">Back to Home</a> | <a href="privacy-policy.html" style="color: #9ca3af;">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
