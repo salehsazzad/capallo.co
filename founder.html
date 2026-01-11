@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abu Saleh Sazzad - Founder, Capallo</title>
+    <meta name="description" content="Meet Abu Saleh Sazzad, founder of Capallo - Bangladesh's first investor-protected venture platform. Building the future of private market investing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0f3460;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 3rem 80px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #fbbf24;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 4px solid #fbbf24;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            border: 4px solid #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 60px 3rem;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 80px 3rem;
+            background: #f7fafc;
+        }
+
+        .story-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f3460;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 3rem;
+        }
+
+        .story-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #fbbf24;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-quote {
+            background: #fff8f0;
+            border-left: 4px solid #fbbf24;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-quote p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #1a1a2e;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 3rem;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.8rem;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .mission-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .mission-list li {
+            padding: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        /* Experience Timeline */
+        .timeline-section {
+            padding: 80px 3rem;
+            background: white;
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #0f3460, #fbbf24);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #fbbf24;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #0f3460;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #0f3460;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 3rem;
+            background: #f7fafc;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #fbbf24;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 3rem;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-description {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary {
+            background: #fbbf24;
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0f3460;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #9ca3af;
+            padding: 40px 3rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                padding: 2rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="https://capallo.co" class="logo">
+                <span>Capallo</span>
+            </a>
+            <div class="nav-links">
+                <a href="https://capallo.co#investors">For Investors</a>
+                <a href="https://capallo.co#founders">For Founders</a>
+                <a href="https://capallo.co#about">About</a>
+                <a href="https://capallo.co#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Abu Saleh Sazzad</h1>
+                <p class="hero-subtitle">Founder & Managing Partner, Capallo</p>
+                <p class="hero-description">
+                    Building Bangladesh's first investor-protected venture platform. On a mission to create 10,000 venture investors and support 100 high-cashflow businesses by democratizing private market investing for 180 million Bangladeshis.
+                </p>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <a href="https://www.linkedin.com/in/abusalehsazzad/" target="_blank" style="width: 45px; height: 45px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s;">
+                        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:saleh.sazzad@capallo.co" style="width: 45px; height: 45px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s;">
+                        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Replace this placeholder with your image -->
+                <div class="placeholder-image">
+                    Your Photo Here<br>
+                    <span style="font-size: 0.9rem; margin-top: 0.5rem; display: block;">Add: &lt;img src="YOUR_IMGUR_LINK" alt="Abu Saleh Sazzad"&gt;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">$1M+</div>
+                <div class="stat-label">Capital Facilitated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">350+</div>
+                <div class="stat-label">Angel Investors Managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Startups Supported</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years in Private Markets</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Story Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="section-label">THE ORIGIN STORY</div>
+            <h2 class="section-title">Why Capallo Exists</h2>
+            
+            <div class="story-content">
+                <p>
+                    During a startup showcase at my previous role at a local angel investing network, I witnessed something that changed the trajectory of my career—and ultimately, led to Capallo's creation.
+                </p>
+                
+                <p>
+                    An investor approached me, visibly frustrated. He hadn't received a single update from the startup he'd invested in. No financials. No progress reports. Nothing. When he tried to exit, the founder was sympathetic but honest: "Our cashflow won't allow a buyback. The only way out is if you find a buyer yourself."
+                </p>
+
+                <div class="highlight-quote">
+                    <p>"I gotta build this. Or else the private market venture investing ecosystem won't develop in Bangladesh."</p>
+                </div>
+
+                <p>
+                    That moment crystallized a harsh reality: In a frontier market like Bangladesh with fewer than 200 venture investors, finding secondary buyers is nearly impossible. The ecosystem was broken—not because of bad founders or unwilling investors, but because we lacked the infrastructure, education, and trust mechanisms that mature markets take for granted.
+                </p>
+
+                <p>
+                    I realized that to create exits, we first needed to create investors. Lots of them. We needed to make venture equity a mainstream asset class. Only then could we build the liquidity that makes exits possible.
+                </p>
+
+                <p>
+                    That's when Capallo was born—not just as a platform, but as a mission.
+                </p>
+
+                <p>
+                    I started with investor education through Capallo Venture School, with an ambitious goal: create 10,000 venture investors in the next 5 years. But education alone wasn't enough. I needed quality deal flow. So I built comprehensive founder services—from investment advisory to our Business-in-a-Box offering—to identify and support the 100 most promising, high-cashflow companies in Bangladesh.
+                </p>
+
+                <p>
+                    The name "Capallo" comes from capital allocation—because that's exactly what Bangladesh needs: a structured, protected way for people to allocate their hard-earned money into innovation and societal value creation. To take our country one step further.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <div class="section-label" style="color: #fbbf24;">MISSION & VISION</div>
+            <h2 class="section-title" style="color: white;">Building Bangladesh's Venture Future</h2>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>🎯 The Mission</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Create 10,000 venture investors and support 100 high-cashflow businesses to democratize private market investing across Bangladesh.
+                    </p>
+                    <ul class="mission-list">
+                        <li>✓ Make venture equity a mainstream asset class</li>
+                        <li>✓ Build investor-protected infrastructure</li>
+                        <li>✓ Channel capital into innovation & societal value</li>
+                        <li>✓ Create sustainable exit pathways</li>
+                        <li>✓ Educate & empower 180M Bangladeshis</li>
+                    </ul>
+                </div>
+
+                <div class="mission-card">
+                    <h3>🚀 The Vision</h3>
+                    <p>
+                        I want to see Capallo leading private market investments in Bangladesh and becoming the fund manager for 180 million people—channeling their hard-earned money into innovation and societal value creation.
+                    </p>
+                    <p>
+                        Right now, Bangladeshis have limited wealth-building options: FDs at 8-10%, Shonchoy Potro at 12%, pension funds at 14%, and savings accounts at a laughable 4%. These aren't wealth-building tools—they're barely keeping pace with inflation.
+                    </p>
+                    <p style="margin-top: 1.5rem; font-weight: 600; color: #fbbf24;">
+                        Our children deserve to inherit a better Bangladesh. And our investors deserve to build real wealth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="timeline-section">
+        <div class="timeline-container">
+            <div class="section-label">PROFESSIONAL JOURNEY</div>
+            <h2 class="section-title">The Path to Capallo</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">July 2024 – Present</div>
+                    <div class="timeline-title">Program Fellow</div>
+                    <div class="timeline-company">Angel School, Singapore (Remote)</div>
+                    <div class="timeline-description">
+                        Learning venture investments under the mentorship of Jed Ng, who has two unicorns in his portfolio. Gaining deal experience through Angel School's Investment Committee of 1,300+ LPs. Certified in Managing SPVs of Angel Syndicates.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">July 2022 – July 2024</div>
+                    <div class="timeline-title">Investment Associate, Team Lead</div>
+                    <div class="timeline-company">Bangladesh Angels Network Limited, Dhaka</div>
+                    <div class="timeline-description">
+                        Supported 20+ startups across fintech, agri-tech, and digital solutions. Managed investor relations for 350+ angel investors spanning 24 countries. Closed multi-million aggregate investments from pre-seed to Series B. Co-organized Sankalp Dhaka Summit 2023 with 100+ investors and 70+ paid tickets sold.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2024 – July 2024</div>
+                    <div class="timeline-title">Facilitator (Part-time)</div>
+                    <div class="timeline-company">Orange Corners, Bangladesh</div>
+                    <div class="timeline-description">
+                        Conducted startup sessions on product design and investment readiness for aspiring entrepreneurs. Coordinated design of learning resources for the entrepreneurial ecosystem.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2023 – Dec 2023</div>
+                    <div class="timeline-title">Independent Contributor (Remote)</div>
+                    <div class="timeline-company">Magrathea Partners, Dallas, TX</div>
+                    <div class="timeline-description">
+                        Built 400+ EdTech company database with founder contact details. Gained proficiency with Crunchbase, PitchBook, and AngelList platforms.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2017 – Dec 2020</div>
+                    <div class="timeline-title">Bachelor of Business Administration</div>
+                    <div class="timeline-company">East West University, Dhaka</div>
+                    <div class="timeline-description">
+                        Graduated in Finance & Marketing (CGPA 3.20). Executive of Marketing Club, helping members prepare for marketing careers through networking and educational events.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Values Section -->
+    <section class="values-section">
+        <div class="mission-container">
+            <div class="section-label">WHAT DRIVES ME</div>
+            <h2 class="section-title">Beyond the Numbers</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🏡</div>
+                    <h3>Order Creates Confidence</h3>
+                    <p>
+                        I find joy in household chores—washing floors, cleaning, cooking for my three cats (Alfie, Halu, and Kalu). My mother once told me: "The one who can keep their house in order can accomplish the world." It's a philosophy I carry into everything I do.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Vision & Judgment</h3>
+                    <p>
+                        My ability to identify promising companies and envision how entire sectors might evolve isn't just my work—it's what excites me most. Finding that hidden gem, seeing the future others can't yet see, that's the thrill of venture investing.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤲</div>
+                    <h3>Faith & Family</h3>
+                    <p>
+                        As a believer who prays five times daily, I find strength in my faith. I carry the memory of my deceased parents with me—they're watching, guiding me through every difficulty. Their legacy drives me to build something meaningful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Let's Build Bangladesh's Future Together</h2>
+            <p class="cta-description">
+                Whether you're an investor looking to deploy capital wisely or a founder building the next generation of Bangladeshi companies, I'd love to connect.
+            </p>
+            <div>
+                <a href="mailto:saleh.sazzad@capallo.co" class="btn btn-primary">Get in Touch</a>
+                <a href="https://calendar.app.google/etHdy6gfbpcHL3T29" target="_blank" class="btn btn-outline">Schedule a Call</a>
+            </div>
+        </div>
+    </section
