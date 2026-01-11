@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Capallo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            background: #0f3460;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #16213e;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 2rem 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #0f3460;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            color: #4a5568;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid #0f3460;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff8f0;
+            border-left: 4px solid #fbbf24;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        strong {
+            color: #1a1a2e;
+        }
+
+        a {
+            color: #0f3460;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #16213e;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: #9ca3af;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .container {
+                padding: 120px 1.5rem 60px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="https://capallo.co" class="logo">
+                <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo Logo" style="height: 40px; width: auto;">
+            </a>
+            <a href="https://capallo.co" class="btn">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: January 11, 2025</p>
+
+        <p>Capallo ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website (capallo.co) and services related to venture capital facilitation in Bangladesh.</p>
+
+        <div class="highlight-box">
+            <p style="margin: 0;"><strong>Key Point:</strong> We handle sensitive financial and personal information. This policy describes our practices in detail so you understand how your data is protected.</p>
+        </div>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Information You Provide to Us</h3>
+        <p>We collect information that you voluntarily provide when you:</p>
+        <ul>
+            <li><strong>Complete KYC Forms:</strong> Name, address, date of birth, national ID/passport number, tax identification number, proof of address, income verification, source of funds documentation</li>
+            <li><strong>Submit Founder Applications:</strong> Company details, financial statements, business plans, founder backgrounds, equity structure, banking information</li>
+            <li><strong>Schedule Consultations:</strong> Contact information, investment interests, business needs</li>
+            <li><strong>Communicate with Us:</strong> Email correspondence, chat messages, phone call records</li>
+            <li><strong>Sign Agreements:</strong> Capital facilitation agreements (founders), confidential non-disclosure agreements (investors)</li>
+        </ul>
+
+        <h3>1.2 Information Collected Automatically</h3>
+        <ul>
+            <li><strong>Usage Data:</strong> IP address, browser type, device information, pages visited, time spent on pages, referring URLs</li>
+            <li><strong>Cookies:</strong> We use cookies and similar technologies to track activity and enhance user experience</li>
+            <li><strong>Analytics:</strong> Google Analytics data (anonymized where possible)</li>
+        </ul>
+
+        <h3>1.3 Information from Third Parties</h3>
+        <ul>
+            <li><strong>Verification Services:</strong> Background checks, credit reports, business verification data</li>
+            <li><strong>Payment Processors:</strong> Transaction data from banking partners</li>
+            <li><strong>Public Records:</strong> Business registrations, court records, regulatory filings (Bangladesh RJSC, tax authorities)</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+
+        <p>We use collected information for the following purposes:</p>
+
+        <h3>2.1 Core Business Operations</h3>
+        <ul>
+            <li>Processing investor KYC and founder applications</li>
+            <li>Facilitating investment transactions and capital raises</li>
+            <li>Conducting due diligence on companies and individuals</li>
+            <li>Managing investor-founder introductions and deal flow</li>
+            <li>Providing portfolio monitoring and reporting services</li>
+            <li>Administering capital facilitation agreements and NDAs</li>
+        </ul>
+
+        <h3>2.2 Fraud Prevention & Investor Protection</h3>
+        <ul>
+            <li>Verifying identities and preventing fraud</li>
+            <li>Monitoring for suspicious activities or financial crimes</li>
+            <li>Investigating potential breaches of agreements</li>
+            <li>Protecting against financial embezzlement or misrepresentation</li>
+        </ul>
+
+        <h3>2.3 Communication & Service Delivery</h3>
+        <ul>
+            <li>Sending transaction confirmations and updates</li>
+            <li>Providing investor education materials and newsletters</li>
+            <li>Responding to inquiries and providing customer support</li>
+            <li>Notifying you of deal opportunities (with consent)</li>
+        </ul>
+
+        <h3>2.4 Legal Compliance</h3>
+        <ul>
+            <li>Complying with Bangladesh financial regulations</li>
+            <li>Meeting anti-money laundering (AML) requirements</li>
+            <li>Responding to legal requests and regulatory inquiries</li>
+            <li>Maintaining required records for tax and regulatory purposes</li>
+        </ul>
+
+        <h2>3. How We Share Your Information</h2>
+
+        <div class="warning-box">
+            <p style="margin: 0;"><strong>Important:</strong> We never sell your personal information. We only share data as described below, with strict confidentiality measures.</p>
+        </div>
+
+        <h3>3.1 With Your Consent</h3>
+        <ul>
+            <li><strong>Investor-Founder Matching:</strong> With explicit consent, we share relevant investor profiles with founders and vice versa to facilitate potential transactions</li>
+            <li><strong>Deal Syndication:</strong> Sharing investment opportunities with qualified investors who have opted in</li>
+        </ul>
+
+        <h3>3.2 Service Providers</h3>
+        <p>We share information with trusted third-party service providers who assist us, including:</p>
+        <ul>
+            <li>Legal counsel for agreement drafting and compliance</li>
+            <li>Accounting firms for financial audits and tax services</li>
+            <li>Background check and verification services</li>
+            <li>Cloud storage providers (with encryption)</li>
+            <li>Payment processors and banking partners</li>
+            <li>Customer support platforms (Tawk.to)</li>
+        </ul>
+        <p><em>All service providers are contractually bound to maintain confidentiality and use data only for specified purposes.</em></p>
+
+        <h3>3.3 Legal Requirements</h3>
+        <p>We may disclose information when required by law, including:</p>
+        <ul>
+            <li>Response to court orders, subpoenas, or legal processes</li>
+            <li>Cooperation with law enforcement or regulatory investigations</li>
+            <li>Protection of our legal rights or defense against legal claims</li>
+            <li>Prevention of fraud, security threats, or illegal activity</li>
+        </ul>
+
+        <h3>3.4 Business Transfers</h3>
+        <p>If Capallo is involved in a merger, acquisition, or sale of assets, your information may be transferred. We will notify you before your information is transferred and becomes subject to a different privacy policy.</p>
+
+        <h2>4. Confidentiality Commitments</h2>
+
+        <h3>4.1 Investor Non-Disclosure Agreements (NDAs)</h3>
+        <p>Investors sign confidential non-disclosure agreements covering:</p>
+        <ul>
+            <li>Company financial information and business plans</li>
+            <li>Deal terms and proprietary business strategies</li>
+            <li>Founder personal information and company valuations</li>
+            <li>Any non-public information shared during due diligence</li>
+        </ul>
+
+        <h3>4.2 Founder Capital Facilitation Agreements</h3>
+        <p>Founders sign agreements that include confidentiality provisions protecting:</p>
+        <ul>
+            <li>Investor personal information and financial details</li>
+            <li>Investment thesis and strategic interests</li>
+            <li>Capallo's proprietary processes and methodologies</li>
+        </ul>
+
+        <h3>4.3 Internal Data Handling</h3>
+        <ul>
+            <li>Access to sensitive information is restricted to authorized personnel only</li>
+            <li>All team members sign confidentiality agreements</li>
+            <li>Data is stored in encrypted, secure systems with access logs</li>
+            <li>Regular security audits and compliance reviews</li>
+        </ul>
+
+        <h2>5. Data Security</h2>
+
+        <p>We implement appropriate technical and organizational measures to protect your information:</p>
+
+        <h3>Security Measures Include:</h3>
+        <ul>
+            <li><strong>Encryption:</strong> Data encrypted in transit (SSL/TLS) and at rest</li>
+            <li><strong>Access Controls:</strong> Role-based access with multi-factor authentication</li>
+            <li><strong>Secure Storage:</strong> Cloud infrastructure with enterprise-grade security (Google Cloud/AWS)</li>
+            <li><strong>Regular Audits:</strong> Periodic security assessments and vulnerability testing</li>
+            <li><strong>Incident Response:</strong> Defined procedures for detecting and responding to breaches</li>
+            <li><strong>Data Minimization:</strong> We collect only necessary information and delete data when no longer needed</li>
+        </ul>
+
+        <div class="warning-box">
+            <p style="margin: 0;"><strong>Disclaimer:</strong> While we implement industry-standard security measures, no system is 100% secure. We cannot guarantee absolute security of your information.</p>
+        </div>
+
+        <h2>6. Data Retention</h2>
+
+        <p>We retain your information for as long as necessary to fulfill the purposes outlined in this policy:</p>
+
+        <ul>
+            <li><strong>Active Relationships:</strong> Throughout your engagement with Capallo and for ongoing portfolio monitoring</li>
+            <li><strong>Legal Requirements:</strong> Minimum 7 years for financial records (Bangladesh tax law compliance)</li>
+            <li><strong>Investor Protection Framework:</strong> Records retained for duration of investment plus 3 years after exit</li>
+            <li><strong>Terminated Relationships:</strong> Essential records retained for legal/regulatory purposes; non-essential data deleted within 12 months</li>
+        </ul>
+
+        <h2>7. Your Rights and Choices</h2>
+
+        <h3>You have the following rights regarding your personal information:</h3>
+
+        <ul>
+            <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+            <li><strong>Deletion:</strong> Request deletion of your information (subject to legal retention requirements)</li>
+            <li><strong>Restriction:</strong> Request limitation on how we process your information</li>
+            <li><strong>Portability:</strong> Request transfer of your data to another service provider (where technically feasible)</li>
+            <li><strong>Objection:</strong> Object to processing of your information for certain purposes</li>
+            <li><strong>Withdraw Consent:</strong> Withdraw consent for marketing communications (does not affect previously consented processing)</li>
+        </ul>
+
+        <p><strong>To exercise these rights, contact us at:</strong> <a href="mailto:saleh.sazzad@capallo.co">saleh.sazzad@capallo.co</a></p>
+
+        <h2>8. Cookies and Tracking Technologies</h2>
+
+        <h3>We use the following types of cookies:</h3>
+
+        <ul>
+            <li><strong>Essential Cookies:</strong> Required for website functionality (cannot be disabled)</li>
+            <li><strong>Analytics Cookies:</strong> Google Analytics to understand website usage and improve services</li>
+            <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+            <li><strong>Marketing Cookies:</strong> Track conversions from advertising campaigns (with consent)</li>
+        </ul>
+
+        <p>You can control cookies through your browser settings. Note that disabling cookies may affect website functionality.</p>
+
+        <h2>9. Third-Party Links</h2>
+
+        <p>Our website may contain links to third-party websites (Google Forms, Calendly, LinkedIn, WhatsApp). We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.</p>
+
+        <h2>10. Children's Privacy</h2>
+
+        <p>Capallo's services are not directed to individuals under 18. We do not knowingly collect information from minors. If we discover we have collected information from a minor, we will delete it immediately.</p>
+
+        <h2>11. Bangladesh Data Protection Compliance</h2>
+
+        <p>While Bangladesh does not have comprehensive data protection legislation equivalent to GDPR, we voluntarily adopt international best practices and comply with:</p>
+        <ul>
+            <li>Bangladesh Bank guidelines on financial data protection</li>
+            <li>Digital Security Act, 2018 (relevant provisions)</li>
+            <li>Information and Communication Technology Act, 2006</li>
+            <li>Sector-specific regulations applicable to financial services</li>
+        </ul>
+
+        <h2>12. International Data Transfers</h2>
+
+        <p>Your information may be transferred to and processed in countries outside Bangladesh (e.g., cloud servers in Singapore, USA). We ensure appropriate safeguards are in place, including:</p>
+        <ul>
+            <li>Use of reputable cloud providers with strong security measures</li>
+            <li>Contractual data protection clauses</li>
+            <li>Encryption of data in transit and at rest</li>
+        </ul>
+
+        <h2>13. Changes to This Privacy Policy</h2>
+
+        <p>We may update this Privacy Policy periodically. We will notify you of significant changes by:</p>
+        <ul>
+            <li>Posting the updated policy on our website with a new "Last Updated" date</li>
+            <li>Sending email notifications to registered users</li>
+            <li>Displaying prominent notices on our website</li>
+        </ul>
+
+        <p>Your continued use of our services after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>14. Contact Information</h2>
+
+        <p>For questions, concerns, or requests regarding this Privacy Policy or our data practices:</p>
+
+        <div class="highlight-box">
+            <p><strong>Capallo</strong><br>
+            Email: <a href="mailto:saleh.sazzad@capallo.co">saleh.sazzad@capallo.co</a><br>
+            Phone: +880 1645-823853<br>
+            Location: Dhaka, Bangladesh<br>
+            Website: <a href="https://capallo.co">capallo.co</a></p>
+        </div>
+
+        <h2>15. Dispute Resolution</h2>
+
+        <p>Any disputes arising from this Privacy Policy or our data practices will be governed by the laws of Bangladesh and subject to the jurisdiction of courts in Dhaka, Bangladesh.</p>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid #e5e7eb;">
+
+        <p style="font-size: 0.9rem; color: #6b7280;"><em>By using Capallo's services, you acknowledge that you have read, understood, and agree to this Privacy Policy.</em></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Capallo. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;"><a href="https://capallo.co" style="color: #9ca3af;">Back to Home</a> | <a href="terms-of-service.html" style="color: #9ca3af;">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
