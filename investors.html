@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest with Capallo — Private Market Access for Serious Investors</title>
+    <meta name="description" content="Capallo connects conservative investors with one carefully vetted, cash-flow positive company at a time. Minimum $5,000. Fraud-protected. Bangladesh's most disciplined venture platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0a1f3d;
+            --navy-mid: #0f3460;
+            --navy-light: #1a3a5c;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --gold-pale: #f5edda;
+            --cream: #faf8f4;
+            --white: #ffffff;
+            --text-dark: #0a1f3d;
+            --text-mid: #3d5470;
+            --text-light: #6b7f96;
+            --border: #d9e2ed;
+            --shadow-sm: 0 2px 12px rgba(10,31,61,0.06);
+            --shadow-md: 0 8px 32px rgba(10,31,61,0.10);
+            --shadow-lg: 0 20px 60px rgba(10,31,61,0.14);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(10,31,61,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.1rem 2.5rem;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 0.75rem;
+            text-decoration: none;
+        }
+        .nav-logo img { height: 34px; width: auto; }
+        .nav-links-wrap { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links-wrap a {
+            color: rgba(255,255,255,0.7); text-decoration: none;
+            font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links-wrap a:hover { color: var(--gold-light); }
+        .nav-cta-btn {
+            background: var(--gold); color: var(--navy);
+            padding: 0.6rem 1.4rem; border-radius: 4px;
+            font-weight: 600; font-size: 0.875rem;
+            text-decoration: none; transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .nav-cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding: 120px 2.5rem 80px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,76,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 80% at 10% 80%, rgba(15,52,96,0.8) 0%, transparent 60%);
+        }
+        .hero-grid-bg {
+            position: absolute; inset: 0; opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 420px;
+            gap: 5rem; align-items: center;
+            position: relative; z-index: 1;
+        }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--gold-light);
+            padding: 0.45rem 1rem; border-radius: 2px;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 2rem;
+        }
+        .hero-eyebrow::before {
+            content: ''; width: 6px; height: 6px;
+            background: var(--gold); border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            font-weight: 600; line-height: 1.15;
+            color: var(--white); margin-bottom: 1.5rem;
+        }
+        .hero h1 em {
+            font-style: italic; color: var(--gold-light);
+        }
+        .hero-sub {
+            font-size: 1.05rem; color: rgba(255,255,255,0.65);
+            line-height: 1.8; max-width: 540px; margin-bottom: 2.5rem;
+        }
+        .hero-trust {
+            display: flex; gap: 2rem; flex-wrap: wrap;
+        }
+        .trust-pill {
+            display: flex; align-items: center; gap: 0.5rem;
+            color: rgba(255,255,255,0.55); font-size: 0.82rem;
+        }
+        .trust-pill span { color: var(--gold); font-size: 1rem; }
+
+        /* Hero card */
+        .hero-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(201,168,76,0.25);
+            border-radius: 8px; padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .hero-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; color: var(--gold-light);
+            margin-bottom: 0.5rem;
+        }
+        .hero-card-sub {
+            font-size: 0.82rem; color: rgba(255,255,255,0.4);
+            margin-bottom: 2rem; padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-stat-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1.5rem; margin-bottom: 2rem;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 700;
+            color: var(--white); display: block;
+        }
+        .hero-stat-label {
+            font-size: 0.72rem; color: rgba(255,255,255,0.4);
+            text-transform: uppercase; letter-spacing: 0.8px;
+        }
+        .hero-stat-divider {
+            width: 1px; background: rgba(255,255,255,0.1);
+        }
+        .hero-card-cta {
+            display: block; width: 100%; text-align: center;
+            background: var(--gold); color: var(--navy);
+            padding: 1rem; border-radius: 4px;
+            font-weight: 700; font-size: 0.95rem;
+            text-decoration: none; transition: all 0.2s;
+            margin-bottom: 0.75rem;
+        }
+        .hero-card-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+        }
+        .hero-card-cta-secondary {
+            display: block; width: 100%; text-align: center;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.7);
+            padding: 0.85rem; border-radius: 4px;
+            font-weight: 500; font-size: 0.875rem;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .hero-card-cta-secondary:hover {
+            border-color: rgba(255,255,255,0.4);
+            color: white;
+        }
+        .hero-card-note {
+            text-align: center; margin-top: 1rem;
+            font-size: 0.75rem; color: rgba(255,255,255,0.3);
+        }
+
+        /* ── WHAT YOU GET ── */
+        .promise-section {
+            padding: 100px 2.5rem;
+            background: var(--cream);
+        }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-eyebrow {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 600; color: var(--navy);
+            margin-bottom: 1rem; line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.05rem; color: var(--text-mid);
+            max-width: 600px; line-height: 1.75;
+        }
+        .promise-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 2px; margin-top: 4rem;
+            border: 2px solid var(--border); border-radius: 8px;
+            overflow: hidden;
+        }
+        .promise-card {
+            background: white; padding: 2.5rem 2rem;
+            position: relative; transition: background 0.3s;
+        }
+        .promise-card:hover { background: var(--gold-pale); }
+        .promise-card + .promise-card {
+            border-left: 2px solid var(--border);
+        }
+        .promise-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem; font-weight: 700;
+            color: var(--border); line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .promise-card:hover .promise-num { color: var(--gold-light); }
+        .promise-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem; color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .promise-card-text {
+            font-size: 0.9rem; color: var(--text-mid); line-height: 1.7;
+        }
+
+        /* ── JOURNEY TIMELINE ── */
+        .journey-section {
+            padding: 100px 2.5rem;
+            background: var(--navy);
+            position: relative; overflow: hidden;
+        }
+        .journey-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .journey-section .section-title { color: var(--white); }
+        .journey-section .section-subtitle { color: rgba(255,255,255,0.55); }
+        .journey-section .section-eyebrow { color: var(--gold); }
+
+        .timeline {
+            margin-top: 5rem;
+            position: relative;
+        }
+        .timeline-line {
+            position: absolute; top: 28px; left: 28px; right: 28px;
+            height: 1px; background: rgba(201,168,76,0.2);
+            display: none;
+        }
+        .timeline-steps {
+            display: grid; grid-template-columns: repeat(5,1fr);
+            gap: 1.5rem; position: relative;
+        }
+        .timeline-step {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; position: relative;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .timeline-step.visible { opacity: 1; transform: translateY(0); }
+        .step-node {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: rgba(201,168,76,0.1);
+            border: 1.5px solid rgba(201,168,76,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem; font-weight: 600; color: var(--gold);
+            margin-bottom: 1.25rem; position: relative; z-index: 1;
+            transition: all 0.3s; cursor: default;
+            flex-shrink: 0;
+        }
+        .timeline-step:hover .step-node {
+            background: var(--gold); color: var(--navy);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 8px rgba(201,168,76,0.1);
+        }
+        .step-connector {
+            position: absolute; top: 28px; left: calc(50% + 28px);
+            right: calc(-50% + 28px); height: 1px;
+            background: rgba(201,168,76,0.2);
+        }
+        .timeline-step:last-child .step-connector { display: none; }
+        .step-label {
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
+            color: var(--gold-light); margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem; color: white;
+            margin-bottom: 0.5rem; line-height: 1.3;
+        }
+        .step-desc {
+            font-size: 0.78rem; color: rgba(255,255,255,0.4);
+            line-height: 1.6;
+        }
+        .step-tag {
+            display: inline-block; margin-top: 0.75rem;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid rgba(201,168,76,0.2);
+            color: var(--gold); padding: 0.2rem 0.6rem;
+            border-radius: 2px; font-size: 0.68rem;
+            font-weight: 600; letter-spacing: 0.5px;
+        }
+
+        /* ── PROTECTION ── */
+        .protection-section {
+            padding: 100px 2.5rem;
+            background: white;
+        }
+        .protection-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 5rem; align-items: start;
+        }
+        .protection-left {}
+        .protection-right {}
+        .protection-box {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 6px; padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .protection-box-title {
+            font-weight: 700; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .protection-box.covered .protection-box-title { color: #16a34a; }
+        .protection-box.not-covered .protection-box-title { color: var(--text-light); }
+        .protection-item {
+            display: flex; gap: 0.75rem; align-items: flex-start;
+            padding: 0.6rem 0; font-size: 0.88rem; color: var(--text-mid);
+            border-bottom: 1px solid var(--border);
+        }
+        .protection-item:last-child { border-bottom: none; }
+        .protection-item .icon { flex-shrink: 0; font-size: 1rem; margin-top: 0.05rem; }
+        .protection-note {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 6px; padding: 1.5rem;
+            font-size: 0.875rem; color: #78350f; line-height: 1.7;
+        }
+
+        /* ── SERVICES / PRICING ── */
+        .services-section {
+            padding: 100px 2.5rem;
+            background: var(--cream);
+        }
+        .services-intro {
+            max-width: 1200px; margin: 0 auto 5rem;
+        }
+        .services-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: white; border: 1px solid var(--border);
+            border-radius: 6px; padding: 2.5rem;
+            position: relative; transition: all 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .service-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+        .service-stage {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        .service-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        .service-tagline {
+            font-size: 0.875rem; color: var(--text-mid);
+            margin-bottom: 2rem; line-height: 1.6;
+        }
+        .service-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; font-weight: 700; color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+        .service-price-note {
+            font-size: 0.78rem; color: var(--text-light);
+            margin-bottom: 2rem; padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-features { list-style: none; flex: 1; }
+        .service-features li {
+            display: flex; gap: 0.75rem; align-items: flex-start;
+            padding: 0.6rem 0; font-size: 0.875rem; color: var(--text-mid);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .service-features li:last-child { border-bottom: none; }
+        .service-features .chk { color: var(--gold); flex-shrink: 0; font-weight: 700; }
+        .service-btn {
+            display: block; width: 100%; text-align: center;
+            background: var(--navy); color: white;
+            padding: 0.9rem; border-radius: 4px;
+            font-weight: 600; font-size: 0.875rem;
+            text-decoration: none; transition: all 0.2s;
+            margin-top: 2rem;
+        }
+        .service-btn:hover { background: var(--navy-light); }
+        .service-card.highlighted { border-color: var(--gold); }
+        .service-card.highlighted .service-btn {
+            background: var(--gold); color: var(--navy);
+        }
+        .service-card.highlighted .service-btn:hover {
+            background: var(--gold-light);
+        }
+        .service-badge {
+            position: absolute; top: -12px; left: 2rem;
+            background: var(--gold); color: var(--navy);
+            padding: 0.3rem 0.9rem; border-radius: 2px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Exit monetization callout */
+        .exit-callout {
+            max-width: 1200px; margin: 3rem auto 0;
+            background: var(--navy);
+            border-radius: 8px; padding: 2.5rem 3rem;
+            display: grid; grid-template-columns: 1fr auto;
+            gap: 3rem; align-items: center;
+        }
+        .exit-callout-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; color: white; margin-bottom: 0.5rem;
+        }
+        .exit-callout-text {
+            font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7;
+        }
+        .exit-callout-btn {
+            background: var(--gold); color: var(--navy);
+            padding: 1rem 2rem; border-radius: 4px;
+            font-weight: 700; font-size: 0.9rem;
+            text-decoration: none; white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .exit-callout-btn:hover {
+            background: var(--gold-light); transform: translateY(-2px);
+        }
+
+        /* ── SOCIAL PROOF ── */
+        .proof-section {
+            padding: 100px 2.5rem;
+            background: white;
+        }
+        .proof-inner { max-width: 1200px; margin: 0 auto; }
+        .proof-numbers {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 0; border: 1px solid var(--border); border-radius: 6px;
+            overflow: hidden; margin-bottom: 4rem;
+        }
+        .proof-num-card {
+            padding: 2.5rem 2rem; text-align: center;
+            border-right: 1px solid var(--border);
+        }
+        .proof-num-card:last-child { border-right: none; }
+        .proof-num-val {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; font-weight: 700; color: var(--navy);
+            display: block; margin-bottom: 0.3rem;
+        }
+        .proof-num-label {
+            font-size: 0.8rem; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.8px;
+        }
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--cream); border: 1px solid var(--border);
+            border-radius: 6px; padding: 2rem;
+        }
+        .testimonial-quote {
+            font-size: 0.9rem; color: var(--text-mid);
+            line-height: 1.8; margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .testimonial-author {
+            font-size: 0.78rem; font-weight: 700; color: var(--navy);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .testimonial-tag {
+            display: inline-block; margin-top: 0.4rem;
+            background: rgba(201,168,76,0.15); color: var(--gold);
+            padding: 0.2rem 0.5rem; border-radius: 2px;
+            font-size: 0.68rem; font-weight: 600;
+        }
+
+        /* ── FINAL CTA ── */
+        .final-cta {
+            padding: 100px 2.5rem;
+            background: var(--navy);
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
+        }
+        .final-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 600; color: white; margin-bottom: 1rem;
+        }
+        .final-cta p {
+            font-size: 1.05rem; color: rgba(255,255,255,0.55);
+            margin-bottom: 3rem; line-height: 1.7;
+        }
+        .final-cta-btns {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+        }
+        .final-btn-primary {
+            background: var(--gold); color: var(--navy);
+            padding: 1.1rem 2.5rem; border-radius: 4px;
+            font-weight: 700; font-size: 1rem;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .final-btn-primary:hover {
+            background: var(--gold-light); transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+        }
+        .final-btn-secondary {
+            background: transparent; color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.1rem 2.5rem; border-radius: 4px;
+            font-weight: 500; font-size: 1rem;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .final-btn-secondary:hover {
+            color: white; border-color: rgba(255,255,255,0.5);
+        }
+        .final-note {
+            margin-top: 2rem; font-size: 0.82rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ── FOOTER STRIP ── */
+        .footer-strip {
+            background: #06132a; padding: 2rem 2.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1rem;
+        }
+        .footer-strip p { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+        .footer-strip a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.8rem; }
+        .footer-strip a:hover { color: var(--gold); }
+        .footer-links { display: flex; gap: 2rem; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-card { max-width: 480px; }
+            .timeline-steps { grid-template-columns: repeat(3,1fr); }
+            .timeline-step:nth-child(3) .step-connector,
+            .timeline-step:nth-child(5) .step-connector { display: none; }
+            .protection-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .proof-numbers { grid-template-columns: repeat(2,1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links-wrap a:not(.nav-cta-btn) { display: none; }
+            .promise-grid { grid-template-columns: 1fr; }
+            .promise-card + .promise-card { border-left: none; border-top: 2px solid var(--border); }
+            .timeline-steps { grid-template-columns: 1fr 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .exit-callout { grid-template-columns: 1fr; gap: 1.5rem; }
+            .proof-numbers { grid-template-columns: 1fr 1fr; }
+            .hero-stat-row { grid-template-columns: 1fr; }
+            .hero-stat-divider { display: none; }
+        }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .fade-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="https://capallo.co" class="nav-logo">
+            <img src="https://i.imgur.com/gygdJtU.png" alt="Capallo">
+        </a>
+        <div class="nav-links-wrap">
+            <a href="#journey">How It Works</a>
+            <a href="#protection">Protection</a>
+            <a href="#services">Services</a>
+            <a href="https://blog.capallo.co">Insights</a>
+            <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" target="_blank">Schedule a Call</a>
+            <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="nav-cta-btn" target="_blank">Begin Your Profile →</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-eyebrow">Private Market Access · Bangladesh</div>
+            <h1>One vetted company.<br><em>Your capital, protected.</em></h1>
+            <p class="hero-sub">
+                We don't send you a list of 20 deals. We review your profile, match you to <em>one</em> carefully selected, cash-flow positive company — and stay accountable from day one to the day you exit.
+            </p>
+            <div class="hero-trust">
+                <div class="trust-pill"><span>✦</span> Minimum $5,000</div>
+                <div class="trust-pill"><span>✦</span> Fraud-protected principal</div>
+                <div class="trust-pill"><span>✦</span> 15–25% target annual return</div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-card">
+                <div class="hero-card-title">Active Deal Window</div>
+                <div class="hero-card-sub">1 opportunity currently open · Limited allocation</div>
+                <div class="hero-stat-row">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">$1.2M+</span>
+                        <span class="hero-stat-label">Deployed</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">3</span>
+                        <span class="hero-stat-label">Companies Funded</span>
+                    </div>
+                </div>
+                <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="hero-card-cta" target="_blank">
+                    Begin Investor Profile — 8 minutes
+                </a>
+                <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="hero-card-cta-secondary" target="_blank">
+                    Prefer a call first? Book 25 min →
+                </a>
+                <p class="hero-card-note">Reviewed within 48 hours · No commitment required</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise-section" id="promise">
+    <div class="section-inner">
+        <div class="fade-up">
+            <div class="section-eyebrow">Why Capallo</div>
+            <h2 class="section-title">A different kind of<br>investment partnership</h2>
+            <p class="section-subtitle">Built for conservative investors who want private market returns without the chaos of unstructured angel investing.</p>
+        </div>
+        <div class="promise-grid fade-up">
+            <div class="promise-card">
+                <div class="promise-num">01</div>
+                <div class="promise-card-title">One Deal, Not Twenty</div>
+                <p class="promise-card-text">We eliminate analysis paralysis. After reviewing your profile, we recommend one specific opportunity matched to your risk tolerance and capital size. You evaluate it deeply, not broadly.</p>
+            </div>
+            <div class="promise-card">
+                <div class="promise-num">02</div>
+                <div class="promise-card-title">Fraud Protection, In Writing</div>
+                <p class="promise-card-text">If founders commit financial embezzlement, fabricate financials, or abandon the company — your principal is returned at bank savings rate. This is contractual, not a promise.</p>
+            </div>
+            <div class="promise-card">
+                <div class="promise-num">03</div>
+                <div class="promise-card-title">Institutional Infrastructure</div>
+                <p class="promise-card-text">Monthly portfolio reports. Legal documentation under your name. Group founder sessions. Exit facilitation. We run the process so you don't have to chase anyone for updates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section class="journey-section" id="journey">
+    <div class="section-inner">
+        <div class="fade-up">
+            <div class="section-eyebrow">The Investment Journey</div>
+            <h2 class="section-title">Exactly what happens,<br>step by step</h2>
+            <p class="section-subtitle">From your first profile submission to the day you receive your exit — here is the complete picture.</p>
+        </div>
+        <div class="timeline fade-up">
+            <div class="timeline-steps">
+                <div class="timeline-step">
+                    <div class="step-node">1</div>
+                    <div class="step-connector"></div>
+                    <div class="step-label">Week 1</div>
+                    <div class="step-title">Investor Profile & KYC</div>
+                    <div class="step-desc">Complete your 8-minute investor profile. We assess your risk tolerance, investment goals, and capital availability.</div>
+                    <span class="step-tag">48hr review</span>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">2</div>
+                    <div class="step-connector"></div>
+                    <div class="step-label">Week 1–2</div>
+                    <div class="step-title">Profile Approval & Deal Match</div>
+                    <div class="step-desc">We categorise your risk profile and match you to one active deal. No shortlists — one focused recommendation.</div>
+                    <span class="step-tag">Personalised</span>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">3</div>
+                    <div class="step-connector"></div>
+                    <div class="step-label">Week 2–3</div>
+                    <div class="step-title">Due Diligence Access</div>
+                    <div class="step-desc">You receive structured access to the company's data room — financials, business model, legal docs, and founder track record.</div>
+                    <span class="step-tag">Full transparency</span>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">4</div>
+                    <div class="step-connector"></div>
+                    <div class="step-label">Week 3–4</div>
+                    <div class="step-title">Founder Session & Confirmation</div>
+                    <div class="step-desc">Group in-person session with the founder. Ask questions, verify operations, meet the team. Then confirm your investment legally.</div>
+                    <span class="step-tag">In-person</span>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">5</div>
+                    <div class="step-connector"></div>
+                    <div class="step-label">Ongoing</div>
+                    <div class="step-title">Monitor, Report & Exit</div>
+                    <div class="step-desc">Monthly performance reports. Quarterly updates. Active exit facilitation when your liquidity window opens (typically 3–7 years).</div>
+                    <span class="step-tag">Managed exit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROTECTION -->
+<section class="protection-section" id="protection">
+    <div class="protection-inner">
+        <div class="fade-up">
+            <div class="section-eyebrow">Investor Protection</div>
+            <h2 class="section-title">We protect against fraud.<br>Not market risk.</h2>
+            <p class="section-subtitle" style="margin-bottom: 2.5rem;">This distinction matters. Private markets carry real risk — and we don't pretend otherwise. But we do guarantee your principal if founders act dishonestly.</p>
+            <div class="protection-box covered">
+                <div class="protection-box-title">✓ &nbsp;Covered by Capallo's Protection Framework</div>
+                <div class="protection-item"><span class="icon">🛡</span><span>Financial embezzlement or misappropriation of investor funds</span></div>
+                <div class="protection-item"><span class="icon">🛡</span><span>Fabricated or fraudulent financial statements submitted to investors</span></div>
+                <div class="protection-item"><span class="icon">🛡</span><span>Founder abandonment with capital flight out of Bangladesh</span></div>
+                <div class="protection-item"><span class="icon">🛡</span><span>Principal returned at Bangladesh bank savings rate for documented fraud</span></div>
+            </div>
+            <div class="protection-box not-covered">
+                <div class="protection-box-title">✗ &nbsp;Not Covered (Market Risk)</div>
+                <div class="protection-item"><span class="icon">⚖</span><span>Genuine business failure due to market conditions</span></div>
+                <div class="protection-item"><span class="icon">⚖</span><span>Founders who tried in good faith but couldn't succeed</span></div>
+                <div class="protection-item"><span class="icon">⚖</span><span>Poor management decisions made transparently</span></div>
+            </div>
+        </div>
+        <div class="fade-up">
+            <div class="section-eyebrow">How It's Funded</div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 1rem;">A dedicated risk reserve from our profits</h2>
+            <p style="color: var(--text-mid); line-height: 1.8; font-size: 0.95rem; margin-bottom: 2rem;">Inspired by Bangladesh's bank Liquidity Coverage Ratio (10–20%), Capallo maintains a dedicated risk reserve funded from our own revenues — not investor capital. Our goal is to maintain near 100% coverage for every active investment.</p>
+            <div class="protection-note">
+                <strong>Our mitigation strategy:</strong> We only work with experienced founders running cash-flow positive businesses. We visit headquarters. We review 3 years of financials. We interview the team. By the time a deal reaches you, it has already passed our internal investment committee. Most applications are declined.
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <div class="section-eyebrow" style="margin-bottom: 1rem;">Investor Eligibility</div>
+                <div style="background: var(--cream); border: 1px solid var(--border); border-radius: 6px; padding: 2rem;">
+                    <p style="font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem;">Capallo is intended for sophisticated investors who understand that private market investing involves meaningful risk, including total loss of capital. By applying, you confirm:</p>
+                    <div class="protection-item" style="border-bottom: 1px solid var(--border); padding: 0.6rem 0;"><span class="icon" style="color: var(--navy);">→</span><span style="font-size: 0.875rem; color: var(--text-mid);">You can afford to lose the full amount invested</span></div>
+                    <div class="protection-item" style="border-bottom: 1px solid var(--border); padding: 0.6rem 0;"><span class="icon" style="color: var(--navy);">→</span><span style="font-size: 0.875rem; color: var(--text-mid);">You understand capital may be locked for 3–7+ years</span></div>
+                    <div class="protection-item" style="padding: 0.6rem 0;"><span class="icon" style="color: var(--navy);">→</span><span style="font-size: 0.875rem; color: var(--text-mid);">You will conduct your own due diligence in addition to ours</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES / PRICING -->
+<section class="services-section" id="services">
+    <div class="services-intro fade-up">
+        <div class="section-eyebrow">Investor Services</div>
+        <h2 class="section-title">What you pay for,<br>and when you pay it</h2>
+        <p class="section-subtitle">Three services tied to three moments in your investment lifecycle. Not subscriptions — stages of a relationship.</p>
+    </div>
+    <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card fade-up">
+            <div class="service-stage">Stage 1 · Before You Invest</div>
+            <div class="service-name">Venture Education</div>
+            <div class="service-tagline">Become a confident private market investor. Monthly in-person classes in Gulshan-1 with real deal case studies.</div>
+            <div class="service-price">$250</div>
+            <div class="service-price-note">One-time · Lifetime membership · No future fees</div>
+            <ul class="service-features">
+                <li><span class="chk">✦</span>Monthly in-person classes, Gulshan-1</li>
+                <li><span class="chk">✦</span>Weekly deal evaluation newsletter</li>
+                <li><span class="chk">✦</span>How to read financials & term sheets</li>
+                <li><span class="chk">✦</span>Access to Capallo investor community</li>
+                <li><span class="chk">✦</span>Priority deal access for members</li>
+            </ul>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="service-btn" target="_blank">Enroll in Venture School</a>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card highlighted fade-up">
+            <div class="service-badge">Most Active</div>
+            <div class="service-stage">Stage 2 · After You Invest</div>
+            <div class="service-name">Portfolio Monitoring</div>
+            <div class="service-tagline">We watch your investment so you don't have to chase anyone. Monthly reports, red flag alerts, and strategic guidance.</div>
+            <div class="service-price">$50<span style="font-size:1rem; font-weight:400; color:var(--text-light);">/month</span></div>
+            <div class="service-price-note">Per active investment · Cancel when you exit</div>
+            <ul class="service-features">
+                <li><span class="chk">✦</span>Monthly portfolio performance report</li>
+                <li><span class="chk">✦</span>Company financial health tracking</li>
+                <li><span class="chk">✦</span>Red flag & risk alerts</li>
+                <li><span class="chk">✦</span>Quarterly founder update calls</li>
+                <li><span class="chk">✦</span>Strategic recommendations</li>
+            </ul>
+            <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="service-btn" target="_blank">Discuss Monitoring →</a>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card fade-up">
+            <div class="service-stage">Stage 3 · When You Exit</div>
+            <div class="service-name">Exit Facilitation</div>
+            <div class="service-tagline">We actively find your buyer, negotiate your terms, and execute the transaction. You pay only when you receive liquidity.</div>
+            <div class="service-price">20%</div>
+            <div class="service-price-note">Of liquidity received · Only on successful exit · No upfront fee</div>
+            <ul class="service-features">
+                <li><span class="chk">✦</span>Exit strategy development (IPO, M&A, buyback)</li>
+                <li><span class="chk">✦</span>Strategic buyer identification</li>
+                <li><span class="chk">✦</span>Valuation & negotiation support</li>
+                <li><span class="chk">✦</span>Legal documentation & transfer</li>
+                <li><span class="chk">✦</span>Transaction execution management</li>
+            </ul>
+            <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="service-btn" target="_blank">Discuss Exit Options →</a>
+        </div>
+    </div>
+
+    <!-- Exit Monetization Callout -->
+    <div class="exit-callout fade-up">
+        <div>
+            <div class="exit-callout-title">Why 20% on exit makes sense for you</div>
+            <p class="exit-callout-text">We earn nothing on exit facilitation until you receive your money. This aligns our incentives completely with yours — the more you make, the more we make. Our team actively works to maximise your exit value, not just close a transaction.</p>
+        </div>
+        <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="exit-callout-btn" target="_blank">Ask About Exit →</a>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section" id="proof">
+    <div class="proof-inner">
+        <div class="fade-up" style="margin-bottom: 4rem;">
+            <div class="section-eyebrow">Track Record</div>
+            <h2 class="section-title">Numbers that matter</h2>
+        </div>
+        <div class="proof-numbers fade-up">
+            <div class="proof-num-card">
+                <span class="proof-num-val">$1.2M+</span>
+                <span class="proof-num-label">Capital Deployed</span>
+            </div>
+            <div class="proof-num-card">
+                <span class="proof-num-val">3</span>
+                <span class="proof-num-label">Companies Funded</span>
+            </div>
+            <div class="proof-num-card">
+                <span class="proof-num-val">15–25%</span>
+                <span class="proof-num-label">Target Annual Returns</span>
+            </div>
+            <div class="proof-num-card">
+                <span class="proof-num-val">48h</span>
+                <span class="proof-num-label">KYC Review Time</span>
+            </div>
+        </div>
+        <div class="testimonials-grid fade-up">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Saleh is doing wonderful work — especially the creative financing structures. Wakalah, quasi-equity, quasi-debt alongside Shariah financing. It's value alignment for the next generation of venture investors."</p>
+                <div class="testimonial-author">Prominent Angel Investor</div>
+                <span class="testimonial-tag">Angel Investor</span>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"I was skeptical about private market investing. Once I learned about the impact I could create, it completely changed my perception. Capallo gave me the structure I needed to feel confident."</p>
+                <div class="testimonial-author">Working Professional</div>
+                <span class="testimonial-tag">Corporate Executive</span>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Capallo is a powerhouse for our company's growth. We're one of their portfolio companies and genuinely grateful for the opportunity to connect with supportive, engaged investors."</p>
+                <div class="testimonial-author">Growth-Stage Founder</div>
+                <span class="testimonial-tag">Founder</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="final-cta-inner">
+        <div class="section-eyebrow" style="color: var(--gold); margin-bottom: 1.5rem;">Ready to Begin</div>
+        <h2>Your investor profile.<br>8 minutes. No commitment.</h2>
+        <p>Complete your profile and we'll review it within 48 hours. If there's a deal that matches your profile, we'll reach out personally. If not, we'll tell you honestly.</p>
+        <div class="final-cta-btns">
+            <a href="https://forms.gle/sHqpWhoeJGkrmw9L6" class="final-btn-primary" target="_blank">Begin Investor Profile →</a>
+            <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="final-btn-secondary" target="_blank">Schedule a Call First</a>
+        </div>
+        <p class="final-note">Minimum $5,000 · Reviewed within 48 hours · No commitment at this stage</p>
+    </div>
+</section>
+
+<!-- FOOTER STRIP -->
+<div class="footer-strip">
+    <p>© 2026 Capallo. Bangladesh's first fraud-protected venture platform. <a href="https://capallo.co">capallo.co</a></p>
+    <div class="footer-links">
+        <a href="https://capallo.co/privacy_policy.html">Privacy</a>
+        <a href="https://capallo.co/terms_of_service.html">Terms</a>
+        <a href="https://capallo.co/#risk-disclaimer">Risk Disclaimer</a>
+        <a href="mailto:saleh.sazzad@capallo.co">Contact</a>
+    </div>
+</div>
+
+<script>
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Timeline steps staggered
+    const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const steps = entry.target.querySelectorAll('.timeline-step');
+                steps.forEach((step, i) => {
+                    setTimeout(() => step.classList.add('visible'), i * 150);
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.timeline').forEach(el => stepObserver.observe(el));
+</script>
+</body>
+</html>
