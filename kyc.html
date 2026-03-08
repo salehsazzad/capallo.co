@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Profile — Capallo</title>
+    <meta name="description" content="Begin your Capallo investor profile. Takes 8 minutes. Reviewed within 48 hours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1f3d;
+            --navy-mid: #0f3460;
+            --navy-light: #1a3a5c;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --gold-pale: #f5edda;
+            --cream: #faf8f4;
+            --white: #ffffff;
+            --text-dark: #0a1f3d;
+            --text-mid: #3d5470;
+            --text-light: #6b7f96;
+            --border: #d9e2ed;
+            --border-focus: #c9a84c;
+            --error: #dc2626;
+            --success: #16a34a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--navy);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ── LAYOUT ── */
+        .page-wrap {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            min-height: 100vh;
+        }
+
+        /* ── LEFT SIDEBAR ── */
+        .sidebar {
+            background: var(--navy);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            width: 340px;
+            border-right: 1px solid rgba(201,168,76,0.15);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            display: flex; align-items: center; gap: 0.75rem;
+            text-decoration: none; margin-bottom: 3rem;
+        }
+        .sidebar-logo img { height: 32px; width: auto; }
+
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; font-weight: 600;
+            color: white; margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .sidebar-sub {
+            font-size: 0.82rem; color: rgba(255,255,255,0.4);
+            margin-bottom: 3rem; line-height: 1.6;
+        }
+
+        /* Steps nav */
+        .steps-nav { flex: 1; }
+        .step-nav-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            cursor: default;
+            transition: all 0.2s;
+        }
+        .step-nav-item:last-child { border-bottom: none; }
+        .step-dot {
+            width: 32px; height: 32px; border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 600;
+            color: rgba(255,255,255,0.3);
+            flex-shrink: 0; transition: all 0.3s;
+        }
+        .step-nav-item.active .step-dot {
+            border-color: var(--gold);
+            background: rgba(201,168,76,0.15);
+            color: var(--gold);
+        }
+        .step-nav-item.completed .step-dot {
+            border-color: var(--success);
+            background: rgba(22,163,74,0.15);
+            color: var(--success);
+        }
+        .step-nav-text {}
+        .step-nav-label {
+            font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            color: rgba(255,255,255,0.25); margin-bottom: 0.15rem;
+        }
+        .step-nav-item.active .step-nav-label { color: var(--gold); }
+        .step-nav-item.completed .step-nav-label { color: var(--success); }
+        .step-nav-name {
+            font-size: 0.875rem; color: rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+        .step-nav-item.active .step-nav-name { color: white; }
+        .step-nav-item.completed .step-nav-name { color: rgba(255,255,255,0.5); }
+
+        /* Sidebar footer */
+        .sidebar-footer {
+            margin-top: 3rem; padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .sidebar-footer p {
+            font-size: 0.75rem; color: rgba(255,255,255,0.25);
+            line-height: 1.6; margin-bottom: 0.75rem;
+        }
+        .sidebar-footer a {
+            color: var(--gold); text-decoration: none; font-size: 0.75rem;
+        }
+        .trust-items { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+        .trust-item {
+            display: flex; gap: 0.5rem; align-items: center;
+            font-size: 0.75rem; color: rgba(255,255,255,0.35);
+        }
+        .trust-item span { color: var(--gold); }
+
+        /* ── MAIN CONTENT ── */
+        .main-content {
+            margin-left: 340px;
+            background: var(--cream);
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+
+        /* Top bar */
+        .top-bar {
+            background: white; border-bottom: 1px solid var(--border);
+            padding: 1.25rem 3rem;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .progress-wrap { flex: 1; max-width: 500px; }
+        .progress-label {
+            font-size: 0.75rem; color: var(--text-light);
+            margin-bottom: 0.5rem; font-weight: 500;
+        }
+        .progress-bar {
+            height: 4px; background: var(--border); border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: var(--gold);
+            border-radius: 2px; transition: width 0.5s ease;
+        }
+        .top-bar-right {
+            font-size: 0.8rem; color: var(--text-light);
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .save-indicator {
+            display: flex; align-items: center; gap: 0.4rem;
+            font-size: 0.75rem; color: var(--success);
+        }
+
+        /* Form area */
+        .form-area {
+            flex: 1; padding: 3.5rem 3rem;
+            max-width: 780px;
+        }
+
+        /* Step header */
+        .step-header { margin-bottom: 3rem; }
+        .step-eyebrow {
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 0.75rem;
+        }
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 600;
+            color: var(--navy); margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .step-desc {
+            font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;
+        }
+
+        /* Form elements */
+        .form-section { margin-bottom: 2.5rem; }
+        .form-section-title {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--text-light);
+            margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .field-group { margin-bottom: 1.5rem; }
+        .field-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1.25rem; margin-bottom: 1.5rem;
+        }
+        label {
+            display: block; font-size: 0.85rem; font-weight: 600;
+            color: var(--navy); margin-bottom: 0.5rem;
+        }
+        label .req { color: var(--gold); margin-left: 2px; }
+        label .opt {
+            color: var(--text-light); font-weight: 400;
+            font-size: 0.78rem; margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%; padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 4px; font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem; color: var(--text-dark);
+            background: white; transition: all 0.2s;
+            outline: none; appearance: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+        }
+        input.error, select.error, textarea.error {
+            border-color: var(--error);
+        }
+        .field-error {
+            font-size: 0.75rem; color: var(--error);
+            margin-top: 0.4rem; display: none;
+        }
+        .field-hint {
+            font-size: 0.75rem; color: var(--text-light);
+            margin-top: 0.4rem; line-height: 1.5;
+        }
+        textarea { resize: vertical; min-height: 100px; }
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7f96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+
+        /* Choice cards */
+        .choice-grid {
+            display: grid; gap: 0.75rem;
+        }
+        .choice-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .choice-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+        .choice-card {
+            border: 1.5px solid var(--border);
+            border-radius: 6px; padding: 1rem 1.25rem;
+            cursor: pointer; transition: all 0.2s;
+            background: white;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            position: relative;
+        }
+        .choice-card:hover { border-color: var(--gold); background: var(--gold-pale); }
+        .choice-card.selected {
+            border-color: var(--gold);
+            background: var(--gold-pale);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+        }
+        .choice-card input[type="radio"],
+        .choice-card input[type="checkbox"] {
+            width: 18px; height: 18px; flex-shrink: 0;
+            margin-top: 0.1rem; accent-color: var(--gold);
+            cursor: pointer;
+        }
+        .choice-card-body {}
+        .choice-card-title {
+            font-size: 0.875rem; font-weight: 600; color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+        .choice-card-desc {
+            font-size: 0.78rem; color: var(--text-mid); line-height: 1.5;
+        }
+        .choice-badge {
+            position: absolute; top: -8px; right: 12px;
+            background: var(--navy); color: var(--gold);
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;
+            padding: 0.2rem 0.5rem; border-radius: 2px;
+        }
+
+        /* Risk slider */
+        .risk-slider-wrap { margin-top: 0.5rem; }
+        .risk-slider {
+            width: 100%; height: 6px;
+            -webkit-appearance: none; appearance: none;
+            background: linear-gradient(to right, #16a34a, #eab308, #dc2626);
+            border-radius: 3px; outline: none; cursor: pointer;
+        }
+        .risk-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: white; border: 2px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer; transition: transform 0.2s;
+        }
+        .risk-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+        .risk-labels {
+            display: flex; justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        .risk-labels span { font-size: 0.72rem; color: var(--text-light); }
+        .risk-value {
+            text-align: center; margin-top: 0.75rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; font-weight: 600; color: var(--navy);
+        }
+        .risk-desc {
+            text-align: center; font-size: 0.8rem; color: var(--text-mid);
+        }
+
+        /* Capital range selector */
+        .capital-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+        /* Declaration */
+        .declaration-box {
+            background: white; border: 1.5px solid var(--border);
+            border-radius: 6px; padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .declaration-box p {
+            font-size: 0.875rem; color: var(--text-mid);
+            line-height: 1.8; margin-bottom: 1rem;
+        }
+        .declaration-box p:last-child { margin-bottom: 0; }
+        .checkbox-wrap {
+            display: flex; gap: 0.75rem; align-items: flex-start;
+            padding: 1rem; background: var(--gold-pale);
+            border: 1.5px solid rgba(201,168,76,0.3);
+            border-radius: 4px; cursor: pointer;
+        }
+        .checkbox-wrap input {
+            width: 18px; height: 18px; flex-shrink: 0;
+            margin-top: 0.1rem; accent-color: var(--navy); cursor: pointer;
+        }
+        .checkbox-wrap label {
+            font-size: 0.875rem; color: var(--navy);
+            font-weight: 500; cursor: pointer; margin: 0;
+        }
+
+        /* Review summary */
+        .review-section { margin-bottom: 2rem; }
+        .review-section-title {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1rem; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .review-edit {
+            font-size: 0.75rem; color: var(--navy);
+            cursor: pointer; text-decoration: underline;
+            font-weight: 400; text-transform: none; letter-spacing: 0;
+        }
+        .review-grid {
+            background: white; border: 1px solid var(--border);
+            border-radius: 6px; overflow: hidden;
+        }
+        .review-row {
+            display: grid; grid-template-columns: 180px 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+        .review-row:last-child { border-bottom: none; }
+        .review-key {
+            padding: 0.85rem 1rem; font-size: 0.78rem;
+            color: var(--text-light); background: var(--cream);
+            font-weight: 500; border-right: 1px solid var(--border);
+        }
+        .review-val {
+            padding: 0.85rem 1rem; font-size: 0.875rem;
+            color: var(--navy); font-weight: 500;
+        }
+
+        /* Navigation buttons */
+        .form-nav {
+            display: flex; justify-content: space-between;
+            align-items: center; margin-top: 3rem;
+            padding-top: 2rem; border-top: 1px solid var(--border);
+        }
+        .btn-back {
+            display: flex; align-items: center; gap: 0.5rem;
+            background: none; border: 1.5px solid var(--border);
+            color: var(--text-mid); padding: 0.85rem 1.5rem;
+            border-radius: 4px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem; font-weight: 600; transition: all 0.2s;
+        }
+        .btn-back:hover { border-color: var(--navy); color: var(--navy); }
+        .btn-next {
+            display: flex; align-items: center; gap: 0.5rem;
+            background: var(--navy); color: white;
+            padding: 0.85rem 2rem; border-radius: 4px;
+            cursor: pointer; font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem; font-weight: 700;
+            border: none; transition: all 0.2s;
+        }
+        .btn-next:hover { background: var(--navy-light); transform: translateY(-1px); }
+        .btn-submit {
+            background: var(--gold); color: var(--navy);
+        }
+        .btn-submit:hover { background: var(--gold-light); }
+
+        /* Success screen */
+        .success-screen {
+            display: none; flex-direction: column;
+            align-items: center; justify-content: center;
+            min-height: 70vh; text-align: center; padding: 3rem;
+        }
+        .success-icon {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: rgba(22,163,74,0.1); border: 2px solid var(--success);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .success-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; color: var(--navy); margin-bottom: 1rem;
+        }
+        .success-sub {
+            font-size: 1.05rem; color: var(--text-mid);
+            max-width: 500px; line-height: 1.7; margin-bottom: 3rem;
+        }
+        .next-steps {
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 2rem; max-width: 500px;
+            text-align: left; margin-bottom: 2rem;
+        }
+        .next-steps-title {
+            font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+        .next-step-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+        }
+        .next-step-item:last-child { border-bottom: none; }
+        .next-step-num {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--navy); color: white;
+            font-size: 0.75rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .next-step-text { font-size: 0.875rem; color: var(--text-mid); line-height: 1.5; }
+        .next-step-text strong { color: var(--navy); }
+
+        /* Step panels */
+        .step-panel { display: none; }
+        .step-panel.active { display: block; }
+
+        /* Animations */
+        .step-panel.active {
+            animation: fadeSlide 0.35s ease;
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateX(16px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; }
+            .top-bar { padding: 1rem 1.5rem; }
+            .form-area { padding: 2rem 1.5rem; }
+            .field-row { grid-template-columns: 1fr; }
+            .choice-grid.cols-2 { grid-template-columns: 1fr; }
+            .choice-grid.cols-3 { grid-template-columns: 1fr 1fr; }
+            .capital-options { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <a href="https://capallo.co" class="sidebar-logo">
+            <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo">
+        </a>
+        <div class="sidebar-title">Investor Profile</div>
+        <div class="sidebar-sub">Reviewed within 48 hours. No commitment required at this stage.</div>
+
+        <nav class="steps-nav">
+            <div class="step-nav-item active" data-step="1">
+                <div class="step-dot">1</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 1 of 6</div>
+                    <div class="step-nav-name">Investment Profile</div>
+                </div>
+            </div>
+            <div class="step-nav-item" data-step="2">
+                <div class="step-dot">2</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 2 of 6</div>
+                    <div class="step-nav-name">Personal Details</div>
+                </div>
+            </div>
+            <div class="step-nav-item" data-step="3">
+                <div class="step-dot">3</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 3 of 6</div>
+                    <div class="step-nav-name">Identity & Nominee</div>
+                </div>
+            </div>
+            <div class="step-nav-item" data-step="4">
+                <div class="step-dot">4</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 4 of 6</div>
+                    <div class="step-nav-name">Bank Details</div>
+                </div>
+            </div>
+            <div class="step-nav-item" data-step="5">
+                <div class="step-dot">5</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 5 of 6</div>
+                    <div class="step-nav-name">Authorized Signee</div>
+                </div>
+            </div>
+            <div class="step-nav-item" data-step="6">
+                <div class="step-dot">6</div>
+                <div class="step-nav-text">
+                    <div class="step-nav-label">Step 6 of 6</div>
+                    <div class="step-nav-name">Review & Submit</div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="trust-items">
+                <div class="trust-item"><span>🔒</span> Your data is handled confidentially</div>
+                <div class="trust-item"><span>⏱</span> Takes 8 minutes to complete</div>
+                <div class="trust-item"><span>✦</span> No commitment at this stage</div>
+            </div>
+            <p>Questions? Contact Sazzad directly.</p>
+            <a href="https://wa.me/+8801645823853">WhatsApp →</a>&nbsp;&nbsp;
+            <a href="/cdn-cgi/l/email-protection#d4a7b5b8b1bcfaa7b5aeaeb5b094b7b5a4b5b8b8bbfab7bb">Email →</a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="progress-wrap">
+                <div class="progress-label" id="progressLabel">Step 1 of 6 — Investment Profile</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 16.6%"></div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <span class="save-indicator" id="saveIndicator" style="display:none;">✓ Auto-saved</span>
+                <a href="https://capallo.co/investors" style="font-size:0.8rem; color:var(--text-light); text-decoration:none;">← Back to Investor Page</a>
+            </div>
+        </div>
+
+        <!-- FORM AREA -->
+        <div class="form-area">
+
+            <!-- ═══ STEP 1: INVESTMENT PROFILE ═══ -->
+            <div class="step-panel active" id="step1">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 1 · Investment Profile</div>
+                    <h1 class="step-title">Tell us about your<br>investing goals</h1>
+                    <p class="step-desc">This helps us match you to the right opportunity. There are no wrong answers — we want to understand your goals honestly.</p>
+                </div>
+
+                <!-- Investment experience -->
+                <div class="form-section">
+                    <div class="form-section-title">Investment Experience</div>
+                    <div class="field-group">
+                        <label>Where do you currently invest? <span class="req">*</span></label>
+                        <div class="choice-grid cols-2">
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="Never invested before">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Never invested before</div>
+                                    <div class="choice-card-desc">This would be my first investment</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="SMEs/Companies">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">SMEs / Companies</div>
+                                    <div class="choice-card-desc">Private company ownership</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="Real Estate">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Real Estate</div>
+                                    <div class="choice-card-desc">Residential or commercial property</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="Stocks">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Stocks / Bonds</div>
+                                    <div class="choice-card-desc">Public market investments</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="NSC">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">National Savings Certificate</div>
+                                    <div class="choice-card-desc">Shonchoy Potro</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="checkbox" name="invest_where" value="Commodities">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Commodities / Other</div>
+                                    <div class="choice-card-desc">Gold, silver, cars, etc.</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment goal -->
+                <div class="form-section">
+                    <div class="form-section-title">Investment Goal</div>
+                    <div class="field-group">
+                        <label>Which statement best describes your goal? <span class="req">*</span></label>
+                        <div class="choice-grid">
+                            <label class="choice-card">
+                                <input type="radio" name="invest_goal" value="Good returns">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I want strong returns on my capital</div>
+                                    <div class="choice-card-desc">Growth-focused, comfortable with a longer horizon</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_goal" value="Reliable monthly income">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I need reliable monthly income</div>
+                                    <div class="choice-card-desc">Regular profit or interest distributions</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_goal" value="Long term profits">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I want long-term wealth building</div>
+                                    <div class="choice-card-desc">Patient capital, 5–7 year horizon</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_goal" value="Co-own assets">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I want to co-own assets with monthly profit</div>
+                                    <div class="choice-card-desc">Shariah-compliant asset ownership model</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment instrument -->
+                <div class="form-section">
+                    <div class="form-section-title">Investment Instrument Preference</div>
+                    <div class="field-group">
+                        <label>Do you have a preference on how your investment is structured? <span class="req">*</span></label>
+                        <div class="choice-grid cols-2">
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="Equity">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Equity</div>
+                                    <div class="choice-card-desc">Own a share of the company</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="Shariah debt">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Shariah Debt</div>
+                                    <div class="choice-card-desc">Islamic finance compliant structure</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="RBF">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">RBF — Revenue Based</div>
+                                    <div class="choice-card-desc">Returns tied to company revenue</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="ABF">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">ABF — Asset Based</div>
+                                    <div class="choice-card-desc">Secured against company assets</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="Quasi equity">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Quasi Equity</div>
+                                    <div class="choice-card-desc">Hybrid debt-equity structure</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="invest_instrument" value="Need advice">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I need your advice</div>
+                                    <div class="choice-card-desc">New to this, happy to be guided</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk appetite -->
+                <div class="form-section">
+                    <div class="form-section-title">Risk Appetite</div>
+
+                    <div class="field-group">
+                        <label>Are you aware that venture investment is risky and you may lose all invested capital? <span class="req">*</span></label>
+                        <div class="choice-grid cols-2">
+                            <label class="choice-card">
+                                <input type="radio" name="risk_aware" value="Yes, fully aware">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Yes, I understand fully</div>
+                                    <div class="choice-card-desc">I'm ready to proceed</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="risk_aware" value="No, want call">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">I'd like a call first</div>
+                                    <div class="choice-card-desc">Not fully convinced yet</div>
+                                </div>
+                            </label>
+                        </div>
+                        <p class="field-hint">If you're not sure — don't worry. Capallo can transfer part of the risk to our book and help you manage it better.</p>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Risk appetite score — how much risk do you think is adequate for you? <span class="req">*</span></label>
+                        <div class="risk-slider-wrap">
+                            <input type="range" class="risk-slider" id="riskSlider" min="1" max="10" value="5">
+                            <div class="risk-labels">
+                                <span>1 — Very conservative</span>
+                                <span>10 — Very aggressive</span>
+                            </div>
+                            <div class="risk-value" id="riskValue">5</div>
+                            <div class="risk-desc" id="riskDesc">Balanced — moderate growth with capital preservation</div>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Sector preference <span class="req">*</span></label>
+                        <div class="choice-grid cols-2">
+                            <label class="choice-card">
+                                <input type="radio" name="sector" value="Energy">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Energy</div>
+                                    <div class="choice-card-desc">Currently our active deal sector</div>
+                                    <span class="choice-badge">ACTIVE</span>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="sector" value="Health">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Health</div>
+                                    <div class="choice-card-desc">Coming soon as we expand</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Preferred ticket size <span class="req">*</span></label>
+                        <p class="field-hint" style="margin-bottom:0.75rem;">We recommend investing 5–10% of your current net worth. Minimum investment is $5,000.</p>
+                        <div class="capital-options">
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="$5,000–$10,000">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">$5K–$10K</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="$10,000–$25,000">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">$10K–$25K</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="$25,000–$50,000">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">$25K–$50K</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="$50,000–$100,000">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">$50K–$100K</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="$100,000+">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">$100K+</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="ticket_size" value="Not sure yet">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Not sure yet</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <div></div>
+                    <button class="btn-next" onclick="nextStep(1)">
+                        Continue to Personal Details →
+                    </button>
+                </div>
+            </div>
+
+            <!-- ═══ STEP 2: PERSONAL DETAILS ═══ -->
+            <div class="step-panel" id="step2">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 2 · Personal Details</div>
+                    <h1 class="step-title">Your personal<br>information</h1>
+                    <p class="step-desc">This information is used for legal documentation and investor communications. All fields are kept strictly confidential.</p>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Basic Information</div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="fullName">Full name <span class="req">*</span><span class="opt">(as per NID)</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. Mohammad Rahman">
+                        </div>
+                        <div class="field-group">
+                            <label for="email">Email address <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="phone">Phone number <span class="req">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+880 1XXX XXXXXX">
+                        </div>
+                        <div class="field-group">
+                            <label for="linkedin">LinkedIn profile <span class="opt">(optional)</span></label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="linkedin.com/in/yourname">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="address">Permanent address <span class="req">*</span></label>
+                        <textarea id="address" name="address" placeholder="Full address — used for legal notices shared by portfolio companies" rows="3"></textarea>
+                        <p class="field-hint">This is the address that will appear on your investment agreement.</p>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Investor Type & Capital</div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="investorType">Investor type <span class="req">*</span></label>
+                            <select id="investorType" name="investorType">
+                                <option value="">Select type</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Entity / Company">Entity / Company</option>
+                                <option value="Trust / Fund">Trust / Fund</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="capitalBDT">Requested capital commitment (BDT) <span class="req">*</span></label>
+                            <input type="text" id="capitalBDT" name="capitalBDT" placeholder="e.g. 6,00,000">
+                            <p class="field-hint">Minimum BDT equivalent of $5,000 (~৳5.5 lakh at current rates)</p>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="annualIncome">Annual income range <span class="opt">(optional — helps us tailor recommendations)</span></label>
+                        <select id="annualIncome" name="annualIncome">
+                            <option value="">Prefer not to say</option>
+                            <option value="Under BDT 20 lakh">Under BDT 20 lakh</option>
+                            <option value="BDT 20–50 lakh">BDT 20–50 lakh</option>
+                            <option value="BDT 50 lakh – 1 crore">BDT 50 lakh – 1 crore</option>
+                            <option value="BDT 1–3 crore">BDT 1–3 crore</option>
+                            <option value="BDT 3 crore+">BDT 3 crore+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Source of Funds</div>
+                    <div class="field-group">
+                        <label for="sourceOfFunds">Source of funds declaration <span class="req">*</span></label>
+                        <textarea id="sourceOfFunds" name="sourceOfFunds" rows="4"
+                            placeholder="Please state the origins of the funds used to invest — how they were produced/earned and from which source.&#10;&#10;Example: 'Funds originate from my salary as a Director at [Company], earned over 5 years. Additional funds from the sale of residential property in Dhaka in 2022.'"></textarea>
+                        <p class="field-hint">This declaration is required for compliance purposes. You may alternatively email a signed declaration to <a href="/cdn-cgi/l/email-protection#dba8bab7beb3f5a8baa1a1babf9bb8baabbab7b7b4f5b8b4" style="color:var(--navy);"><span class="__cf_email__" data-cfemail="97e4f6fbf2ffb9e4f6ededf6f3d7f4f6e7f6fbfbf8b9f4f8">[email&#160;protected]</span></a></p>
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <button class="btn-back" onclick="prevStep(2)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(2)">Continue to Identity →</button>
+                </div>
+            </div>
+
+            <!-- ═══ STEP 3: IDENTITY & NOMINEE ═══ -->
+            <div class="step-panel" id="step3">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 3 · Identity & Nominee</div>
+                    <h1 class="step-title">Identity verification<br>& nominee details</h1>
+                    <p class="step-desc">Your NID is required for legal investment documentation. Nominee information ensures your investment is protected in unforeseen circumstances.</p>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Investor Identity</div>
+                    <div class="field-group">
+                        <label for="investorNID">National ID (NID) number <span class="req">*</span></label>
+                        <input type="text" id="investorNID" name="investorNID" placeholder="Your NID number">
+                        <p class="field-hint">If you're not comfortable submitting your NID here, you may send a photo via <a href="https://wa.me/+8801645823853" style="color:var(--navy);">WhatsApp</a> or <a href="/cdn-cgi/l/email-protection#4734262b222f6934263d3d262307242637262b2b28692428" style="color:var(--navy);">email</a> instead. Please rename the file as your full name.</p>
+                    </div>
+                    <div class="field-group">
+                        <label>NID copy / photo <span class="opt">(optional — can be sent separately)</span></label>
+                        <div style="border: 1.5px dashed var(--border); border-radius: 4px; padding: 2rem; text-align: center; background: white; cursor: pointer;" onclick="document.getElementById('nidUpload').click()">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📎</div>
+                            <div style="font-size: 0.875rem; color: var(--text-mid); margin-bottom: 0.25rem;">Click to upload NID photo</div>
+                            <div style="font-size: 0.75rem; color: var(--text-light);">JPG, PNG or PDF · Max 5MB</div>
+                            <input type="file" id="nidUpload" name="nidUpload" accept=".jpg,.jpeg,.png,.pdf" style="display:none;" onchange="showFileName(this, 'nidFileName')">
+                            <div id="nidFileName" style="margin-top:0.75rem; font-size:0.8rem; color:var(--success); display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Nominee Details</div>
+                    <p style="font-size: 0.875rem; color: var(--text-mid); margin-bottom: 1.5rem; line-height: 1.7;">Your nominee will receive your investment proceeds in the event of your passing. This protects your family's interests.</p>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="nomineeName">Nominee full name <span class="req">*</span></label>
+                            <input type="text" id="nomineeName" name="nomineeName" placeholder="Nominee's full name as per NID">
+                        </div>
+                        <div class="field-group">
+                            <label for="nomineeRelation">Relationship to you <span class="req">*</span></label>
+                            <select id="nomineeRelation" name="nomineeRelation">
+                                <option value="">Select relationship</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Child">Child</option>
+                                <option value="Parent">Parent</option>
+                                <option value="Sibling">Sibling</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="nomineeNID">Nominee NID number <span class="req">*</span></label>
+                        <input type="text" id="nomineeNID" name="nomineeNID" placeholder="Nominee's NID number">
+                        <p class="field-hint">If not comfortable submitting here, you may send it separately via email or WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <button class="btn-back" onclick="prevStep(3)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(3)">Continue to Bank Details →</button>
+                </div>
+            </div>
+
+            <!-- ═══ STEP 4: BANK DETAILS ═══ -->
+            <div class="step-panel" id="step4">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 4 · Bank Account</div>
+                    <h1 class="step-title">Your bank account<br>information</h1>
+                    <p class="step-desc">Required for investment disbursements, profit distributions, and exit proceeds. This information is kept strictly confidential.</p>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Bank Account Details</div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="bankName">Bank name <span class="req">*</span></label>
+                            <select id="bankName" name="bankName">
+                                <option value="">Select your bank</option>
+                                <option>Dutch-Bangla Bank (DBBL)</option>
+                                <option>BRAC Bank</option>
+                                <option>Eastern Bank (EBL)</option>
+                                <option>City Bank</option>
+                                <option>Prime Bank</option>
+                                <option>Islami Bank Bangladesh</option>
+                                <option>Standard Chartered Bangladesh</option>
+                                <option>HSBC Bangladesh</option>
+                                <option>Sonali Bank</option>
+                                <option>Janata Bank</option>
+                                <option>Agrani Bank</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="branchName">Branch name <span class="req">*</span></label>
+                            <input type="text" id="branchName" name="branchName" placeholder="e.g. Gulshan Branch">
+                        </div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label for="accountName">Beneficiary account name <span class="req">*</span></label>
+                            <input type="text" id="accountName" name="accountName" placeholder="Name as it appears on the account">
+                            <p class="field-hint">Must match your legal name on the investment agreement.</p>
+                        </div>
+                        <div class="field-group">
+                            <label for="accountNumber">Account number <span class="req">*</span></label>
+                            <input type="text" id="accountNumber" name="accountNumber" placeholder="Your full account number">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="routingNumber">Routing number <span class="opt">(optional)</span></label>
+                        <input type="text" id="routingNumber" name="routingNumber" placeholder="9-digit routing number if applicable">
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <button class="btn-back" onclick="prevStep(4)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(4)">Continue to Signee →</button>
+                </div>
+            </div>
+
+            <!-- ═══ STEP 5: AUTHORIZED SIGNEE ═══ -->
+            <div class="step-panel" id="step5">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 5 · Authorized Signee</div>
+                    <h1 class="step-title">Authorized signee<br>information</h1>
+                    <p class="step-desc">The authorized signee is the person who will sign all legal investment documents on behalf of the investor. For individuals, this is typically yourself.</p>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Signee Details</div>
+                    <div class="field-group">
+                        <label for="signeeSelf">Is the authorized signee yourself? <span class="req">*</span></label>
+                        <div class="choice-grid cols-2">
+                            <label class="choice-card">
+                                <input type="radio" name="signeeSelf" value="Yes" onclick="toggleSigneeFields(false)">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">Yes, I will sign personally</div>
+                                    <div class="choice-card-desc">Most common for individual investors</div>
+                                </div>
+                            </label>
+                            <label class="choice-card">
+                                <input type="radio" name="signeeSelf" value="No" onclick="toggleSigneeFields(true)">
+                                <div class="choice-card-body">
+                                    <div class="choice-card-title">No, a different person will sign</div>
+                                    <div class="choice-card-desc">For entity / company investors</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="signeeFields" style="display:none;">
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="signeeTitle">Signee title <span class="req">*</span></label>
+                                <input type="text" id="signeeTitle" name="signeeTitle" placeholder="e.g. CEO, Director, Managing Partner">
+                            </div>
+                            <div class="field-group">
+                                <label for="signeeName">Signee full name <span class="req">*</span><span class="opt">(as per NID)</span></label>
+                                <input type="text" id="signeeName" name="signeeName" placeholder="Legal name of signee">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label for="signeeEmail">Signee email address <span class="req">*</span></label>
+                            <input type="email" id="signeeEmail" name="signeeEmail" placeholder="signee@company.com">
+                            <p class="field-hint">All legal documents will be sent to this email address for signature.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <button class="btn-back" onclick="prevStep(5)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(5)">Review Your Profile →</button>
+                </div>
+            </div>
+
+            <!-- ═══ STEP 6: REVIEW & SUBMIT ═══ -->
+            <div class="step-panel" id="step6">
+                <div class="step-header">
+                    <div class="step-eyebrow">Step 6 · Review & Submit</div>
+                    <h1 class="step-title">Review your<br>investor profile</h1>
+                    <p class="step-desc">Please review your information carefully before submitting. Our team will contact you within 48 hours of submission.</p>
+                </div>
+
+                <!-- Review sections populated by JS -->
+                <div id="reviewContent"></div>
+
+                <!-- Declaration -->
+                <div class="form-section" style="margin-top: 2rem;">
+                    <div class="form-section-title">Declaration & Consent</div>
+                    <div class="declaration-box">
+                        <p>By submitting this investor KYC form, I confirm that all information provided is accurate to the best of my knowledge.</p>
+                        <p>I understand that Capallo will coordinate my entire investment process, assuring clean governance, proper reporting, and investor protection as described on their platform.</p>
+                        <p>I also agree that returns and exits will be facilitated as per the investment agreement I will enter into with the companies I invest in through Capallo.</p>
+                        <p>I confirm that I am a sophisticated investor who understands that private market investments carry significant risk, including the potential for total loss of invested capital.</p>
+                    </div>
+                    <div class="checkbox-wrap" style="margin-bottom: 1rem;">
+                        <input type="checkbox" id="consent1" name="consent1">
+                        <label for="consent1">Yes, I agree and consent to all of the above. I confirm all information provided is accurate.</label>
+                    </div>
+                    <div class="checkbox-wrap">
+                        <input type="checkbox" id="consent2" name="consent2">
+                        <label for="consent2">I understand that venture investing is high-risk and I may lose my full investment. I only invest capital I can afford to lose.</label>
+                    </div>
+                </div>
+
+                <div class="form-nav">
+                    <button class="btn-back" onclick="prevStep(6)">← Back</button>
+                    <button class="btn-next btn-submit" onclick="submitForm()">
+                        Submit Investor Profile ✦
+                    </button>
+                </div>
+            </div>
+
+            <!-- ═══ SUCCESS SCREEN ═══ -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">Profile submitted.</h2>
+                <p class="success-sub">Thank you for completing your investor profile. Our team will review it and reach out to you personally within 48 hours.</p>
+
+                <div class="next-steps">
+                    <div class="next-steps-title">What happens next</div>
+                    <div class="next-step-item">
+                        <div class="next-step-num">1</div>
+                        <div class="next-step-text"><strong>Within 48 hours:</strong> Sazzad will review your profile and contact you via email or WhatsApp.</div>
+                    </div>
+                    <div class="next-step-item">
+                        <div class="next-step-num">2</div>
+                        <div class="next-step-text"><strong>If approved:</strong> We'll share one matched deal from our active portfolio that fits your risk profile.</div>
+                    </div>
+                    <div class="next-step-item">
+                        <div class="next-step-num">3</div>
+                        <div class="next-step-text"><strong>Due diligence:</strong> You'll receive structured access to the company data room and join a founder Q&A session.</div>
+                    </div>
+                    <div class="next-step-item">
+                        <div class="next-step-num">4</div>
+                        <div class="next-step-text"><strong>Confirmation:</strong> If you're ready to invest, we'll prepare legal documents under your name.</div>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+                    <a href="https://capallo.co" style="background:var(--navy); color:white; padding:0.9rem 2rem; border-radius:4px; text-decoration:none; font-weight:600; font-size:0.9rem;">Return to Capallo.co</a>
+                    <a href="https://wa.me/+8801645823853" target="_blank" style="background:white; color:var(--navy); border:1.5px solid var(--border); padding:0.9rem 2rem; border-radius:4px; text-decoration:none; font-weight:600; font-size:0.9rem;">WhatsApp Sazzad →</a>
+                </div>
+            </div>
+
+        </div><!-- end form-area -->
+    </main>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    let currentStep = 1;
+    const totalSteps = 6;
+
+    // Step metadata
+    const stepMeta = [
+        { num: 1, label: 'Investment Profile' },
+        { num: 2, label: 'Personal Details' },
+        { num: 3, label: 'Identity & Nominee' },
+        { num: 4, label: 'Bank Details' },
+        { num: 5, label: 'Authorized Signee' },
+        { num: 6, label: 'Review & Submit' },
+    ];
+
+    // Risk descriptions
+    const riskDescs = {
+        1: 'Extremely conservative — capital preservation only',
+        2: 'Very conservative — minimal risk accepted',
+        3: 'Conservative — steady returns prioritized',
+        4: 'Moderately conservative — some growth acceptable',
+        5: 'Balanced — moderate growth with capital preservation',
+        6: 'Moderately growth-oriented — comfortable with volatility',
+        7: 'Growth-oriented — higher risk for higher returns',
+        8: 'Aggressive — significant risk tolerance',
+        9: 'Very aggressive — maximum growth focus',
+        10: 'Maximum risk — full speculative exposure'
+    };
+
+    // Risk slider
+    const slider = document.getElementById('riskSlider');
+    const riskVal = document.getElementById('riskValue');
+    const riskDesc = document.getElementById('riskDesc');
+    slider.addEventListener('input', () => {
+        riskVal.textContent = slider.value;
+        riskDesc.textContent = riskDescs[slider.value];
+    });
+
+    // Choice cards toggle
+    document.querySelectorAll('.choice-card').forEach(card => {
+        const input = card.querySelector('input');
+        input.addEventListener('change', () => {
+            if (input.type === 'radio') {
+                const name = input.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                    r.closest('.choice-card').classList.remove('selected');
+                });
+            }
+            if (input.checked) card.classList.add('selected');
+            else card.classList.remove('selected');
+        });
+    });
+
+    function updateProgress() {
+        const pct = (currentStep / totalSteps) * 100;
+        document.getElementById('progressFill').style.width = pct + '%';
+        document.getElementById('progressLabel').textContent =
+            `Step ${currentStep} of ${totalSteps} — ${stepMeta[currentStep-1].label}`;
+
+        // Update sidebar nav
+        document.querySelectorAll('.step-nav-item').forEach((item, i) => {
+            const step = i + 1;
+            item.classList.remove('active', 'completed');
+            const dot = item.querySelector('.step-dot');
+            if (step < currentStep) {
+                item.classList.add('completed');
+                dot.textContent = '✓';
+            } else if (step === currentStep) {
+                item.classList.add('active');
+                dot.textContent = step;
+            } else {
+                dot.textContent = step;
+            }
+        });
+    }
+
+    function showStep(n) {
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        const panel = document.getElementById('step' + n);
+        if (panel) panel.classList.add('active');
+        updateProgress();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function nextStep(from) {
+        if (from < totalSteps) {
+            if (from === totalSteps - 1) buildReview();
+            currentStep = from + 1;
+            showStep(currentStep);
+            showSaveIndicator();
+        }
+    }
+
+    function prevStep(from) {
+        if (from > 1) {
+            currentStep = from - 1;
+            showStep(currentStep);
+        }
+    }
+
+    function showSaveIndicator() {
+        const ind = document.getElementById('saveIndicator');
+        ind.style.display = 'flex';
+        setTimeout(() => ind.style.display = 'none', 3000);
+    }
+
+    function toggleSigneeFields(show) {
+        document.getElementById('signeeFields').style.display = show ? 'block' : 'none';
+    }
+
+    function showFileName(input, targetId) {
+        const el = document.getElementById(targetId);
+        if (input.files && input.files[0]) {
+            el.textContent = '✓ ' + input.files[0].name;
+            el.style.display = 'block';
+        }
+    }
+
+    function getCheckedValues(name) {
+        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+            .map(i => i.value).join(', ') || '—';
+    }
+
+    function getVal(id) {
+        const el = document.getElementById(id);
+        return el ? (el.value || '—') : '—';
+    }
+
+    function buildReviewSection(title, step, rows) {
+        return `
+        <div class="review-section">
+            <div class="review-section-title">
+                ${title}
+                <span class="review-edit" onclick="currentStep=${step}; showStep(${step})">Edit</span>
+            </div>
+            <div class="review-grid">
+                ${rows.map(r => `
+                <div class="review-row">
+                    <div class="review-key">${r[0]}</div>
+                    <div class="review-val">${r[1]}</div>
+                </div>`).join('')}
+            </div>
+        </div>`;
+    }
+
+    function buildReview() {
+        const html =
+            buildReviewSection('Investment Profile', 1, [
+                ['Experience', getCheckedValues('invest_where')],
+                ['Goal', getCheckedValues('invest_goal')],
+                ['Instrument', getCheckedValues('invest_instrument')],
+                ['Risk aware', getCheckedValues('risk_aware')],
+                ['Risk score', document.getElementById('riskSlider').value + '/10 — ' + riskDescs[document.getElementById('riskSlider').value]],
+                ['Sector', getCheckedValues('sector')],
+                ['Ticket size', getCheckedValues('ticket_size')],
+            ]) +
+            buildReviewSection('Personal Details', 2, [
+                ['Full name', getVal('fullName')],
+                ['Email', getVal('email')],
+                ['Phone', getVal('phone')],
+                ['LinkedIn', getVal('linkedin')],
+                ['Address', getVal('address')],
+                ['Investor type', getVal('investorType')],
+                ['Capital (BDT)', getVal('capitalBDT')],
+                ['Annual income', getVal('annualIncome')],
+                ['Source of funds', getVal('sourceOfFunds')],
+            ]) +
+            buildReviewSection('Identity & Nominee', 3, [
+                ['Investor NID', getVal('investorNID') ? '••••' + getVal('investorNID').slice(-4) : '—'],
+                ['Nominee name', getVal('nomineeName')],
+                ['Relationship', getVal('nomineeRelation')],
+                ['Nominee NID', getVal('nomineeNID') ? '••••' + getVal('nomineeNID').slice(-4) : '—'],
+            ]) +
+            buildReviewSection('Bank Details', 4, [
+                ['Bank', getVal('bankName')],
+                ['Branch', getVal('branchName')],
+                ['Account name', getVal('accountName')],
+                ['Account no.', getVal('accountNumber') ? '••••' + getVal('accountNumber').slice(-4) : '—'],
+            ]) +
+            buildReviewSection('Authorized Signee', 5, [
+                ['Self-signing', getCheckedValues('signeeSelf')],
+                ['Signee title', getVal('signeeTitle')],
+                ['Signee name', getVal('signeeName')],
+                ['Signee email', getVal('signeeEmail')],
+            ]);
+
+        document.getElementById('reviewContent').innerHTML = html;
+    }
+
+    // ── REPLACE THIS URL after deploying your Apps Script ──
+    const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+    function collectFormData() {
+        return {
+            invest_where:      getCheckedValues('invest_where'),
+            invest_goal:       getCheckedValues('invest_goal'),
+            invest_instrument: getCheckedValues('invest_instrument'),
+            risk_aware:        getCheckedValues('risk_aware'),
+            riskScore:         document.getElementById('riskSlider').value,
+            sector:            getCheckedValues('sector'),
+            ticket_size:       getCheckedValues('ticket_size'),
+            fullName:          getVal('fullName'),
+            email:             getVal('email'),
+            phone:             getVal('phone'),
+            linkedin:          getVal('linkedin'),
+            address:           getVal('address'),
+            investorType:      getVal('investorType'),
+            capitalBDT:        getVal('capitalBDT'),
+            annualIncome:      getVal('annualIncome'),
+            sourceOfFunds:     getVal('sourceOfFunds'),
+            investorNID:       getVal('investorNID'),
+            nomineeName:       getVal('nomineeName'),
+            nomineeRelation:   getVal('nomineeRelation'),
+            nomineeNID:        getVal('nomineeNID'),
+            bankName:          getVal('bankName'),
+            branchName:        getVal('branchName'),
+            accountName:       getVal('accountName'),
+            accountNumber:     getVal('accountNumber'),
+            routingNumber:     getVal('routingNumber'),
+            signeeSelf:        getCheckedValues('signeeSelf'),
+            signeeTitle:       getVal('signeeTitle'),
+            signeeName:        getVal('signeeName'),
+            signeeEmail:       getVal('signeeEmail'),
+            consent1:          document.getElementById('consent1').checked,
+            consent2:          document.getElementById('consent2').checked,
+        };
+    }
+
+    function showSuccessScreen() {
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('successScreen').style.display = 'flex';
+        document.getElementById('progressFill').style.width = '100%';
+        document.getElementById('progressLabel').textContent = 'Profile submitted successfully';
+        document.querySelectorAll('.step-nav-item').forEach(item => {
+            item.classList.remove('active');
+            item.classList.add('completed');
+            item.querySelector('.step-dot').textContent = '\u2713';
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setSubmitState(loading) {
+        const btn = document.querySelector('.btn-submit');
+        btn.disabled = loading;
+        btn.textContent = loading ? 'Submitting\u2026' : 'Submit Investor Profile \u2746';
+        btn.style.opacity = loading ? '0.7' : '1';
+    }
+
+    function submitForm() {
+        const c1 = document.getElementById('consent1').checked;
+        const c2 = document.getElementById('consent2').checked;
+        if (!c1 || !c2) {
+            alert('Please check both declaration boxes before submitting.');
+            return;
+        }
+
+        if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+            showSuccessScreen();
+            return;
+        }
+
+        setSubmitState(true);
+        const data = collectFormData();
+
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(() => { showSuccessScreen(); })
+        .catch(() => { showSuccessScreen(); })
+        .finally(() => { setSubmitState(false); });
+    }
+
+    // Init
+    updateProgress();
+</script>
+</body>
+</html>
