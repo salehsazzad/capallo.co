@@ -39,8 +39,7 @@
 
         /* ── LAYOUT ── */
         .page-wrap {
-            display: grid;
-            grid-template-columns: 340px 1fr;
+            display: block;
             min-height: 100vh;
         }
 
@@ -141,17 +140,23 @@
             margin-left: 340px;
             background: var(--cream);
             min-height: 100vh;
-            display: flex; flex-direction: column;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Top bar */
         .top-bar {
-            background: white; border-bottom: 1px solid var(--border);
+            background: white;
+            border-bottom: 1px solid var(--border);
             padding: 1.25rem 3rem;
-            display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        .progress-wrap { flex: 1; max-width: 500px; }
+        .progress-wrap { flex: 1; max-width: 500px; min-width: 0; overflow: hidden; }
         .progress-label {
             font-size: 0.75rem; color: var(--text-light);
             margin-bottom: 0.5rem; font-weight: 500;
@@ -177,6 +182,8 @@
         .form-area {
             flex: 1; padding: 3.5rem 3rem;
             max-width: 780px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         /* Step header */
@@ -485,14 +492,29 @@
 
         /* Mobile */
         @media (max-width: 900px) {
+            .page-wrap { display: block; }
             .sidebar { display: none; }
-            .main-content { margin-left: 0; }
-            .top-bar { padding: 1rem 1.5rem; }
-            .form-area { padding: 2rem 1.5rem; }
-            .field-row { grid-template-columns: 1fr; }
+            .main-content { margin-left: 0; width: 100%; min-height: 100vh; }
+            .top-bar { padding: 1rem 1.25rem; flex-wrap: wrap; gap: 0.75rem; }
+            .progress-wrap { min-width: 0; flex: 1 1 100%; }
+            .top-bar-right { flex: 1 1 100%; justify-content: flex-end; }
+            .form-area { padding: 2rem 1.25rem; max-width: 100%; }
+            .step-title { font-size: 1.6rem; }
+            .field-row { grid-template-columns: 1fr; gap: 0; }
             .choice-grid.cols-2 { grid-template-columns: 1fr; }
             .choice-grid.cols-3 { grid-template-columns: 1fr 1fr; }
             .capital-options { grid-template-columns: 1fr 1fr; }
+            .form-nav { flex-direction: column-reverse; gap: 0.75rem; }
+            .btn-next, .btn-back { width: 100%; justify-content: center; }
+            .review-row { grid-template-columns: 120px 1fr; }
+        }
+        @media (max-width: 480px) {
+            .choice-grid.cols-2 { grid-template-columns: 1fr; }
+            .choice-grid.cols-3 { grid-template-columns: 1fr; }
+            .capital-options { grid-template-columns: 1fr 1fr; }
+            .review-row { grid-template-columns: 1fr; }
+            .review-key { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+            .review-val { padding-top: 0.25rem; }
         }
     </style>
 </head>
@@ -561,7 +583,7 @@
             </div>
             <p>Questions? Contact Sazzad directly.</p>
             <a href="https://wa.me/+8801645823853">WhatsApp →</a>&nbsp;&nbsp;
-            <a href="/cdn-cgi/l/email-protection#d4a7b5b8b1bcfaa7b5aeaeb5b094b7b5a4b5b8b8bbfab7bb">Email →</a>
+            <a href="mailto:saleh.sazzad@capallo.co">Email →</a>
         </div>
     </aside>
 
@@ -920,7 +942,7 @@
                         <label for="sourceOfFunds">Source of funds declaration <span class="req">*</span></label>
                         <textarea id="sourceOfFunds" name="sourceOfFunds" rows="4"
                             placeholder="Please state the origins of the funds used to invest — how they were produced/earned and from which source.&#10;&#10;Example: 'Funds originate from my salary as a Director at [Company], earned over 5 years. Additional funds from the sale of residential property in Dhaka in 2022.'"></textarea>
-                        <p class="field-hint">This declaration is required for compliance purposes. You may alternatively email a signed declaration to <a href="/cdn-cgi/l/email-protection#dba8bab7beb3f5a8baa1a1babf9bb8baabbab7b7b4f5b8b4" style="color:var(--navy);"><span class="__cf_email__" data-cfemail="97e4f6fbf2ffb9e4f6ededf6f3d7f4f6e7f6fbfbf8b9f4f8">[email&#160;protected]</span></a></p>
+                        <p class="field-hint">This declaration is required for compliance purposes. You may alternatively email a signed declaration to <a href="mailto:saleh.sazzad@capallo.co" style="color:var(--navy);">saleh.sazzad@capallo.co</a></p>
                     </div>
                 </div>
 
@@ -943,7 +965,7 @@
                     <div class="field-group">
                         <label for="investorNID">National ID (NID) number <span class="req">*</span></label>
                         <input type="text" id="investorNID" name="investorNID" placeholder="Your NID number">
-                        <p class="field-hint">If you're not comfortable submitting your NID here, you may send a photo via <a href="https://wa.me/+8801645823853" style="color:var(--navy);">WhatsApp</a> or <a href="/cdn-cgi/l/email-protection#4734262b222f6934263d3d262307242637262b2b28692428" style="color:var(--navy);">email</a> instead. Please rename the file as your full name.</p>
+                        <p class="field-hint">If you're not comfortable submitting your NID here, you may send a photo via <a href="https://wa.me/+8801645823853" style="color:var(--navy);">WhatsApp</a> or <a href="mailto:saleh.sazzad@capallo.co" style="color:var(--navy);">email</a> instead. Please rename the file as your full name.</p>
                     </div>
                     <div class="field-group">
                         <label>NID copy / photo <span class="opt">(optional — can be sent separately)</span></label>
@@ -1176,7 +1198,7 @@
     </main>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     let currentStep = 1;
     const totalSteps = 6;
 
@@ -1431,7 +1453,7 @@
             return;
         }
 
-        if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+        if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbwpmzRD0-20SkAzCCBiPn9dilmYGwI0nMuzsRC5l8JYgy-QfK70dyf0neeV3WV0Hpnh/exec') {
             showSuccessScreen();
             return;
         }
