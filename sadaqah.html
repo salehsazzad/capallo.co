@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capallo Sadaqah — Give Capital. Create Entrepreneurs.</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+<meta name="description" content="Capallo's Ramadan Sadaqah initiative — channel your charity into struggling entrepreneurs across Bangladesh and watch it multiply.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0f3460;
+    --navy-dark: #16213e;
+    --navy-deep: #1a1a2e;
+    --gold: #fbbf24;
+    --gold-light: #fcd34d;
+    --green: #10b981;
+    --white: #ffffff;
+    --gray-light: #f7fafc;
+    --gray-mid: #e5e7eb;
+    --gray-text: #4a5568;
+    --gray-muted: #6b7280;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--navy-deep);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-mid);
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+  }
+  .nav-logo img { height: 40px; width: auto; }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-right a {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .btn {
+    padding: 0.75rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary { background: var(--navy); color: white; }
+  .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
+  .btn-gold { background: var(--gold); color: var(--navy-deep); }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(251,191,36,0.4); }
+  .btn-outline-white { background: transparent; color: white; border: 2px solid white; }
+  .btn-outline-white:hover { background: white; color: var(--navy); }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1rem; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 3rem 80px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: white;
+    text-align: center;
+  }
+  .hero-content { max-width: 900px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+  .hero-cta { display: flex; gap: 1.2rem; justify-content: center; margin-bottom: 4rem; flex-wrap: wrap; }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .stat-num {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.78); }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 80px 3rem; }
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 1rem;
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    max-width: 680px;
+    margin: 0 auto 3rem;
+    line-height: 1.75;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .text-center { text-align: center; }
+
+  /* ── QURAN VERSE ── */
+  .quran-section {
+    background: var(--gray-light);
+    padding: 60px 3rem;
+  }
+  .quran-box {
+    max-width: 860px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--gold);
+  }
+  .quran-arabic {
+    font-size: clamp(20px, 2.5vw, 28px);
+    direction: rtl;
+    color: var(--navy);
+    line-height: 2;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .quran-translation {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+  .quran-ref {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .shariah-note {
+    max-width: 860px;
+    margin: 1.5rem auto 0;
+    background: #fef3c7;
+    border-left: 4px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #78350f;
+    line-height: 1.7;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: white; }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    margin-top: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .step-card {
+    background: var(--gray-light);
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--gray-mid);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .step-card:last-child { border-right: none; }
+  .step-card:hover { background: white; }
+  .step-num {
+    width: 52px; height: 52px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .step-title { font-size: 1.1rem; font-weight: 700; color: var(--navy-deep); margin-bottom: 0.75rem; }
+  .step-desc { font-size: 0.95rem; color: var(--gray-text); line-height: 1.7; }
+  .step-arrow {
+    position: absolute;
+    right: -14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
+    z-index: 2;
+  }
+
+  /* ── WHO BENEFITS ── */
+  .who-section { background: var(--gray-light); }
+  .micro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .micro-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid var(--gray-mid);
+    transition: all 0.3s;
+  }
+  .micro-card:hover { border-color: var(--navy); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(15,52,96,0.12); }
+  .micro-emoji { font-size: 2.2rem; margin-bottom: 1rem; }
+  .micro-name { font-size: 0.95rem; font-weight: 600; color: var(--navy-deep); margin-bottom: 0.4rem; }
+  .micro-amount { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
+
+  /* ── IMPACT OUTCOMES ── */
+  .impact-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: white;
+  }
+  .impact-section .section-label { color: var(--gold); }
+  .impact-section .section-title { color: white; }
+  .impact-section .section-subtitle { color: rgba(255,255,255,0.8); }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .impact-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+  .impact-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+  .impact-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .impact-title { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 0.75rem; }
+  .impact-desc { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+  .impact-vision {
+    background: rgba(251,191,36,0.15);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  .impact-vision h3 { font-size: 1.4rem; color: var(--gold); margin-bottom: 1rem; }
+  .impact-vision p { color: rgba(255,255,255,0.88); line-height: 1.75; font-size: 1rem; max-width: 800px; margin: 0 auto; }
+
+  .impact-numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .impact-num-item { text-align: center; }
+  .impact-big-num { font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .impact-num-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+
+  /* ── TRANSPARENCY / HOW WE OPERATE ── */
+  .ops-section { background: white; }
+  .ops-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .ops-card {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 2px solid var(--gray-mid);
+    transition: border-color 0.3s;
+  }
+  .ops-card:hover { border-color: var(--navy); }
+  .ops-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .ops-card-title { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+  .ops-card-desc { font-size: 0.95rem; color: var(--gray-text); line-height: 1.75; }
+  .ops-list { list-style: none; margin-top: 0.75rem; }
+  .ops-list li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    display: flex;
+    gap: 0.6rem;
+    border-bottom: 1px solid var(--gray-mid);
+    line-height: 1.5;
+  }
+  .ops-list li:last-child { border-bottom: none; }
+  .ops-list .ck { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  .commitment-box {
+    background: #f0fdf4;
+    border-left: 4px solid var(--green);
+    padding: 2rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+  }
+  .commitment-box h4 { color: var(--navy-deep); font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .commitment-box p { color: var(--gray-text); font-size: 0.95rem; line-height: 1.75; }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--gray-light); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .faq-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.75rem;
+    border: 2px solid var(--gray-mid);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  .faq-item:hover { border-color: var(--navy); }
+  .faq-item.open { border-color: var(--gold); box-shadow: 0 4px 16px rgba(251,191,36,0.15); }
+  .faq-q {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--navy-deep);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .faq-toggle {
+    color: var(--navy);
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    line-height: 1.2;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); color: var(--gold); }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+    margin-top: 1rem;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-disclaimer {
+    background: #fef3c7;
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem 2rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #78350f;
+    line-height: 1.7;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── FINAL CTA ── */
+  .cta-section {
+    padding: 80px 3rem;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: white;
+    text-align: center;
+  }
+  .cta-content { max-width: 800px; margin: 0 auto; }
+  .cta-content h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: 1.5rem; }
+  .cta-content p { font-size: 1.1rem; color: rgba(255,255,255,0.88); margin-bottom: 2.5rem; line-height: 1.75; }
+
+  .amount-row {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .amount-chip {
+    background: rgba(251,191,36,0.15);
+    border: 1.5px solid rgba(251,191,36,0.5);
+    color: var(--gold);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .amount-chip:hover { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+
+  .cta-note { margin-top: 1.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+  .cta-note a { color: var(--gold); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy-deep); color: #9ca3af; padding: 50px 3rem 30px; }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #374151;
+    margin-bottom: 1.5rem;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 1rem; }
+  .footer-brand img { height: 32px; }
+  .footer-brand span { color: #9ca3af; font-size: 0.9rem; }
+  .footer-links-row { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .footer-links-row a { color: #9ca3af; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+  .footer-links-row a:hover { color: white; }
+  .footer-copy { text-align: center; font-size: 0.8rem; color: #6b7280; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 60px 1.5rem; }
+    .nav-container { padding: 1rem 1.5rem; }
+    .hero { padding: 120px 1.5rem 60px; }
+    .hero-stats { grid-template-columns: 1fr; gap: 2rem; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .step-card { border-right: none; border-bottom: 1px solid var(--gray-mid); }
+    .step-card:last-child { border-bottom: none; }
+    .step-arrow { display: none; }
+    .ops-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .impact-numbers { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links-row { justify-content: center; }
+    .nav-right .hide-mobile { display: none; }
+  }
+
+  /* entry animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-content > *:nth-child(2) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <a href="https://capallo.co" class="nav-logo">
+      <img src="https://i.imgur.com/gygdJtU.png" alt="Capallo">
+    </a>
+    <div class="nav-right">
+      <a href="https://capallo.co" class="hide-mobile">← Back to Capallo</a>
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="btn btn-primary">Donate Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌙 Ramadan Mubarak · Capallo Sadaqah Initiative</div>
+    <h1>Your <span>Sadaqah</span> doesn't<br>just help — it builds.</h1>
+    <p>Channel your charity into struggling entrepreneurs across Bangladesh. One donation creates a business. One business creates a livelihood. One livelihood creates future givers.</p>
+    <div class="hero-cta">
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="btn btn-gold btn-lg">Donate via SupportKori →</a>
+      <a href="#how" class="btn btn-outline-white btn-lg">How it works</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">৳50L+</div>
+        <div class="stat-label">Target to raise this Ramadan</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Goes directly to entrepreneurs</div>
+      </div>
+      <div>
+        <div class="stat-num">৳5K–20K</div>
+        <div class="stat-label">Seed capital per micropreneur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QURAN VERSE -->
+<section class="quran-section">
+  <div class="quran-box">
+    <div class="quran-arabic">إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا</div>
+    <p class="quran-translation">"Charity is only for the poor, the needy, and those working to earn but struggling to meet their needs..." — the people who will not ask, but whose potential is waiting for one small act of trust.</p>
+    <div class="quran-ref">Surah At-Tawbah, 9:60</div>
+  </div>
+  <div class="shariah-note">
+    <strong>⚡ Shariah Guidance:</strong> This initiative is structured as <strong>Sadaqah / Sadaqah Jariyah</strong> (ongoing voluntary charity). Donations go directly to individual entrepreneurs — not to business entities — making this valid under the broadest scholarly consensus. Donors who intend this as Zakat should consult their own scholar regarding the nisab eligibility of each recipient. <em>We intentionally do not brand this as Zakat so that donors of all kinds — both Zakat and Sadaqah — can participate without restriction.</em>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="container text-center">
+    <div class="section-label">The Journey of Your Donation</div>
+    <h2 class="section-title">Simple. Transparent. Traceable.</h2>
+    <p class="section-subtitle">Every taka you give follows a clear, documented path from your wallet to a founder's hands — and we report back on exactly where it went.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-arrow">›</div>
+        <div class="step-num">1</div>
+        <div class="step-title">You Donate</div>
+        <div class="step-desc">Give any amount via the SupportKori link. Secure, instant, and takes 60 seconds. No account needed.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-arrow">›</div>
+        <div class="step-num">2</div>
+        <div class="step-title">Capallo Curates</div>
+        <div class="step-desc">We identify vetted struggling entrepreneurs from our network — founders with real businesses and real potential but zero working capital.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-arrow">›</div>
+        <div class="step-num">3</div>
+        <div class="step-title">Capital Deployed</div>
+        <div class="step-desc">Funds are transferred directly to individual founders. We document every disbursement with a name, business, and amount.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title">You See the Impact</div>
+        <div class="step-desc">Monthly updates shared on LinkedIn & directly to donors. By next Ramadan, many of these founders will be giving their own Zakat.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO BENEFITS -->
+<section class="who-section">
+  <div class="container text-center">
+    <div class="section-label">The People You're Helping</div>
+    <h2 class="section-title">Not charity cases. Entrepreneurs.</h2>
+    <p class="section-subtitle">These are people with products, skills, and customers — who simply need ৳5,000–20,000 to take their next step. They don't want handouts forever. They want a start.</p>
+    <div class="micro-grid">
+      <div class="micro-card">
+        <div class="micro-emoji">🧵</div>
+        <div class="micro-name">Tailors</div>
+        <div class="micro-amount">৳8,000–15,000</div>
+      </div>
+      <div class="micro-card">
+        <div class="micro-emoji">🍱</div>
+        <div class="micro-name">Food Vendors</div>
+        <div class="micro-amount">৳5,000–12,000</div>
+      </div>
+      <div class="micro-card">
+        <div class="micro-emoji">🛒</div>
+        <div class="micro-name">Small Shops</div>
+        <div class="micro-amount">৳10,000–20,000</div>
+      </div>
+      <div class="micro-card">
+        <div class="micro-emoji">🧴</div>
+        <div class="micro-name">Home Businesses</div>
+        <div class="micro-amount">৳5,000–10,000</div>
+      </div>
+      <div class="micro-card">
+        <div class="micro-emoji">📱</div>
+        <div class="micro-name">Micro Startups</div>
+        <div class="micro-amount">৳15,000–20,000</div>
+      </div>
+      <div class="micro-card">
+        <div class="micro-emoji">🌾</div>
+        <div class="micro-name">Agri Entrepreneurs</div>
+        <div class="micro-amount">৳10,000–20,000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT & OUTCOMES -->
+<section class="impact-section" id="impact">
+  <div class="container text-center">
+    <div class="section-label">Why This Matters</div>
+    <h2 class="section-title">The Multiplier Effect of Smart Sadaqah</h2>
+    <p class="section-subtitle">Traditional charity feeds people for a day. This initiative creates engines that generate income — for years, for families, for communities.</p>
+
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">🔁</div>
+        <div class="impact-title">Sadaqah Jariyah — Ongoing Reward</div>
+        <div class="impact-desc">When your donation enables a business, every product sold, every family fed, every employee paid — that is your ongoing reward continuing even after Ramadan ends.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">📈</div>
+        <div class="impact-title">From Recipient to Giver</div>
+        <div class="impact-desc">Today's micropreneur is next year's Zakat-payer. Our goal: every founder we support reaches nisab within 12 months and pays it forward independently.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">👨‍👩‍👧</div>
+        <div class="impact-title">Family & Community Impact</div>
+        <div class="impact-desc">One business supports an average of 3–5 family members. At scale, ৳50 lakh seeded into 100+ businesses touches 300–500 lives directly.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏦</div>
+        <div class="impact-title">Capallo Management Fee → More Micropreneurs</div>
+        <div class="impact-desc">100% of Capallo's management fees from Ramadan investments are separately donated to this same fund — your Sadaqah is amplified by our own commitment.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌏</div>
+        <div class="impact-title">Building the ৳1 Trillion Economy</div>
+        <div class="impact-desc">Bangladesh's path to a trillion-dollar economy runs through millions of small businesses. Channelling Zakat and Sadaqah into working capital is the fastest, most halal route there.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🛡️</div>
+        <div class="impact-title">Institutional-Grade Accountability</div>
+        <div class="impact-desc">Unlike anonymous charity funds, Capallo uses the same due-diligence infrastructure we apply to investor deals — vetted founders, documented disbursements, transparent reporting.</div>
+      </div>
+    </div>
+
+    <div class="impact-vision">
+      <h3>🌙 The Vision: A Self-Sustaining Cycle of Giving</h3>
+      <p>Imagine ৳50 lakh given this Ramadan creates 100 businesses. Those 100 businesses employ 400 people. By next Ramadan, 60 of those founders are above nisab and give their own Zakat. That Zakat seeds 120 new businesses. And the cycle compounds — not through speculation, but through <strong>amanah</strong>: capital as a trust, wielded with intention.</p>
+    </div>
+
+    <div class="impact-numbers">
+      <div class="impact-num-item">
+        <div class="impact-big-num">100+</div>
+        <div class="impact-num-label">Target businesses seeded this Ramadan</div>
+      </div>
+      <div class="impact-num-item">
+        <div class="impact-big-num">400+</div>
+        <div class="impact-num-label">Lives touched directly</div>
+      </div>
+      <div class="impact-num-item">
+        <div class="impact-big-num">৳50L</div>
+        <div class="impact-num-label">Target raised via community</div>
+      </div>
+      <div class="impact-num-item">
+        <div class="impact-big-num">12mo</div>
+        <div class="impact-num-label">Target for founders to reach nisab</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE OPERATE / TRANSPARENCY -->
+<section class="ops-section" id="transparency">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Our Commitment to Donors</div>
+      <h2 class="section-title">Full Transparency. No Overhead. No Ambiguity.</h2>
+      <p class="section-subtitle">We know that trust is earned, not assumed. Here is exactly how every taka moves and how we hold ourselves accountable.</p>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card">
+        <div class="ops-card-icon">💸</div>
+        <div class="ops-card-title">How Funds Are Disbursed</div>
+        <div class="ops-card-desc">Every donation collected through SupportKori is held separately and disbursed in tranches to individual entrepreneurs — not pooled into a general fund.</div>
+        <ul class="ops-list">
+          <li><span class="ck">✓</span> Directly to individual founders — not to companies</li>
+          <li><span class="ck">✓</span> In tranches of ৳5,000–20,000 per entrepreneur</li>
+          <li><span class="ck">✓</span> Each disbursement is documented with name, business type & amount</li>
+          <li><span class="ck">✓</span> No overhead deducted — 0% management cut from donations</li>
+          <li><span class="ck">✓</span> SupportKori platform fee (if any) disclosed upfront</li>
+        </ul>
+      </div>
+
+      <div class="ops-card">
+        <div class="ops-card-icon">🔍</div>
+        <div class="ops-card-title">How We Vet Entrepreneurs</div>
+        <div class="ops-card-desc">We apply a simplified version of our investor due-diligence framework to identify genuine need and genuine potential.</div>
+        <ul class="ops-list">
+          <li><span class="ck">✓</span> Active business or clear business plan required</li>
+          <li><span class="ck">✓</span> Verified financial need (below nisab threshold)</li>
+          <li><span class="ck">✓</span> Background check via Capallo's existing founder network</li>
+          <li><span class="ck">✓</span> Commitment to monthly progress updates for 12 months</li>
+          <li><span class="ck">✓</span> Priority for women-led and marginalized founders</li>
+        </ul>
+      </div>
+
+      <div class="ops-card">
+        <div class="ops-card-icon">📊</div>
+        <div class="ops-card-title">How We Report Back to Donors</div>
+        <div class="ops-card-desc">Accountability isn't optional. We publish impact updates publicly so every donor can see where their money went.</div>
+        <ul class="ops-list">
+          <li><span class="ck">✓</span> Monthly LinkedIn post: disbursements, businesses, amounts</li>
+          <li><span class="ck">✓</span> End-of-Ramadan full transparency report</li>
+          <li><span class="ck">✓</span> 12-month follow-up: how many founders reached nisab</li>
+          <li><span class="ck">✓</span> Direct email update to SupportKori donors</li>
+          <li><span class="ck">✓</span> Any unspent funds rolled into next disbursement cycle</li>
+        </ul>
+      </div>
+
+      <div class="ops-card">
+        <div class="ops-card-icon">🤝</div>
+        <div class="ops-card-title">Capallo's Own Contribution</div>
+        <div class="ops-card-desc">We don't just facilitate. We contribute. 100% of Capallo's management fees from investments processed during Ramadan are separately donated to this fund.</div>
+        <ul class="ops-list">
+          <li><span class="ck">✓</span> Management fee donation: disclosed per deal processed</li>
+          <li><span class="ck">✓</span> Separate accounting from community donations</li>
+          <li><span class="ck">✓</span> Sazzad personally accountable — all queries: sazzad@capallo.co</li>
+          <li><span class="ck">✓</span> This initiative is not investor capital — donations are separate</li>
+          <li><span class="ck">✓</span> No conflict of interest between investors and Sadaqah fund</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="commitment-box">
+      <h4>🌿 Our Pledge</h4>
+      <p>Capallo will never use this fund for operational expenses, salaries, or investor activities. This is pure amanah — a trust from donors to founders. If for any reason we cannot identify suitable entrepreneurs for a portion of funds, that amount will be held in trust and rolled into the next Ramadan cycle or returned to donors on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Questions Answered</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to feel confident before giving.</p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Does my donation count as Zakat? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">This initiative is structured as <strong>Sadaqah</strong> (voluntary charity), not formally as Zakat. However, since funds go directly to individual entrepreneurs who are below the nisab threshold, many scholars would consider this valid as Zakat too. We recommend consulting your own scholar. If your intention is Zakat, please ensure you're satisfied that recipients qualify under nisab rules. Either way, the impact is identical.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Why "Sadaqah" instead of "Zakat"? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Branding this as Zakat would require us to verify the nisab eligibility of every individual recipient — a compliance burden we cannot do at scale for 100+ founders. By framing it as Sadaqah, we can accept donations from everyone (Zakat-intending or not), ensure maximum participation, and avoid inadvertently invalidating anyone's Zakat due to unverified eligibility. It is the more cautious and inclusive approach.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">How do I know the money actually reaches founders? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">We publish monthly disbursement reports on LinkedIn with names (or initials if privacy is requested), business types, and amounts given. At the end of Ramadan, a full transparency report will be shared publicly and emailed to all SupportKori donors. We treat this with the same rigor we apply to investor reporting.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">What if the founder misuses the money? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">All selected founders are vetted through Capallo's existing network and agree to monthly check-ins. In the event of misuse, Capallo will document it, pursue recovery where legally possible, and report transparently to donors. We cannot guarantee outcomes — but we guarantee transparency and accountability, which is the Islamic standard for those who handle others' amanah.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Is this connected to Capallo's investor deals? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. The Sadaqah fund and Capallo's investment deals are completely separate. Investor capital is never mixed with charity funds. The only connection is that Capallo donates 100% of its own management fees from Ramadan deals to this fund — but that is Capallo's own money, not investors' money.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Who decides which entrepreneurs receive the funds? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Sazzad (founder of Capallo) personally curates the list, drawing from founders who've applied to Capallo for working capital, referrals from the Capallo network, and community nominations. Selection criteria: genuine financial need, viable business idea, and willingness to provide progress updates. Priority given to women-led and marginalized founders.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Can I donate a specific amount for one entrepreneur? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes — if you donate ৳10,000–20,000 and specify in the notes that you'd like it directed to a single founder, we'll do our best to honour that. For amounts under ৳5,000, funds are pooled and distributed collectively to maximise impact. Reach out to sazzad@capallo.co for large or directed donations.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">What happens to unspent funds? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Any unspent funds at the end of the Ramadan cycle will be carried forward to the next disbursement round and disclosed in the transparency report. No funds will be used for Capallo's operating expenses. If you'd prefer a refund of undeployed funds, contact us within 30 days of the end of Ramadan.</div>
+      </div>
+
+    </div>
+
+    <div class="faq-disclaimer">
+      ⚠️ <strong>Important:</strong> This is a charitable giving initiative, not an investment. You will not receive financial returns on your donation. Capallo acts as a curator and distributor, not a financial institution. This initiative is not regulated by any financial authority in Bangladesh. All disbursements are acts of charitable giving, and Capallo volunteers its time and infrastructure at no cost to donors.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-content">
+    <div class="hero-badge" style="margin-bottom: 1.5rem;">🌙 This Ramadan</div>
+    <h2>Don't just give charity.<br>Give a future.</h2>
+    <p>৳1,000 from you today could be someone's entire startup capital tomorrow. And next Ramadan, they'll be giving — not receiving.</p>
+
+    <div class="amount-row">
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="amount-chip">৳500</a>
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="amount-chip">৳1,000</a>
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="amount-chip">৳5,000</a>
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="amount-chip">৳10,000</a>
+      <a href="https://www.supportkori.com/capallo" target="_blank" class="amount-chip">Custom</a>
+    </div>
+
+    <a href="https://www.supportkori.com/capallo" target="_blank" class="btn btn-gold btn-lg">Donate on SupportKori →</a>
+
+    <p class="cta-note">
+      Secure payment via <a href="https://www.supportkori.com/capallo" target="_blank">SupportKori</a> · Takes 60 seconds · No account needed<br>
+      Questions? <a href="mailto:sazzad@capallo.co">sazzad@capallo.co</a> · <a href="http://wa.me/+8801645823853" target="_blank">WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo">
+      <span>A Capallo Community Initiative · Ramadan 2025</span>
+    </div>
+    <div class="footer-links-row">
+      <a href="https://capallo.co">capallo.co</a>
+      <a href="https://blog.capallo.co">Blog</a>
+      <a href="https://www.linkedin.com/company/capallo/" target="_blank">LinkedIn</a>
+      <a href="mailto:sazzad@capallo.co">Email</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    &copy; 2025 Capallo · Capital is amanah. Not just for wealth.
+  </div>
+</footer>
+
+<script>
+  function toggleFAQ(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+    });
+  });
+
+  // scroll-reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.impact-card, .step-card, .micro-card, .ops-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
