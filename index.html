@@ -719,18 +719,6 @@
                 font-size: 1.1rem !important;
             }
         }
-          /* Ramadan popup */
-        .ramadan-popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  animation: fadeIn 0.4s ease;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -1610,36 +1598,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
-    <div class="ramadan-popup-overlay" id="ramadanPopup">
-  <div class="ramadan-popup">
-    <button class="ramadan-popup-close" onclick="closePopup()">✕</button>
-    <div class="ramadan-popup-badge">🌙 Ramadan Mubarak</div>
-    <h3>Don't just give charity. Give a future.</h3>
-    <p>৳1,000 from you today could be someone's entire starting capital tomorrow. And next Ramadan, they'll be giving — not receiving. One asset. One life changed.</p>
-    <a href="https://capallo.co/sadaqah" class="ramadan-popup-btn">See how it works →</a>
-    <button class="ramadan-popup-skip" onclick="closePopup()">Maybe later</button>
-  </div>
-</div>
-
-    <script>
-  // Show popup after 4 seconds, only once per session
-  setTimeout(() => {
-    if (!sessionStorage.getItem('ramadanPopupSeen')) {
-      document.getElementById('ramadanPopup').style.display = 'flex';
-    }
-  }, 4000);
-
-  function closePopup() {
-    document.getElementById('ramadanPopup').style.display = 'none';
-    sessionStorage.setItem('ramadanPopupSeen', 'true');
-  }
-
-  // Close if clicking outside the popup box
-  document.getElementById('ramadanPopup').addEventListener('click', function(e) {
-    if (e.target === this) closePopup();
-  });
-</script>
 </body>
 
 
