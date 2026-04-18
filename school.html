@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture School - Bangladesh's Investment Professional Training Program | Capallo</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+    
+    <meta name="description" content="4-weekend intensive program teaching venture investment fundamentals. Perfect for career switchers, aspiring VCs, and investors entering Bangladesh's private markets. May 2026 cohort.">
+    <meta name="keywords" content="venture capital training Bangladesh, VC career Bangladesh, investment professional course, angel investing Bangladesh, startup investing course, Capallo Venture School">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Venture School May 2026 - Investment Professional Training | Capallo">
+    <meta property="og:description" content="Learn venture investing fundamentals in 4 weekends. Build your investment practice with Bangladesh's only structured program for aspiring VCs and angels.">
+    <meta property="og:image" content="https://i.imgur.com/ZORm1WL.png">
+    <meta property="og:url" content="https://capallo.co/school">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* Navigation - Same as main site */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0f3460;
+        }
+
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #0f3460;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #16213e;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 52, 96, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0f3460;
+            border: 2px solid #0f3460;
+        }
+
+        .btn-secondary:hover {
+            background: #0f3460;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 3rem 80px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .countdown-timer {
+            background: rgba(251, 191, 36, 0.2);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .countdown-timer h3 {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 3rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f3460;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Who This Is For Section */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .audience-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .audience-card:hover {
+            border-color: #0f3460;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .audience-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .audience-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .audience-description {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .audience-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .audience-list li {
+            color: #4a5568;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Curriculum Section */
+        .curriculum-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .week-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .week-card:hover {
+            border-color: #0f3460;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .week-number {
+            width: 60px;
+            height: 60px;
+            background: #0f3460;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .week-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3460;
+        }
+
+        .week-description {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .week-topics {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .week-topics li {
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .live-exercise {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #fbbf24;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .live-exercise strong {
+            color: #b36a4c;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #0f3460;
+        }
+
+        .pricing-card.featured {
+            border-color: #fbbf24;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #fbbf24;
+            color: #1a1a2e;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .pricing-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .pricing-save {
+            font-size: 0.85rem;
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 2rem;
+            background: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f7fafc;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 1.5rem 2rem;
+            color: #4a5568;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Guarantee Section */
+        .guarantee-box {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .guarantee-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Footer - Same as main site */
+        footer {
+            background: #1a1a2e;
+            color: #9ca3af;
+            padding: 60px 3rem 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .week-topics {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SXVEH8MS2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3SXVEH8MS2');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="https://capallo.co" class="logo">
+                <img src="https://i.imgur.com/gygdJtU.png" alt="Capallo Logo" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-links">
+                <a href="#who">Who It's For</a>
+                <a href="#curriculum">Curriculum</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div>
+                <a href="#pricing" class="btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">VENTURE SCHOOL MAY 2026</div>
+            <h1>Build Your Investment Career in 4 Weekends</h1>
+            <p>Bangladesh's only structured venture investment program for career switchers, aspiring VCs, and investors entering private markets. Learn deal evaluation, due diligence, and portfolio management from practitioners.</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-timer">
+                <h3>Early Bird Ends In:</h3>
+                <div class="countdown-display" id="countdown">
+                    <!-- JavaScript will populate this -->
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 4rem;">
+                <a href="#pricing" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.05rem; background: white; color: #0f3460;">Apply for May Cohort</a>
+                <a href="#curriculum" class="btn btn-secondary" style="padding: 1.2rem 2.5rem; font-size: 1.05rem; background: transparent; color: white; border: 2px solid white;">View Curriculum</a>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Weekends</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Spots Only</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">In-Person</div>
+                    <div class="stat-label">Gulshan, Dhaka</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section id="who" style="background: #f7fafc;">
+        <div class="section-container">
+            <div class="section-label">WHO THIS IS FOR</div>
+            <h2 class="section-title">Built for Career Switchers & Aspiring Investors</h2>
+            <p class="section-subtitle">This program is designed for three types of people looking to enter venture investing or fundraising roles.</p>
+
+            <div class="audience-grid">
+                <!-- Investment Professionals -->
+                <div class="audience-card">
+                    <div class="audience-icon">💼</div>
+                    <h3 class="audience-title">Career Switchers</h3>
+                    <p class="audience-description">Breaking into VC/PE, investor relations, or fundraising roles</p>
+                    <ul class="audience-list">
+                        <li><span class="checkmark">✓</span> Bankers & consultants</li>
+                        <li><span class="checkmark">✓</span> Corporate finance professionals</li>
+                        <li><span class="checkmark">✓</span> MBAs seeking investment roles</li>
+                        <li><span class="checkmark">✓</span> Startup operators pivoting</li>
+                    </ul>
+                </div>
+
+                <!-- Active Allocators -->
+                <div class="audience-card">
+                    <div class="audience-icon">📈</div>
+                    <h3 class="audience-title">Aspiring Investors</h3>
+                    <p class="audience-description">Starting angel investing or building investment practice</p>
+                    <ul class="audience-list">
+                        <li><span class="checkmark">✓</span> HNWIs exploring angels</li>
+                        <li><span class="checkmark">✓</span> Family office principals</li>
+                        <li><span class="checkmark">✓</span> Successful exits ready to invest</li>
+                        <li><span class="checkmark">✓</span> Second-gen business leaders</li>
+                    </ul>
+                </div>
+
+                <!-- Founders -->
+                <div class="audience-card">
+                    <div class="audience-icon">🚀</div>
+                    <h3 class="audience-title">Strategic Founders</h3>
+                    <p class="audience-description">Understanding investor mindset to raise smarter</p>
+                    <ul class="audience-list">
+                        <li><span class="checkmark">✓</span> Founders raising Series A+</li>
+                        <li><span class="checkmark">✓</span> Serial entrepreneurs</li>
+                        <li><span class="checkmark">✓</span> Operators building theses</li>
+                        <li><span class="checkmark">✓</span> Fundraising professionals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" style="background: white;">
+        <div class="section-container">
+            <div class="section-label">WHAT YOU'LL LEARN</div>
+            <h2 class="section-title">4-Week Intensive Curriculum</h2>
+            <p class="section-subtitle">From deal sourcing to portfolio management, build a complete investment practice.</p>
+
+            <div class="curriculum-grid">
+                <!-- Week 1 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <div class="week-number">1</div>
+                        <h3 class="week-title">Deal Evaluation Fundamentals</h3>
+                    </div>
+                    <p class="week-description">Learn how professional investors assess opportunities and build your evaluation framework.</p>
+                    <ul class="week-topics">
+                        <li><span class="checkmark">→</span> Financial model analysis (beyond P&L)</li>
+                        <li><span class="checkmark">→</span> Unit economics (CAC, LTV, margins)</li>
+                        <li><span class="checkmark">→</span> Market sizing for Bangladesh (TAM/SAM/SOM)</li>
+                        <li><span class="checkmark">→</span> Founder assessment frameworks</li>
+                        <li><span class="checkmark">→</span> Business model viability tests</li>
+                        <li><span class="checkmark">→</span> Competitive analysis techniques</li>
+                    </ul>
+                    <div class="live-exercise">
+                        <strong>Live Exercise:</strong> Evaluate 3 real Bangladesh startups and present investment recommendations
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <div class="week-number">2</div>
+                        <h3 class="week-title">Investment Structures & Term Sheets</h3>
+                    </div>
+                    <p class="week-description">Master the mechanics of how venture deals are structured and documented.</p>
+                    <ul class="week-topics">
+                        <li><span class="checkmark">→</span> Equity vs SAFE vs Convertible Notes</li>
+                        <li><span class="checkmark">→</span> Shariah-compliant structures (Mudarabah)</li>
+                        <li><span class="checkmark">→</span> Valuation methodologies (Berkus, VC method)</li>
+                        <li><span class="checkmark">→</span> Cap table dynamics & dilution math</li>
+                        <li><span class="checkmark">→</span> Term sheet clause-by-clause breakdown</li>
+                        <li><span class="checkmark">→</span> Protective provisions & investor rights</li>
+                    </ul>
+                    <div class="live-exercise">
+                        <strong>Live Exercise:</strong> Negotiate a mock term sheet with founder role-play scenarios
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <div class="week-number">3</div>
+                        <h3 class="week-title">Due Diligence & Risk Management</h3>
+                    </div>
+                    <p class="week-description">Build systematic processes to identify risks and validate assumptions.</p>
+                    <ul class="week-topics">
+                        <li><span class="checkmark">→</span> Financial DD (red flags in statements)</li>
+                        <li><span class="checkmark">→</span> Legal DD (incorporation, IP, contracts)</li>
+                        <li><span class="checkmark">→</span> Operational DD (customer validation)</li>
+                        <li><span class="checkmark">→</span> Reference checks & background verification</li>
+                        <li><span class="checkmark">→</span> Building your investment thesis</li>
+                        <li><span class="checkmark">→</span> Portfolio construction strategies</li>
+                    </ul>
+                    <div class="live-exercise">
+                        <strong>Live Exercise:</strong> Complete full due diligence on a live deal from Capallo's pipeline
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <div class="week-number">4</div>
+                        <h3 class="week-title">Deal Execution & Portfolio Management</h3>
+                    </div>
+                    <p class="week-description">From LOI to close, plus ongoing value creation and exit planning.</p>
+                    <ul class="week-topics">
+                        <li><span class="checkmark">→</span> Legal documentation (SSA, SHA)</li>
+                        <li><span class="checkmark">→</span> Investor onboarding process</li>
+                        <li><span class="checkmark">→</span> Post-investment value addition</li>
+                        <li><span class="checkmark">→</span> Portfolio monitoring & reporting</li>
+                        <li><span class="checkmark">→</span> Exit strategies (M&A, secondary, IPO)</li>
+                        <li><span class="checkmark">→</span> Building deal flow networks</li>
+                    </ul>
+                    <div class="live-exercise">
+                        <strong>Demo Day:</strong> Evaluate live founder pitches, make investment decisions, present rationale
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's Included -->
+            <div style="background: #fff8f0; border-left: 4px solid #fbbf24; padding: 2rem; margin-top: 3rem; border-radius: 8px;">
+                <h4 style="color: #1a1a2e; font-size: 1.3rem; margin-bottom: 1rem;">✨ What's Included</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; color: #4a5568; line-height: 2;">
+                    <div>
+                        <div>✓ 8 sessions × 3 hours (24 hours total)</div>
+                        <div>✓ Investment toolkit (templates, frameworks)</div>
+                        <div>✓ Guest sessions with active VCs/angels</div>
+                        <div>✓ Access to live deal evaluations</div>
+                    </div>
+                    <div>
+                        <div>✓ Certificate (digital + printed)</div>
+                        <div>✓ Lifetime investor community access</div>
+                        <div>✓ Post-program career support</div>
+                        <div>✓ Evening refreshments provided</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="background: #f7fafc;">
+        <div class="section-container">
+            <div class="section-label">INVESTMENT</div>
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Limited to 10 participants for intimate learning. Secure your spot early.</p>
+
+            <div class="pricing-grid">
+                <!-- Super Early Bird -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Super Early Bird</h3>
+                        <p class="pricing-subtitle">Apply by April 30</p>
+                    </div>
+                    <div class="pricing-price">BDT 20,000</div>
+                    <p class="pricing-save">Save BDT 10,000</p>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> All program benefits</li>
+                        <li><span class="checkmark">✓</span> Exclusive pre-program onboarding call</li>
+                        <li><span class="checkmark">✓</span> Early access to all materials</li>
+                        <li><span class="checkmark">✓</span> Priority seating selection</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+
+                <!-- Early Bird -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Early Bird</h3>
+                        <p class="pricing-subtitle">May 1-10</p>
+                    </div>
+                    <div class="pricing-price">BDT 25,000</div>
+                    <p class="pricing-save">Save BDT 5,000</p>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Full program access</li>
+                        <li><span class="checkmark">✓</span> All course materials</li>
+                        <li><span class="checkmark">✓</span> Certificate upon completion</li>
+                        <li><span class="checkmark">✓</span> Lifetime community access</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+
+                <!-- Regular -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Regular</h3>
+                        <p class="pricing-subtitle">May 11-30</p>
+                    </div>
+                    <div class="pricing-price">BDT 30,000</div>
+                    <p class="pricing-subtitle">Standard pricing</p>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Full program access</li>
+                        <li><span class="checkmark">✓</span> All course materials</li>
+                        <li><span class="checkmark">✓</span> Certificate upon completion</li>
+                        <li><span class="checkmark">✓</span> Lifetime community access</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="btn btn-primary" style="width: 100%; text-align: center; display: block;" target="_blank">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Program Details -->
+            <div style="background: white; padding: 2.5rem; border-radius: 12px; margin-top: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <h3 style="color: #0f3460; font-size: 1.5rem; margin-bottom: 1.5rem;">📅 Program Details</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; color: #4a5568; line-height: 2;">
+                    <div>
+                        <strong>Start Date:</strong> May 8, 2026<br>
+                        <strong>Duration:</strong> 4 weekends<br>
+                        <strong>Schedule:</strong> Thursdays + Fridays, 6-9 PM<br>
+                        <strong>Format:</strong> In-person only
+                    </div>
+                    <div>
+                        <strong>Location:</strong> Gulshan 1, Dhaka<br>
+                        <strong>Cohort Size:</strong> 10 participants max<br>
+                        <strong>Dress Code:</strong> Business casual<br>
+                        <strong>Language:</strong> English
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scholarships -->
+            <div style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: white; padding: 2.5rem; border-radius: 12px; margin-top: 2rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🎓 3 Full Scholarships Available</h3>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; line-height: 1.7;">We're offering full scholarships (BDT 30,000 value) to exceptional candidates. Submit your application + why you should be selected by May 5, 2026.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="btn btn-primary" style="background: #fbbf24; color: #1a1a2e;" target="_blank">Apply for Scholarship</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section style="background: white;">
+        <div class="section-container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">✅</div>
+                <h3 class="guarantee-title">100% Satisfaction Guarantee</h3>
+                <p class="guarantee-text">Attend all 8 sessions, participate in exercises, and if you don't leave with practical investment frameworks, vetted deal access, and career-relevant skills, we'll refund your full registration fee. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background: #f7fafc;">
+        <div class="section-container">
+            <div class="section-label">FREQUENTLY ASKED QUESTIONS</div>
+            <h2 class="section-title">Got Questions?</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do I need prior investment experience?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. The program is designed for beginners to intermediate learners. We start with fundamentals and build systematically. Most participants are career switchers with no prior investment experience.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is this only for people with capital to invest?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. Many participants are building skills for VC/PE careers, investor relations roles, or fundraising positions. You don't need capital to join—just the intention to work in venture investing or fundraising.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What's the time commitment?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        8 sessions × 3 hours = 24 hours over 4 weeks (Thursdays + Fridays, 6-9 PM). Plus light homework/reading (~2-3 hours/week). Total commitment: ~35-40 hours.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Will I actually invest in deals during the program?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The program teaches evaluation frameworks. Actual investment is optional post-program based on your criteria. You'll practice on live deals, but commitment to invest is not required.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you help with job placements?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. For aspiring investment professionals, we provide career support including CV review, intro to fund managers, and placement assistance for analyst/associate roles in Bangladesh's investment ecosystem.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is the certification recognized?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        It's a professional development credential. While not government-accredited, it's respected in Bangladesh's investment community and demonstrates systematic investment training.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What if I miss a session?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Attendance is mandatory for certification. One missed session can be made up via recorded content + 1-on-1 catch-up. Two+ missed sessions = no certificate, but materials are still provided.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I attend remotely?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. May cohort is in-person only (Gulshan 1, Dhaka) for maximum interaction, networking, and hands-on learning. Future cohorts may offer hybrid options.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What's your refund policy?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Attend all sessions and participate fully. If you don't get value, request a full refund within 7 days of program completion. No questions asked.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: white; text-align: center;">
+        <div class="section-container">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Ready to Start Your Investment Career?</h2>
+            <p style="font-size: 1.15rem; margin-bottom: 2.5rem; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin-left: auto; margin-right: auto;">Join Bangladesh's first structured venture investment program. 10 spots only. May 8-31, 2026.</p>
+            
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrBKo1CM3KQxh-h0J_IWSB_DoSwiWaKhvUGEEHSiJscAChqA/viewform?usp=header" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.05rem; background: white; color: #0f3460;" target="_blank">Apply Now (Super Early Bird)</a>
+                <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-secondary" style="padding: 1.2rem 2.5rem; font-size: 1.05rem; background: transparent; color: white; border: 2px solid white;" target="_blank">Schedule Call</a>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8);">Questions? Email: <a href="mailto:saleh.sazzad@capallo.co" style="color: #fbbf24; text-decoration: underline;">saleh.sazzad@capallo.co</a> or WhatsApp: <a href="http://wa.me/+8801645823853" style="color: #fbbf24; text-decoration: underline;">+880 1645 823853</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div class="footer-container">
+                <div>
+                    <a href="https://capallo.co" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; margin-bottom: 1rem;">
+                        <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo Logo" style="height: 35px; width: auto;">
+                    </a>
+                    <p style="color: #9ca3af; line-height: 1.7; max-width: 400px;">Bangladesh's first fraud-protected venture investing platform. Venture School is our education arm for aspiring investors and career switchers.</p>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">Venture School</h4>
+                    <ul class="footer-links">
+                        <li><a href="#who">Who It's For</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">Capallo</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://capallo.co#investors">For Investors</a></li>
+                        <li><a href="https://capallo.co#founders">For Founders</a></li>
+                        <li><a href="https://capallo.co#about">About</a></li>
+                        <li><a href="https://blog.capallo.co">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:saleh.sazzad@capallo.co">Email Us</a></li>
+                        <li><a href="http://wa.me/+8801645823853">WhatsApp</a></li>
+                        <li><a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8">Schedule Call</a></li>
+                        <li><a href="https://www.linkedin.com/company/capallo/">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Capallo. All rights reserved. | <a href="https://capallo.co/privacy_policy.html" style="color: #9ca3af;">Privacy Policy</a> | <a href="https://capallo.co/terms_of_service.html" style="color: #9ca3af;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('April 30, 2026 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `
+                <div class="countdown-item">
+                    <span class="countdown-number">${days}</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${hours}</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${minutes}</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${seconds}</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            `;
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<p style="color: #fbbf24; font-size: 1.2rem;">Super Early Bird Ended. Early Bird Now Active!</p>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('span').textContent = '+';
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Tawk.to Chat -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/696207a42f86a5197c127202/1jejern58';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>
