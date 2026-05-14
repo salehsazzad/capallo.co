@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fractional CFO for High-Cashflow Businesses | Capallo</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+<meta name="description" content="Institutional-grade financial management for high-cashflow Bangladeshi businesses. Done-for-you Fractional CFO service. Clean books. Audit-ready. BDT 30,000/month.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--navy:#0f3460;
+--navy-dark:#16213e;
+--navy-deeper:#0a2240;
+--gold:#fbbf24;
+--gold-light:#fde68a;
+--white:#ffffff;
+--off-white:#f7fafc;
+--text:#1a1a2e;
+--text-muted:#4a5568;
+--text-light:#6b7280;
+--border:#e5e7eb;
+--green:#10b981;
+--serif:'DM Serif Display',Georgia,serif;
+--sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;font-weight:400}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-weight:500;font-size:0.9rem;transition:color 0.3s}
+.nav-links a:hover{color:var(--navy)}
+.nav-back{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;display:flex;align-items:center;gap:0.4rem;transition:color 0.3s}
+.nav-back:hover{color:var(--navy)}
+.btn{padding:0.75rem 1.8rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--navy);color:white}
+.btn-primary:hover{background:var(--navy-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,52,96,0.3)}
+.btn-secondary{background:white;color:var(--navy);border:2px solid var(--navy)}
+.btn-secondary:hover{background:var(--navy);color:white}
+.mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer;padding:0.5rem}
+
+/* HERO */
+.hero{padding:140px 3rem 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 60%,#0a1628 100%);color:white;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(251,191,36,0.04);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.02);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-badge{display:inline-block;padding:0.4rem 1.1rem;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem}
+.hero h1{font-family:var(--serif);font-size:3.2rem;font-weight:400;line-height:1.15;margin-bottom:1.5rem;color:white}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.8);line-height:1.8;margin-bottom:2.5rem;font-weight:300}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--navy-dark);font-weight:700}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 16px rgba(251,191,36,0.4)}
+.btn-outline-white{background:transparent;color:white;border:2px solid rgba(255,255,255,0.4)}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:white}
+
+/* HERO RIGHT CARD */
+.hero-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:2.5rem;backdrop-filter:blur(10px)}
+.hero-card-title{font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.price-block{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.price-label{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:0.5rem}
+.price-amount{font-family:var(--serif);font-size:2.4rem;color:white;line-height:1}
+.price-amount span{font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,0.6);font-weight:400}
+.price-note{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.4rem}
+.hero-features{list-style:none}
+.hero-features li{padding:0.6rem 0;color:rgba(255,255,255,0.85);font-size:0.9rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero-features li:last-child{border-bottom:none}
+.check{color:var(--green);font-size:1rem;flex-shrink:0}
+
+/* PROBLEM SECTION */
+.problem{padding:90px 3rem;background:var(--off-white)}
+.problem-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:700;color:var(--navy);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:1rem}
+.section-title{font-family:var(--serif);font-size:2.4rem;font-weight:400;color:var(--text);margin-bottom:1.2rem;line-height:1.2}
+.section-sub{font-size:1.05rem;color:var(--text-muted);line-height:1.8;max-width:680px;font-weight:300}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.problem-card{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),transparent);border-radius:12px 12px 0 0}
+.problem-number{font-family:var(--serif);font-size:2.5rem;color:var(--border);line-height:1;margin-bottom:1rem;font-weight:400}
+.problem-title{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+.problem-desc{font-size:0.9rem;color:var(--text-muted);line-height:1.7}
+
+/* TROJAN HORSE */
+.trojan{padding:90px 3rem;background:white}
+.trojan-inner{max-width:1100px;margin:0 auto}
+.trojan-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);border-radius:16px;padding:3.5rem;color:white;position:relative;overflow:hidden}
+.trojan-box::after{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(251,191,36,0.06);pointer-events:none}
+.trojan-label{font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.trojan-title{font-family:var(--serif);font-size:2rem;color:white;margin-bottom:1rem;font-weight:400}
+.trojan-sub{font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:2.5rem;max-width:700px;font-weight:300}
+.trojan-offer{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:2rem;margin-bottom:1.5rem}
+.trojan-offer-title{font-size:1.15rem;font-weight:600;color:white;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.75rem}
+.trojan-price-tag{background:rgba(251,191,36,0.2);border:1px solid rgba(251,191,36,0.4);color:var(--gold);font-size:0.8rem;padding:0.2rem 0.7rem;border-radius:50px;font-weight:600}
+.trojan-offer-desc{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:1rem}
+.trojan-offer-bridge{font-size:0.85rem;color:rgba(251,191,36,0.9);font-style:italic;border-left:2px solid rgba(251,191,36,0.4);padding-left:1rem}
+
+/* DELIVERABLES */
+.deliverables{padding:90px 3rem;background:var(--off-white)}
+.deliverables-inner{max-width:1100px;margin:0 auto}
+.deliverables-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem}
+.deliverable-item{background:white;border:1px solid var(--border);border-radius:12px;padding:1.8rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s}
+.deliverable-item:hover{border-color:var(--navy);box-shadow:0 4px 20px rgba(15,52,96,0.08);transform:translateY(-2px)}
+.deliverable-icon{width:44px;height:44px;background:rgba(15,52,96,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
+.deliverable-content h4{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+.deliverable-content p{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+
+/* PRICING */
+.pricing-section{padding:90px 3rem;background:white}
+.pricing-inner{max-width:900px;margin:0 auto;text-align:center}
+.pricing-card-main{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);border-radius:20px;padding:3.5rem;color:white;margin-top:3rem;position:relative;overflow:hidden}
+.pricing-card-main::before{content:'INSTITUTIONAL GRADE';position:absolute;top:2rem;right:2rem;font-size:0.7rem;font-weight:700;letter-spacing:2px;color:var(--gold);opacity:0.9}
+.pricing-main-label{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.5rem}
+.pricing-main-title{font-family:var(--serif);font-size:2rem;color:white;margin-bottom:2.5rem;font-weight:400}
+.pricing-tiers{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem}
+.tier{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:1.8rem;text-align:left}
+.tier.featured{background:rgba(251,191,36,0.12);border-color:rgba(251,191,36,0.3)}
+.tier-label{font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.75rem}
+.tier.featured .tier-label{color:var(--gold)}
+.tier-price{font-family:var(--serif);font-size:2rem;color:white;margin-bottom:0.25rem}
+.tier-price small{font-family:var(--sans);font-size:0.9rem;color:rgba(255,255,255,0.6);font-weight:400}
+.tier-note{font-size:0.8rem;color:rgba(255,255,255,0.5)}
+.tier.featured .tier-note{color:rgba(251,191,36,0.8)}
+.pricing-includes{text-align:left;margin-bottom:2.5rem}
+.pricing-includes-title{font-size:0.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.pricing-features-list{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+.pricing-features-list li{list-style:none;font-size:0.88rem;color:rgba(255,255,255,0.8);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5}
+.guarantee-box{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:2rem;display:flex;align-items:flex-start;gap:1rem;text-align:left}
+.guarantee-text{font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.6}
+.guarantee-text strong{color:var(--green);display:block;margin-bottom:0.2rem}
+
+/* PROCESS */
+.process{padding:90px 3rem;background:var(--off-white)}
+.process-inner{max-width:1100px;margin:0 auto}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 28px);right:calc(12.5% + 28px);height:2px;background:linear-gradient(90deg,var(--navy),var(--gold),var(--navy));opacity:0.2}
+.step{text-align:center;padding:0 1rem}
+.step-num{width:56px;height:56px;background:var(--navy);color:white;border-radius:50%;font-family:var(--serif);font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;position:relative;z-index:1;box-shadow:0 4px 12px rgba(15,52,96,0.25)}
+.step-title{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.step-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.6}
+
+/* COMPARISON TABLE */
+.comparison{padding:90px 3rem;background:white}
+.comparison-inner{max-width:1000px;margin:0 auto}
+.compare-table{width:100%;margin-top:3.5rem;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+.compare-table th{padding:1.25rem 1.5rem;font-size:0.85rem;font-weight:700;letter-spacing:0.5px}
+.compare-table th:first-child{background:var(--off-white);color:var(--text-muted);text-align:left;width:40%}
+.compare-table th:nth-child(2){background:#fff8f0;color:var(--text-muted)}
+.compare-table th:nth-child(3){background:var(--navy);color:white}
+.compare-table td{padding:1rem 1.5rem;font-size:0.9rem;border-top:1px solid var(--border);text-align:center}
+.compare-table td:first-child{text-align:left;font-weight:500;color:var(--text);background:var(--off-white)}
+.compare-table td:nth-child(2){background:#fff8f0;color:var(--text-muted)}
+.compare-table td:nth-child(3){background:#f0f5ff;color:var(--navy);font-weight:600}
+.compare-table tr:last-child td:first-child{border-bottom-left-radius:12px}
+.compare-table tr:last-child td:last-child{border-bottom-right-radius:12px}
+.x-mark{color:#e53e3e}
+.check-mark{color:var(--green);font-weight:700}
+
+/* TESTIMONIAL */
+.testimonial-section{padding:90px 3rem;background:var(--off-white)}
+.testimonial-inner{max-width:900px;margin:0 auto;text-align:center}
+.quote-mark{font-family:var(--serif);font-size:5rem;color:var(--navy);opacity:0.15;line-height:0.5;margin-bottom:1rem;display:block}
+.quote-text{font-family:var(--serif);font-size:1.5rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:1.5rem;font-weight:400}
+.quote-author{font-size:0.9rem;font-weight:600;color:var(--text-muted)}
+
+/* CTA */
+.cta{padding:100px 3rem;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);text-align:center;color:white}
+.cta-inner{max-width:700px;margin:0 auto}
+.cta h2{font-family:var(--serif);font-size:2.8rem;font-weight:400;margin-bottom:1.2rem;line-height:1.2}
+.cta h2 em{color:var(--gold);font-style:italic}
+.cta p{font-size:1.05rem;color:rgba(255,255,255,0.8);margin-bottom:2.5rem;line-height:1.8;font-weight:300}
+.cta-buttons{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.cta-footnote{font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.cta-footnote a{color:rgba(251,191,36,0.8);text-decoration:underline}
+
+/* FOOTER */
+footer{background:#1a1a2e;color:#9ca3af;padding:50px 3rem 30px}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid #374151;gap:4rem;flex-wrap:wrap}
+.footer-brand p{line-height:1.7;margin-top:1rem;font-size:0.9rem;max-width:380px}
+.footer-links-grid{display:flex;gap:4rem}
+.footer-col h4{color:#fbbf24;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.2rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:0.6rem}
+.footer-col ul li a{color:#9ca3af;text-decoration:none;font-size:0.88rem;transition:color 0.3s}
+.footer-col ul li a:hover{color:white}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem}
+.footer-legal{display:flex;gap:2rem}
+.footer-legal a{color:#6b7280;text-decoration:none;transition:color 0.3s}
+.footer-legal a:hover{color:white}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav-container{padding:1rem 1.5rem}
+.mobile-menu-btn{display:block}
+.nav-links{position:fixed;top:70px;left:-100%;width:100%;height:calc(100vh - 70px);background:white;flex-direction:column;align-items:flex-start;padding:2rem;transition:left 0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.1);z-index:999}
+.nav-links.active{left:0}
+.hero{padding:120px 1.5rem 70px}
+.hero-inner{grid-template-columns:1fr;gap:3rem}
+.hero h1{font-size:2.2rem}
+.problem-grid{grid-template-columns:1fr}
+.deliverables-grid{grid-template-columns:1fr}
+.pricing-tiers{grid-template-columns:1fr}
+.pricing-features-list{grid-template-columns:1fr}
+.process-steps{grid-template-columns:1fr 1fr;gap:2rem}
+.process-steps::before{display:none}
+.compare-table th,.compare-table td{padding:0.75rem 0.75rem;font-size:0.8rem}
+.footer-top{flex-direction:column}
+.footer-links-grid{flex-wrap:wrap;gap:2rem}
+.footer-bottom{flex-direction:column;text-align:center}
+.trojan-box{padding:2rem}
+.cta h2{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <a href="https://capallo.co" style="display:inline-flex;align-items:center;gap:0.75rem;text-decoration:none;">
+      <img src="https://i.imgur.com/gygdJtU.png" alt="Capallo" style="height:38px;width:auto;">
+    </a>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+    <div class="nav-links">
+      <a href="#problem">The Problem</a>
+      <a href="#deliverables">What's Included</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">How It Works</a>
+      <a href="https://capallo.co">Back to Capallo</a>
+    </div>
+    <div style="display:flex;gap:1rem;">
+      <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-primary" target="_blank">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Fractional CFO Service — Bangladesh</div>
+      <h1>Your business makes money.<br><em>Your books should prove it.</em></h1>
+      <p class="hero-sub">High-cashflow Bangladeshi founders who are about to hire an accounts manager are solving the wrong problem. For BDT 5,000 more per month, you get a CFO — not a bookkeeper.</p>
+      <div class="hero-cta">
+        <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-gold" target="_blank">Book a Free Discovery Call</a>
+        <a href="#pricing" class="btn btn-outline-white">See Pricing</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">What You're Getting</div>
+      <div class="price-block">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div>
+            <div class="price-label">Signup Fee</div>
+            <div class="price-amount">৳40,000<span> once</span></div>
+            <div class="price-note">Onboarding & setup</div>
+          </div>
+          <div>
+            <div class="price-label">Monthly Retainer</div>
+            <div class="price-amount">৳30,000<span>/mo</span></div>
+            <div class="price-note">Paid in advance</div>
+          </div>
+        </div>
+      </div>
+      <ul class="hero-features">
+        <li><span class="check">✓</span> Clean, institutional-grade financial books</li>
+        <li><span class="check">✓</span> 3-statement financial model, live every month</li>
+        <li><span class="check">✓</span> Audit-ready reporting package</li>
+        <li><span class="check">✓</span> Monthly management accounts</li>
+        <li><span class="check">✓</span> Cashflow forecasting & variance analysis</li>
+        <li><span class="check">✓</span> Done-for-you. No hiring. No HR.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem-inner">
+    <div class="section-label">The Real Problem</div>
+    <h2 class="section-title">You're about to hire the wrong person</h2>
+    <p class="section-sub">Most SME founders in Bangladesh with BDT 1 crore+ in annual revenue are solving the symptom, not the disease. Here's what's actually happening inside your business.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-number">01</div>
+        <div class="problem-title">You're leaking 15–30% of gross margin</div>
+        <p class="problem-desc">Untracked owner withdrawals. Unreconciled advances. Informal staff costs. Vendor payment timing. A bookkeeper records these. A CFO finds and fixes them.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-number">02</div>
+        <div class="problem-title">Your books can't survive institutional scrutiny</div>
+        <p class="problem-desc">Bank loan managers. Angel investors. Potential partners. Any serious counterparty will review your financials. Most Bangladeshi SME books cannot survive that moment.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-number">03</div>
+        <div class="problem-title">A full-time hire doesn't solve this</div>
+        <p class="problem-desc">A BDT 25,000/month accounts manager records transactions. They do not build financial models, audit-proof your books, or give you CFO-level insight on your own business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROJAN HORSE OFFER -->
+<section class="trojan" id="audit">
+  <div class="trojan-inner">
+    <div class="trojan-box">
+      <div class="trojan-label">Start Here — Before You Hire Anyone</div>
+      <h2 class="trojan-title">The Accounts Hire Alternative Audit</h2>
+      <p class="trojan-sub">Before you post that job listing, let's spend 90 minutes together. We'll show you exactly what a BDT 25,000/month accounts hire will and won't give your business — against what your business actually needs at your revenue level.</p>
+      <div class="trojan-offer">
+        <div class="trojan-offer-title">
+          90-Minute CFO Clarity Session
+          <span class="trojan-price-tag">৳6,000 one-time</span>
+        </div>
+        <p class="trojan-offer-desc">A focused session where we map your current financial reality, identify your top 3 cash leakages, and produce a one-page written comparison: what you'd get from a full-time hire vs. what you'd get from a Fractional CFO — using your actual numbers, your specific business.</p>
+        <div class="trojan-offer-bridge">"You were about to pay BDT 25,000 a month for someone to record transactions. For BDT 5,000 more, you get institutional-grade financial management, a live model, audit-ready books, and a CFO-level brain on your business — with no HR headache."</div>
+      </div>
+      <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-gold" target="_blank" style="font-size:0.95rem;padding:1rem 2.2rem;">Book the Clarity Session →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="deliverables" id="deliverables">
+  <div class="deliverables-inner">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">Done-for-you. Every month. Without exception.</h2>
+    <p class="section-sub" style="font-weight:300;">This is not a consulting retainer. This is an ongoing operational function — the CFO layer your business needs to grow with credibility.</p>
+    <div class="deliverables-grid">
+      <div class="deliverable-item">
+        <div class="deliverable-icon">📊</div>
+        <div class="deliverable-content">
+          <h4>3-Statement Financial Model</h4>
+          <p>A live P&L, Balance Sheet, and Cash Flow statement built for your business — updated with real numbers every month. Not a template. Your actual business.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">📁</div>
+        <div class="deliverable-content">
+          <h4>Clean, Audit-Ready Books</h4>
+          <p>Chart of accounts setup, monthly reconciliation, and a bookkeeping structure that survives institutional scrutiny — from banks, auditors, or investors.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">📋</div>
+        <div class="deliverable-content">
+          <h4>Monthly Management Accounts</h4>
+          <p>A structured monthly report that tells you what actually happened in your business — revenue, margin, cashflow, and where you stand against your plan.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">🔮</div>
+        <div class="deliverable-content">
+          <h4>Cashflow Forecasting</h4>
+          <p>A rolling 90-day cash forecast so you always know what's coming in and going out — and you're never surprised by a liquidity crunch.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">📉</div>
+        <div class="deliverable-content">
+          <h4>Variance Analysis</h4>
+          <p>Monthly review of actuals vs. budget with written commentary explaining what happened and what you should do about it.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">🏦</div>
+        <div class="deliverable-content">
+          <h4>Bank & Investor Ready Reporting</h4>
+          <p>Financials formatted to the standard that BRAC Bank, City Bank, or any serious investor would expect — so you're never caught unprepared.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">⚖️</div>
+        <div class="deliverable-content">
+          <h4>Owner Salary vs. Profit Separation</h4>
+          <p>Correct structuring of your personal draws vs. business profit — the single most common financial mistake in Bangladeshi SMEs, with serious tax implications.</p>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-icon">🛡️</div>
+        <div class="deliverable-content">
+          <h4>Annual Audit Preparation</h4>
+          <p>Year-end financial close, record organization, and audit-ready folder structure — so when the auditor comes, you're ready on day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">One service. One price. No ambiguity.</h2>
+    <p class="section-sub" style="font-weight:300;margin:0.75rem auto 0;max-width:580px;">Paid in advance at the beginning of every month. Cancel anytime after the first 3 months.</p>
+    <div class="pricing-card-main">
+      <div class="pricing-main-label">Fractional CFO as a Service</div>
+      <div class="pricing-main-title">Everything your business needs. Nothing it doesn't.</div>
+      <div class="pricing-tiers">
+        <div class="tier">
+          <div class="tier-label">One-time Signup</div>
+          <div class="tier-price">৳40,000<small></small></div>
+          <div class="tier-note">Covers onboarding, setup, chart of accounts, and first-month financial audit</div>
+        </div>
+        <div class="tier featured">
+          <div class="tier-label">Monthly Retainer</div>
+          <div class="tier-price">৳30,000<small>/month</small></div>
+          <div class="tier-note">Paid in advance. Ongoing CFO service, reporting, and financial management</div>
+        </div>
+      </div>
+      <div class="pricing-includes">
+        <div class="pricing-includes-title">Every month includes</div>
+        <ul class="pricing-features-list">
+          <li><span class="check-mark">✓</span> 3-statement financial model</li>
+          <li><span class="check-mark">✓</span> Clean, reconciled books</li>
+          <li><span class="check-mark">✓</span> Monthly management accounts</li>
+          <li><span class="check-mark">✓</span> Cashflow forecast</li>
+          <li><span class="check-mark">✓</span> Variance analysis with commentary</li>
+          <li><span class="check-mark">✓</span> Bank & investor-ready reporting</li>
+          <li><span class="check-mark">✓</span> Owner compensation structuring</li>
+          <li><span class="check-mark">✓</span> Annual audit preparation</li>
+        </ul>
+      </div>
+      <div class="guarantee-box">
+        <span style="font-size:1.5rem;flex-shrink:0;">🤝</span>
+        <div class="guarantee-text">
+          <strong>Start with the ৳6,000 Clarity Session first</strong>
+          If you complete the 90-minute session and proceed to the full subscription within 30 days, the session fee is credited toward your signup cost.
+        </div>
+      </div>
+      <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-gold" target="_blank" style="font-size:1rem;padding:1.1rem 2.5rem;display:inline-block;">Book Your Free Discovery Call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison" id="comparison">
+  <div class="comparison-inner">
+    <div class="section-label">The Real Numbers</div>
+    <h2 class="section-title" style="text-align:center;">Full-time hire vs. Fractional CFO</h2>
+    <p class="section-sub" style="text-align:center;margin:0.75rem auto 0;max-width:600px;font-weight:300;">What you actually get for your money — and what you're missing.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>What You're Comparing</th>
+          <th>Full-Time Accounts Manager<br><small style="font-weight:400;">~৳25,000/month + benefits</small></th>
+          <th>Fractional CFO (This Service)<br><small style="font-weight:400;">৳30,000/month</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly cost</td><td>৳25,000–35,000 + EOBI</td><td>৳30,000 flat</td></tr>
+        <tr><td>HR overhead & supervision</td><td>High</td><td><span class="check-mark">None</span></td></tr>
+        <tr><td>Financial model (3-statement)</td><td><span class="x-mark">✗ Not in scope</span></td><td><span class="check-mark">✓ Every month</span></td></tr>
+        <tr><td>Audit-ready book structure</td><td><span class="x-mark">✗ Unlikely</span></td><td><span class="check-mark">✓ Built-in</span></td></tr>
+        <tr><td>Investor-ready reporting</td><td><span class="x-mark">✗ No</span></td><td><span class="check-mark">✓ Included</span></td></tr>
+        <tr><td>Cashflow forecasting</td><td><span class="x-mark">✗ Out of scope</span></td><td><span class="check-mark">✓ Monthly</span></td></tr>
+        <tr><td>CFO-level strategic insight</td><td><span class="x-mark">✗ Not trained for it</span></td><td><span class="check-mark">✓ Core function</span></td></tr>
+        <tr><td>Risk of bad hire</td><td>High</td><td><span class="check-mark">Zero</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title" style="text-align:center;">From zero to institutional-grade in 30 days</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">25-minute call to understand your business, current books, and financial goals. No commitment required.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Financial Audit</div>
+        <p class="step-desc">We review your existing records, identify the gaps, and design your CFO framework — included in the signup fee.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Setup & Onboarding</div>
+        <p class="step-desc">Chart of accounts, accounting system, and reporting templates configured for your specific business within 2 weeks.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Monthly Delivery</div>
+        <p class="step-desc">Every month, clean books, updated model, management report, and cashflow forecast — delivered on time, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <h2>Your cashflow is real.<br><em>Make your books match.</em></h2>
+    <p>High-cashflow founders deserve institutional-grade financial management. Not a junior hire who records what already happened, but a CFO function that tells you what's happening, why, and what to do next.</p>
+    <div class="cta-buttons">
+      <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-gold" target="_blank" style="font-size:1rem;padding:1.1rem 2.5rem;">Book Free Discovery Call</a>
+      <a href="https://wa.me/+8801645823853" class="btn btn-outline-white" target="_blank" style="font-size:1rem;padding:1.1rem 2.2rem;">WhatsApp Us</a>
+    </div>
+    <p class="cta-footnote">Or start with the ৳6,000 Clarity Session · <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" target="_blank">Book here</a> · No obligation</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="https://capallo.co" style="display:inline-flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo" style="height:32px;width:auto;">
+        </a>
+        <p>A service by Capallo — Bangladesh's institutional-grade private investment platform. Clean books are the first step to attracting disciplined capital.</p>
+        <div style="margin-top:1rem;font-size:0.88rem;">
+          <p style="margin-bottom:0.4rem;">📍 Dhaka, Bangladesh</p>
+          <p>📧 <a href="mailto:saleh.sazzad@capallo.co" style="color:#9ca3af;text-decoration:none;">saleh.sazzad@capallo.co</a></p>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>CFO Service</h4>
+          <ul>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#deliverables">What's Included</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#process">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Capallo</h4>
+          <ul>
+            <li><a href="https://capallo.co">Main Platform</a></li>
+            <li><a href="https://capallo.co#investors">For Investors</a></li>
+            <li><a href="https://capallo.co#founders">For Founders</a></li>
+            <li><a href="https://blog.capallo.co">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <ul>
+            <li><a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" target="_blank">Book Discovery Call</a></li>
+            <li><a href="https://wa.me/+8801645823853" target="_blank">WhatsApp</a></li>
+            <li><a href="mailto:saleh.sazzad@capallo.co">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Capallo. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="https://capallo.co/privacy_policy.html">Privacy Policy</a>
+        <a href="https://capallo.co/terms_of_service.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function scrollToTop(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}
+  })
+});
+let lastScroll=0;
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  nav.style.boxShadow=window.pageYOffset>100?'0 2px 10px rgba(0,0,0,0.1)':'0 1px 3px rgba(0,0,0,0.05)';
+});
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;s1.src='https://embed.tawk.to/696207a42f86a5197c127202/1jejern58';
+s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
+</script>
+</body>
+</html>
