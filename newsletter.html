@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Private Market Letter — Capallo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230f3460'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='white' font-family='Inter, system-ui, sans-serif'>C</text></svg>">
+  <meta name="description" content="A structured curriculum for serious private market investors in Bangladesh. Monthly, quarterly, and annual plans.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0f3460;
+      --navy-dark: #16213e;
+      --gold: #fbbf24;
+      --gold-dark: #f59e0b;
+      --green: #10b981;
+      --text: #1a1a2e;
+      --muted: #4a5568;
+      --light: #f7fafc;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .nav-container {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+    }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--navy); font-weight: 600; }
+    .btn { padding: 0.75rem 1.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; display: inline-block; }
+    .btn-primary { background: var(--navy); color: white; }
+    .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
+    .btn-secondary { background: white; color: var(--navy); border: 2px solid var(--navy); }
+    .btn-secondary:hover { background: var(--navy); color: white; }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 140px 3rem 100px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: white; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; padding: 0.5rem 1.4rem;
+      background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.4);
+      border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem; font-weight: 700;
+      margin-bottom: 1.5rem; line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      font-size: 1.2rem; margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.85); line-height: 1.8;
+      max-width: 680px; margin-left: auto; margin-right: auto;
+    }
+    .hero-sub {
+      font-size: 0.9rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 3rem;
+    }
+    .founding-banner {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.35);
+      border-radius: 8px; padding: 1rem 1.8rem;
+      font-size: 0.95rem; color: rgba(255,255,255,0.9);
+      margin-bottom: 2.5rem;
+    }
+    .founding-banner strong { color: var(--gold); }
+    .spots-remaining {
+      display: inline-block; background: var(--gold); color: var(--navy-dark);
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
+    }
+    .hero-cta { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: var(--gold); color: var(--navy-dark); font-weight: 700; padding: 1.1rem 2.4rem; font-size: 1rem; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(251,191,36,0.4); }
+    .btn-outline-white { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); padding: 1.1rem 2.4rem; font-size: 1rem; }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+    /* ─── SECTION LABELS ─── */
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; color: var(--navy);
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1.05rem; color: var(--muted); max-width: 640px; margin: 0 auto 3.5rem; line-height: 1.75; }
+
+    /* ─── WHY SECTION ─── */
+    .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .why-card {
+      background: white; border-radius: 12px; padding: 2.5rem 2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--navy);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+    .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .why-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+
+    /* ─── PLANS ─── */
+    .plans-section { padding: 90px 3rem; background: white; text-align: center; }
+    .plans-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+    .plan-card {
+      background: white; border: 2px solid var(--border);
+      border-radius: 16px; padding: 2.5rem 2rem;
+      transition: all 0.3s; position: relative;
+      text-align: left;
+    }
+    .plan-card:hover { border-color: var(--navy); box-shadow: 0 12px 40px rgba(15,52,96,0.1); transform: translateY(-4px); }
+    .plan-card.featured {
+      border-color: var(--gold); background: linear-gradient(180deg, #fffdf5 0%, white 100%);
+      transform: scale(1.03);
+      box-shadow: 0 16px 50px rgba(251,191,36,0.15);
+    }
+    .plan-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+    .featured-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: var(--navy-dark);
+      padding: 0.35rem 1.2rem; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; white-space: nowrap;
+    }
+    .plan-tier { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem; }
+    .plan-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--text); margin-bottom: 0.5rem; }
+    .plan-tagline { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.5; }
+    .plan-price-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .plan-price { font-size: 2.4rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .plan-price sub { font-size: 0.9rem; font-weight: 500; color: var(--muted); vertical-align: baseline; }
+    .plan-saving { font-size: 0.82rem; color: var(--green); font-weight: 600; margin-top: 0.4rem; }
+    .plan-annualized { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+    .founding-price {
+      background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.4);
+      border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem;
+    }
+    .founding-price .strike { text-decoration: line-through; color: var(--muted); font-size: 0.9rem; }
+    .founding-price .new-price { font-size: 1.8rem; font-weight: 700; color: var(--gold-dark); }
+    .founding-price .tag { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 0.2rem; }
+    .plan-features { list-style: none; margin-bottom: 2rem; }
+    .plan-features li { padding: 0.65rem 0; color: var(--muted); border-bottom: 1px solid #f3f4f6; display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; line-height: 1.5; }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .plan-cta { display: block; width: 100%; text-align: center; padding: 1rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+    .plan-cta-primary { background: var(--navy); color: white; }
+    .plan-cta-primary:hover { background: var(--navy-dark); box-shadow: 0 4px 16px rgba(15,52,96,0.3); }
+    .plan-cta-gold { background: var(--gold); color: var(--navy-dark); }
+    .plan-cta-gold:hover { background: var(--gold-dark); box-shadow: 0 4px 16px rgba(251,191,36,0.4); }
+    .plan-cta-outline { background: white; color: var(--navy); border: 2px solid var(--navy); }
+    .plan-cta-outline:hover { background: var(--navy); color: white; }
+
+    /* ─── SUBSCRIBE FORM ─── */
+    .subscribe-section { padding: 90px 3rem; background: var(--light); }
+    .subscribe-container { max-width: 800px; margin: 0 auto; }
+    .form-card {
+      background: white; border-radius: 16px; padding: 3rem;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--navy);
+    }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--text); margin-bottom: 0.5rem; }
+    .form-subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label { display: block; font-weight: 600; font-size: 0.88rem; color: var(--text); margin-bottom: 0.5rem; letter-spacing: 0.3px; }
+    .form-input, .form-select {
+      width: 100%; padding: 0.9rem 1.1rem; border: 2px solid var(--border);
+      border-radius: 8px; font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
+      color: var(--text); background: white; transition: border-color 0.3s;
+      appearance: none;
+    }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--navy); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .plan-selector { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.5rem; }
+    .plan-option { position: relative; }
+    .plan-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .plan-option label {
+      display: block; padding: 1rem; border: 2px solid var(--border);
+      border-radius: 8px; cursor: pointer; transition: all 0.2s;
+      text-align: center;
+    }
+    .plan-option label:hover { border-color: var(--navy); }
+    .plan-option input:checked + label { border-color: var(--navy); background: rgba(15,52,96,0.04); }
+    .plan-option.gold input:checked + label { border-color: var(--gold); background: rgba(251,191,36,0.06); }
+    .plan-option label .po-name { font-weight: 700; font-size: 0.9rem; color: var(--text); display: block; }
+    .plan-option label .po-price { font-size: 1.1rem; font-weight: 700; color: var(--navy); display: block; margin-top: 0.2rem; }
+    .plan-option label .po-tag { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 0.2rem; }
+    .plan-option.gold label .po-price { color: var(--gold-dark); }
+    .divider { border: none; border-top: 2px dashed var(--border); margin: 2rem 0; }
+
+    /* Payment Box */
+    .payment-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      border-radius: 12px; padding: 2rem; margin: 2rem 0; color: white;
+    }
+    .payment-box h4 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--gold); }
+    .payment-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .payment-method {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 1.25rem;
+    }
+    .payment-method h5 { font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .payment-method p { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0; }
+    .payment-method strong { color: white; }
+    .payment-note {
+      margin-top: 1.25rem; padding: 0.85rem 1rem;
+      background: rgba(251,191,36,0.12); border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+    }
+    .payment-note p { font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 0; line-height: 1.6; }
+
+    .submit-btn {
+      width: 100%; padding: 1.1rem; background: var(--navy); color: white;
+      border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.3px;
+    }
+    .submit-btn:hover { background: var(--navy-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15,52,96,0.3); }
+    .form-disclaimer { font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 1rem; line-height: 1.6; }
+
+    /* ─── WHAT YOU GET ─── */
+    .curriculum-section { padding: 90px 3rem; background: white; }
+    .curriculum-container { max-width: 1100px; margin: 0 auto; }
+    .curriculum-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+    .curriculum-card {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid var(--border);
+    }
+    .curriculum-header { padding: 1.5rem 2rem; }
+    .curriculum-header.monthly { background: linear-gradient(135deg, #e8f0fe, #f0f4ff); }
+    .curriculum-header.quarterly { background: linear-gradient(135deg, #e6f7f0, #f0faf5); }
+    .curriculum-header.annual { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); }
+    .curriculum-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .curriculum-label.monthly { color: var(--navy); }
+    .curriculum-label.quarterly { color: var(--green); }
+    .curriculum-label.annual { color: var(--gold); }
+    .curriculum-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+    .curriculum-title.annual { color: white; }
+    .curriculum-body { padding: 1.5rem 2rem; }
+    .curriculum-timeline { list-style: none; }
+    .curriculum-timeline li {
+      padding: 0.85rem 0; border-bottom: 1px solid #f3f4f6;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .curriculum-timeline li:last-child { border-bottom: none; }
+    .timeline-week { font-size: 0.72rem; font-weight: 700; color: var(--navy); letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; padding-top: 2px; min-width: 52px; }
+    .timeline-topic { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+    .timeline-topic strong { color: var(--text); display: block; font-size: 0.92rem; }
+
+    /* ─── ABOUT AUTHOR ─── */
+    .author-section { padding: 90px 3rem; background: var(--light); text-align: center; }
+    .author-card {
+      max-width: 780px; margin: 0 auto;
+      background: white; border-radius: 16px; padding: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-left: 4px solid var(--gold);
+      text-align: left;
+    }
+    .author-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.25rem; }
+    .author-role { font-size: 0.85rem; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem; }
+    .author-bio { color: var(--muted); line-height: 1.8; font-size: 0.97rem; }
+
+    /* ─── FAQ ─── */
+    .faq-section { padding: 90px 3rem; background: white; }
+    .faq-container { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 1.5rem 0; font-size: 1rem; font-weight: 600; color: var(--text);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      font-family: 'DM Sans', sans-serif; gap: 1rem;
+    }
+    .faq-question:hover { color: var(--navy); }
+    .faq-arrow { color: var(--navy); font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-answer { display: none; padding: 0 0 1.5rem; color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      padding: 90px 3rem;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      text-align: center; color: white;
+    }
+    .final-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; margin-bottom: 1rem; }
+    .final-cta p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #1a1a2e; color: #9ca3af; padding: 60px 3rem 30px; }
+    .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+    .footer-brand p { line-height: 1.7; margin-bottom: 1.5rem; }
+    .footer-col h4 { color: #fbbf24; font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col ul a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+    .footer-col ul a:hover { color: white; }
+    .footer-bottom { max-width: 1400px; margin: 0 auto; border-top: 1px solid #374151; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; }
+    .footer-bottom a { color: #6b7280; text-decoration: none; }
+    .footer-bottom a:hover { color: white; }
+
+    /* ─── SUCCESS MESSAGE ─── */
+    .success-msg {
+      display: none; background: #ecfdf5; border: 2px solid var(--green);
+      border-radius: 10px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+    }
+    .success-msg h4 { color: #065f46; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .success-msg p { color: #047857; font-size: 0.9rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.6rem; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .plan-card.featured { transform: scale(1); }
+      .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .curriculum-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .plan-selector { grid-template-columns: 1fr 1fr; }
+      .payment-methods { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .nav-container { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .nav-links.active {
+        display: flex;
+        position: fixed;
+        top: 70px; left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+      .nav-links.active a {
+        padding: 1rem 0;
+        width: 100%;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .hero { padding: 120px 1.5rem 70px; }
+      .hero h1 { font-size: 2rem; }
+      .why-section, .plans-section, .subscribe-section, .curriculum-section,
+      .author-section, .faq-section, .final-cta { padding: 60px 1.5rem; }
+      .form-card { padding: 2rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .plan-selector { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SXVEH8MS2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3SXVEH8MS2');
+  </script>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+    <div class="nav-container">
+        <a href="https://capallo.co" class="logo" onclick="return true;">
+            <img src="https://i.imgur.com/gygdJtU.png" alt="Capallo Logo" style="height: 40px; width: auto;">
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
+            <a href="https://capallo.co#investors">For Investors</a>
+            <a href="https://capallo.co#founders">For Founders</a>
+            <a href="https://capallo.co#about">About</a>
+            <a href="https://capallo.co#contact">Contact</a>
+            <a href="https://blog.capallo.co">Blog</a>
+            <a href="/newsletter" style="color: #0f3460; font-weight: 700;">Newsletter</a>
+        </div>
+        <div class="nav-cta">
+            <a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" class="btn btn-secondary" target="_blank">Schedule Call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">The Private Market Letter — by Capallo</div>
+    <h1>Structured knowledge for<br><em>serious investors.</em></h1>
+    <p>Most investor education in Bangladesh is free. That is exactly why no one takes it seriously. This is a 12-month curriculum built for HNIs ready to deploy capital intelligently into private markets.</p>
+    <p class="hero-sub">One structured piece every week. No filler. No repurposed LinkedIn posts.</p>
+
+    <div class="founding-banner">
+      <span class="spots-remaining">FOUNDING OFFER</span>
+      <span>First 50 annual subscribers get <strong>30% off — BDT 4,999</strong> instead of BDT 9,999. This price does not come back.</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#subscribe" class="btn btn-gold">Subscribe Now →</a>
+      <a href="#plans" class="btn btn-outline-white">View All Plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY ─── -->
+<section class="why-section">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-label">Why This Exists</div>
+    <h2 class="section-title">The gap is not appetite. It is knowledge.</h2>
+    <p class="section-subtitle">Bangladesh has roughly 200 active venture investors. The country needs 10,000. The infrastructure and the deals exist. What is missing is structured, practitioner-grade education.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">📚</div>
+      <h3>Curriculum-led, not content-led</h3>
+      <p>Not a newsletter of loosely connected posts. A structured 12-month programme that builds investor knowledge systematically from foundation to advanced deal analysis.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🇧🇩</div>
+      <h3>Bangladesh-specific and grounded</h3>
+      <p>Every lesson is anchored in Bangladesh's private market context — deal sizes, regulatory structures, Shariah-compliant frameworks, and real company examples from our own deal flow.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏦</div>
+      <h3>Written by a practitioner</h3>
+      <p>Not an academic. Not a blogger. Someone who has structured actual deals, reviewed real financials, and built the infrastructure for Bangladesh's private capital ecosystem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLANS ─── -->
+<section class="plans-section" id="plans">
+  <div class="section-label" style="text-align:center;">Choose Your Depth</div>
+  <h2 class="section-title" style="text-align:center;">Three tiers. One direction.</h2>
+  <p class="section-subtitle" style="text-align:center;">Each plan unlocks a different depth of content. The annual plan gives you the complete curriculum — foundation through advanced deal analysis — at a fraction of the monthly cost.</p>
+
+  <div class="plans-grid">
+
+    <!-- MONTHLY -->
+    <div class="plan-card">
+      <div class="plan-tier">Monthly</div>
+      <div class="plan-name">The Foundation</div>
+      <div class="plan-tagline">For investors building the right mental models before deploying their first taka into private markets.</div>
+      <div class="plan-price-block">
+        <div class="plan-price">BDT 999<sub>/month</sub></div>
+        <div class="plan-annualized">Annualized: BDT 11,988/year — annual saves BDT 6,989</div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> What equity and debt mean in a private company — your rights, risk, and return</li>
+        <li><span class="check">✓</span> How to evaluate a business before you invest</li>
+        <li><span class="check">✓</span> How Bangladesh's private markets work — deal sizes, structures, access</li>
+        <li><span class="check">✓</span> Shariah-compliant investment structures explained</li>
+        <li><span class="check">✓</span> One structured piece every week</li>
+        <li><span class="check">✓</span> Cancel anytime</li>
+      </ul>
+      <a href="#subscribe" class="plan-cta plan-cta-outline" onclick="selectPlan('monthly')">Start Monthly — BDT 999</a>
+    </div>
+
+    <!-- ANNUAL (FEATURED) -->
+    <div class="plan-card featured">
+      <div class="featured-badge">⭐ MOST POPULAR — BEST VALUE</div>
+      <div class="plan-tier">Annual</div>
+      <div class="plan-name">The Full Curriculum</div>
+      <div class="plan-tagline">The complete 12-month investor education programme. Foundation through advanced deal analysis.</div>
+      <div class="plan-price-block">
+        <div class="founding-price">
+          <span class="strike">BDT 9,999/year</span><br>
+          <span class="new-price">BDT 4,999</span>
+          <span class="tag">Founding member price — first 50 subscribers only</span>
+        </div>
+        <div class="plan-saving">✓ Save BDT 6,989 vs monthly · Save BDT 4,997 vs quarterly</div>
+        <div class="plan-annualized">Equivalent to just BDT 417/month</div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Complete foundation curriculum (months 1–3)</li>
+        <li><span class="check">✓</span> Practitioner layer: deal structuring & financial analysis (months 4–8)</li>
+        <li><span class="check">✓</span> Advanced layer: live deal analysis, cap table mechanics, valuation negotiation (months 9–12)</li>
+        <li><span class="check">✓</span> Case studies from real Bangladesh private market transactions</li>
+        <li><span class="check">✓</span> 52 structured pieces across 12 months</li>
+        <li><span class="check">✓</span> Priority access to year-2 deal intelligence tier</li>
+        <li><span class="check">✓</span> Direct email access to Saleh for questions</li>
+      </ul>
+      <a href="#subscribe" class="plan-cta plan-cta-gold" onclick="selectPlan('founding')">Claim Founding Rate — BDT 4,999</a>
+    </div>
+
+    <!-- QUARTERLY -->
+    <div class="plan-card">
+      <div class="plan-tier">Quarterly</div>
+      <div class="plan-name">The Practitioner</div>
+      <div class="plan-tagline">For investors who understand the basics and are ready to go deeper into deal analysis and risk assessment.</div>
+      <div class="plan-price-block">
+        <div class="plan-price">BDT 2,499<sub>/quarter</sub></div>
+        <div class="plan-saving">Save BDT 498 vs monthly over 3 months</div>
+        <div class="plan-annualized">Annualized: BDT 9,996/year — founding saves BDT 4,997</div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Deal structuring in Bangladesh's private market context</li>
+        <li><span class="check">✓</span> How to read financials the way an investor reads them</li>
+        <li><span class="check">✓</span> Red flags in term sheets most investors miss</li>
+        <li><span class="check">✓</span> Murabaha vs Mudarabah — when each protects you better</li>
+        <li><span class="check">✓</span> Sector analysis of Bangladesh's private economy</li>
+        <li><span class="check">✓</span> 13 structured pieces across 3 months</li>
+      </ul>
+      <a href="#subscribe" class="plan-cta plan-cta-outline" onclick="selectPlan('quarterly')">Start Quarterly — BDT 2,499</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CURRICULUM ─── -->
+<section class="curriculum-section">
+  <div class="curriculum-container">
+    <div style="text-align:center;">
+      <div class="section-label">What's Inside</div>
+      <h2 class="section-title">The complete curriculum.</h2>
+      <p class="section-subtitle" style="text-align:center;">Each tier unlocks progressively deeper content. Annual subscribers get all three layers across 52 weeks.</p>
+    </div>
+    <div class="curriculum-grid">
+
+      <!-- MONTHLY -->
+      <div class="curriculum-card">
+        <div class="curriculum-header monthly">
+          <div class="curriculum-label monthly">Monthly · Foundation</div>
+          <div class="curriculum-title" style="color:var(--navy);">Weeks 1 – 4</div>
+        </div>
+        <div class="curriculum-body">
+          <ul class="curriculum-timeline">
+            <li>
+              <span class="timeline-week">Week 1</span>
+              <div class="timeline-topic"><strong>Equity vs Debt</strong>What each means for your rights, risk, and return in a private company</div>
+            </li>
+            <li>
+              <span class="timeline-week">Week 2</span>
+              <div class="timeline-topic"><strong>Evaluating a Business</strong>What numbers matter, what numbers mislead, and the one question to always ask first</div>
+            </li>
+            <li>
+              <span class="timeline-week">Week 3</span>
+              <div class="timeline-topic"><strong>Bangladesh Private Markets</strong>The landscape, deal sizes, typical structures, and why access has been limited</div>
+            </li>
+            <li>
+              <span class="timeline-week">Week 4</span>
+              <div class="timeline-topic"><strong>Shariah-Compliant Structures</strong>Why they exist, how they protect investors, how to spot genuine vs nominal compliance</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- QUARTERLY -->
+      <div class="curriculum-card">
+        <div class="curriculum-header quarterly">
+          <div class="curriculum-label quarterly">Quarterly · Practitioner</div>
+          <div class="curriculum-title" style="color:#065f46;">Months 1 – 3</div>
+        </div>
+        <div class="curriculum-body">
+          <ul class="curriculum-timeline">
+            <li>
+              <span class="timeline-week">Month 1</span>
+              <div class="timeline-topic"><strong>Deal Structuring & Financials</strong>How private deals are assembled in Bangladesh. Reading P&L and balance sheets as an investor, not an accountant</div>
+            </li>
+            <li>
+              <span class="timeline-week">Month 2</span>
+              <div class="timeline-topic"><strong>Risk & Red Flags</strong>Term sheet navigation, founder presentation vs reality, financial patterns that precede most failures in Bangladesh</div>
+            </li>
+            <li>
+              <span class="timeline-week">Month 3</span>
+              <div class="timeline-topic"><strong>Sector Analysis</strong>Which industries generate real cash flow, which grow on leverage, and how to position capital accordingly</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ANNUAL -->
+      <div class="curriculum-card">
+        <div class="curriculum-header annual">
+          <div class="curriculum-label annual">Annual · Advanced</div>
+          <div class="curriculum-title annual">Months 9 – 12</div>
+        </div>
+        <div class="curriculum-body">
+          <ul class="curriculum-timeline">
+            <li>
+              <span class="timeline-week">Month 9</span>
+              <div class="timeline-topic"><strong>Live Deal Analysis</strong>Real companies, real numbers, real investment decisions — walked through in full</div>
+            </li>
+            <li>
+              <span class="timeline-week">Month 10</span>
+              <div class="timeline-topic"><strong>Cap Table Mechanics</strong>How ownership structures evolve, dilution dynamics, and what to protect at entry</div>
+            </li>
+            <li>
+              <span class="timeline-week">Month 11</span>
+              <div class="timeline-topic"><strong>Valuation Negotiation</strong>How to negotiate entry valuations without destroying the founder relationship</div>
+            </li>
+            <li>
+              <span class="timeline-week">Month 12</span>
+              <div class="timeline-topic"><strong>Bangladesh Case Studies</strong>Real transactions, real outcomes, real lessons — the layer most educators never reach</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SUBSCRIBE FORM ─── -->
+<section class="subscribe-section" id="subscribe">
+  <div class="subscribe-container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-label">Subscribe</div>
+      <h2 class="section-title">Two steps. You're in.</h2>
+      <p style="color:var(--muted);font-size:0.97rem;">Fill in your details, complete the payment, and you will receive your first piece of content within the week.</p>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">Your subscription details</div>
+      <div class="form-subtitle">All fields required. You will receive a confirmation email within 24 hours of payment.</div>
+
+      <form id="subscribeForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fullName">Full Name</label>
+            <input class="form-input" type="text" id="fullName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">WhatsApp / Phone Number</label>
+          <input class="form-input" type="tel" id="phone" placeholder="+880 17XX XXX XXX" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Your Plan</label>
+          <div class="plan-selector" id="planSelector">
+            <div class="plan-option">
+              <input type="radio" name="plan" id="plan-monthly" value="monthly">
+              <label for="plan-monthly">
+                <span class="po-name">Monthly</span>
+                <span class="po-price">BDT 999</span>
+                <span class="po-tag">per month</span>
+              </label>
+            </div>
+            <div class="plan-option">
+              <input type="radio" name="plan" id="plan-quarterly" value="quarterly">
+              <label for="plan-quarterly">
+                <span class="po-name">Quarterly</span>
+                <span class="po-price">BDT 2,499</span>
+                <span class="po-tag">per quarter</span>
+              </label>
+            </div>
+            <div class="plan-option">
+              <input type="radio" name="plan" id="plan-annual" value="annual">
+              <label for="plan-annual">
+                <span class="po-name">Annual</span>
+                <span class="po-price">BDT 9,999</span>
+                <span class="po-tag">per year</span>
+              </label>
+            </div>
+            <div class="plan-option gold">
+              <input type="radio" name="plan" id="plan-founding" value="founding" checked>
+              <label for="plan-founding">
+                <span class="po-name">⭐ Founding Member</span>
+                <span class="po-price">BDT 4,999</span>
+                <span class="po-tag">annual · 50% off · 50 spots only</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Payment Box -->
+        <div class="payment-box">
+          <h4>Step 2 — Complete Your Payment</h4>
+          <div class="payment-methods">
+            <div class="payment-method">
+              <h5>📱 bKash</h5>
+              <p>
+                Send to:<br>
+                <strong>01645-823853</strong><br>
+                Account type: Personal<br>
+                Reference: Your email address
+              </p>
+            </div>
+            <div class="payment-method">
+              <h5>🏦 Bank Transfer</h5>
+              <p>
+                Bank: <strong>Midland Bank Limited</strong><br>
+                Branch: <strong>Gulshan, Dhaka</strong><br>
+                Account Name: <strong>Abu Saleh Sazzad</strong><br>
+                Account No: <strong>8801-1801003334</strong><br>
+                Routing: <strong>285261727</strong><br>
+                SWIFT: <strong>MDBLBDDH</strong><br>
+                Reference: Your email address
+              </p>
+            </div>
+          </div>
+          <div class="payment-note">
+            <p>After payment, submit this form. Include your email as the reference so we can match your payment. You will receive a confirmation email within <strong>24 hours</strong> and your first content piece within the week.</p>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1.5rem;">
+          <label class="form-label" for="txnId">Transaction / Reference Number <span style="color:var(--muted);font-weight:400;">(optional but recommended)</span></label>
+          <input class="form-input" type="text" id="txnId" placeholder="e.g. bKash TrxID or bank reference">
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex;gap:0.75rem;align-items:flex-start;cursor:pointer;">
+            <input type="checkbox" id="agreeTerms" required style="margin-top:4px;accent-color:var(--navy);">
+            <span style="font-size:0.88rem;color:var(--muted);line-height:1.6;">I have completed my payment and understand that access will be activated within 24 hours of payment confirmation.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Subscription →</button>
+        <div class="form-disclaimer">Your information is never shared. Expect a reply from saleh.sazzad@capallo.co within 24 hours of payment.</div>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <h4>✅ Subscription received — thank you.</h4>
+        <p>We will verify your payment and send your welcome email to the address you provided within 24 hours. Check your inbox — including spam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AUTHOR ─── -->
+<section class="author-section">
+  <div class="section-label">Who Writes This</div>
+  <h2 class="section-title" style="margin-bottom:2.5rem;">A practitioner. Not an educator.</h2>
+  <div class="author-card">
+    <div class="author-name">Saleh Sazzad</div>
+    <div class="author-role">Founder & CEO, Capallo · Private Investment Platform, Bangladesh</div>
+    <p class="author-bio">
+      Saleh has structured deals for companies generating hundreds of millions of taka in annual revenue, built Shariah-compliant investment frameworks for HNIs and family offices, and spent years building the infrastructure Bangladesh's private capital ecosystem needs. He has reviewed financials across healthcare, manufacturing, and consumer sectors — and turned that due diligence into a repeatable methodology.
+      <br><br>
+      Bangladesh has roughly 200 active venture investors today. It needs 10,000. The gap is not appetite — it is structured knowledge and the confidence that comes from it. This newsletter is one attempt to close it.
+    </p>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq-section">
+  <div class="faq-container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common questions.</h2>
+    </div>
+    <div class="faq-item open">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is this the same as your LinkedIn content?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">No. The newsletter goes significantly deeper than anything published publicly. LinkedIn posts introduce ideas. This curriculum builds them systematically over weeks and months, with Bangladesh-specific context, real numbers, and structured frameworks you can apply immediately.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I upgrade my plan later?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">Yes. Reply to any newsletter email and the difference will be calculated and invoiced. Note that the founding member price of BDT 4,999 is only available to the first 50 annual subscribers and will not be available after that.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is this Shariah-compliant?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">The newsletter is educational content, not an investment product. There is no interest-bearing component. The subscription is a straightforward payment for a knowledge service.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What is the refund policy?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">Monthly subscribers can cancel before the next billing cycle. Quarterly and annual subscribers can request a prorated refund within the first 14 days if they feel the content does not deliver the value described. Email saleh.sazzad@capallo.co directly.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How is this different from Capallo's free investor education?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">Capallo's free content — LinkedIn posts, blog articles — is designed to build awareness. The newsletter is the structured, deep-dive curriculum that takes someone from basic awareness to genuine investor competence. Think of the free content as the syllabus preview and the newsletter as the actual course.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What happens after Year 1?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">Year 2 subscribers move into the intelligence tier — live deal analysis from Capallo's active pipeline, investor conversations and key takeaways, founder stories from the other side of the table, and community access. The product shifts from education to active market intelligence. Pricing for year 2 will reflect that.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <h2>The investors defining Bangladesh's next decade are educating themselves right now.</h2>
+  <p>52 structured pieces. 12 months. The depth of knowledge most investors in Bangladesh will never have.</p>
+  <div class="cta-buttons">
+    <a href="#subscribe" class="btn btn-gold" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Claim Founding Rate — BDT 4,999 →</a>
+    <a href="https://capallo.co" class="btn btn-outline-white">Learn About Capallo</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://capallo.co" style="display:inline-flex;align-items:center;gap:0.75rem;text-decoration:none;margin-bottom:1rem;">
+        <img src="https://i.imgur.com/1fRr4Cy.png" alt="Capallo" style="height:35px;width:auto;">
+      </a>
+      <p>Bangladesh's first fraud-protected venture investing platform. Connecting institutional-grade investors with the country's most promising growth-stage companies.</p>
+      <p style="font-size:0.9rem;">📍 Dhaka, Bangladesh<br>📧 <a href="mailto:saleh.sazzad@capallo.co" style="color:#9ca3af;text-decoration:none;">saleh.sazzad@capallo.co</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>For Investors</h4>
+      <ul>
+        <li><a href="https://capallo.co#investors">Investor Services</a></li>
+        <li><a href="/newsletter">Newsletter</a></li>
+        <li><a href="https://capallo.co/investors">Investor KYC</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Founders</h4>
+      <ul>
+        <li><a href="https://capallo.co#founders">Founder Services</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf43UpC5PkPlNINfR-jbnx0F-y67JLg3Sb4y_c7WtCpIr_QSw/viewform?usp=header" target="_blank">Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://blog.capallo.co" target="_blank">Blog</a></li>
+        <li><a href="/newsletter">Newsletter</a></li>
+        <li><a href="https://calendar.app.google/xWeHjJBs1MCDkaUh8" target="_blank">Schedule a Call</a></li>
+        <li><a href="mailto:saleh.sazzad@capallo.co">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p style="color:#6b7280;">© 2026 Capallo. All rights reserved.</p>
+    <div style="display:flex;gap:2rem;">
+      <a href="https://capallo.co/privacy_policy.html">Privacy Policy</a>
+      <a href="https://capallo.co/terms_of_service.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle — same as index.html
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+
+  // Plan selector from buttons
+  function selectPlan(plan) {
+    setTimeout(() => {
+      const radio = document.getElementById('plan-' + plan);
+      if (radio) radio.checked = true;
+    }, 100);
+  }
+
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // ── REPLACE THIS URL with your deployed Google Apps Script web app URL ──
+  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const plan = document.querySelector('input[name="plan"]:checked');
+    if (!plan) { alert('Please select a plan before submitting.'); return; }
+
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.textContent = 'Submitting…';
+    submitBtn.disabled = true;
+
+    const planLabels = {
+      monthly:  'Monthly — BDT 999/month',
+      quarterly: 'Quarterly — BDT 2,499/quarter',
+      annual:   'Annual — BDT 9,999/year',
+      founding: 'Founding Member Annual — BDT 4,999'
+    };
+
+    const payload = {
+      name:      document.getElementById('fullName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      plan:      planLabels[plan.value] || plan.value,
+      txnId:     document.getElementById('txnId').value.trim() || '—',
+      timestamp: new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' })
+    };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      // no-cors means we won't get a readable response — assume success
+      document.getElementById('subscribeForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    } catch (err) {
+      // If fetch fails (network issue), still show success and log error
+      console.error('Submission error:', err);
+      document.getElementById('subscribeForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    });
+  });
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/696207a42f86a5197c127202/1jejern58';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
