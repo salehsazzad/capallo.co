@@ -253,7 +253,7 @@
     /* ─── WHAT YOU GET ─── */
     .curriculum-section { padding: 90px 3rem; background: white; }
     .curriculum-container { max-width: 1100px; margin: 0 auto; }
-    .curriculum-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+    .curriculum-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
     .curriculum-card {
       border-radius: 12px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid var(--border);
@@ -518,88 +518,60 @@
 <!-- ─── CURRICULUM ─── -->
 <section class="curriculum-section">
   <div class="curriculum-container">
-    <div style="text-align:center;">
+<div style="text-align:center;">
       <div class="section-label">What's Inside</div>
-      <h2 class="section-title">The complete curriculum.</h2>
-      <p class="section-subtitle" style="text-align:center;">Each tier unlocks progressively deeper content. Annual subscribers get all three layers across 52 weeks.</p>
+      <h2 class="section-title">How the subscription unfolds.</h2>
+      <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same content — starting with a structured onboarding sequence, then an ongoing weekly stream of investor interviews and case studies for as long as you're subscribed.</p>
     </div>
     <div class="curriculum-grid">
 
-      <!-- MONTHLY -->
+<!-- ONBOARDING -->
       <div class="curriculum-card">
         <div class="curriculum-header monthly">
-          <div class="curriculum-label monthly">Monthly · Foundation</div>
-          <div class="curriculum-title" style="color:var(--navy);">Weeks 1 – 4</div>
+          <div class="curriculum-label monthly">Getting Started</div>
+          <div class="curriculum-title" style="color:var(--navy);">Your First Few Months</div>
         </div>
         <div class="curriculum-body">
           <ul class="curriculum-timeline">
             <li>
-              <span class="timeline-week">Week 1</span>
+              <span class="timeline-week">Wk 1</span>
               <div class="timeline-topic"><strong>Equity vs Debt</strong>What each means for your rights, risk, and return in a private company</div>
             </li>
             <li>
-              <span class="timeline-week">Week 2</span>
+              <span class="timeline-week">Wk 2</span>
               <div class="timeline-topic"><strong>Evaluating a Business</strong>What numbers matter, what numbers mislead, and the one question to always ask first</div>
             </li>
             <li>
-              <span class="timeline-week">Week 3</span>
-              <div class="timeline-topic"><strong>Bangladesh Private Markets</strong>The landscape, deal sizes, typical structures, and why access has been limited</div>
+              <span class="timeline-week">Wk 3</span>
+              <div class="timeline-topic"><strong>Deal Structuring & Financials</strong>How private deals are assembled in Bangladesh — reading P&L and balance sheets as an investor, not an accountant</div>
             </li>
             <li>
-              <span class="timeline-week">Week 4</span>
-              <div class="timeline-topic"><strong>Shariah-Compliant Structures</strong>Why they exist, how they protect investors, how to spot genuine vs nominal compliance</div>
+              <span class="timeline-week">Wk 4</span>
+              <div class="timeline-topic"><strong>Risk & Red Flags</strong>Term sheet navigation, founder presentation vs reality, and the financial patterns that precede most failures</div>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- QUARTERLY -->
-      <div class="curriculum-card">
-        <div class="curriculum-header quarterly">
-          <div class="curriculum-label quarterly">Quarterly · Practitioner</div>
-          <div class="curriculum-title" style="color:#065f46;">Months 1 – 3</div>
-        </div>
-        <div class="curriculum-body">
-          <ul class="curriculum-timeline">
-            <li>
-              <span class="timeline-week">Month 1</span>
-              <div class="timeline-topic"><strong>Deal Structuring & Financials</strong>How private deals are assembled in Bangladesh. Reading P&L and balance sheets as an investor, not an accountant</div>
-            </li>
-            <li>
-              <span class="timeline-week">Month 2</span>
-              <div class="timeline-topic"><strong>Risk & Red Flags</strong>Term sheet navigation, founder presentation vs reality, financial patterns that precede most failures in Bangladesh</div>
-            </li>
-            <li>
-              <span class="timeline-week">Month 3</span>
-              <div class="timeline-topic"><strong>Sector Analysis</strong>Which industries generate real cash flow, which grow on leverage, and how to position capital accordingly</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ANNUAL -->
+      <!-- ONGOING -->
       <div class="curriculum-card">
         <div class="curriculum-header annual">
-          <div class="curriculum-label annual">Annual · Advanced</div>
-          <div class="curriculum-title annual">Months 9 – 12</div>
+          <div class="curriculum-label annual">Every Week After</div>
+          <div class="curriculum-title annual">The Ongoing Stream</div>
         </div>
         <div class="curriculum-body">
           <ul class="curriculum-timeline">
             <li>
-              <span class="timeline-week">Month 9</span>
-              <div class="timeline-topic"><strong>Live Deal Analysis</strong>Real companies, real numbers, real investment decisions — walked through in full</div>
+              <span class="timeline-week">Weekly</span>
+              <div class="timeline-topic"><strong>Investor Interviews</strong>Takeaways and hard-won lessons from top global angel and venture investors</div>
             </li>
             <li>
-              <span class="timeline-week">Month 10</span>
-              <div class="timeline-topic"><strong>Cap Table Mechanics</strong>How ownership structures evolve, dilution dynamics, and what to protect at entry</div>
+              <span class="timeline-week">Weekly</span>
+              <div class="timeline-topic"><strong>Startup Case Studies</strong>Real companies, real numbers, real investment decisions — Bangladesh and beyond</div>
             </li>
             <li>
-              <span class="timeline-week">Month 11</span>
-              <div class="timeline-topic"><strong>Valuation Negotiation</strong>How to negotiate entry valuations without destroying the founder relationship</div>
-            </li>
-            <li>
-              <span class="timeline-week">Month 12</span>
-              <div class="timeline-topic"><strong>Bangladesh Case Studies</strong>Real transactions, real outcomes, real lessons — the layer most educators never reach</div>
+              <span class="timeline-week">Weekly</span>
+              <div class="timeline-topic"><strong>Deal Mechanics</strong>Cap tables, valuation negotiation, term sheets — as live examples come up</div>
             </li>
           </ul>
         </div>
