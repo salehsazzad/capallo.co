@@ -253,7 +253,9 @@
     /* ─── WHAT YOU GET ─── */
     .curriculum-section { padding: 90px 3rem; background: white; }
     .curriculum-container { max-width: 1100px; margin: 0 auto; }
-    .curriculum-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .curriculum-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 950px; margin-left: auto; margin-right: auto; align-items: center; }
+.curriculum-connector { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: var(--navy); font-weight: 700; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.curriculum-connector .arrow { font-size: 1.8rem; line-height: 1; color: var(--gold-dark); }
     .curriculum-card {
       border-radius: 12px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid var(--border);
@@ -340,12 +342,14 @@
     .success-msg p { color: #047857; font-size: 0.9rem; }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
+@media (max-width: 900px) {
       .hero h1 { font-size: 2.6rem; }
       .plans-grid { grid-template-columns: 1fr; max-width: 480px; }
       .plan-card.featured { transform: scale(1); }
       .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
       .curriculum-grid { grid-template-columns: 1fr; }
+      .curriculum-connector { flex-direction: row; justify-content: center; }
+      .curriculum-connector .arrow { display: inline-block; transform: rotate(90deg); }
       .form-row { grid-template-columns: 1fr; }
       .plan-selector { grid-template-columns: 1fr 1fr; }
       .payment-methods { grid-template-columns: 1fr; }
@@ -520,16 +524,16 @@
   <div class="curriculum-container">
 <div style="text-align:center;">
       <div class="section-label">What's Inside</div>
-      <h2 class="section-title">How the subscription unfolds.</h2>
-      <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same content — starting with a structured onboarding sequence, then an ongoing weekly stream of investor interviews and case studies for as long as you're subscribed.</p>
+      <h2 class="section-title">What you get, in order.</h2>
+      <p class="section-subtitle" style="text-align:center;">Not two tracks to pick between — one sequence every subscriber goes through. Four weeks to build your foundation, then a weekly stream that keeps going for as long as you're subscribed.</p>
     </div>
     <div class="curriculum-grid">
 
 <!-- ONBOARDING -->
       <div class="curriculum-card">
         <div class="curriculum-header monthly">
-          <div class="curriculum-label monthly">Getting Started</div>
-          <div class="curriculum-title" style="color:var(--navy);">Your First Few Months</div>
+          <div class="curriculum-label monthly">Weeks 1–4 · Start Here</div>
+          <div class="curriculum-title" style="color:var(--navy);">Your Foundation</div>
         </div>
         <div class="curriculum-body">
           <ul class="curriculum-timeline">
@@ -553,11 +557,18 @@
         </div>
       </div>
 
+</div>
+
+      <div class="curriculum-connector">
+        <span class="arrow">→</span>
+        <span>then</span>
+      </div>
+
       <!-- ONGOING -->
       <div class="curriculum-card">
         <div class="curriculum-header annual">
-          <div class="curriculum-label annual">Every Week After</div>
-          <div class="curriculum-title annual">The Ongoing Stream</div>
+          <div class="curriculum-label annual">Week 5 Onward · No End Date</div>
+          <div class="curriculum-title annual">The Weekly Stream</div>
         </div>
         <div class="curriculum-body">
           <ul class="curriculum-timeline">
