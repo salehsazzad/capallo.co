@@ -253,13 +253,15 @@
     /* ─── WHAT YOU GET ─── */
     .curriculum-section { padding: 90px 3rem; background: white; }
     .curriculum-container { max-width: 1100px; margin: 0 auto; }
-    .curriculum-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 950px; margin-left: auto; margin-right: auto; align-items: center; }
+    .curriculum-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 950px; margin-left: auto; margin-right: auto; align-items: stretch; }
 .curriculum-connector { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: var(--navy); font-weight: 700; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; }
 .curriculum-connector .arrow { font-size: 1.8rem; line-height: 1; color: var(--gold-dark); }
     .curriculum-card {
       border-radius: 12px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid var(--border);
+      display: flex; flex-direction: column;
     }
+    .curriculum-card .curriculum-body { flex: 1; }
     .curriculum-header { padding: 1.5rem 2rem; }
     .curriculum-header.monthly { background: linear-gradient(135deg, #e8f0fe, #f0f4ff); }
     .curriculum-header.quarterly { background: linear-gradient(135deg, #e6f7f0, #f0faf5); }
@@ -584,6 +586,10 @@
             <li>
               <span class="timeline-week">Weekly</span>
               <div class="timeline-topic"><strong>Deal Mechanics</strong>Cap tables, valuation negotiation, term sheets — as live examples come up</div>
+            </li>
+            <li>
+              <span class="timeline-week">Ongoing</span>
+              <div class="timeline-topic"><strong>Direct Access</strong>Reply to any issue with a question — every subscriber can reach Saleh directly</div>
             </li>
           </ul>
         </div>
