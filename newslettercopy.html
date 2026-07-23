@@ -613,31 +613,24 @@
 
         <div class="form-group">
           <label class="form-label">Select Your Plan</label>
-          <div class="plan-selector" id="planSelector">
+         <div class="plan-selector" id="planSelector">
             <div class="plan-option">
               <input type="radio" name="plan" id="plan-monthly" value="monthly">
               <label for="plan-monthly">
                 <span class="po-name">Monthly</span>
-                <span class="po-price">BDT 999</span>
+                <span class="po-price">BDT 1,500</span>
                 <span class="po-tag">per month</span>
               </label>
             </div>
-            <div class="plan-option">
-              <input type="radio" name="plan" id="plan-quarterly" value="quarterly">
-              <label for="plan-quarterly">
-                <span class="po-name">Quarterly</span>
-                <span class="po-price">BDT 2,499</span>
-                <span class="po-tag">per quarter</span>
+            <div class="plan-option gold">
+              <input type="radio" name="plan" id="plan-founding" value="founding" checked>
+              <label for="plan-founding">
+                <span class="po-name">⭐ Founding Annual</span>
+                <span class="po-price">BDT 4,999</span>
+                <span class="po-tag">per year · 60% off · 19 spots left</span>
               </label>
             </div>
-            <div class="plan-option">
-              <input type="radio" name="plan" id="plan-annual" value="annual">
-              <label for="plan-annual">
-                <span class="po-name">Annual</span>
-                <span class="po-price">BDT 9,999</span>
-                <span class="po-tag">per year</span>
-              </label>
-            </div>
+          </div>
             <div class="plan-option gold">
               <input type="radio" name="plan" id="plan-founding" value="founding" checked>
               <label for="plan-founding">
@@ -860,11 +853,9 @@
     submitBtn.textContent = 'Submitting…';
     submitBtn.disabled = true;
 
-    const planLabels = {
-      monthly:  'Monthly — BDT 999/month',
-      quarterly: 'Quarterly — BDT 2,499/quarter',
-      annual:   'Annual — BDT 9,999/year',
-      founding: 'Founding Member Annual — BDT 4,999'
+const planLabels = {
+      monthly:  'Monthly — BDT 1,500/month',
+      founding: 'Founding Annual — BDT 4,999/year'
     };
 
     const payload = {
