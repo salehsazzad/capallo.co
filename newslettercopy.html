@@ -136,7 +136,7 @@
 
     /* ─── PLANS ─── */
     .plans-section { padding: 90px 3rem; background: white; text-align: center; }
-    .plans-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+    .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
     .plan-card {
       background: white; border: 2px solid var(--border);
       border-radius: 16px; padding: 2.5rem 2rem;
@@ -471,72 +471,45 @@
 
   <div class="plans-grid">
 
-    <!-- MONTHLY -->
+<!-- MONTHLY (anchor) -->
     <div class="plan-card">
       <div class="plan-tier">Monthly</div>
-      <div class="plan-name">The Foundation</div>
-      <div class="plan-tagline">For investors building the right mental models before deploying their first taka into private markets.</div>
+      <div class="plan-name">Pay As You Go</div>
+      <div class="plan-tagline">Try it month to month. Same weekly content as annual subscribers — just billed differently.</div>
       <div class="plan-price-block">
-        <div class="plan-price">BDT 999<sub>/month</sub></div>
-        <div class="plan-annualized">Annualized: BDT 11,988/year — annual saves BDT 6,989</div>
+        <div class="plan-price">BDT 1,500<sub>/month</sub></div>
+        <div class="plan-annualized">Annualized: BDT 18,000/year</div>
       </div>
       <ul class="plan-features">
-        <li><span class="check">✓</span> What equity and debt mean in a private company — your rights, risk, and return</li>
-        <li><span class="check">✓</span> How to evaluate a business before you invest</li>
-        <li><span class="check">✓</span> How Bangladesh's private markets work — deal sizes, structures, access</li>
-        <li><span class="check">✓</span> Shariah-compliant investment structures explained</li>
-        <li><span class="check">✓</span> One structured piece every week</li>
+        <li><span class="check">✓</span> Full weekly newsletter — investor interviews, case studies, structured lessons</li>
+        <li><span class="check">✓</span> Bangladesh-specific frameworks and Shariah-compliant structures</li>
         <li><span class="check">✓</span> Cancel anytime</li>
       </ul>
-      <a href="#subscribe" class="plan-cta plan-cta-outline" onclick="selectPlan('monthly')">Start Monthly — BDT 999</a>
+      <a href="#subscribe" class="plan-cta plan-cta-outline" onclick="selectPlan('monthly')">Start Monthly — BDT 1,500</a>
     </div>
 
     <!-- ANNUAL (FEATURED) -->
     <div class="plan-card featured">
       <div class="featured-badge">⭐ MOST POPULAR — BEST VALUE</div>
       <div class="plan-tier">Annual</div>
-      <div class="plan-name">The Full Curriculum</div>
-      <div class="plan-tagline">The complete 12-month investor education programme. Foundation through advanced deal analysis.</div>
+      <div class="plan-name">The Full Subscription</div>
+      <div class="plan-tagline">Everything, every week — investor interviews, case studies, and the complete structured curriculum. No gates, no separate tiers.</div>
       <div class="plan-price-block">
         <div class="founding-price">
-          <span class="strike">BDT 9,999/year</span><br>
+          <span class="strike">BDT 12,400/year</span><br>
           <span class="new-price">BDT 4,999</span>
-          <span class="tag">Founding member price — Only 20 slots available at this price. 19 spots remaining before the price increases</span>
+          <span class="tag">Founding member price — only 20 spots at this price, ever. 19 spots remaining.</span>
         </div>
-        <div class="plan-saving">✓ Save BDT 6,989 vs monthly · Save BDT 4,997 vs quarterly</div>
+        <div class="plan-saving">✓ Save BDT 13,001 vs paying monthly for a year</div>
         <div class="plan-annualized">Equivalent to just BDT 417/month</div>
       </div>
       <ul class="plan-features">
-        <li><span class="check">✓</span> Complete foundation curriculum (months 1–3)</li>
-        <li><span class="check">✓</span> Practitioner layer: deal structuring & financial analysis (months 4–8)</li>
-        <li><span class="check">✓</span> Advanced layer: live deal analysis, cap table mechanics, valuation negotiation (months 9–12)</li>
-        <li><span class="check">✓</span> Case studies from real Bangladesh private market transactions</li>
-        <li><span class="check">✓</span> 52 structured pieces across 12 months</li>
-        <li><span class="check">✓</span> Priority access to year-2 deal intelligence tier</li>
+        <li><span class="check">✓</span> Full weekly newsletter — investor interviews, case studies, structured lessons</li>
+        <li><span class="check">✓</span> Complete onboarding curriculum for new subscribers (private markets fundamentals through deal analysis)</li>
+        <li><span class="check">✓</span> Ongoing case studies from real Bangladesh private market transactions</li>
         <li><span class="check">✓</span> Direct email access to Saleh for questions</li>
       </ul>
       <a href="#subscribe" class="plan-cta plan-cta-gold" onclick="selectPlan('founding')">Claim Founding Rate — BDT 4,999</a>
-    </div>
-
-    <!-- QUARTERLY -->
-    <div class="plan-card">
-      <div class="plan-tier">Quarterly</div>
-      <div class="plan-name">The Practitioner</div>
-      <div class="plan-tagline">For investors who understand the basics and are ready to go deeper into deal analysis and risk assessment.</div>
-      <div class="plan-price-block">
-        <div class="plan-price">BDT 2,499<sub>/quarter</sub></div>
-        <div class="plan-saving">Save BDT 498 vs monthly over 3 months</div>
-        <div class="plan-annualized">Annualized: BDT 9,996/year — founding saves BDT 4,997</div>
-      </div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> Deal structuring in Bangladesh's private market context</li>
-        <li><span class="check">✓</span> How to read financials the way an investor reads them</li>
-        <li><span class="check">✓</span> Red flags in term sheets most investors miss</li>
-        <li><span class="check">✓</span> Murabaha vs Mudarabah — when each protects you better</li>
-        <li><span class="check">✓</span> Sector analysis of Bangladesh's private economy</li>
-        <li><span class="check">✓</span> 13 structured pieces across 3 months</li>
-      </ul>
-      <a href="#subscribe" class="plan-cta plan-cta-outline" onclick="selectPlan('quarterly')">Start Quarterly — BDT 2,499</a>
     </div>
 
   </div>
