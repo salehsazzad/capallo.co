@@ -120,21 +120,24 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
     .section-subtitle { font-size: 1.05rem; color: var(--muted); max-width: 640px; margin: 0 auto 3.5rem; line-height: 1.75; }
 
-    /* ─── WHY SECTION ─── */
-    .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
-    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-    .why-card {
-      background: white; border-radius: 12px; padding: 2.5rem 2rem;
+/* ─── TRUSTED BY ─── */
+    .trust-section { padding: 80px 3rem; background: var(--light); text-align: center; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .trust-card {
+      background: white; border-radius: 12px; padding: 2rem 1.5rem;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      border-top: 3px solid var(--navy);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 3px solid var(--gold);
+      display: flex; flex-direction: column; align-items: center;
     }
-    .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-    .why-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
-    .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
-    .why-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+    .trust-card .trust-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(15,52,96,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .trust-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin: 0; }
 
-/* ─── WHY SECTION ─── */
+    /* ─── WHY SECTION ─── */
     .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
     .why-card {
@@ -363,6 +366,7 @@
       .plans-grid { grid-template-columns: 1fr; max-width: 480px; }
       .plan-card.featured { transform: scale(1); }
       .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .trust-grid { grid-template-columns: 1fr 1fr; max-width: 480px; margin: 0 auto; }
       .curriculum-grid { grid-template-columns: 1fr; }
       .curriculum-connector { flex-direction: row; justify-content: center; }
       .curriculum-connector .arrow { display: inline-block; transform: rotate(90deg); }
@@ -459,25 +463,26 @@
 
 <!-- ─── TRUSTED BY ─── -->
 <section class="trust-section">
-  <div class="trust-container">
-    <div class="trust-label">Who's Already Reading</div>
-    <div class="trust-grid">
-      <div class="trust-item">
-        <span class="trust-icon">🏦</span>
-        <span class="trust-text">Banking professionals at leading multinational and local banks</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">📈</span>
-        <span class="trust-text">Public market professionals from top brokerage firms</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">🌍</span>
-        <span class="trust-text">Bengali diaspora and foreign investors across Southeast Asia</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">👔</span>
-        <span class="trust-text">CEOs of established Bangladeshi conglomerates</span>
-      </div>
+  <div style="text-align:center;margin-bottom:2.5rem;">
+    <div class="section-label">Who's Already Reading</div>
+    <h2 class="section-title" style="font-size:1.9rem;">Trusted by professionals who already know the difference.</h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">🏦</div>
+      <p>Banking professionals at leading multinational and local banks</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">📈</div>
+      <p>Public market professionals from top brokerage firms</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🌍</div>
+      <p>Bengali diaspora and foreign investors across Southeast Asia</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">👔</div>
+      <p>CEOs of established Bangladeshi conglomerates</p>
     </div>
   </div>
 </section>
