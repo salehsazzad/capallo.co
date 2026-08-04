@@ -134,6 +134,20 @@
     .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
     .why-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
 
+/* ─── WHY SECTION ─── */
+    .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .why-card {
+      background: white; border-radius: 12px; padding: 2.5rem 2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--navy);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+    .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .why-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+    
     /* ─── PLANS ─── */
     .plans-section { padding: 90px 3rem; background: white; text-align: center; }
     .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
@@ -443,6 +457,31 @@
   </div>
 </section>
 
+<!-- ─── TRUSTED BY ─── -->
+<section class="trust-section">
+  <div class="trust-container">
+    <div class="trust-label">Who's Already Reading</div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-icon">🏦</span>
+        <span class="trust-text">Banking professionals at leading multinational and local banks</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📈</span>
+        <span class="trust-text">Public market professionals from top brokerage firms</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🌍</span>
+        <span class="trust-text">Bengali diaspora and foreign investors across Southeast Asia</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">👔</span>
+        <span class="trust-text">CEOs of established Bangladeshi conglomerates</span>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <!-- ─── WHY ─── -->
 <section class="why-section">
   <div style="text-align:center;margin-bottom:3rem;">
