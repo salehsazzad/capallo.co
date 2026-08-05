@@ -153,12 +153,13 @@
     
     /* ─── PLANS ─── */
     .plans-section { padding: 90px 3rem; background: white; text-align: center; }
-    .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+    .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: stretch; }
     .plan-card {
       background: white; border: 2px solid var(--border);
       border-radius: 16px; padding: 2.5rem 2rem;
       transition: all 0.3s; position: relative;
       text-align: left;
+      display: flex; flex-direction: column;
     }
     .plan-card:hover { border-color: var(--navy); box-shadow: 0 12px 40px rgba(15,52,96,0.1); transform: translateY(-4px); }
     .plan-card.featured {
@@ -188,7 +189,7 @@
     .founding-price .strike { text-decoration: line-through; color: var(--muted); font-size: 0.9rem; }
     .founding-price .new-price { font-size: 1.8rem; font-weight: 700; color: var(--gold-dark); }
     .founding-price .tag { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 0.2rem; }
-    .plan-features { list-style: none; margin-bottom: 2rem; }
+    .plan-features { list-style: none; margin-bottom: 2rem; flex: 1; text-align: left; }
     .plan-features li { padding: 0.65rem 0; color: var(--muted); border-bottom: 1px solid #f3f4f6; display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; line-height: 1.5; }
     .plan-features li:last-child { border-bottom: none; }
     .plan-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
@@ -517,7 +518,7 @@
 <section class="plans-section" id="plans">
  <div class="section-label" style="text-align:center;">Choose Your Plan</div>
   <h2 class="section-title" style="text-align:center;">Same content. Two ways to pay.</h2>
-  <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same weekly newsletter. Pay monthly for flexibility, or lock in the founding annual rate — 60% off, and it won't come back once the spots are gone.</p>
+  <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same weekly newsletter. Pay monthly for flexibility, or lock in the better rate with an annual subscription.</p>
 
   <div class="plans-grid">
 
