@@ -120,6 +120,23 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
     .section-subtitle { font-size: 1.05rem; color: var(--muted); max-width: 640px; margin: 0 auto 3.5rem; line-height: 1.75; }
 
+/* ─── TRUSTED BY ─── */
+    .trust-section { padding: 80px 3rem; background: var(--light); text-align: center; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .trust-card {
+      background: white; border-radius: 12px; padding: 2rem 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--gold);
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .trust-card .trust-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(15,52,96,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .trust-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin: 0; }
+
     /* ─── WHY SECTION ─── */
     .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
@@ -133,7 +150,7 @@
     .why-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
     .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
     .why-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
-
+    
     /* ─── PLANS ─── */
     .plans-section { padding: 90px 3rem; background: white; text-align: center; }
     .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
@@ -253,13 +270,15 @@
     /* ─── WHAT YOU GET ─── */
     .curriculum-section { padding: 90px 3rem; background: white; }
     .curriculum-container { max-width: 1100px; margin: 0 auto; }
-    .curriculum-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 950px; margin-left: auto; margin-right: auto; align-items: center; }
+    .curriculum-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 950px; margin-left: auto; margin-right: auto; align-items: stretch; }
 .curriculum-connector { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: var(--navy); font-weight: 700; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; }
 .curriculum-connector .arrow { font-size: 1.8rem; line-height: 1; color: var(--gold-dark); }
     .curriculum-card {
       border-radius: 12px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid var(--border);
+      display: flex; flex-direction: column;
     }
+    .curriculum-card .curriculum-body { flex: 1; }
     .curriculum-header { padding: 1.5rem 2rem; }
     .curriculum-header.monthly { background: linear-gradient(135deg, #e8f0fe, #f0f4ff); }
     .curriculum-header.quarterly { background: linear-gradient(135deg, #e6f7f0, #f0faf5); }
@@ -347,6 +366,7 @@
       .plans-grid { grid-template-columns: 1fr; max-width: 480px; }
       .plan-card.featured { transform: scale(1); }
       .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .trust-grid { grid-template-columns: 1fr 1fr; max-width: 480px; margin: 0 auto; }
       .curriculum-grid { grid-template-columns: 1fr; }
       .curriculum-connector { flex-direction: row; justify-content: center; }
       .curriculum-connector .arrow { display: inline-block; transform: rotate(90deg); }
@@ -431,7 +451,7 @@
 
     <div class="founding-banner">
       <span class="spots-remaining">FOUNDING OFFER</span>
-      <span>First 20 annual subscribers get <strong>60% off — BDT 4,999</strong> instead of BDT 12,400. Only 19 spots remaining — this price does not return.</span>
+      <span>First 20 annual subscribers get <strong>60% off — BDT 4,999</strong> instead of BDT 12,400. Only 6 spots remaining — this price does not return.</span>
     </div>
 
     <div class="hero-cta">
@@ -441,17 +461,43 @@
   </div>
 </section>
 
+<!-- ─── TRUSTED BY ─── -->
+<section class="trust-section">
+  <div style="text-align:center;margin-bottom:2.5rem;">
+    <div class="section-label">Who's Already Reading</div>
+    <h2 class="section-title" style="font-size:1.9rem;">Trusted by professionals</h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">🏦</div>
+      <p>Banking professionals at leading multinational and local banks</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">📈</div>
+      <p>Public market professionals from top brokerage firms</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🌍</div>
+      <p>Bengali diaspora and foreign investors across Southeast Asia</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">👔</div>
+      <p>CEOs of established Bangladeshi conglomerates</p>
+    </div>
+  </div>
+</section>
+  
 <!-- ─── WHY ─── -->
 <section class="why-section">
   <div style="text-align:center;margin-bottom:3rem;">
     <div class="section-label">Why This Exists</div>
-    <h2 class="section-title">The gap is not appetite. It is knowledge.</h2>
-    <p class="section-subtitle">Bangladesh has roughly 200 active venture investors. The country needs 10,000. The infrastructure and the deals exist. What is missing is structured, practitioner-grade education.</p>
+    <h2 class="section-title">Most investors were never shown how private markets actually work.</h2>
+    <p class="section-subtitle">Bangladesh has roughly 200 active venture investors. The country needs 10,000. The infrastructure and the deals exist. What is missing is structured, practitioner-grade investor education.</p>
   </div>
   <div class="why-grid">
     <div class="why-card">
       <div class="why-icon">📚</div>
-      <h3>Curriculum-led, not content-led</h3>
+      <h3>Structure-led, not content-led</h3>
       <p>Not a newsletter of loosely connected posts. A structured foundation, then an ongoing weekly stream of investor interviews and case studies that keeps building for as long as you're subscribed.</p>
     </div>
     <div class="why-card">
@@ -462,7 +508,7 @@
     <div class="why-card">
       <div class="why-icon">🏦</div>
       <h3>Written by a practitioner</h3>
-      <p>Not an academic. Not a blogger. Someone who has structured actual deals, reviewed real financials, and built the infrastructure for Bangladesh's private capital ecosystem.</p>
+      <p>Not an academic. Not a blogger. Someone who has structured actual deals, reviewed financials, and built the infrastructure for Bangladesh's private capital ecosystem.</p>
     </div>
   </div>
 </section>
@@ -503,7 +549,7 @@
         <div class="founding-price">
           <span class="strike">BDT 12,400/year</span><br>
           <span class="new-price">BDT 4,999</span>
-          <span class="tag">Founding member price — only 20 spots at this price, ever. 19 spots remaining.</span>
+          <span class="tag">Founding member price — only 20 spots at this price, ever. 6 spots remaining.</span>
         </div>
         <div class="plan-saving">✓ Save BDT 13,001 vs paying monthly for a year</div>
         <div class="plan-annualized">Equivalent to just BDT 417/month</div>
@@ -585,6 +631,10 @@
               <span class="timeline-week">Weekly</span>
               <div class="timeline-topic"><strong>Deal Mechanics</strong>Cap tables, valuation negotiation, term sheets — as live examples come up</div>
             </li>
+            <li>
+              <span class="timeline-week">Ongoing</span>
+              <div class="timeline-topic"><strong>Direct Access</strong>Reply to any issue with a question — every subscriber can reach Saleh directly</div>
+            </li>
           </ul>
         </div>
       </div>
@@ -639,7 +689,7 @@
               <label for="plan-founding">
                 <span class="po-name">⭐ Founding Annual</span>
                 <span class="po-price">BDT 4,999</span>
-                <span class="po-tag">per year · 60% off · 19 spots left</span>
+                <span class="po-tag">per year · 60% off · 6 spots left</span>
               </label>
             </div>
           </div>
@@ -657,7 +707,7 @@
                 Send to:<br>
                 <strong>01645-823853</strong><br>
                 Account type: Personal<br>
-                Reference: Your email address
+                Reference: Last 3 digits of your phone number
               </p>
             </div>
             <div class="payment-method">
@@ -669,12 +719,12 @@
                 Account No: <strong>8801-1801003334</strong><br>
                 Routing: <strong>285261727</strong><br>
                 SWIFT: <strong>MDBLBDDH</strong><br>
-                Reference: Your email address
+                Reference: Last 3 digits of your phone number
               </p>
             </div>
           </div>
           <div class="payment-note">
-            <p>After payment, submit this form. Include your email as the reference so we can match your payment. You will receive a confirmation email within <strong>24 hours</strong> and your first content piece within the week.</p>
+            <p>After payment, submit this form. Include your last 4 digits of your phone number as the reference so we can match your payment. You will receive a confirmation email within <strong>24 hours</strong> and your first content piece within the week.</p>
           </div>
         </div>
 
@@ -761,7 +811,7 @@
         How is this different from Capallo's free investor education?
         <span class="faq-arrow">▾</span>
       </button>
-      <div class="faq-answer">Capallo's free content — LinkedIn posts, blog articles — is designed to build awareness. The newsletter is the structured, deep-dive curriculum that takes someone from basic awareness to genuine investor competence. Think of the free content as the syllabus preview and the newsletter as the actual course.</div>
+      <div class="faq-answer">Capallo's free content — LinkedIn posts, blog articles — is designed to build awareness. The newsletter goes deeper and stays ongoing: it takes someone from basic awareness to genuine investor competence, then keeps delivering new interviews and case studies every week after that. Think of the free content as the introduction, and the newsletter as where the real depth lives.</div>
     </div>
 <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
@@ -776,7 +826,7 @@
 <!-- ─── FINAL CTA ─── -->
 <section class="final-cta">
   <h2>The investors defining Bangladesh's next decade are educating themselves right now.</h2>
-  <p>A new investor interview or case study every week — for as long as you're subscribed. The depth of knowledge most investors in Bangladesh doesn't have.</p>
+  <p>A new investor interview or case study every week — for as long as you're subscribed. The depth of knowledge most investors in Bangladesh don't have.</p>
   <div class="cta-buttons">
     <a href="#subscribe" class="btn btn-gold" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Claim Founding Rate — BDT 4,999 →</a>
     <a href="https://capallo.co" class="btn btn-outline-white">Learn About Capallo</a>
