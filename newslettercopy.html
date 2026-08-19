@@ -153,12 +153,13 @@
     
     /* ─── PLANS ─── */
     .plans-section { padding: 90px 3rem; background: white; text-align: center; }
-    .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+    .plans-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: stretch; }
     .plan-card {
       background: white; border: 2px solid var(--border);
       border-radius: 16px; padding: 2.5rem 2rem;
       transition: all 0.3s; position: relative;
       text-align: left;
+      display: flex; flex-direction: column;
     }
     .plan-card:hover { border-color: var(--navy); box-shadow: 0 12px 40px rgba(15,52,96,0.1); transform: translateY(-4px); }
     .plan-card.featured {
@@ -188,7 +189,7 @@
     .founding-price .strike { text-decoration: line-through; color: var(--muted); font-size: 0.9rem; }
     .founding-price .new-price { font-size: 1.8rem; font-weight: 700; color: var(--gold-dark); }
     .founding-price .tag { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 0.2rem; }
-    .plan-features { list-style: none; margin-bottom: 2rem; }
+    .plan-features { list-style: none; margin-bottom: 2rem; flex: 1; text-align: left; }
     .plan-features li { padding: 0.65rem 0; color: var(--muted); border-bottom: 1px solid #f3f4f6; display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; line-height: 1.5; }
     .plan-features li:last-child { border-bottom: none; }
     .plan-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
@@ -449,9 +450,9 @@
 <p>Every week, one piece lands in your inbox — takeaways from the world's top angel and venture investors, real Bangladesh case studies, and Capallo's own structured frameworks. Ongoing, for as long as you're subscribed.</p>
 <p class="hero-sub">Weekly. Ongoing. The depth of knowledge most HNIs in Bangladesh will never have.</p>
 
-    <div class="founding-banner">
-      <span class="spots-remaining">FOUNDING OFFER</span>
-      <span>First 20 annual subscribers get <strong>60% off — BDT 4,999</strong> instead of BDT 12,400. Only 6 spots remaining — this price does not return.</span>
+<div class="founding-banner">
+      <span class="spots-remaining">SOLD OUT</span>
+      <span>All 20 founding spots at BDT 4,999 are claimed. Annual subscription is now <strong>BDT 12,400/year.</strong></span>
     </div>
 
     <div class="hero-cta">
@@ -517,7 +518,7 @@
 <section class="plans-section" id="plans">
  <div class="section-label" style="text-align:center;">Choose Your Plan</div>
   <h2 class="section-title" style="text-align:center;">Same content. Two ways to pay.</h2>
-  <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same weekly newsletter. Pay monthly for flexibility, or lock in the founding annual rate — 60% off, and it won't come back once the spots are gone.</p>
+  <p class="section-subtitle" style="text-align:center;">Every subscriber gets the same weekly newsletter. Pay monthly for flexibility, or lock in the better rate with an annual subscription.</p>
 
   <div class="plans-grid">
 
@@ -544,15 +545,11 @@
       <div class="featured-badge">⭐ MOST POPULAR — BEST VALUE</div>
       <div class="plan-tier">Annual</div>
       <div class="plan-name">The Full Subscription</div>
-      <div class="plan-tagline">Everything, every week — at the founding rate, before it's gone.</div>
-      <div class="plan-price-block">
-        <div class="founding-price">
-          <span class="strike">BDT 12,400/year</span><br>
-          <span class="new-price">BDT 4,999</span>
-          <span class="tag">Founding member price — only 20 spots at this price, ever. 6 spots remaining.</span>
-        </div>
-        <div class="plan-saving">✓ Save BDT 13,001 vs paying monthly for a year</div>
-        <div class="plan-annualized">Equivalent to just BDT 417/month</div>
+<div class="plan-tagline">Everything, every week — the complete subscription.</div>
+<div class="plan-price-block">
+        <div class="plan-price">BDT 12,400<sub>/year</sub></div>
+        <div class="plan-saving">✓ Save BDT 5,600 vs paying monthly for a year</div>
+        <div class="plan-annualized">Equivalent to just BDT 1,033/month</div>
       </div>
       <ul class="plan-features">
         <li><span class="check">✓</span> Full weekly newsletter — investor interviews, case studies, structured lessons</li>
@@ -560,7 +557,7 @@
         <li><span class="check">✓</span> Ongoing case studies from real Bangladesh private market transactions</li>
         <li><span class="check">✓</span> Direct email access to Saleh for questions</li>
       </ul>
-      <a href="#subscribe" class="plan-cta plan-cta-gold" onclick="selectPlan('founding')">Claim Founding Rate — BDT 4,999</a>
+      <a href="#subscribe" class="plan-cta plan-cta-gold" onclick="selectPlan('annual')">Subscribe Annually — BDT 12,400</a>
     </div>
 
   </div>
@@ -684,12 +681,12 @@
                 <span class="po-tag">per month</span>
               </label>
             </div>
-            <div class="plan-option gold">
-              <input type="radio" name="plan" id="plan-founding" value="founding" checked>
-              <label for="plan-founding">
-                <span class="po-name">⭐ Founding Annual</span>
-                <span class="po-price">BDT 4,999</span>
-                <span class="po-tag">per year · 60% off · 6 spots left</span>
+<div class="plan-option gold">
+              <input type="radio" name="plan" id="plan-annual" value="annual" checked>
+              <label for="plan-annual">
+                <span class="po-name">⭐ Annual</span>
+                <span class="po-price">BDT 12,400</span>
+                <span class="po-tag">per year</span>
               </label>
             </div>
           </div>
@@ -790,7 +787,7 @@
         Can I switch from Monthly to Annual later?
         <span class="faq-arrow">▾</span>
       </button>
-      <div class="faq-answer">Yes — reply to any newsletter email and we'll switch your billing. But the founding annual price of BDT 4,999 is limited to the first 20 annual subscribers only. If those spots fill before you switch, you'll pay the regular annual rate of BDT 12,400.</div>
+      <div class="faq-answer">Yes — reply to any newsletter email and we'll switch your billing to the annual rate of BDT 12,400.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
@@ -828,7 +825,7 @@
   <h2>The investors defining Bangladesh's next decade are educating themselves right now.</h2>
   <p>A new investor interview or case study every week — for as long as you're subscribed. The depth of knowledge most investors in Bangladesh don't have.</p>
   <div class="cta-buttons">
-    <a href="#subscribe" class="btn btn-gold" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Claim Founding Rate — BDT 4,999 →</a>
+    <a href="#subscribe" class="btn btn-gold" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Subscribe — BDT 12,400/year →</a>
     <a href="https://capallo.co" class="btn btn-outline-white">Learn About Capallo</a>
   </div>
 </section>
@@ -912,7 +909,7 @@
 
 const planLabels = {
       monthly:  'Monthly — BDT 1,500/month',
-      founding: 'Founding Annual — BDT 4,999/year'
+      annual:   'Annual — BDT 12,400/year'
     };
 
     const payload = {
