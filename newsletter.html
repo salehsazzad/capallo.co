@@ -136,7 +136,10 @@
       font-size: 1.5rem; margin-bottom: 1rem;
     }
     .trust-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin: 0; }
-
+    .trust-stat { display: flex; flex-direction: column; align-items: center; margin-top: 1.5rem; }
+    .trust-stat-num { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .trust-stat-label { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
+    
     /* ─── WHY SECTION ─── */
     .why-section { padding: 90px 3rem; background: var(--light); text-align: center; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
@@ -445,15 +448,10 @@
 <!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-content">
-<div class="hero-badge">The Private Market Letter — by Capallo</div>
-<h1>Bangladesh's only structured<br>investor education curriculum<br><em>delivered to your inbox.</em></h1>
+<div class="hero-badge">The Private Market Letter by Capallo</div>
+<h1>Private market investor education,<br>built for Bangladesh's<br><em>top 1% of investors.</em></h1>
 <p>Every week, one piece lands in your inbox — takeaways from the world's top angel and venture investors, real Bangladesh case studies, and Capallo's own structured frameworks. Ongoing, for as long as you're subscribed.</p>
 <p class="hero-sub">Weekly. Ongoing. The depth of knowledge most HNIs in Bangladesh will never have.</p>
-
-<div class="founding-banner">
-      <span class="spots-remaining">SOLD OUT</span>
-      <span>All 20 founding spots at BDT 4,999 are claimed. Annual subscription is now <strong>BDT 12,400/year.</strong></span>
-    </div>
 
     <div class="hero-cta">
       <a href="#subscribe" class="btn btn-gold">Subscribe Now →</a>
@@ -467,6 +465,10 @@
   <div style="text-align:center;margin-bottom:2.5rem;">
     <div class="section-label">Who's Already Reading</div>
     <h2 class="section-title" style="font-size:1.9rem;">Trusted by professionals</h2>
+    <div class="trust-stat">
+      <span class="trust-stat-num">44</span>
+      <span class="trust-stat-label">paid subscribers and counting</span>
+    </div>
   </div>
   <div class="trust-grid">
     <div class="trust-card">
